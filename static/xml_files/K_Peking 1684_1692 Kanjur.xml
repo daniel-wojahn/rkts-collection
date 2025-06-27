@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">52</identifier>
+  <identifier type="sigla">K</identifier>
+  <titleInfo>
+    <title>Peking 1684/1692 Kanjur</title>
+  </titleInfo>
+  <abstract>This edition was prepared in Peking between 1684 and 1692 during the reign of the Kangxi Emperor (r. 1661–1722). It is a major representative of the Tshal pa lineage, descending from the manuscript Tshal pa Kanjur compiled 1347–1351, which itself served as the model for the first xylograph edition printed in 1410 under the Yongle Emperor. The 1684–1692 Kangxi edition is a direct textual descendant, newly carved from scratch for this project; additional editions followed in 1700, 1717–1720, and 1737.
+
+While sometimes mistaken for a recarving of the Wanli Kanjur, close comparison shows nearly exact correspondence to the Yongle edition—even replicating its divisions, folio count, lines per page, and textual errors. The Kangxi Kanjur is printed in red ink and is often referred to as the &quot;Red Kanjur&quot;.
+
+Distinctively, the Tantra section appears first, a reflection of esoteric priorities in Tibetan Buddhism. Another innovation of the 1684–1692 edition is unified volume numbering: instead of each section beginning anew, the volumes are continuously numbered from Tantra through Vinaya.
+
+The subsequent 1700 Kangxi Kanjur moved a dhāraṇī collection compiled by Buton Rinchen Drup (Bu ston rin chen grub, 1290–1364) to the very front, which is not the case in the 1684–1692 version. Additionally, the texts Vidyutprāptaparipṛcchā and Bhadrapālaśreṣṭhiparipṛcchā are absent from the Ratnakūṭa section of the 1684–1692 print and were only added in 1700, requiring the insertion of new leaves.
+
+Sets of the 1684–1692 Kangxi Kanjur, complete or partial, are preserved at the Harvard-Yenching Library, the International Academy of Indian Culture in New Delhi, and other institutions.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshal pa</classification>
+  <originInfo>
+    <dateCreated>1684</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

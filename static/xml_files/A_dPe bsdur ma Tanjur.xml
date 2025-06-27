@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">2</identifier>
+  <identifier type="sigla">A</identifier>
+  <titleInfo>
+    <title>Comparative Tanjur (Pedurma)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བསྟན་འགྱུར་དཔེ་བསྡུར་མ།</title>
+  </titleInfo>
+  <abstract>The creation of this edition was a monumental scholarly project initiated in 1986 in Chengdu by the China Tibetology Research Center. The explicit purpose of this undertaking was to create a complete, extensive, high-quality, and authoritative version of the Tanjur by synthesizing its most important existing editions. It was envisioned as an indispensable research tool for scholars studying the history of the treatises, intended to be a faithful compilation with no additions or subtractions to the content of its sources. The project involved over one hundred scholars, spanned more than a decade, and cost nearly three million RMB.
+
+The editorial method for the Comparative Tanjur was systematic and rigorous. The Derge (sde dge) Tanjur was chosen to serve as the foundational source text for the edition. The editors collated the base text against three other major woodblock prints: the Beijing (Pe cin), Narthang (Snar thang), and Coné (Co ne) Tanjurs. Any differences found among the editions—whether in individual syllables, words, or entire passages—were carefully documented in a comparative table displayed below the main source text on each page.</abstract>
+  <genre>Tanjur</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>2008</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">79</identifier>
+    <titleInfo>
+      <title>MW1PD95844</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD95844</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <form type="medium">Modern print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

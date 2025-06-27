@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">3</identifier>
+  <identifier type="sigla">D</identifier>
+  <titleInfo>
+    <title>Derge Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར ༼སྡེ་དགེ་པར་ཕུད༽</title>
+  </titleInfo>
+  <abstract>The Derge Kanjur project was sponsored by Tenpa Tsering (Bstan pa tshe ring, 1678–1738), ruler of the Derge kingdom in Kham. Initiated in 1729, the carving and printing took place at Lhündrup Teng Parkhang Chödzö Chenmo (lhun grub steng par khang chos mdzod chen mo), the kingdom’s major printing house. The work concluded after five years in 1733. 
+
+Editorial supervision was led by Situ Paṇchen Chökyi Jungne (Si tu paṇ chen Chos kyi ’byung gnas, 1700–1774), an eminent scholar of the period. The team included roughly sixty calligraphers, ten editors, and over four hundred woodcarvers. The editors aimed for a philologically accurate collection, consulting the ’Jang sa tham (Lithang Kanjur, c. 1608–1621), the Them spangs ma (notably the Lho rdzong Kanjur), a Kanjur by A gnyen pakshi, as well as copies of the Tshal pa Kanjur and perhaps the Old Narthang Kanjur. Stringent procedures ensured accuracy, with three levels of copy-editing and a policy permitting each artisan to carve only one block per day when necessary.
+
+The Derge Kanjur is principally a representative of the Tshal pa lineage but is noted for its eclectic editorial method, incorporating textual elements and structure from multiple traditions, including the Tantra section arrangement from the Them spangs ma lineage. This deliberate blending makes the Derge edition both highly authoritative and &quot;contaminated&quot; in modern textual classifications. Its excellence influenced later editions, serving as the basis for the Urga Kanjur, produced in Mongolia in 1910.
+
+The complete Derge Kanjur typically comprises 103 volumes—102 containing canonical texts and one for the index (dkar chag), though some accounts list 104 volumes, counting Situ Paṇchen’s separate index. 
+
+The production of the Derge Kanjur and its companion Tanjur secured Derge’s reputation across the Tibetan Buddhist world. Today, it remains a vital scholarly resource, having been among the eight historic editions used in creating the modern Comparative Kanjur (bka’ ’gyur dpe bsdur ma).</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshal pa</classification>
+  <originInfo>
+    <dateCreated>1733</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Derge Printing house</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.8330556,98.59972222222221</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1657</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1657</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">true</note>
+  <relatedItem type="constituent">
+    <identifier type="local">2</identifier>
+    <titleInfo>
+      <title>MW22084</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW22084</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">3</identifier>
+    <titleInfo>
+      <title>MW4CZ5369</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ5369</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">4</identifier>
+    <titleInfo>
+      <title>MW30532</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW30532</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">5</identifier>
+    <titleInfo>
+      <title>MW3CN20612</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN20612</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">96</identifier>
+    <titleInfo>
+      <title>MW1ER165</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1ER165</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">CIHTS</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

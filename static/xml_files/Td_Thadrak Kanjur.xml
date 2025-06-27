@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">84</identifier>
+  <identifier type="sigla">Td</identifier>
+  <titleInfo>
+    <title>Thadrak Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཐ་བྲག་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Thadrak Kanjur is a manuscript collection held at Thadrak Temple, located a few hours&apos; climb from Thimphu, Bhutan. The collection is part of the broader archival initiative documented by the Endangered Archives Programme (https://eap.bl.uk/project/EAP310). Thadrak, along with the temple libraries of Tshamdrak and Neyphug, preserves ancient Buddhist texts and other works that have remained largely unknown and often inaccessible to scholars.
+
+The Thadrak Kanjur comprises 109 volumes of manuscripts in loose-leaf poti format, written in Tibetan dbu can script. The set includes a diverse array of canonical genres:
+
+- 20 volumes of rGyud &apos;bum (Tantras)
+- 3 volumes of Nyingma rGyud &apos;bum (Nyingma Tantras)
+- 1 volume of Dus &apos;khor (Kālacakra)
+- 2 volumes of Shri dri med &apos;od
+- 32 volumes of mDo sde (Sūtras)
+- 13 volumes of &apos;Dul ba (Vinaya)
+- 16 volumes of Sher phyin (Prajñāpāramitā)
+- 6 volumes of dKon brtsegs (Ratnakūṭa)
+- 6 volumes of Phal chen (Avataṃsaka)
+- 4 volumes of Myang &apos;das (Parinirvāṇa)  
+
+Although specific historical details on the origin and development of Thadrak Temple are sparse, the site was once a thriving religious centre and is associated with a Vajrakīla tradition known as Phur pa mtha&apos; brag ma. The manuscript collection itself represents a highly ecumenical corpus, with approximately seventy titles in total, including not only canonical texts but also works on philosophy, language, meditation, ritual, and more than twenty-six biographical and historical treatises—many of them rare or little-known in Buddhist scholarship.
+
+The majority of the manuscripts are dated between the 18th and early 20th centuries, though some titles are likely several hundred years older, with a few plausibly from as early as the 14th or 15th century.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Thadrak Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.47298875804195,89.67499737729304</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">68</identifier>
+    <titleInfo>
+      <title>MWEAP310-1-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP310-1-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>108</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

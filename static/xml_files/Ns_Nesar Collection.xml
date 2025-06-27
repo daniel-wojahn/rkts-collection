@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">64</identifier>
+  <identifier type="sigla">Ns</identifier>
+  <titleInfo>
+    <title>Nesar Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གནས་གསར་དགོན་པར་བཞུགས་པའི་དཔེ་ཆ་སྣ་ཚོགས།</title>
+  </titleInfo>
+  <abstract>The Nesar (gnas gsar) Collection is a major assemblage of Tibetan canonical manuscripts housed at Nesar Monastery in Bicher (byi gcer) village, Upper Dolpo. Renowned for its age, scale, and pivotal role in Kanjur transmission, the collection serves as a vital source for the study of canonical history in the western Himalayas.
+
+The library consists of 642 largely canonical volumes, totalling around 160,000 folios, including 150 illuminated folios. In the 1990s, the collection came to scholarly attention through the efforts of Klaus-Dieter Mathes. To safeguard the manuscripts from theft, the head lama, Tenzin Gyaltsen (Bstan &apos;dzin rgyal mtshan), sealed the library in 1996; it was reopened in 2001 for documentation and study during the Pritzker-Roncoroni expeditions. Amy Heller conducted a preliminary survey of the manuscripts at that time, focusing on the illuminations and historical prefaces.
+
+The Nesar Collection is composite, assembled from at least three sources. The majority are original to Nesar Monastery, with 98 volumes from Lang Monastery (Glang dgon pa) and 71 from Serkhang Temple (Gser khang). Though the full contents remain under study, the collection includes sections such as the Vinaya and Prajñāpāramitā.
+
+The primary period of creation for the main illuminated manuscript sections at Nesar—specifically the Sūtra and Śatasāhasrikā-Prajñāpāramitā sections—is estimated to be circa 1350–1500 CE, as established by multiple lines of evidence. Scientific radiocarbon analysis of the manuscripts confirms this date range. Paleographic and orthographic features further indicate a fourteenth-century creation, a time when the old writing style in western Tibet was gradually giving way to a newer script. Manuscripts from this period display distinctive archaic characteristics, which set them apart from those of later centuries. These include the use of two string holes, often marked in red, simple and ancient-style head marks (mgo yig), consistent use of the conjunct ma with a subscript ya (mya), frequent appearance of the “strong da” (da drag), and only very occasional use of the reversed i-vowel sign for (gi gu log).
+
+Most of the major manuscripts at Nesar date to the fourteenth and fifteenth centuries, but the temple itself was built much earlier, around 1100–1125 CE. Manuscript collections from the broader Dolpo region go back to the twelfth and thirteenth centuries, placing the Nesar collection firmly within a longstanding local tradition of manuscript production.
+
+The Nesar Collection stands as an intermediary link in the history of Tibetan canonical transmission, bridging the collections of Phug brag and Mustang (Glo). It belongs to the same textual network as the Kanjurs of Early Mustang, Hemis, and Basgo, underscoring the close historical and cultural connections between these sites.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated>1350–1500</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Nesar Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.452222,82.914167</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL11</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL11</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

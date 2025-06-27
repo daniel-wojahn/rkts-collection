@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">36</identifier>
+  <identifier type="sigla">Gnu</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Nubri)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བྲག་དཀར་རྟ་སོའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Nubri Nyingma Gyübum manuscript is a complete, 37-volume illuminated collection, exemplifying the Tibetan-Nepalese Borderlands transmission lineage. Closely related to the Kathmandu National Archives set, it stands as one of the finest witnesses to this distinct recension.
+
+Commissioned by Drakar Taso Trülku Chökyi Wangchuk (Brag dkar rta so sprul sku Chos kyi dbang phyug, 1775–1837), the Nubri manuscript was produced in 1813–1814 at Drakar Taso. The master copy was reportedly a set from Langthang (glang ’phrang). The completed manuscript was kept at Drakar Taso before coming into the possession of Lopön Gyurmé (Slob dpon ’Gyur med) in Nubri (Samagaon), Nepal. In 1992, it was microfilmed by the Nepal-German Manuscript Preservation Project (NGMPP, Reel Nos. L 426/4–L 448/1).
+
+The Nubri edition is noted for its uniform structure, format, and layout, in stark contrast to the organizational irregularities of the Kathmandu set. Both collections define a Tibetan-Nepalese Borderlands lineage, representing an intermediate stage between the South-West Tibetan (Tingkyé, Rikdzin Tsewang Norbu) and the 46-volume Central Bhutanese groups. Although produced before the Kathmandu set, Nubri reflects a more editorially advanced and coherent phase within this transmission line.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
+  <originInfo>
+    <dateCreated>1813–1814</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Drakar Taso</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>28.600000,85.250000</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G317</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G317</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

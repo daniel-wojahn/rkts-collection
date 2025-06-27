@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">21</identifier>
+  <identifier type="sigla">F</identifier>
+  <titleInfo>
+    <title>Phugbrag Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཕུག་བྲག་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>Of course. Based on the provided Tibetan document, The History of Phugbrag Monastery, Called &apos;The First Dawn&apos; (སྤུ་བྲག་དགོན་གྱི་ལོ་རྒྱུས་སྐྱ་རེངས་དང་པོ།, spu brag dgon gyi lo rgyus skya rengs dang po), compiled in 2020 by the monk Lobsang Tenzin, here is the supplemented description with new information and dates integrated.
+
+The Phugbrag Kanjur is a unique and historically important manuscript edition of the Tibetan Buddhist canon, recognized for its independent textual tradition and distinctive content. The name Phugbrag derives from its home monastery, reportedly built atop a rock (brag) shaped like a pigeon (phug ron); other historical spellings include Spud tra, Phu brag, Spu grags, and Spu brag.
+
+Phugbrag Monastery, located in the Saga (sa dga&apos;) region of Western Tibet and once affiliated with Sera Je (Se ra byes) Monastery, was founded by &apos;Jam dbyangs legs pa don grub, a direct disciple of the First Dalai Lama, Gendun Drup (Dge &apos;dun grub, 1391–1474). Although it later became associated with the Gelugpa school, the monastery originally belonged to the ’Brug pa Bka’ brgyud pa tradition, as seen in the biography of Urgyenpa Rinchen Pel (Grub thob U rgyan pa Rin chen dpal, 1230–1309), who was active at Phugbrag. The monastery received significant official patronage from the government of the Fifth Dalai Lama (1617–1682) and his regent, Desi Sangye Gyatso.
+
+The Phugbrag Kanjur was sponsored by the abbot Ngawang Chödrak (Ngag dbang Chos grags), aided by the monk Lobsang Tenzin (Blo bzang Bstan ’dzin), the nun Lobsang Wangmo (Blo bzang dbang mo), and local community members. Its catalogue states it was commissioned for the long life of the Sixth Dalai Lama, Tsangyang Gyatso (Tshangs dbyangs rgya mtsho, 1683– after 1706, enthroned 1696), so its compilation dates to the late 17th century. The manuscript is considered a completely independent edition, minimally revised and preserving earlier textual forms.
+
+Its preservation is credited to Sera Je Tsethang Geshe Kelsang Lhündrup (Se ra byes Rtse thang dge bshes Skal bzang lhun grub), who became abbot around 1940. At that time, the monastery had only about ten monks; by 1959, he had grown the population to over sixty. Just before the events of 1959, he took pains to safeguard the monastery&apos;s treasures. After the uprising, approximately 35 monks fled with the collection to Nubri, Nepal. The process of transferring the collection to the Tibetan Government-in-Exile began in 1967, and by 1971, the Phugbrag collection was housed at the Library of Tibetan Works and Archives (LTWA), Dharamsala. The transferred items included 51 statues (sku rten), 37 thangkas (zhal thang), and 157 scripture volumes (gsung dpe). A microfiche edition was later made for scholarly access.
+
+The Phugbrag Kanjur contains many unique readings and is not descended from the Narthang manuscript tradition. Unlike Kanjur editions that derive from Chomden Rigpé Raldri&apos;s (Bcom ldan Rig pa&apos;i ral gri, 1227–1305) standard, Phugbrag stands alone as an independent witness. It preserves 30 texts with translation variants—often reflecting earlier renderings compared to the revised versions in other Kanjurs—and uniquely includes an eighth-century translation preserved only here. The Kanjur also contains a rare historical work by Jinamitra on the spread of Buddhism in India, Li-yul, and Tibet. While the Sālistamba sūtra (Sa lu&apos;i ljang pa&apos;i mdo) in this collection is closely aligned with the Dunhuang manuscripts, other texts, such as the Druma-kinnara-rāja-paripṛcchā-sūtra (Mi &apos;am ci&apos;i rgyal po ljon pas zhus pa&apos;i mdo), occasionally share variants with the Narthang-derived editions, contributing to ongoing debate about its complex textual affiliations.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Phugbrag Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.483333,85.083333</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2KG1681</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2KG1681</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">20</identifier>
+    <titleInfo>
+      <title>MW1KG13607</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG13607</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>120</extent>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">21</identifier>
+    <titleInfo>
+      <title>MW2KG210295</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG210295</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">LTWA</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>120</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">20</identifier>
+  <identifier type="sigla">Eg</identifier>
+  <titleInfo>
+    <title>Egoo Collection</title>
+  </titleInfo>
+  <abstract>The collection from the Egoo Temple, Ladakh includes a rare Tibetan manuscript volume. It consists of 515 folios, and as the title &apos;jam dpal mtshan brjod dang dkon mchog rje dran gyi mdo sogs indicates it contains works such as the “Praise of Mañjuśrī” and sūtras devoted to the recollection of the Three Jewels.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <cartographics>
+      <coordinates>33.998934, 78.095007</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">19</identifier>
+    <titleInfo>
+      <title>MW1KG12671</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG12671</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>1</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

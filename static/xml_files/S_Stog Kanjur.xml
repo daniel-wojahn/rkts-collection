@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">74</identifier>
+  <identifier type="sigla">S</identifier>
+  <titleInfo>
+    <title>Stog Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྟོག་ཕོ་བྲང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Stog Palace Kanjur is a complete manuscript edition of the Tibetan Buddhist canon, kept in the royal residence at Stog, Ladakh. It is an important witness to the Thempangma transmission lineage.
+
+Produced in the first half of the 18th century, likely around 1729, the Stog Kanjur was commissioned under the patronage of King Nyima Namgyal (Nyi ma rnam rgyal, r. 1691–1729), with the chief minister, Sönam Lhundrup (Bsod nams lhun grub), procuring a Kanjur manuscript from Bhutan and commissioning a new copy as an act of religious merit for the king’s long life—or, according to oral tradition, for his funeral rites. The Bhutanese exemplar likely reached Ladakh through the First Sela Jamgon Ngawang Gyaltsen (Se’u la Byams mgon Ngag dbang rgya mtshan, 1647–1732), the king’s chief spiritual adviser, underscoring close Ladakhi-Bhutanese religious ties.
+
+The Stog Kanjur is a direct manuscript copy of its Bhutanese source, possibly produced by four scribes, judging by calligraphic evidence. In the 20th century, the manuscript was published in an offset edition (109 vols.) by T. Namgyal Tarusergar in Leh (1975–1980). Skorupski’s 1985 catalogue remains the definitive reference.
+
+Though closely related to the Thempangma, Stog exhibits unique features, notably in section order: the Buddhāvatamsaka and Mahāratnakūṭa sections are placed within Prajñāpāramitā, not after it, and both the Vinaya and Tantra sections show distinct arrangements. Despite such differences, the manuscript is recognized for careful orthographic regularization.
+
+The Stog Palace Kanjur is crucial for the study of the Tibetan canon’s transmission, especially as one of the most complete and accessible Thempangma manuscripts. Its relationship with the Shey Palace Kanjur documents the development of a distinct Ladakhi branch of the tradition.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Stog Palace</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.072778,77.548611</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL25</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL25</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">true</note>
+  <relatedItem type="constituent">
+    <identifier type="local">64</identifier>
+    <titleInfo>
+      <title>MW22083</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW22083</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>109</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

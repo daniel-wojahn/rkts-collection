@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">77</identifier>
+  <identifier type="sigla">Sk</identifier>
+  <titleInfo>
+    <title>Serkhang Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གསེར་ཁང་དུ་བཞུགས་པའི་དཔེ་ཆ་སྣ་ཚོགས།</title>
+  </titleInfo>
+  <abstract>The Serkhang Collection (Wylie: gser khang) is a distinctive assembly of Tibetan manuscripts originating from Serkhang Temple in the Lang valley, near Bicher in Upper Dolpo, Nepal. Closely linked historically and ritually with Nesar and Lang monasteries, the collection was at one point grouped with them into the so-called &quot;Dolpo Kanjur,&quot; an artificially constructed set later disaggregated by scholarly research. 
+
+Serkhang Temple fell into disuse and its seventy-one manuscript volumes were relocated to nearby Nesar Monastery (Wylie: gnas gsar dgon pa) to ensure their preservation. Although still housed at Nesar for decades, the recently renovated Serkhang Temple is beginning to host some of these volumes again. Research, particularly by Klaus-Dieter Mathes, has underlined the close connection between the libraries of Serkhang, Nesar, and Lang.
+
+Initial documentation of the Serkhang Collection was carried out by Amy Heller in 2009, who inventoried seventy-one volumes at Nesar Monastery. In 2014, the head lama of Nesar, Tenzin Gyaltsen (Bstan ‘dzin rgyal mtshan), provided photographs of eighty-eight volumes believed to represent a complete Kanjur, but later analysis revealed this &quot;Dolpo Kanjur&quot; actually comprised volumes from three different monastic collections. This prompted an effort to catalogue and digitize each collection—Nesar, Lang, and Serkhang—separately. The Tibetan Manuscript Project Vienna (TMPV) completed digitization of the Serkhang Collection in May 2024. Out of the seventy-one volumes noted by Heller, fifty-seven were photographed. Fourteen volumes, mostly smaller historiographical and ritual texts (T56–T71 in Heller&apos;s handlist), were not digitized as they are in ongoing ritual use and have been distributed to various locations, including the restored Serkhang Temple. Additional fieldwork in 2024 identified and digitized an Abhidharma commentary not previously listed.
+
+The Serkhang Collection is exceptional for the absence of a Sutra collection and for its unique textual profile compared to other Dolpo libraries. It includes fourteen Vinaya volumes, notable as these are missing from other documented Dolpo collections and represent fragments from two different sets. The collection also holds several volumes of the Śatasāhasrikāprajñāpāramitā and Pañcaviṃśatisāhasrikāprajñāpāramitā, various other canonical texts including an Abhidharma commentary, and a substantial body of non-canonical writings such as the Maṇi Kambum, Pema Kathang, Klu &apos;bum anthologies, and biographies of figures such as Milarepa (Mi la ras pa, 1040–1123) and Rinchen Sangpo (Rin chen bzang po, 958–1055).</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Serkhang Temple</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.474712715352606,82.84403162704238</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

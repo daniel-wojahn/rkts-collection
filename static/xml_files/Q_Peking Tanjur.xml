@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">70</identifier>
+  <identifier type="sigla">Q</identifier>
+  <titleInfo>
+    <title>Peking Tanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>པེ་ཅིང་བསྟན་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Peking Tanjur—also known as the Qing Tanjur—represents one of the classical xylograph editions of the Tibetan Buddhist canon, completed in Beijing in 1724. Produced as part of a Qing imperial initiative to create canonical collections in major languages of the empire, the Peking Tanjur followed after the earlier Peking Kanjur. According to its colophon, the Tanjur was compiled between 1687 and 1688, posthumously attributed to the Fifth Dalai Lama (1617–1682), though actual supervision was by the regent Desi Sangyé Gyatso (Sde srid Sangs rgyas rgya mtsho, 1653–1705). The blocks were carved under imperial sponsorship beginning in 1724, during Yongzheng Emperor’s reign, and printing was completed by 1738.
+
+The Peking Tanjur is a faithful printing of the 1688 Tanjur produced under sDesi Sangyé Gyatso, itself based on the Shalu Tanjur (Zhwa lu bstan &apos;gyur). Analysis shows the Peking, Narthang, and Cone Tanjurs all descend from a common original. While the colophon omits its sources, the structure and contents closely match the manuscript Golden Tanjur (Gser bris bstan &apos;gyur).
+
+Notable additions in the Peking edition are twenty volumes of collected works of Tsongkhapa Lobsang Dragpa (Tsong kha pa blo bzang grags pa, 1357–1419) and seven volumes of works by the First Cangkya Khutukhtu Ngawang Chokden (Lcang skya Ngag dbang mchog ldan, 1642–1714).
+
+These additions expanded the Peking and Narthang collections by over five hundred texts relative to the Derge and Cone editions. The original catalogue was written by the regent, with an important later catalogue by Second Thukwan, Cho4kyi Gyatso (Thu&apos;u bkwan Chos kyi rgya mtsho (1680–1736).
+
+Produced as an imperial xylograph, the Peking Tanjur woodblocks were housed in Beijing with restricted access, and were lost by around 1900. The collection survived through several key reproductions:
+- Around 1920, a complete set was brought to Japan for the Thirteenth Dalai Lama, Thubten Gyatso, and housed at Tohoku University.
+- In 1955, Tohoku University published a photostat reprint in 105 volumes, now in major libraries worldwide.
+- Ōtani University’s edition is a further reproduction.</abstract>
+  <genre>Tanjur</genre>
+  <originInfo>
+    <dateCreated>1738</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">61</identifier>
+    <titleInfo>
+      <title>MW1KG13126</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG13126</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>224</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

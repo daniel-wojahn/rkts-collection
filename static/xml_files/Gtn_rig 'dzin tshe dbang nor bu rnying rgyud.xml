@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">44</identifier>
+  <identifier type="sigla">Gtn</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Rikdzin Tsewang Norbu) </title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title> ཀཿཐོག་རིག་འཛིན་ཚེ་དབང་ནོར་བུའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Rikdzin Tsewang Norbu edition of the Nyingma Gyübum (Rig ’dzin tshe dbang nor bu&apos;i rnying ma’i rgyud ’bum) is a lavishly illustrated Tibetan manuscript collection, historically known as the “Waddell edition” after L.A. Waddell, who took it from Tibet in 1904. Contemporary scholarship identifies its patron as Kathok Tsewang Norbu (Kaḥ thog Tshe dbang nor bu, 1698–1755), a renowned 18th-century lama whose miniature portrait and homage appear on the illuminated opening folio of most volumes.
+
+The manuscript&apos;s origins are closely linked to the vibrant Nyingma scriptural revival in the borderlands of southern Tibet and Nepal, particularly the Kyirong (Skyid grong) region, in the late 18th century. Tsewang Norbu, although nominally based at Kathok in eastern Tibet, traveled extensively, restored monasteries in the Kathmandu Valley, and died in Kyirong. The edition likely arose as part of the revival movement led by his student Trinlé Düjom (Phrin las bdud ’joms, 1726–1789), whose disciples produced several manuscript collections of the Nyingma Gyübum in the area after their master’s death.
+
+Internal evidence for this milieu includes the presence of a certain Nya Sönam Chöphel (Snya bsod nams chos ’phel)—possibly the artist—in the opening volume, with “snya” likely referring to Gnya&apos; nang, near Kyirong. The lama-artist Künsang Trinlé Wangchuk of Kyirong (Kun bzang phrin las dbang phyug, 1772–1812)—a disciple of Trinlé Düjom—was active in producing manuscript frontispieces for the Nyingma canon during this period.
+
+The surviving manuscript is incomplete, believed to have originally comprised 33 volumes but now existing in 29 volumes, distributed primarily among the British Library (29 vols.), Bodleian Libraries, Oxford (vol. Ka), and the Victoria and Albert Museum, London (two title folios). It is a principal exemplar of the South-Western Tibetan recension, sharing features with the Tingkyé manuscript and Bathang Kanjur (Newark). Notably, its volume dza preserves two versions of the &quot;Immaculate Confession Tantra&quot; (Dri med bshags rgyud), one incorporating corrections by the Fifth Dalai Lama (1617–1682).</abstract>
+  <genre>Old Tantra</genre>
+  <classification>South-Western Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated>18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Kyirong</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>28.852222,85.297500</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2161</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2161</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">38</identifier>
+    <titleInfo>
+      <title>MW2PD19896</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2PD19896</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

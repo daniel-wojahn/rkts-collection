@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">69</identifier>
+  <identifier type="sigla">Q</identifier>
+  <titleInfo>
+    <title>Peking 1737 Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>པེ་ཅིང་བཀའ་འགྱུར། ༼༡༧༣༧༽</title>
+  </titleInfo>
+  <abstract>The 1737 Peking Kanjur, also known as the Qianlong Kanjur, is a major woodblock-printed edition, produced under the patronage of the Qianlong emperor (乾隆, r. 1735–1796) of the Qing dynasty. It comprises 107 volumes plus an index and was printed in red ink. The Qianlong edition is not a new textual redaction, but a reprinting from established xylographs. The original blocks were carved for the Yongle Kanjur in 1410, based on the Tshal pa tradition. The 1737 edition used the second set of woodblocks commissioned for the Peking Kanjur under the Kangxi emperor, originally carved between 1684 and 1692. These same blocks were used for earlier Kangxi editions (1700, 1717–1720) and the Qianlong edition, with occasional corrections and minor changes. Consequently, the so-called &quot;Peking group&quot; block-print editions are nearly identical, with each subsequent print descended from the same source blocks or their direct impressions.
+
+The Qianlong Kanjur belongs to the Peking branch of the &quot;Eastern group&quot; of Kanjur transmission. Scholarly analysis confirms that the 1737 Qianlong edition is &quot;almost identical&quot; to the preceding 1717–1720 Kangxi edition. Its reliability and completeness led modern editors to use the Qianlong print to restore missing parts in the photolithographic reprint &quot;The Tibetan Tripitaka: Peking Edition&quot; (Japan, 1955), which otherwise used the 1717–1720 blocks.
+
+A unique feature of the 1737 Qianlong edition is the inclusion of an additional colophon, specifically attached to the text &quot;“The Great King of Contemplations Called ‘Nondual Equanimity that Perfectly Conquers’” (Gnyis su med pa mnyam pa nyid rnam par rgyal ba zhes bya ba’i rtog pa’i rgyal po chen po), expressly dated to the Qianlong emperor’s second regnal year.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshal pa</classification>
+  <originInfo>
+    <dateCreated>1737</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">true</note>
+  <relatedItem type="constituent">
+    <identifier type="local">59</identifier>
+    <titleInfo>
+      <title>MW1PD96684</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD96684</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>107</extent>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">60</identifier>
+    <titleInfo>
+      <title>MW3CN1094</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN1094</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>107</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

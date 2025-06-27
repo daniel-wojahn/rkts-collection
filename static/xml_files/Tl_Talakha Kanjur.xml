@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">88</identifier>
+  <identifier type="sigla">Tl</identifier>
+  <titleInfo>
+    <title>Talakha Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྟ་ལང་ཁ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>
+The Talakha Kanjur is the principal canonical manuscript collection preserved at Talangkha Gonpa—officially known as Talakha Tashi Drukgyel Monastery—in Bhutan.
+
+The set comprises 126 volumes of meticulously hand-written manuscripts in traditional dbu can script, using black ink on cream-colored Bhutanese handmade paper. The first page of each Kanjur volume stands out for its artistic refinement: the text is written in gold ink on dark blue paper, flanked on either side by miniature illustrations of the Buddha. These flourishes demonstrate both the skill and devotion with which the collection was created. Each volume is kept as a sacred relic—wrapped in layers of cloth, enclosed between wooden boards, and securely fastened with string—then stored on the monastery&apos;s traditional wooden shelves. 
+
+The entire Talakha collection, including the Kanjur, was likely produced at Talangkha Lhakhang Gompa between the 17th and 18th centuries. As with several other Bhutanese archives, the Talakha collection is not organized according to any specific system at the collection level. Nevertheless, it is divided into two primary categories: the Talakha Kanjur, containing canonical Buddhist texts, and the Talakha Thorbu (Archive details at https://eap.bl.uk/collection/EAP1494-17).
+
+The Talangkha Kanjur was digitized in 2024 as part of the &quot;Digitisation of 20 remote Bhutanese archives&quot; project, ensuring its preservation and enabling scholarly access to this significant collection. For more on the archive and its holdings, see the https://eap.bl.uk/collection/EAP1494-17-1.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated>17th–18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Talakha Tashi Drukgyel Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.416838487965922,89.67763572649515</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

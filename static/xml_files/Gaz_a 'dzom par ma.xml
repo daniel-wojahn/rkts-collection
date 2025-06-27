@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">23</identifier>
+  <identifier type="sigla">Gaz</identifier>
+  <titleInfo>
+    <title>Seventeen Tantras (Anzom Chögar)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྒྱུད་བཅུ་བདུན ༼ཨ་འཛོམ་པར་མ༽</title>
+  </titleInfo>
+  <abstract>The Seventeen Tantras of the Great Perfection (rdzogs chen rgyud bcu bdun) are foundational scriptures of the Nyingma school, standing at the heart of the Atiyoga or Dzogchen tradition. Among their key canonical witnesses is the woodblock-printed edition produced at Anzom Chögar (A &apos;dzom chos sgar), a prominent Nyingma monastic center located in Kardze (Dkar mdzes), eastern Tibet.
+
+This particular edition, comprising four volumes, was created using both woodblock and manuscript methods, and it preserves the full set of Seventeen Tantras as established in classical Nyingma collections. The structure follows the Nyingma nine-vehicle system, in which these tantras are presented as the central texts of the Atiyoga (Great Perfection) class.
+
+The Anzom Chögar edition is regarded by scholars as closely matching the canonical Derge Nyingma Gyübum (sde dge rnying ma’i rgyud ’bum) version, reflecting a significant editorial and textual lineage.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Eastern Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated>2000</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Anzom Chögar Printing house</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.149722, 99.566667</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G3JT12503</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G3JT12503</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">23</identifier>
+    <titleInfo>
+      <title>MW1KG11703</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG11703</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <form type="medium">Paper</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>4</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">14</identifier>
+  <identifier type="sigla">Dd</identifier>
+  <titleInfo>
+    <title>Dodedrak Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མདོ་སྡེ་བྲག་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Dodedrak Kanjur (Mdo sde brag bka’ ’gyur) is a complete manuscript edition of the Tibetan Buddhist canon preserved at Dodedrak Monastery, founded in 1779 CE, and a historically significant monastic institution located northeast of Thimphu, affiliated with the Drukpa Kagyu tradition.
+
+A yet to be studied catalog (dkar chag) of the collection is preserved as part of the archive.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>16th–19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Dodedrak Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.51510,89.61020</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG116098</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG116098</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">16</identifier>
+    <titleInfo>
+      <title>MWEAP570-5-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP570-5-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>104</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

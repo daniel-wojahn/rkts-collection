@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">100</identifier>
+  <identifier type="sigla">Zl</identifier>
+  <titleInfo>
+    <title>Zangla Collection</title>
+  </titleInfo>
+  <abstract>The Zangla Canonical Collection is a significant group of canonical manuscripts preserved at Zangla Palace (bzang la/bzang lha) in the Zanskar region of Ladakh. Associated with the Zangla royal family, it is classified among the most important manuscript collections in Western Tibet.
+
+The collection was thoroughly documented by Ákos Debreczeni. Textually, the Zangla collection shows the closest affinity with the Hemis manuscript Kanjur (He), as demonstrated by their shared unique errors. This reveals a direct relationship within the transmission history of canonical texts in Ladakh.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>Unknown</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Zangla Palace</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.6511249724998,76.99451366976426</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

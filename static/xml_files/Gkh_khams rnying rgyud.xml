@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">33</identifier>
+  <identifier type="sigla">Gkh</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Zhichen Monastery)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གཞི་ཆེན་དགོན་དུ་བཞུགས་པའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>A manuscript collection from Zhichen Kharmar Sangngak Tengye Ling (Gzhi chen mkhar dmar gsang sngags bstan rgyas gling), located in Kardze (Garzê) County. It was founded by the master Orgyen Lhundrup Gyatso (O rgyan Lhun grub rgya mtsho) in the Wood-Dragon year of 1664. It is a monastery of the Nyingma school and is a branch monastery of the great Kathok Monastery. 
+
+Information taken from &apos;Jigs med bsam grub.  1995. Dkar mdzes khul gyi dgon sde so so&apos;i lo rgyus gsal bar bshad pa. 3 vols. Beijing: krung go&apos;i bod kyi shes rig dpe skrun khang, vol. 1, p. 141.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Eastern Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated>unknown</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Zhichen Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.95000,100.26667</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1563</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1563</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">29</identifier>
+    <titleInfo>
+      <title>MW2PD17382</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2PD17382</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

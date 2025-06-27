@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">73</identifier>
+  <identifier type="sigla">Re</identifier>
+  <titleInfo>
+    <title>Reruk Collection</title>
+  </titleInfo>
+  <abstract>The Reruk Collection is located in Ladakh. More detailed information regarding its specific origins, the patrons or communities involved in its creation, and the historical period of its production is not yet available.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Reru</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.336000,76.965670</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

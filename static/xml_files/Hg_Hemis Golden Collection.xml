@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">48</identifier>
+  <identifier type="sigla">Hg</identifier>
+  <titleInfo>
+    <title>Hemis Golden Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཧེ་མིས་གསེར་བྲིས་མ་ལས་རྒྱུད་ཁ་ཐོར་སྣ་ཚོགས།</title>
+  </titleInfo>
+  <abstract>The Hemis Golden Kanjur is a deluxe manuscript set preserved at Hemis. Details about this collection are scarce; it has not been thoroughly studied by the Tibetan Manuscript Project Vienna (TMPV).</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Hemis monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.912475,77.702833</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">43</identifier>
+    <titleInfo>
+      <title>MW4CZ45315</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45315</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">115</identifier>
+  <identifier type="sigla">Bkt</identifier>
+  <titleInfo>
+    <title>Bon Katen (Chengdu)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བོན་གྱི་བཀའ་བརྟེན</title>
+  </titleInfo>
+  <abstract>Published 1998 by Sokdé Tülku Tenpé Nyima (Sog sde sprul sku Bstan pa&apos;i nyi ma) in Chengdu. Digitized in 2006-2007 at the Tibetan Bon Yungdrung Library at Menri Monastery in Dolanji, Himachal Pradesh, India at the order of 33rd Menri Trizin Lungtok Tenpé Nyima (Lung rtogs bstan pa&apos;i nyi ma).</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>1998</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chengdu</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>30.4238,104.0519</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1111</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1111</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">99</identifier>
+    <titleInfo>
+      <title>MW30498</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW30498</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>300</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

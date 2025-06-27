@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">61</identifier>
+  <identifier type="sigla">Ng</identifier>
+  <titleInfo>
+    <title>Namgyal Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྣམ་རྒྱལ་དགོན་དུ་བཞུགས་པའི་མདོ་མང་།</title>
+  </titleInfo>
+  <abstract>Namgyal (rnam rgyal) Monastery (Rnam rgyal dgon pa, situated on a hill west of Lo Manthang in Upper Mustang, preserves a major collection of approximately 126 early Tibetan manuscripts. Though sometimes called a &quot;Kanjur&quot; locally, this is a heterogeneous collection. It includes 28 volumes from a 30-volume Sūtra collection (mdo sde), with volumes ma and ha missing; 14 volumes comprise a Prajñāpāramitā set containing only the Śatasāhasrikāprajñāpāramitāsūtra (&apos;bum); and several fragments or individual volumes representing other categories.
+
+The Sūtra and Prajñāpāramitā collections stand out for both quality and age, featuring intricate illuminations on the first and last folios. Art-historical and codicological evidence indicates these manuscripts were likely produced in the early fourteenth century, though stylistic comparisons suggest production could be as early as the twelfth or thirteenth century. This places their creation before the establishment of the Mustang kingdom and the influence of Ngorchen Kunga Sangpo (Ngor chen kun dga’ bzang po, 1382–1456).
+
+The Namgyal collection is a key example of the canonical transmission known as the &quot;Mustang group,&quot; distinct from both the Tsalpa and Thempangma mainstream Kanjur traditions. The Sūtra collection exemplifies the mdo mangs model, an earlier precursor to the fully structured Sūtra sections of later Kanjurs. Other similar Sūtra collections have been identified in Mustang and Dolpo, all organized in 30-volume sets by the Tibetan alphabet and containing roughly 450 canonical works, including several absent from later standardized Kanjurs. Such collections influenced the compilation of the &quot;Early Mustang Kanjur&quot; in the fifteenth century, with dhāraṇīs and works redistributed in new sections, a process visible in the Namgyal Collection. Connections are also seen in Kanjurs preserved at Hemis and Basgo.
+
+The Namgyal collection’s contents reflect its early origins. The Prajñāpāramitā set consists solely of the Śatasāhasrikāprajñāpāramitāsūtra, spread across fourteen volumes and 76 chapters—four more than the Derge Kanjur version, which has twelve volumes. The Sūtra collection, originally thirty volumes, contains 325 individual texts. Notably, it includes Tanjur-style works by authors, such as Āryaśūra’s Jātakamālā and the Saptakumārikāvadāna, and intersperses dhāraṇīs and short tantric texts within the Sūtra section, rather than separating them as in later works. It also preserves rare texts, such as a praise to Maitreya and a sūtra on Maudgalyāyana rescuing his mother from hell.
+
+Physically, the manuscripts are high-quality, large-format pothī volumes written on thick, natural beige paper. Each volume features illuminated folios at front and back, constituting a unique iconographic program unrivalled among extant early Tibetan manuscript collections. The Sūtra collection employs a distinctively angular dbu can script with red ink for volume letters and consistent archaic orthography.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>12th–14th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Namgyal Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.19002,83.94746</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2KG2759</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2KG2759</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">55</identifier>
+    <titleInfo>
+      <title>MW2KG229028</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG229028</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>52</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

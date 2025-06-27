@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">17</identifier>
+  <identifier type="sigla">Dr</identifier>
+  <titleInfo>
+    <title>Peking Dragon Kanjur</title>
+  </titleInfo>
+  <abstract>The Kangxi Kanjur Manuscript of 1669—often called the &quot;Peking Dragon Kanjur&quot;—is among the most impressive and artistically lavish Kanjur editions produced under Qing imperial patronage. Commissioned by Grand Empress Dowager Xiaozhuang (孝莊文皇后, Mong. Bumbutai, 1613–1688), with the assistance of her grandson, the young Kangxi Emperor (康熙帝, 1654–1722), this project was completed over two years, supported by the vast resources of the imperial court and additional contributions from the Empress Dowager’s Horgin Mongol homeland. Intended as both a spiritual offering and a demonstration of Qing engagement with Tibetan Buddhism, this lavish manuscript predates the famous woodblock-printed Peking Kanjur editions later produced under Kangxi’s reign.
+
+The Kangxi manuscript does not simply copy earlier texts but stands out for its refined artistry, combining Tibetan and Han Chinese traditions. The scriptures are written in gold ink on long, deep-blue goat-brain treated paper, decorated with precious metals and pearls. Folio edges are painted with the Eight Auspicious Symbols, and each large volume is encased between carved wooden boards, wrapped in silk and ceremonial cloths, and bound together with a five-colored strap. The covers display three inscriptions: first in Sanskrit Rañjanā script, then a Tibetan transliteration, and finally the Tibetan translation.
+
+The Peking Dragon Kanjur consists of 108 volumes containing 1,057 individual texts. The structure—mirroring the Tshal pa and Yongle lineages—places Tantras first (24 volumes), followed by Prajñāpāramitā (24), Ratnakūṭa (6), Avataṃsaka (6), Sutras (32), and Vinaya (16). The entire organization adheres to the Tshal pa tradition.
+
+Celebrated for its exquisite production and imperial splendor, this edition has been described as a &quot;National Treasure&quot; and stands as a testament to the close interweaving of religious devotion, artistic achievement, and imperial authority in Qing-era Buddhist culture.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshal pa</classification>
+  <originInfo>
+    <dateCreated>1669</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">95</identifier>
+    <titleInfo>
+      <title>MWNPM1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWNPM1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">NPM</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">26</identifier>
+  <identifier type="sigla">Gcd</identifier>
+  <titleInfo>
+    <title>Seventeen Tantras (Sumra)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྙིང་མ་རྒྱུད་བཅུ་བདུན</title>
+  </titleInfo>
+  <abstract>A reproduction of an ancient manuscript from Spiti of a collection of Nyingmapa Tantras of the Man ngag sde class of the Atiyoga (rdzogs chen). Published by Orgyan Dorji in Sumra, Himachal Pradesh, India.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>South-Western Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated>1977</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Sumra</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>32.047289,78.490987</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">26</identifier>
+    <titleInfo>
+      <title>MW21520</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21520</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>2</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

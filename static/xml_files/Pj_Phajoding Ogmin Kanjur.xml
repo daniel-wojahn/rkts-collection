@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">67</identifier>
+  <identifier type="sigla">Pj</identifier>
+  <titleInfo>
+    <title>Phajoding Ogmin Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཕ་ཇོ་ལྡིང་འོག་མིན་ལྷ་ཁང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>Phajoding Monastery, perched above Thimphu in Bhutan, was founded in the 13th century as a hermitage by Phajo Drukgom Zhigpo (Pha jo &apos;Brug sgom zhig po, 1184–1251), the yogin who introduced the Drukpa Kagyu tradition to Bhutan. Over the following centuries, the site gained prominence as a place of retreat for many Chief Abbots (rje mkhan po) of Bhutan, especially during the medieval period. One of the most notable figures associated with Phajoding is Shakya Rinchen (Shākya rin chen, 1710–1759), a great scholar and the 9th Je Khenpo, who—along with several other Je Khenpos—retired to Phajoding.
+
+The main temple complex was constructed around 1755 by Bhutan&apos;s 13th Desi, Sherab Wangchuk (Shes rab dbang phyug, 1697–1765), together with Shakya Rinchen. Over subsequent centuries, additional temples and monastic residences were developed, resulting in the substantial monastic community present today.
+
+Phajoding’s library has gradually expanded and now holds over 1,000 volumes of manuscripts and block prints, including canonical, ritual, and biographical works. The Phajoding Ogmin Kanjur is a significant part of this collection and illustrates the monastery’s ongoing commitment to the preservation of Drukpa Kagyu texts in Bhutan. The monastery’s printing house also holds historical importance, notably for producing the works of the Tibetan philosopher Shakya Chokden (Shākya mchog ldan, 1428–1507) after his writings were banned in Tibet. Today, the manuscripts at Phajoding—including those of the Ogmin Kanjur—remain critical for Bhutanese Buddhist traditions and for the study of Himalayan Buddhism more broadly.
+
+References and further details can be found in the EAP570 project archive (https://eap.bl.uk/project/EAP570) </abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>18th–19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Phajoding Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.489086, 89.574310</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">57</identifier>
+    <titleInfo>
+      <title>MWEAP570-6-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP570-6-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>103</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

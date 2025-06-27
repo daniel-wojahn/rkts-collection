@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">5</identifier>
+  <identifier type="sigla">Ba</identifier>
+  <titleInfo>
+    <title>Basgo manuscript Kanjur (Fragments)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལ་དྭགས་བ་མགོ་མཁར་དུ་བཞུགས་པའི་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The manuscript collections preserved in the Gser zangs Lha khang (Serzang Temple) at Basgo fort, Ladakh, are a significant and complex treasury of Tibetan canonical literature. Far from being a single, uniform archive, these holdings comprise several distinct groups of manuscripts. The main body consists of about 60,000 leaves from at least five or six different Kanjur sets, now mixed and disordered, alongside various Kanjur and Tanjur fragments from different periods.
+Housed in the temple founded by King &apos;Jam dbyangs rnam rgyal (Jamyang Namgyel, r. 1595–1616) and later expanded by his son King Sengge rnam rgyal (Sengge Namgyel, r. 1616–1642), Basgo was one of Sengge Namgyel’s principal residences. The collection spans diverse periods. Among its oldest holdings are around 900 folios from the 14th or 15th century, exhibiting ancient orthography and palaeography. Their discovery marked the first identification of proto-canonical fragments in Ladakh proper, which had previously been found only in Zanskar. The largest portion dates to the early 17th century, closely linked to the patronage of King Sengge rnam rgyal and the Drukpa Kagyüpa master Stag tshang ras pa (Taktsang Repa, 1574–1651), the king’s principal religious authority. These Kanjurs were likely commissioned shortly after the founding of Hemis Monastery in 1630.
+The 17th-century manuscripts were part of a major scribal project, with the scribe and scholar Nam mkha&apos; dpal mgon (Namkha Pelgön, b. ca. 1560) named as a reviser in the colophons for both sutra and tantra texts. The identical character of the Hemis and Basgo Kanjurs suggests a shared model or direct copying. In the twentieth century, likely during the 1970s and 1980s, a complete Kanjur was compiled at Basgo using material from at least five separate 17th-century sets. Damaged folios were replaced with new ones of inferior quality. Multiple rounds of re-pagination indicate repeated attempts to reassemble a complete Kanjur. A repair note dates one such effort to October 25, 1986.
+The Basgo Kanjur is considered a &apos;local&apos; or &apos;independent&apos; canon, distinguished by its lack of direct descent from either the Tshalpa or Thempangma transmission lines, yet it shares marked similarities with the Hemis Kanjur, reflecting a shared local origin. During the Tibet-Ladakh-Mughal War (1679–1684), part of the Basgo Kanjur was temporarily moved to Phyang Monastery for safekeeping, but was returned incomplete.
+The contents at Gser zangs Lha khang are extensive, including the compiled Kanjur, the Golden Kanjur, and about 60,000 folios of loose fragments. Although much of the material survives in good condition, significant portions have been damaged by water, fungi, and rodents. The 17th-century manuscripts are notable for lacking string holes—a feature present in earlier manuscripts—and for their elaborate goyik (decorative headings). Most employ new orthography, though some texts, especially among the old tantras, retain older forms like the mya conjunct. While the Basgo and Hemis Kanjurs are generally similar, the Basgo collection is distinguished by its substantial number of tantric texts, in contrast to the relatively few found at Hemis.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Serzang Temple (Basgo fort, Ladakh)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.224730957439945,77.27595887849625</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">7</identifier>
+    <titleInfo>
+      <title>MW4CZ45308</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45308</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <form type="medium">Paper</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>204</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

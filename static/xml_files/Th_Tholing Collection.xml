@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">86</identifier>
+  <identifier type="sigla">Th</identifier>
+  <titleInfo>
+    <title>Tholing Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མཐོ་ལྡིང་དཔེ་ཚོགས།</title>
+  </titleInfo>
+  <abstract>The Tholing (Mtho lding) Collection refers to a substantial yet incomplete cache of Tibetan canonical manuscripts recovered from Tholing Monastery in Western Tibet. Sometimes called the Tholing Kanjur, the collection is not a complete Kanjur but rather a fragmentary core of one.
+
+The manuscripts were discovered by Italian Tibetologist Giuseppe Tucci (1894–1984) in 1933, found in the ruins above Tholing Monastery, specifically in caves formerly used as monks&apos; winter quarters. Earlier, in 1912, British explorers described the library as “knee-deep in loose paper,” with leaves scattered in disarray.
+
+These manuscripts date to Tibet’s later diffusion of Buddhism, an era of religious revival promoted by the Guge Kingdom. Tholing Monastery, founded in 996, became the region’s primary religious center, supported by Guge’s kings who sponsored temple construction and the copying of scriptures. This period saw flourishing scriptoria, with major contributions by the translator Rinchen Zangpo (rin chen bzang po, 958–1055) and Indian master Atiśa (982–1054).
+
+The Tholing manuscripts, dating from the 11th to 15th centuries, are contemporary with or possibly older than the Old Narthang manuscript Kanjur, predating Central Tibetan literary influence in Western Tibet.
+
+The Tholing Collection is not a deliberately compiled Kanjur but a cache of texts, about three thousand folios, likely only part of a once larger collection that fell out of use. Though information about their original compilers is lacking, the manuscripts reveal a careful editorial process. One colophon describes multiple stages of revision, using terms like ngos zhus (first editing), dang zhus (re-edited), and gnyis zhus / gsum zhus (second/third edit), reflecting sustained attention to accuracy.
+
+Most manuscripts are now preserved in the Tucci Tibetan Fund at IsIAO, Rome; some illustrated folios, sold by Tucci, are in collections like the Los Angeles County Museum of Art.
+
+The Tholing manuscripts belong to the Thempangma lineage of the Kanjur. Their structure and contents are critical for understanding early canonical transmission in Western Tibet. The collection shares structural anomalies—such as the order of certain Ratnakūṭa texts—with collections from Tabo, Gondhla, Phukthar, and the London and Ulaanbaatar manuscript Kanjurs, all derived from a common, unedited source within this lineage.
+
+A notable feature is the chapter inversion in the Ratnakūṭa section: the text that should be fifteenth (Mañjuśrībuddhakṣetraguṇavyūha) is twelfth; the twelfth (Bodhisattvapiṭaka) is thirteenth. This inversion is a hallmark of the Western Tibetan Thempangma line, though inconsistent organization within the Tholing fragments makes precise reconstruction challenging.
+
+Paleographic features include Old Tibetan characteristics: da drag, ya btags, horizontal ligatures, and the inverted gi gu (gi gu log). The latter, by this period, was often a space-saving device rather than semantically significant. The folios were written on paper made from local plants such as Daphne and Stellera chameajasme, typical of the western Himalayas.
+
+
+The Tholing Collection is invaluable for understanding the formation of the Tibetan Buddhist canon prior to Central Tibetan standardization. It reflects the religious and artistic renaissance of the Guge Kingdom, providing evidence for patronage, scriptural production, artistic exchange, and scribal practice in the Western Himalayas. Its close relationship with other Western Tibetan manuscript groups enables scholars to trace the early history of canonical transmission in the region.
+Let me know if you need it shortened further or tailored for a specific audience or publication. If you want direct quotations or more Wylie, I can add that as well.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated>11th–15th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tholing Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.485172417624074,79.79655618979143</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2194</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2194</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">69</identifier>
+    <titleInfo>
+      <title>MW3CN965</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN965</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

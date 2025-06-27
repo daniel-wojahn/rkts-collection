@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">1</identifier>
+  <identifier type="sigla">A</identifier>
+  <titleInfo>
+    <title>Comparative Kanjur (Pedurma)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར་དཔེ་བསྡུར་མ།</title>
+  </titleInfo>
+  <abstract>The Comparative Edition of the Kanjur is a modern scholarly publication produced by the Kanjur-Tanjur Comparative Edition Office of the China National Center for Tibetan Studies (ཀྲུང་གོའི་བོད་ཀྱི་ཤེས་རིགཞིབ་འཇུག་ལྟེ་གནས་ཀྱི་བཀའ་བསྟན་དཔེ་སྡུར་ཁང་།). 
+The foundation of this comparative edition is the Derge Kanjur—chosen for its esteemed reputation for accuracy, superior calligraphy, and widespread acceptance within the Tibetan Buddhist tradition—which served as a base text, or ma yig, and collating textual variations from other significant editions.  This base text was then carefully compared against seven other major blockprint editions: the Yongle (Yung lo), Lithang (Li thang), Peking (Pe cin), Narthang (Snar thang), Cone (Co ne), Khure (Khu re), and Zhol (Zhol) editions. These eight versions collectively form the core corpus for the comparative analysis.
+
+The editorial methodology entailed the systematic documentation of all discrepancies found between the Derge base text and the seven comparison editions. These variations—which include missing, added, different, duplicated, or reordered sections, chapters, and even individual syllables—were meticulously recorded in dedicated comparative annotations and a comprehensive comparative results table. A fundamental principle guiding the entire project was the commitment to make no alterations or corruptions to the content of the source texts, ensuring the integrity of each recension. Consequently, other editions, such as the Wanli, Chamdo, Ragya, and Wara, were excluded from this direct comparison. These were deemed derivative copies, being either recarvings or photo-reproductions of the eight primary editions, and therefore would offer limited new data for comparative textual analysis.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>2009</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">1</identifier>
+    <titleInfo>
+      <title>MW1PD96682</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD96682</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

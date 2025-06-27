@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">62</identifier>
+  <identifier type="sigla">Np</identifier>
+  <titleInfo>
+    <title>Neyphug Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར ༼གནས་ཕུག་བྲིས་མ༽</title>
+  </titleInfo>
+  <abstract>Neyphug Monastery (Gnas phug dgon pa), was founded in 1550 by Ngag dbang grags pa (1525–1599), a renowned treasure revealer (gter ston). From its establishment, the monastery became the principal seat of the Neyphug Tülku (Gnas phug sprul sku), a lineage of incarnate lamas who played a vital role in the religious and cultural life of western Bhutan. 
+The monastery houses a manuscript Kanjur believed to have been compiled during the 17th century under the guidance of the second Neyphug lama. This Kanjur is an important link in Bhutan’s textual transmission of the Buddhist canon. In addition to this text, Neyphug preserves significant works by Padma dkar po (1527–1592), a prominent &apos;Brug pa scholar recognized for his doctrinal and historical writings, and Rje mkhan po Yon tan mtha&apos; yas (1724–1786), a Bhutanese chief abbot and historian whose works reflect a deep engagement with local and trans-regional Buddhist learning. The collection also includes contributions by the ecumenical master Byang chub brtson &apos;grus alongside records authored by Ngag dbang grags pa himself, which offer insight into his spiritual practices and teachings.
+A pivotal moment in Neyphug’s history was the fire of 1864, which destroyed much of the residential section of the monastery and many historical records. However, the main temple and its invaluable manuscript collection survived the disaster. Efforts to recover and preserve the institution’s lost history were undertaken by the seventh Neyphug Tulku, Nam grol rdo rje, whose writings partially reconstructed information obliterated in the fire. These recovered accounts, alongside the founder’s own autobiography, are regarded as essential historical documents that illuminate Neyphug’s legacy.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Neyphug Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.39330,89.49910</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG116094</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG116094</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">56</identifier>
+    <titleInfo>
+      <title>MWEAP310-2-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP310-2-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>106</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

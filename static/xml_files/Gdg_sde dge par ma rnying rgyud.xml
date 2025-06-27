@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">27</identifier>
+  <identifier type="sigla">Gdg</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Derge Xylographic ed.)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྡེ་དགེ་པར་མ་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The woodblock-printed edition of the Nyingma Gyübum produced at the Derge Printing House in eastern Tibet is widely regarded as the most authoritative and standardized version of this canonical Nyingma collection. Commissioned between 1794 and 1798 under the patronage of Queen Tsewang Lhamo (Tshe dbang lha mo, d. 1812), the Derge NGB project exemplifies the Derge kingdom’s significance as a center for Tibetan Buddhist scholarship and printing.
+
+The edition’s catalogue and editorial process were supervised by Gajé Pandita Gyurmé Tsewang Chokdrup (Sgar rje paṇḍita &apos;Gyur med Tshe dbang mchog grub, 1761–1829), with rigorous textual editing carried out by a team of &quot;seven Paṇḍitas.&quot; This team drew upon and collated multiple earlier manuscript exemplars—including those from Mindroling (Smin grol gling, 1685), Pema Öling (Padma &apos;od gling, 1772), Ratna gling pa’s proto-canon, and collections from other prominent monasteries—thus synthesizing variant traditions into a single standardized corpus. This comprehensive and comparative editorial approach set the Derge edition apart, resulting in a text considered superior in accuracy and consistency by subsequent scholarship.
+
+Organized according to the nine-vehicle (theg pa dgu) classificatory schema of the Nyingma tradition, with a particular focus on the three highest yoga classes (Ati yoga, Anu yoga, Mahā yoga), the Derge edition also features internal sub-classifications that further structure its content. According to modern scholarly consensus, the Derge Nyingma Gyübum today comprises 25 volumes containing 447 texts across approximately 17,835 pages—though some traditional counts cite 414 texts in 26 volumes, reflecting evolving cataloguing practices.
+
+Alongside the earlier manuscript editions from Mindroling and Pema Öling, the Derge xylograph is a foundational and reliable witness to the Nyingma Gyübum tradition. Its broad dissemination and standardized format greatly influenced later NGB editions in Bhutan, Nepal, and elsewhere, and it remains central to both scholarly research and monastic study.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Eastern Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated>1794-1798</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Derge Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.8330556,98.59972222222221</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1657</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1657</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">27</identifier>
+    <titleInfo>
+      <title>MW21939</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21939</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>26</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

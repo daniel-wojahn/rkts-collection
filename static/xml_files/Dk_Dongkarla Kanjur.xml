@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">15</identifier>
+  <identifier type="sigla">Dk</identifier>
+  <titleInfo>
+    <title>Dongkarla Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གདོང་དཀར་ལ་བཀའ་འགུར།</title>
+  </titleInfo>
+  <abstract>The Dongkarla Kanjur is a canonical collection preserved at Dongkarla Monastery in Shaba, Paro, Bhutan. The temple itself was founded by Drubwang Rinchen Chodor (Grub dbang rin chen chos grags) and his disciple Terton Tsering Dorji (Gter ston Tshe ring rdo rje), both major figures in the religious history of western Bhutan (While the dates of these figures are not specified, portions of Terton Tsering Dorji&apos;s autobiography and other rare texts are preserved in the Dongkarla archive). The collection also includes a version of the Nyingma Gyübum (Rnying ma rgyud ’bum) said to differ from other Bhutanese versions. The monastery suffered severe damage due to an earthquake in 2011.
+
+Recognizing the vulnerability of the manuscripts to decay and destruction, a digitization initiative funded by the Endangered Archives Programme ((https://eap.bl.uk/project/EAP570) in partnership with the Loden Foundation (https://www.loden.org/culture-projects/) was carried out.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Dongkarla Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.359838154385663,89.51575203890106</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG116096</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG116096</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">17</identifier>
+    <titleInfo>
+      <title>MWEAP570-1-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP570-1-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>109</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

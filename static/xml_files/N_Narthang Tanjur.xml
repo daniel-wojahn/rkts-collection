@@ -1,0 +1,78 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">59</identifier>
+  <identifier type="sigla">N</identifier>
+  <titleInfo>
+    <title>Narthang Tanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བསྟན་འགྱུར ༼སྣར་ཐང༽</title>
+  </titleInfo>
+  <abstract>Of the great Tibetan canonical collections, the Narthang Tanjur holds a uniquely significant position, existing in two historically important forms: an early 14th-century manuscript that established the Tibetan canon concept, and the 18th-century xylograph edition, a monumental printing project that became foundational for modern canonical studies.
+
+The name &quot;Narthang Tanjur&quot; (Snar thang bstan &apos;gyur) primarily refers to the 18th-century woodblock print edition, though it is also used for the earlier manuscript collection, sometimes distinguished as the Old Narthang Tanjur. The xylograph belongs to what is sometimes called the New Narthang edition.
+
+The first comprehensive and organized compilation of the Tibetan canon—both the Kanjur and the Tanjur—was undertaken at Narthang Monastery in the early 14th century. This project began when Narthangpa Jamyang offered paper and ink to his teacher, Chomden Rigpé Raldri (Bcom ldan rig pa’i ral gri, 1227–1305). Under his direction, disciples including Üpa Losal Jangchub Yeshe (Dbus pa blo gsal byang chub ye shes, fl. 14th cent.), Lotsāwa Sönam Özer (Lo tsā ba Bsod nams &apos;od zer, fl. 14th cent.), and Gyangro Jangchub Bum (Rgyang ro Byang chub &apos;bum, fl. 14th cent.) gathered, collated, and revised all available translations of Buddhist scriptures from Central Tibetan monasteries (Ü and Tsang). Housed in the Dzamlha Lhakhang of Narthang, this collection marked the introduction of the terms &quot;Kanjur&quot; and &quot;Tanjur&quot; in Tibet. The manuscript Tanjur served as the model for later influential editions, notably the Shalu Tanjur, edited by Butön Rinchen Drup (Bu ston rin chen grub, 1290–1364).
+
+The renowned Narthang xylograph edition of the Tanjur was the outcome of a state-sponsored project commissioned by Pholané Sönam Tobgyal (Pho lha nas bsod nams stobs rgyas, 1689–1747), the de facto ruler of Tibet. This work followed the completion of the Narthang Kanjur (1730–1732) by nearly a decade, emphasizing the independence of the two projects. Carving the Tanjur woodblocks began on the 27th day of the third month of the Iron-Bird year (1741) and concluded on the 25th day of the tenth month of the Water-Dog year (1742). The project lasted just over one year and seven months, the fastest recorded completion for a Tibetan Tanjur woodblock edition. Upon completion, the edition was presented to the Dalai Lama and preserved at Kun dga’ ra ba of the ’Khrungs rabs lha khang.
+
+The speed of production suggests the Narthang Tanjur xylograph was a reproduction of an existing edition, not a newly revised text. Its colophon indicates the Narthang manuscript Tanjur as its exemplar, with additional rare and newly translated texts—primarily from the Shalu Tanjur. This approach contrasts with the more thoroughly revised Derge canon.
+
+The Narthang Tanjur shows close genealogical ties to the Peking and Cone editions, with which it often shares readings, in contrast to the Derge edition. Its sequence and structure also align with the Peking edition. Characteristic traits include a consistent carving of the particle yang as &apos;ang, sporadic contractions (bsdu yig), and the use of unsized, absorbent, uneven bark paper, resulting in mediocre print quality, especially in the middle volumes.
+
+Both manuscript and xylograph forms of the Narthang Tanjur are fundamental to the history of the Tibetan canon. The Old Manuscript Tanjur established the canonical structure and terms that shaped all subsequent collections. The xylograph Tanjur, as one of the four major print editions (with Derge, Peking, and Cone), is crucial for critical study of the treatises.</abstract>
+  <genre>Tanjur</genre>
+  <originInfo>
+    <dateCreated>1742</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Narthang Monastery Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.190596,88.763157</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2CN10912</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2CN10912</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">52</identifier>
+    <titleInfo>
+      <title>MW22704</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW22704</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>225</extent>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">53</identifier>
+    <titleInfo>
+      <title>MW2KG5015</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG5015</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>225</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

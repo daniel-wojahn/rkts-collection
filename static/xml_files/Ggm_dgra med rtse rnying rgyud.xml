@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">31</identifier>
+  <identifier type="sigla">Ggm</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Drametsé)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>དགྲ་མེད་རྩེར་བཞུགས་པའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Nyingma Gyübum collection, preserved at Drametse Monastery in Bhutan, comprises 46 volumes of ancient Tantric texts in Tibetan, dating from the 12th century to the early 20th century. These manuscripts form part of the broader Drametse Monastery Collection, which was documented and digitally preserved through Project EAP105: The digital documentation of manuscripts at Drametse and Ogyen Choling.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated>12th–20th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Drametse Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.315842810957673,91.43663161283524</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG116095</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG116095</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">93</identifier>
+    <titleInfo>
+      <title>MWEAP105-1-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP105-1-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>46</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

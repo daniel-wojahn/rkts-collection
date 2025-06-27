@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">65</identifier>
+  <identifier type="sigla">O</identifier>
+  <titleInfo>
+    <title>Tawang Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཨོ་རྒྱན་གླིང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Tawang Kanjur refers to two manuscript collections of the Tibetan Buddhist canon kept at Tawang Monastery (Dga&apos; ldan rnam rgyal lha rtse) in Arunachal Pradesh, India: a 103-volume handwritten Kanjur (Bka’ ‘gyur skya chos) and an incomplete gold and silver illuminated Kanjur (Bka’ ‘gyur gser chos) with 86 surviving volumes. Both originated at Orgyen Ling Monastery (O rgyan gling dgon pa) in the Mon region of Tibet and are also called the Orgyen Ling Kanjur. These manuscripts are a unique &quot;locally compiled edition&quot; within Tibetan canonical transmission.
+
+The history of the Tawang Kanjur is inseparable from the political and religious upheavals of early eighteenth-century Tibet. Orgyen Ling, the source of these collections, was the birthplace monastery of the Sixth Dalai Lama, Tsangyang Gyatso (Tshangs dbyangs rgya mtsho, 1683–1706). After the death of the Fifth Dalai Lama (1617–1682), Orgyen Ling was destroyed—sources attribute this either to the Dzungar Mongols (who occupied Tibet 1717–1720) or to sectarian attacks on Nyingma monasteries. The Dzungars, known for banning and destroying Nyingma establishments, contributed to this devastation.
+
+During or after this destruction, statues, scriptures, and silver stupas from Orgyen Ling were transferred to Tawang Monastery, established in 1680 as the Gelukpa center of Monyul. An official document formalized the transfer and inventory of these materials at Tawang.
+
+The handwritten Kanjur was commissioned in 1699 by Desi Sangyé Gyatso (Sde srid Sangs rgyas rgya mtsho, 1653–1705), regent of Tibet, and completed before the eighth day of the sixth month of 1700. Written in black ink on thick paper, many volumes bear the signatures of their scribes.
+
+The gold and silver illuminated Kanjur predates the handwritten collection, though its exact date is uncertain. It is written on thick, black-coated paper with alternating lines of gold and silver, and displays archaic orthographic features such as &quot;myi&quot; for &quot;mi&quot; and &quot;stsogs&quot; for &quot;sogs.&quot; Larger volumes measure 29×72 cm with four lines each of gold and silver; smaller ones, 19×72 cm with three lines of gold and four lines of silver per page. Each volume weighs about 10 kg.
+
+Manuscripts were transferred to Tawang after 1717–1720, following the Dzungar occupation. In 1731, Miwang Pholané Sönam Tobgyel (Mi dbang Pho lha nas Bsod nams stobs rgyal, r. 1728–1747) issued an edict reinforcing Tawang’s custodianship of these texts. The collections have remained at Tawang Monastery (Galden Namgyal Lhatse) since their arrival. They were surveyed in 1989 by the Central Institute of Tibetan Higher Studies, Sarnath.
+
+The Tawang Kanjur is notable for its unusually extensive inclusion of Nyingma tantric texts (rnying ma’i rgyud), making it almost a hybrid between a standard Kanjur and a Nyingma tantra collection—unlike mainstream Kanjur editions, which usually contain very few Nyingma works. The handwritten set has 103 volumes; the gold and silver set likely had a similar number, though only 86 survive. The Tawang stock register records 89 volumes of the gser chos in good condition, and 5 in damaged condition, showing the collection was already incomplete when received.
+
+As a locally compiled edition, the Tawang Kanjur differs in its readings and arrangement from both major transmission lines (Tshal pa and Them spangs ma), reflecting the local editorial tradition of Mon.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>1700</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tawang Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.586737543120808,91.85772191816841</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

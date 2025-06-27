@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">85</identifier>
+  <identifier type="sigla">Tg</identifier>
+  <titleInfo>
+    <title>Tango Kanjur</title>
+  </titleInfo>
+  <genre>Kanjur</genre>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

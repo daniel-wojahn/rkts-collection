@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">18</identifier>
+  <identifier type="sigla">Ds</identifier>
+  <titleInfo>
+    <title>Dzongsar Institute Prajñāpāramitā</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྫོང་སར་དགོན་དུ་བཞུགས་པའི་ཤེར་ཕྱིན་སྟོང་ཕྲག་བརྒྱ་པ།</title>
+  </titleInfo>
+  <abstract>Rdzong sar khams bye lnga rig thub bstan slob gling is a Tibetan Buddhist educational and publishing institution located in Derge, founded in 2004. The institution specializes in producing modern, computer-set editions of traditional Buddhist texts, making significant contributions to Tibetan studies by publishing journals, collected works (gsung &apos;bum), and critical editions.
+
+In 2014, it published a 12-volume edition of the Prajñāpāramitā (shes rab kyi pha rol tu phyin pa stong phrag brgya pa). This set is computer-input, clearly printed, and bibliographically documented, though some pages in volume 2 are missing.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>2014</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Dzongsar Institute</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.6436006,98.9628067</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G3JT12554</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G3JT12554</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">18</identifier>
+    <titleInfo>
+      <title>MW2PD19497</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2PD19497</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>12</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

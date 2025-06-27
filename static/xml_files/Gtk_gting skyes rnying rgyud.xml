@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">43</identifier>
+  <identifier type="sigla">Gtk</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Tingkyé)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གཏིང་སྐྱེས་དགོན་དུ་བཞུགས་པའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Thimphu</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.442500,89.666944</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G4706</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G4706</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">37</identifier>
+    <titleInfo>
+      <title>MW21518</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21518</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>36</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

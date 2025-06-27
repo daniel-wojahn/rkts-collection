@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">111</identifier>
+  <identifier type="sigla">Ggy</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Gangtey B)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྒང་སྟེང་དགོན་དུ་བཞུགས་པའི་རྙིང་རྒྱུད། ༼བ༽</title>
+  </titleInfo>
+  <abstract>Gangtey Monastery in Bhutan preserves two manuscript collections of the Nyingma Gyübum. This illuminated edition (B), also known as &quot;sgang steng-b&quot;, the more ornate of the two, was produced around 1728–1735 and contains 46 volumes, while the simpler Gangtey A set predates it, having been created around 1642.
+
+The Gangtey B manuscript is structurally a twin to the Tshamdrak (Mtshams brag) edition, mirroring its organization, doxography, sequence, and exclusivity to tantric texts—Vajrayāna scriptures of the three Inner Tantras (Mahāyoga, Anuyoga, and Atiyoga). This collection, featuring over 1,000 texts, notably includes several gter ma revelations such as Dorjé Lingpa&apos;s (Rdo rje gling pa, 1346–1405) &quot;The Expansive View of the Pha Tantric Cycle&quot; (Pha rgyud lta ba klong yangs) and Northern Treasure (Byang gter) works, while excluding others found in different editions. The criteria for these textual inclusions and omissions remain unexplained.
+
+The transmission of the Gyübum in Bhutan began with Lhomön master Sönam Gyaltsen (Bsod nams rgyal mtshan, 1466–1540) and developed further under figures like Tsültrim Dorjé (also known as Pad gling gsung sprul III Phan pa bzang po, 1598–1669), who created the earlier Gangtey A set as a tribute to his teacher, Gangtey Tülku Pema Trinlé (Sgang steng sprul sku I Padma &apos;phrin las, 1565–1642). Its illuminated successor, Gangtey B, was part of a robust Central Bhutanese tradition including related editions such as Tsamdrak, Tingkyé (Gting skyes), and Rig &apos;dzin. These manuscripts collectively demonstrate a distinct Bhutanese lineage, linked by shared scribal errors, layout features, and textual agreements, suggesting descent from a common archetype.
+
+Digitally photographed in 2003, the **sGang steng-b** manuscript was the first full-color edition of the **rnying ma rgyud &apos;bum**, setting a new standard in manuscript preservation and allowing scholars to critically edit texts using pristine images. This collection is an essential witness to Bhutan’s transmission of Tantric literature, preserving rare and ancient readings vital for understanding the history of Tibetan tantric scriptures.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated>1728–1735</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Gangtey Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.5,90.166667</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G183</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G183</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">92</identifier>
+    <titleInfo>
+      <title>MWEAP039-1-3-2</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP039-1-3-2</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>46</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

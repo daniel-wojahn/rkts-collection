@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">35</identifier>
+  <identifier type="sigla">Gna</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Kathmandu)</title>
+  </titleInfo>
+  <abstract>The Kathmandu Nyingma Gyübum, is an illuminated manuscript, held at the National Archives of Nepal, Kathmandu. This manuscript was likely produced in the Solu Khumbu region, Nepal, in the early 19th century, soon after the closely related Nubri set, which was completed in 1813–1814. Its sponsor was Orgyen Trinlé Tenzin (O rgyan ’phrin las bstan ’dzin) of the Nyang clan of Gzhung, a disciple of Drakar Tao Trülku Chökyi Wangchuk (Brag dkar rta so sprul sku Chos kyi dbang phyug, 1775–1837). The Nyang family maintained the main Junbesi temple in Solu Khumbu. The set was later presented to Nepalese Prime Minister Bhim Shumser Jang Bahadur Rana (1875–1932, in office 1929–1932). The Nepal-German Manuscript Preservation Project (NGMPP) microfilmed it in 1989.
+
+Classified as part of the Tibetan-Nepalese Borderlands group of NGB editions, the Kathmandu set was modeled after the Nubri manuscript but shows significant irregularities. Its editorial process was marked by organizational confusion, with inconsistent volume numbering and foliation, indicating difficulties in both planning and execution. Materials, scribal quality, and artistic features vary widely, likely due to resource limitations and use of different craftsmen. After transfer to the National Archives, further disorder ensued as Nepalese librarians unfamiliar with Tibetan added Indian-numeral foliation.
+
+Although produced slightly after the Nubri manuscript, the Kathmandu NGB appears to reflect an earlier transmission stage, distinct from major recensions like Tingkyé and Rikdzin Tsewang Norbu&apos;s. Its exemplar may have originated from a set brought from Lhodrak Lhalung (Lho brag lha lung), Central Tibet, around 1730.
+
+Intended originally as a 37-volume set, only 35 volumes survive. It contains texts not found in any other known NGB edition, with unique volumes of Dzokchen tantras, paralleling the Nubri set but differing from the Tingkyé edition. The set is notable for inconsistencies in text order and foliation compared to the more uniform Nubri edition.
+
+Despite—or because of—its irregularities, the Kathmandu NGB offers invaluable insight into the practical and textual challenges of compiling large-scale collections in the Tibetan sphere. It preserves a transmission structure reflecting an earlier organizational state, making it a critical resource for the study of the evolution of the Nyingma Gyübum corpus.
+
+The incomplete set (likely 37 volumes; 35 extant) is stored at the National Archives of Kathmandu (Ms no. 5), microfilmed as NGMPP AT 1/1–AT 25. Originating most probably from Junbesi, Solu Khumbu, it stands as a significant witness to the borderland diffusion of Nyingma tantric texts.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
+  <originInfo>
+    <dateCreated>19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Junbesi (Solu Khumbu)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.583208781621828,86.54760212813056</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

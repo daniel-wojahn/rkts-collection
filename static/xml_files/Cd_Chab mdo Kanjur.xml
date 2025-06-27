@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">9</identifier>
+  <identifier type="sigla">Cd</identifier>
+  <titleInfo>
+    <title>Chamdo Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཆབ་མདོ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Chamdo Kanjur represents an important regional attempt to establish a complete set of the Buddhist canon in the Chamdo area of eastern Tibet. While the actual texts remain unidentified in modern repositories, the existence of two historical redactions is confirmed through documentary sources.
+
+*The First Redaction*
+The first known version of the Chamdo Kanjur likely dates to the 17th or 18th century, based on stylistic and technical features inferred from surviving descriptions. A record by the Fifth Bde chen chos &apos;khor yongs &apos;dzin Ye shes grub pa, written in the early 19th century, details the purchase of this edition around 1821/1822 from the Sgrol ma lha khang (a temple in Chamdo). The price noted was 500 srang, a substantial sum indicating the value placed on the collection. This version, said to have been locally carved, is presumed lost as no physical copies have yet been located.
+
+*The Second Redaction*
+A second Chamdo Kanjur was produced in the 1930s, carved using the same textual plates that provided the blocks for the Lhasa Kanjur (Lha sa bka&apos; &apos;gyur). This reflects an effort to align Chamdo’s textual canon with the authoritative Lhasa tradition. Again, no extant copies of this later edition have been found, though it is possible that examples remain in private or temple libraries.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chamdo Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.166666,97.2333324</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2185</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2185</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">11</identifier>
+    <titleInfo>
+      <title>MW1GS54155</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1GS54155</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

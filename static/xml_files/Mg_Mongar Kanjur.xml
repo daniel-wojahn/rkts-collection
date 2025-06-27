@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">57</identifier>
+  <identifier type="sigla">Mg</identifier>
+  <titleInfo>
+    <title>Mongar Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མོང་སྒར་རྫོང་བཀའ་འགྱུར།	</title>
+  </titleInfo>
+  <abstract>The Mongar Kanjur is preserved as part of the Archive of Mongar Dzong, a significant monastic repository in Mongar, eastern Bhutan. The archive houses an extensive collection of religious scriptures, among which the Kanjur holds a central place. The Kanjur, alongside the collected works of Pema Karpo and various miscellaneous manuscripts, is one of the most treasured portions of this archive. The full collection at Mongar includes 169 volumes of manuscripts, most of which are written on cream-colored handmade Bhutanese paper with black ink. These manuscripts are in the traditional pothi style, characterized by loose-format volumes of varying sizes. In addition to handmade manuscripts, the archive also contains block prints produced from woodblocks carved in regions across Bhutan and Tibet.
+
+The Kanjur, in particular, is believed to originate from Zhongar Dzong (Zhong sgar rdzong), an earlier fortress-administrative center that was destroyed by fire in the mid-19th century. The Kanjur and other texts initially came under the custodianship of the Mongar Dzongpon (the fortress’s ruler). In the mid-20th century, following the establishment of a resident monastic body led by the Lama Néten, the custodianship shifted to the monastery. Today, the collection is maintained by designated monk caretakers under the Lama Neten’s guidance.
+
+The Mongar collection, including the Kanjur, has recently been systematically inventoried, digitized, and made accessible as part of a cultural heritage preservation initiative, see EAP1494/12 (https://eap.bl.uk/collection/EAP1494-12). </abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>17th–19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Zhongar Dzong</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.270800,91.240800</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

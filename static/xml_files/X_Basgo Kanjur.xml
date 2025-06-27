@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">95</identifier>
+  <identifier type="sigla">X</identifier>
+  <titleInfo>
+    <title>Basgo Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལ་དྭགས་བ་མགོ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Basgo Manuscript Kanjur is a prominent canonical collection preserved at Serzang Temple in Basgo, Ladakh. It is primarily a black-and-white manuscript, written in black ink, and distinct from the older, ornately decorated Golden Kanjur at Basgo. This collection is a conflated canon—assembled in the 20th century from a vast repository of much older manuscript fragments.
+
+While the present compilation dates to the 20th century, most constituent manuscripts are from the early 17th century, during the reigns of Jamyang Namgyal (&apos;Jam dbyangs rnam rgyal, r. 1595–1616) and his son Sengge Namgyal (Seng ge rnam rgyal, r. 1616–1642). The Serzang Temple was founded by Jamyang Namgyal and enlarged by Sengge Namgyal, who made Basgo a major residence. Patronage by Sengge Namgyal and spiritual guidance from the Drukpa Kagyü master Taktsang Repa Ngawang Gyatso (Stag tshang ras pa Ngag dbang rgya mtsho, 1574–1651) shaped the production of these manuscripts. This ties the Basgo collection to the same historical context as Kanjurs at Hemis, Chemre, and Hanle.
+
+The Basgo collection is not a unified production but the result of ongoing compilation. The current Kanjur was assembled in the 20th century, with a repair note from 1986, drawing from at least five or six different 17th-century Kanjur sets. Over 60,000 folios of source material survive at Basgo. Repeated re-pagination and movement of texts between volumes suggest multiple recompilations before the final 20th-century version. Missing folios were replaced by newly written ones, often of lower quality. The reviser Namkha Pelgön is frequently named in both sūtra and tantra sections, indicating his editorial role in the 17th century.
+
+The Basgo Manuscript Kanjur stands outside the two main lines of Tibetan Kanjur transmission (the Tshalpa and Thempangma). It is a prominent example of the Mustang group, sharing close ties with the Hemis Kanjur and considered a descendant of the Early Mustang Kanjur (mid-15th century). This reflects a unique transmission lineage for the Western Himalayas. Because it does not derive from central Tibetan prototypes, it is classified as a local or independent canon, providing crucial insights into the diversity of Kanjur traditions.
+
+Physically, the 17th-century manuscripts are written in dbu can script on coarse, brownish paper, lack earlier-period string holes, and feature an elaborate ornamental headmark (yig mgo). The collection includes a substantial tantra section, much larger than the related Hemis Kanjur, although this section is in significant disarray. It also preserves archaic textual versions and rare works, some paralleling collections from Dölpo and Batang.
+
+Among the 17th-century manuscripts are approximately 900 folios from a proto-canonical collection of the 14th or early 15th century, displaying archaic orthography and palaeographic features. A complete Kanjur manuscript at Basgo, written in black and red ink, is used annually in processions blessing local fields, underscoring its enduring ritual significance.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mustang</classification>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>14th–17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Serzang Temple (Basgo fort, Ladakh)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.224730957439945,77.27595887849625</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">76</identifier>
+    <titleInfo>
+      <title>MW4CZ45303</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45303</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

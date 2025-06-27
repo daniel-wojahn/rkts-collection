@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">47</identifier>
+  <identifier type="sigla">He</identifier>
+  <titleInfo>
+    <title>Hemis I Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཧེ་མིས་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Hemis I Kanjur is a large, fragmentary manuscript collection discovered in 2007 in a sealed room beneath the Tsom Lhakhang (tshoms lha khang) at Hemis Monastery. The manuscripts, measuring roughly 70 x 20 cm, are written in dbu can script with black ink on coarse, light brown paper, typically seven to eight lines per page. Dating to the early 17th century, production is associated with King Senggé Namgyel (Seng ge rnam rgyal, d. 1642) and reviser Namkha Pelgön (Nam mkha&apos; dpal mgon, b. 1560). The set was likely compiled soon after Hemis’s founding in 1630.
+
+Hemis I is incomplete, but extant sections include Vinaya, Prajñāpāramitā, Ratnakūṭa, Avataṃsaka, and Sūtra; the Sūtra section forming forty volumes. There is no Tantra section, though fragments tied to Nyyingma tantra have been identified. The collection is pivotal for studying textual networks outside the Tshal pa and Them spangs ma traditions, as a member of the &quot;Mustang group,&quot; which also includes the Early Mustang and Basgo Kanjurs. Its Sūtra section parallels the Early Mustang catalogue and Namgyal Sūtra collection, and its close ties with the Basgo Kanjur suggest derivation from a shared prototype or direct copying.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Hemis monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.912475,77.702833</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">42</identifier>
+    <titleInfo>
+      <title>MW4CZ45313</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45313</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>84</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

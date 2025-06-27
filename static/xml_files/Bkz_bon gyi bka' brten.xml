@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">118</identifier>
+  <identifier type="sigla">Bkz</identifier>
+  <titleInfo>
+    <title>Bon Katen (Khyung Tengchen)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བོན་གྱི་བཀའ་བརྟེན</title>
+  </titleInfo>
+  <abstract>Collection of canonical Bon literature (computer input in Umé); digitized in 2014 at the Goshi Zonga ancient texts collector Yungdrung Tengye Ling at Khyungpo Tengchen Monastery in Kham.</abstract>
+  <genre>Bon-Kanjur</genre>
+  <originInfo>
+    <dateCreated>2014</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Khyungpo Tengchen Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.4273,95.57874</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KR1169</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KR1169</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">103</identifier>
+    <titleInfo>
+      <title>MW4CZ58532</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ58532</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>200</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

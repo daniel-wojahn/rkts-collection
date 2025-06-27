@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">25</identifier>
+  <identifier type="sigla">Gbr</identifier>
+  <titleInfo>
+    <title>Bairo Gyübum</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཻ་རོའི་རྒྱུད་འབུམ</title>
+  </titleInfo>
+  <abstract>The Gyübum of Vairocana (bai ro&apos;i rgyud &apos;bum) is an important compilation of Nyingma tantras. The edition was published in 1971 in Leh, Ladakh, by S.W. Tashigangpa, using materials reproduced from the rare manuscript collection of Tokden Rimpoche of Gangon. 
+  
+This edition preserves a collection of rare Nyingma canonical texts originating from the Jangtang region of Ladakh. Among these is a notably ancient example of the &apos;dra &apos;bag chen mo biography of Vairocana, which is a core reason the text is popularly known as the &quot;Bairo Gyübum&quot; The collection as a whole is described as being compiled and translated by the famed eighth-century Tibetan master Vairocana, though the reproduction itself is a 20th-century project, reflecting preservation rather than original compilation.</abstract>
+  <genre>Old Tantra</genre>
+  <originInfo>
+    <dateCreated>1971</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Leh</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.156639,77.585444</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1085</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1085</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">25</identifier>
+    <titleInfo>
+      <title>MW21519</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21519</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>8</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

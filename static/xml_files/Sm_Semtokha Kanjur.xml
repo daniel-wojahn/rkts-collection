@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">79</identifier>
+  <identifier type="sigla">Sm</identifier>
+  <titleInfo>
+    <title>Semtokha Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སེམས་རྟོགས་ཁ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Semtokha Kanjur is a manuscript canon preserved at Semtokha Dzong, near Thimphu, Bhutan. This set forms part of the sacred literary heritage of Bhutan and is revered as a gsung rten—the &quot;speech-relic&quot; representing the Buddha’s word—within the Dzong’s central temple, Sanga Zabdon Phodrang (https://eap.bl.uk/collection/EAP1494-19).
+
+The Semtokha Kanjur comprises 109 volumes in traditional loose-leaf pothi format, meticulously inscribed in Tibetan dbu can script on handmade Bhutanese paper. The main text uses black ink on cream paper, while the opening pages are decorated with gold ink on dark blue paper. The first page of each Vinaya and Tantra volume is adorned with two illustrations of Buddha Shakyamuni. Each volume is carefully wrapped in cloth and protected between two wooden boards, reflecting a tradition of profound reverence and preservation.
+
+In addition to the Kanjur, the Semtokha archive also houses a distinct manuscript of the &quot;Perfection of Wisdom in Twenty-Five Thousand Lines&quot; (shes rab kyi pha rol tu phyin pa nyi khri), presented alongside but separately classified from the canon.
+
+The Semtokha Kanjur is an exemplar of the Thempangma transmission line and is one among several manuscript Kanjurs still preserved in Bhutan. Oral tradition sometimes attributes the set’s creation to Zhabdrung Rinpoche, but available evidence points to its production under the auspices of Tenzin Rabgye (1638–1698). His biography notes the creation of three Kanjur sets—one now at Tango Monastery (the whereabouts of the other two are uncertain), with the Semtokha set plausibly among them. Further historical insight comes from Kunga Gyatsho (1702–1776), who helped to fill a gap in the set by scribing the first volume of the &quot;Perfection of Wisdom in One Hundred Thousand Lines&quot; (stong phrag brgya pa) during the reign of the 9th Desi, Ngawang Gyatsho (1720–1729).
+
+The exact historical catalog of the Semtokha Kanjur is lacking, but its current arrangement mirrors the ordering system of the Bhutanese Kanjur as described in catalogues such as that by Palden Gyatso.
+
+Digitized in 2024, the Semtokha Kanjur is part of the “Digitisation of 20 remote Bhutanese archives” project, secured within the National Library and Archives of Bhutan and now accessible through the British Library Endangered Archives Programme (EAP1494-19, https://eap.bl.uk/collection/EAP1494-19).</abstract>
+  <genre>Kanjur</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Simtokha Dzong</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.43877113199738,89.66827803232233</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

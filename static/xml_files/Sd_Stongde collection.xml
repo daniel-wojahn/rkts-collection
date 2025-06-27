@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">76</identifier>
+  <identifier type="sigla">Sd</identifier>
+  <titleInfo>
+    <title>Stongde collection</title>
+  </titleInfo>
+  <abstract>The Stongde Collection is located in Zangskar. More detailed information regarding its specific origins, the patrons or communities involved in its creation, and the historical period of its production is not yet available.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Stongdé Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.52180136253203,76.98756421701579</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

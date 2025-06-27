@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">109</identifier>
+  <identifier type="sigla">Mmk</identifier>
+  <titleInfo>
+    <title>Mongolian Printed Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར ༼སོག་ཡིག་པར་མ༽</title>
+  </titleInfo>
+  <abstract>The Mongolian Printed Kanjur of 1718–1720 is the first xylograph edition of the Mongolian Buddhist canon. The project was commissioned by the Kangxi Emperor ( 1661–1722) of the Qing dynasty. Woodblock engraving took place in Beijing between 1718 and 1720, with printing completed by the third month of 1720. The edition reflected the Qing court’s commitment to Tibetan Buddhism, which it used to bolster ties with its Mongol subjects. The work involved Tibetan, Mongolian, Chinese, and Manchu scholars and artisans, many resident in or summoned to the Qing capital.
+
+The editorial team relied on the earlier Mongolian manuscript translation ordered by Ligdan Khan (1604–1634), completed in 1628–1629. Scholars fluent in Tibetan and Mongolian revised this text, collating it with a Tibetan Kanjur for accuracy. The structure of the canon followed the Beijing Tibetan Kanjur edition of 1684–1692. Editing of the Mongolian Kanjur happened alongside corrections to the Tibetan Kanjur in Beijing, evidenced by the simultaneous inclusion of texts such as the Vidyutprāptaparipṛcchā and the Bhadrapālaśreṣṭhiparipṛcchā in both canons between 1700 and 1720.
+
+Physically, the Mongolian Printed Kanjur resembles contemporary Tibetan blockprints but is adapted for Mongolian script. It uses the traditional Indian pothi format—loose, oblong folios—printed on relatively soft paper, often multi-layered and made from paper mulberry, bamboo, and jute. The text is printed from woodblocks in black and red ink, oriented vertically.
+
+The 1718–1720 Beijing Kanjur was widely distributed and became the standard version for both study and liturgy throughout Mongolian regions. Its publication marked the culmination of a century-long translation effort and affirmed the Qing dynasty’s patronage of Tibetan Buddhism, symbolizing Mongolian religious and cultural identity.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>1720</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">88</identifier>
+    <titleInfo>
+      <title>MW4CZ5370</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ5370</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>108</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">49</identifier>
+  <identifier type="sigla">Hi</identifier>
+  <titleInfo>
+    <title>Hemis II Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཧེ་མིས་བཀའ་འགྱུར། ༼ཉུང་ངུ།༽</title>
+  </titleInfo>
+  <abstract>The Hemis II Kanjur, discovered alongside Hemis I in 2007, is the smaller of the two fragmentary collections. Pages measure roughly 50 x 15 cm, with six lines per folio, written in black ink on untinted paper. Unlike Hemis I, Hemis II contains miniatures—illuminations generally centered on end pages of texts. Dating and attribution parallel Hemis I, tied to the early 17th century and Namkha Pelgön.
+
+Hemis II’s structure largely matches that of Hemis I, but it includes fragments of a Tantra section and a volume of Old Tantras (rnying rgyud). Due to the fragmentary state, its full original contents are unclear. Together, the extant leaves from both Hemis collections amount to about 50,000—roughly half the material needed for two complete Kanjurs. Like Hemis I, Hemis II is grouped with the &quot;Mustang group&quot; and shares notable affinity with the Basgo Kanjur.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Hemis monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.912475,77.702833</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">44</identifier>
+    <titleInfo>
+      <title>MW4CZ45314</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45314</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

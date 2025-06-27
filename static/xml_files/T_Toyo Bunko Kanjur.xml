@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">82</identifier>
+  <identifier type="sigla">T</identifier>
+  <titleInfo>
+    <title>Toyo Bunko Kanjur</title>
+  </titleInfo>
+  <abstract>The Toyo Bunko Kanjur, also called the Tokyo Manuscript Kanjur or Kawaguchi Kanjur, is a major Tibetan Buddhist canonical collection held at the Toyo Bunko library in Tokyo, Japan. The name &quot;Kawaguchi Kanjur&quot; honors Kawaguchi Ekai (河口慧海, 1866–1945), who brought the set to Japan. This collection is a key representative of the Thempangma group of Kanjurs.
+
+Kawaguchi received the Kanjur in Lhasa in 1913 from the Thirteenth Dalai Lama (Thub bstan rgya mtsho, 1876–1933), as a diplomatic gift—114 manuscript volumes produced at Pelkhor Chödé Monastery (Dpal &apos;khor chos sde) in Gyantse, an important site for the Thempangma tradition. He brought the collection to Japan in 1915 and donated it to Toyo Bunko in 1941, where it remains a key part of the Kawaguchi Ekai Collection.
+
+The Toyo Bunko Kanjur is a handwritten manuscript, not a printed edition, testifying to the Thempangma tradition, which follows the Old Narthang Kanjur. Two sets of Thempangma manuscripts are preserved at Toyo Bunko. Helmut Eimer classifies these within the &quot;Western&quot; Kanjur group.
+
+Research on this collection was long limited by restricted access and by Saitō’s influential 1977 study being available only in Japanese. Jonathan Silk prepared an expanded English translation in the 1980s, but it remains unpublished. Recent digitization is now improving access and facilitating comparative study of the Toyo Bunko Kanjur.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Them spangs ma</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Gyantse Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>28.933056,89.599722</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1511</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1511</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">65</identifier>
+    <titleInfo>
+      <title>MW2KG230012</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG230012</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">Toyo Bunko</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>0</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">45</identifier>
+  <identifier type="sigla">H</identifier>
+  <titleInfo>
+    <title>Lhasa Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལྷ་ས་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Lhasa Kanjur (also called the Lhasa Zhol Kanjur) is a 20th-century woodblock print edition, produced at the Zhol printing house beneath the Potala Palace in Lhasa. Printing was completed between 1934 and 1935 under the patronage of the 13th Dalai Lama, Thubten Gyatso (Thub bstan rgya mtsho, 1876–1933). In the early 20th century, a new set of carved printing blocks was created in Lhasa under the supervision of Drikung Gotsang Tulku Ngeden Tendzin Chökyi Wangpo (&apos;Bri gung sgo lcogs sprul sku Nges don bstan ’dzin chos kyi dbang po, 1887–1940).
+
+The Lhasa Kanjur underwent a meticulous editorial process, primarily grounded in the Narthang Kanjur, with supplementary readings incorporated from the Derge Kanjur to amend and enhance the text. This dual-source approach positions the Lhasa Kanjur as a mixed-lineage edition, built on the Narthang Kanjur’s synthesis of Tshal pa and Them spangs ma transmission lines. Further additions from the Derge edition—a descendant of the Tshal pa line—underscore its hybrid nature.
+
+Diverging significantly from both its Narthang base and other mainstream versions, the Lhasa Kanjur features unique organizational arrangements and a distinct number of texts. Despite its relatively recent origin, the edition holds immense historical and scholarly significance. It was selected as one of eight key editions used to compile the Comparative Kanjur (Bka&apos; &apos;gyur dpe bsdur ma) in the early 21st century.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>1934</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Zhol Kanjur Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.657917,91.117167	</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1PD129184</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1PD129184</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">true</note>
+  <relatedItem type="constituent">
+    <identifier type="local">39</identifier>
+    <titleInfo>
+      <title>MW26071</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW26071</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">96</identifier>
+  <identifier type="sigla">Xg</identifier>
+  <titleInfo>
+    <title>Basgo Golden Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལ་དྭགས་བ་མགོ་གསེར་ཆོས་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Basgo Golden Kanjur is an ornate Tibetan canonical manuscript preserved at Basgo, Ladakh. Written in gold ink (chrysography), it is one of several distinct Kanjur collections at Basgo, alongside 17th-century black-and-white manuscripts. This edition was commissioned by King Tashi Namgyal (Bkra shis rnam rgyal, r. c. 1555–1575) and his wife, as recorded in a colophon from a golden Aṣṭasāhasrikā Prajñāpāramitā sutra manuscript in Basgo. This places its origin in the mid-to-late 16th century, distinguishing it from the 17th-century Basgo Kanjur.
+
+Creation of luxurious Buddhist scriptures was integral to Ladakhi royal culture. The Ladakhi kings, including King Tashi Namgyal and King Sengge Namgyal (Seng ge rnam rgyal, c. 1570–1642), dedicated significant gold revenues from Guge and Rudok to produce such manuscripts and plated stupas. The manuscript belongs to the Namgyal dynasty, which established its first capital at Basgo, and is considered one of the community’s most revered possessions.
+
+Although the identities of specific editors or translators are not documented, the materials and artistry are notable. The manuscript is written on dark blue-black paper (mthing shog), traditionally made in Lingshed, Ladakh, by laminating layers of Daphne paper. The calligraphy employs a bamboo pen and ink from finely powdered gold, a practice often mastered by Newar artisans.
+
+The Basgo Golden Kanjur is incomplete and probably housed in the Serzang Lhakhang at Basgo. As of 2008–2011, the Kanjur was kept secure in a locked metal trunk, not on display. Its incomplete state is likely the result of the fate common to such collections: folios were lost, damaged, or removed for amulets or sale.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>16th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Serzang Temple (Basgo fort, Ladakh)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.224730957439945,77.27595887849625</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>
