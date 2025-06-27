@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Load data from JSON files
 function loadData() {
-    fetch('static/data/collections.json')
+    fetch('/static/data/collections.json')
         .then(response => response.json())
         .then(data => {
             collections = data;
