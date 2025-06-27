@@ -1,4 +1,4 @@
-# Tibetan Buddhist Collections Explorer
+# rKTs Collections Explorer
 
 A web application for exploring and visualizing Tibetan Buddhist text collections with advanced search, filtering, and map visualization capabilities.
 

@@ -182,11 +182,11 @@ async function loadData() {
         const cacheBuster = `?t=${new Date().getTime()}`;
         
         // Fetch collections data with cache-busting
-        const response = await fetch(`/static/data/collections.json${cacheBuster}`);
+        const response = await fetch(`static/data/collections.json${cacheBuster}`);
         collections = await response.json();
         
         // Fetch GeoJSON data with cache-busting
-        const geoResponse = await fetch(`/static/data/collections.geojson${cacheBuster}`);
+        const geoResponse = await fetch(`static/data/collections.geojson${cacheBuster}`);
         const geoData = await geoResponse.json();
         
         // Update statistics
