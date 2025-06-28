@@ -26,18 +26,19 @@
     <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="../../index.html">
                 <img src="../images/rkts-logo.png" alt="rKTs Logo">
                 <div>
-                    <span>Resources of Kanjur and Tanjur Studies</span>
-                    <small class="d-block text-light">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
+                    <span>Resources for Kanjur and Tanjur Studies</span>
+                    <small class="d-block">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="vertical-divider d-none d-lg-block"></div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -60,7 +61,6 @@
     <!-- Main Content -->
     <div class="container mt-4">
         <h1>Bibliography</h1>
-        <p class="lead">Browse publications related to Tibetan Buddhist text collections</p>
         
         <!-- Search and Filter Controls -->
         <div class="row mb-4">
@@ -72,22 +72,18 @@
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bi bi-search"></i></span>
-                                    <input type="text" class="form-control" id="search-input" placeholder="Search publications...">
+                                    <input type="text" class="form-control" id="search-input" placeholder="Search publications by title, author, or abstract...">
                                     <button class="btn btn-outline-secondary" type="button" id="clear-search-btn">
                                         <i class="bi bi-x-lg"></i>
                                     </button>
                                 </div>
                             </div>
                             
-                            <!-- Item Type Filter -->
+                            <!-- Tag Filter -->
                             <div class="col-md-3">
-                                <select class="form-select" id="type-filter">
-                                    <option value="">All Types</option>
-                                    <option value="journalArticle">Journal Articles</option>
-                                    <option value="book">Books</option>
-                                    <option value="bookSection">Book Chapters</option>
-                                    <option value="thesis">Theses</option>
-                                    <option value="manuscript">Manuscripts</option>
+                                <select class="form-select" id="tag-filter">
+                                    <option value="">All Tags</option>
+                                    <!-- Will be populated dynamically -->
                                 </select>
                             </div>
                             
@@ -119,11 +115,6 @@
                                     </button>
                                 </div>
                             </div>
-                            <div>
-                                <a href="https://www.zotero.org/groups/2296997/rkts_bibliography/library" class="btn btn-sm btn-outline-secondary" target="_blank">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i>View in Zotero
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,7 +128,6 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <div>
-                                <span id="publications-count" class="badge bg-primary">0</span> publications loaded
                                 <span id="filter-badge" class="badge bg-secondary ms-2" style="display: none;">Filtered</span>
                             </div>
                             <div>

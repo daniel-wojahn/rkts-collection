@@ -417,38 +417,222 @@ function updateCategoryChart() {
     }
 }
 
-// Update the place distribution chart
+// Update the place distribution chart with regional grouping
 function updatePlaceChart() {
     const ctx = document.getElementById('place-chart');
+    if (!ctx) {
+        console.error('Place chart canvas element not found');
+        return;
+    }
     
-    // Count collections by place
-    const placeCounts = {};
+    // Define regions with their geographical boundaries
+    const regionMapping = {
+        'Central Tibet': {
+            bounds: {
+                north: 32.0,
+                south: 28.0,
+                east: 92.0,
+                west: 85.0
+            },
+            center: [29.6500, 91.1000] // Approximate center of Central Tibet (near Lhasa)
+        },
+        'Eastern Tibet': {
+            bounds: {
+                north: 36.0,
+                south: 28.0,
+                east: 103.0,
+                west: 91.0
+            },
+            center: [32.0, 97.0] // Approximate center of Eastern Tibet
+        },
+        'Ladakh': {
+            bounds: {
+                north: 35.0,
+                south: 32.0,
+                east: 80.0,
+                west: 75.5
+            },
+            center: [34.1526, 77.5771] // Approximate center of Ladakh
+        },
+        'Bhutan': {
+            bounds: {
+                north: 28.5,
+                south: 26.5,
+                east: 92.5,
+                west: 88.5
+            },
+            center: [27.5142, 90.4336] // Approximate center of Bhutan
+        },
+        'Tibetan-Nepalese Borderlands': {
+            bounds: {
+                north: 29.5,
+                south: 27.0,
+                east: 88.5,
+                west: 82.0
+            },
+            center: [28.25, 85.25] // Approximate center of the region
+        },
+        'Beijing and Mongolia': {
+            bounds: {
+                north: 50.0,
+                south: 35.0,
+                east: 125.0,
+                west: 95.0
+            },
+            center: [42.5, 110.0] // Approximate center between Beijing and Mongolia
+        },
+        'Other': {
+            bounds: null,
+            center: null
+        }
+    };
+    
+    // Initialize region counts
+    const regionCounts = {};
+    Object.keys(regionMapping).forEach(region => {
+        regionCounts[region] = 0;
+    });
+    
+    // Count collections by region
     collections.forEach(collection => {
         const place = collection.place_of_production || 'Unknown';
-        placeCounts[place] = (placeCounts[place] || 0) + 1;
+        let lat = null;
+        let lng = null;
+        
+        // Try to extract coordinates if available
+        if (collection.coordinates) {
+            const coords = collection.coordinates.split(',');
+            if (coords.length === 2) {
+                lat = parseFloat(coords[0]);
+                lng = parseFloat(coords[1]);
+            }
+        }
+        
+        // Find the region for this place
+        let matchedRegion = 'Other';
+
+        // First try to match by coordinates if available
+        if (lat !== null && lng !== null && !isNaN(lat) && !isNaN(lng)) {
+            for (const [region, data] of Object.entries(regionMapping)) {
+                if (data.bounds) {
+                    const { north, south, east, west } = data.bounds;
+                    if (lat <= north && lat >= south && lng <= east && lng >= west) {
+                        matchedRegion = region;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // If no region matched by coordinates, try text matching
+        if (matchedRegion === 'Other') {
+            const placeLower = place.toLowerCase();
+            
+            // Central Tibet
+            if (placeLower.includes('lhasa') || 
+                placeLower.includes('sakya') || 
+                placeLower.includes('narthang') || 
+                placeLower.includes('zhalu') || 
+                placeLower.includes('samye') || 
+                placeLower.includes('ganden') || 
+                placeLower.includes('drepung') || 
+                placeLower.includes('sera') || 
+                placeLower.includes('central tibet') || 
+                placeLower.includes('ü-tsang') || 
+                placeLower.includes('u-tsang') || 
+                placeLower.includes('tsang') || 
+                placeLower.includes('shigatse') || 
+                placeLower.includes('gyantse')) {
+                matchedRegion = 'Central Tibet';
+            } 
+            // Eastern Tibet
+            else if (placeLower.includes('derge') || 
+                     placeLower.includes('chamdo') || 
+                     placeLower.includes('kham') || 
+                     placeLower.includes('amdo') || 
+                     placeLower.includes('eastern tibet') || 
+                     placeLower.includes('batang') || 
+                     placeLower.includes('lithang') || 
+                     placeLower.includes('jyekundo') || 
+                     placeLower.includes('qinghai') || 
+                     placeLower.includes('sichuan') || 
+                     placeLower.includes('yunnan') || 
+                     placeLower.includes('gansu')) {
+                matchedRegion = 'Eastern Tibet';
+            } 
+            // Ladakh
+            else if (placeLower.includes('leh') || 
+                     placeLower.includes('ladakh') || 
+                     placeLower.includes('basgo') || 
+                     placeLower.includes('hemis') || 
+                     placeLower.includes('alchi') || 
+                     placeLower.includes('thiksey') || 
+                     placeLower.includes('shey') || 
+                     placeLower.includes('jammu') || 
+                     placeLower.includes('kashmir')) {
+                matchedRegion = 'Ladakh';
+            } 
+            // Bhutan
+            else if (placeLower.includes('thimphu') || 
+                     placeLower.includes('bhutan') || 
+                     placeLower.includes('paro') || 
+                     placeLower.includes('punakha') || 
+                     placeLower.includes('trongsa') || 
+                     placeLower.includes('bumthang') || 
+                     placeLower.includes('druk')) {
+                matchedRegion = 'Bhutan';
+            } 
+            // Beijing and Mongolia
+            else if (placeLower.includes('beijing') || 
+                     placeLower.includes('mongol') || 
+                     placeLower.includes('ulaanbaatar') || 
+                     placeLower.includes('hohhot') || 
+                     placeLower.includes('erdene zuu') || 
+                     placeLower.includes('urga') || 
+                     placeLower.includes('china') || 
+                     placeLower.includes('peking')) {
+                matchedRegion = 'Beijing and Mongolia';
+            } 
+            // Tibetan-Nepalese Borderlands
+            else if (placeLower.includes('kathmandu') || 
+                     placeLower.includes('nepal') || 
+                     placeLower.includes('mustang') || 
+                     placeLower.includes('dolpo') || 
+                     placeLower.includes('jumla') || 
+                     placeLower.includes('tshethang') || 
+                     placeLower.includes('himalaya') || 
+                     placeLower.includes('border')) {
+                matchedRegion = 'Tibetan-Nepalese Borderlands';
+            }
+            // General Tibet (assign to Central Tibet if just "Tibet" is mentioned)
+            else if (placeLower.includes('tibet') && !placeLower.includes('eastern tibet')) {
+                matchedRegion = 'Central Tibet';
+            }
+        }
+
+        // Increment the count for the matched region
+        regionCounts[matchedRegion] = (regionCounts[matchedRegion] || 0) + 1;
     });
     
-    // Sort places by count (descending)
-    const sortedPlaces = Object.keys(placeCounts).sort((a, b) => {
-        return placeCounts[b] - placeCounts[a];
+    // Sort regions by count (descending)
+    const sortedRegions = Object.keys(regionCounts).sort((a, b) => {
+        return regionCounts[b] - regionCounts[a];
     });
-    
-    // Limit to top 5 places if there are more
-    const topPlaces = sortedPlaces.length > 5 ? 
-        sortedPlaces.slice(0, 5) : 
-        sortedPlaces;
     
     // Prepare data for chart
-    const labels = topPlaces;
-    const data = topPlaces.map(place => placeCounts[place]);
+    const labels = sortedRegions;
+    const data = sortedRegions.map(region => regionCounts[region]);
     
-    // Generate colors
+    // Generate colors - using a more distinct color palette
     const colors = [
+        '#e41a1c', // Red
         '#377eb8', // Blue
         '#4daf4a', // Green
         '#984ea3', // Purple
         '#ff7f00', // Orange
-        '#ffff33'  // Yellow
+        '#a65628', // Brown
+        '#f781bf', // Pink
+        '#999999'  // Gray
     ];
     
     // Create or update chart
@@ -462,7 +646,7 @@ function updatePlaceChart() {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Collections by Place',
+                    label: 'Collections by Region',
                     data: data,
                     backgroundColor: colors,
                     borderColor: '#fff',

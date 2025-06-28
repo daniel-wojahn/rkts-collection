@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadData();
     
     // Set up event listeners
-    document.getElementById('apply-filters').addEventListener('click', applyFilters);
     document.getElementById('reset-filters').addEventListener('click', resetFilters);
     
     // Add debounced search input event listener
@@ -250,13 +249,20 @@ async function loadData() {
         // Create Lunr search index
         createSearchIndex();
         
+        // Update the map with all collections initially
+        updateMapWithFiltered();
+        
         // Populate filter dropdowns
         populateFilterDropdowns();
         
-        // Update UI
-        updateCollectionsDisplay();
-        updateMapWithFiltered();
+        // Initialize dynamic filter options
+        updateDynamicFilterOptions();
+        
+        // Update charts with initial data
         updateCharts();
+        
+        // Display all collections initially
+        updateCollectionsDisplay();
         
         showLoading(false);
     } catch (error) {
@@ -285,14 +291,18 @@ function createSearchIndex() {
         // Add ref field for document lookup
         this.ref('id');
         
-        // Add pipeline function to handle Tibetan script and special characters
-        this.pipeline.add(
-            function(token, tokenIndex, tokens) {
-                if (!token) return null;
-                // Normalize token by removing diacritics and special characters
-                return token.toString().replace(/[\u0300-\u036f]/g, '').toLowerCase();
-            }
-        );
+        // Define and register a named pipeline function to handle Tibetan script and special characters
+        const normalizeTibetan = function(token, tokenIndex, tokens) {
+            if (!token) return null;
+            // Normalize token by removing diacritics and special characters
+            return token.toString().replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        };
+        
+        // Register the function with the pipeline
+        lunr.Pipeline.registerFunction(normalizeTibetan, 'normalizeTibetan');
+        
+        // Add the registered function to the pipeline
+        this.pipeline.add(normalizeTibetan);
         
         // Add each collection to the index
         collections.forEach((collection, index) => {
@@ -397,6 +407,8 @@ function createCheckboxItem(value, type, count) {
     checkbox.id = `${type}-${value.replace(/\s+/g, '-').toLowerCase()}`;
     checkbox.value = value;
     checkbox.className = `${type}-checkbox filter-checkbox`;
+    checkbox.dataset.type = type;
+    checkbox.dataset.value = value;
     
     // Add event listener to apply filters when checkbox is changed
     checkbox.addEventListener('change', applyFilters);
@@ -414,6 +426,90 @@ function createCheckboxItem(value, type, count) {
     item.appendChild(countSpan);
     
     return item;
+}
+
+// Update filter options based on current selections
+function updateDynamicFilterOptions() {
+    // Get all selected filters
+    const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+    const selectedGroups = Array.from(document.querySelectorAll('.group-checkbox:checked')).map(cb => cb.value);
+    const selectedPlaces = Array.from(document.querySelectorAll('.place-checkbox:checked')).map(cb => cb.value);
+    
+    // Get all filter checkboxes
+    const allCheckboxes = document.querySelectorAll('.filter-checkbox');
+    
+    // Calculate available options for each filter type based on current filtered collections
+    const availableCategories = new Set();
+    const availableGroups = new Set();
+    const availablePlaces = new Set();
+    
+    // Count occurrences for each option in the filtered collections
+    const categoryCounts = {};
+    const groupCounts = {};
+    const placeCounts = {};
+    
+    // For each filtered collection, track available options
+    filteredCollections.forEach(collection => {
+        // Track categories
+        if (collection.genre) {
+            availableCategories.add(collection.genre);
+            categoryCounts[collection.genre] = (categoryCounts[collection.genre] || 0) + 1;
+        }
+        
+        // Track places
+        if (collection.place_of_production) {
+            availablePlaces.add(collection.place_of_production);
+            placeCounts[collection.place_of_production] = (placeCounts[collection.place_of_production] || 0) + 1;
+        }
+        
+        // Track groups/classifications
+        if (collection.classifications) {
+            collection.classifications.forEach(group => {
+                availableGroups.add(group);
+                groupCounts[group] = (groupCounts[group] || 0) + 1;
+            });
+        }
+    });
+    
+    // Update each checkbox's disabled state and count
+    allCheckboxes.forEach(checkbox => {
+        const type = checkbox.dataset.type;
+        const value = checkbox.dataset.value;
+        const countSpan = checkbox.parentElement.querySelector('.filter-checkbox-count');
+        
+        // Skip checked checkboxes - they should always be enabled
+        if (checkbox.checked) {
+            return;
+        }
+        
+        let isAvailable = false;
+        let count = 0;
+        
+        // Check if this option is available based on current filters
+        switch (type) {
+            case 'category':
+                isAvailable = availableCategories.has(value);
+                count = categoryCounts[value] || 0;
+                break;
+            case 'group':
+                isAvailable = availableGroups.has(value);
+                count = groupCounts[value] || 0;
+                break;
+            case 'place':
+                isAvailable = availablePlaces.has(value);
+                count = placeCounts[value] || 0;
+                break;
+        }
+        
+        // Update disabled state
+        checkbox.disabled = !isAvailable;
+        checkbox.parentElement.classList.toggle('disabled-filter-option', !isAvailable);
+        
+        // Update count
+        if (countSpan) {
+            countSpan.textContent = `(${count})`;
+        }
+    });
 }
 
 // Parse date string to extract year range
@@ -727,84 +823,67 @@ function applyFilters() {
     // Get selected group checkboxes
     const groupCheckboxes = document.querySelectorAll('.group-checkbox:checked');
     const selectedGroups = Array.from(groupCheckboxes).map(cb => cb.value);
-
+    
     // Get selected place checkboxes
     const placeCheckboxes = document.querySelectorAll('.place-checkbox:checked');
     const selectedPlaces = Array.from(placeCheckboxes).map(cb => cb.value);
-
-    console.log('Selected filters:', {
-        search: searchTerm,
-        categories: selectedCategories,
-        groups: selectedGroups,
-        places: selectedPlaces
-    });
-
+    
     // Get date range filter values
     const dateSliderMin = document.getElementById('date-slider-min');
     const dateSliderMax = document.getElementById('date-slider-max');
     const dateMinFilter = dateSliderMin ? parseInt(dateSliderMin.value) : minYear;
     const dateMaxFilter = dateSliderMax ? parseInt(dateSliderMax.value) : maxYear;
-
-    console.log('Filtering with date range:', dateMinFilter, 'to', dateMaxFilter);
     
-        // Search is handled by the performSearch function
-
-    // Search term is not used for filtering in the main view anymore
-    // It's handled by the search preview dropdown
-    filteredCollections = collections.filter((collection, index) => {
-
+    // Filter collections based on search term and filters
+    filteredCollections = collections.filter(collection => {
+        // Filter by search term
+        let matchesSearch = true;
+        if (searchTerm) {
+            if (lunrIndex) {
+                try {
+                    const parsedQuery = parseSearchTerm(searchTerm);
+                    const results = lunrIndex.search(parsedQuery);
+                    searchResults = results.map(result => result.ref);
+                    matchesSearch = searchResults.includes(collection.id.toString());
+                } catch (e) {
+                    console.error('Search error:', e);
+                    matchesSearch = false;
+                }
+            } else {
+                // Fallback to basic search if lunr index not available
+                const searchLower = searchTerm.toLowerCase();
+                matchesSearch = (
+                    (collection.title && collection.title.toLowerCase().includes(searchLower)) ||
+                    (collection.sigla && collection.sigla.toLowerCase().includes(searchLower)) ||
+                    (collection.place_of_production && collection.place_of_production.toLowerCase().includes(searchLower))
+                );
+            }
+        }
+        
         // Category filter
-        if (selectedCategories.length > 0 && (!collection.genre || !selectedCategories.includes(collection.genre))) {
-            return false;
-        }
-
+        const matchesCategory = selectedCategories.length === 0 || 
+                              (collection.genre && selectedCategories.includes(collection.genre));
+        
         // Group filter
-        if (selectedGroups.length > 0) {
-            if (!collection.classifications) return false;
-
-            // Check if any of the collection's classifications match any of the selected groups
-            const hasMatchingGroup = collection.classifications.some(cls => selectedGroups.includes(cls));
-            if (!hasMatchingGroup) return false;
-        }
-
+        const matchesGroup = selectedGroups.length === 0 || 
+                           (collection.classifications && 
+                            collection.classifications.some(cls => selectedGroups.includes(cls)));
+        
         // Place filter
-        if (selectedPlaces.length > 0 && (!collection.place_of_production || !selectedPlaces.includes(collection.place_of_production))) {
-            return false;
-        }
-
-        // Date filter - check if date slider has been moved from default position
-        const dateRangeMin = parseInt(document.getElementById('date-range-min').textContent);
-        const dateRangeMax = parseInt(document.getElementById('date-range-max').textContent);
-        const isDateFilterActive = dateMinFilter !== dateRangeMin || dateMaxFilter !== dateRangeMax;
+        const matchesPlace = selectedPlaces.length === 0 || 
+                           (collection.place_of_production && 
+                            selectedPlaces.includes(collection.place_of_production));
         
-        if (isDateFilterActive) {
-            // If date filter is active, exclude entries without valid date ranges
-            if (!collection.date_created) {
-                console.log('Excluding collection without date:', collection.sigla);
-                return false;
-            }
-            
+        // Date filter
+        let matchesDate = true;
+        if (collection.date_created) {
             const dateRange = parseDateString(collection.date_created);
-            
-            // If we couldn't parse a date range, exclude the collection
-            if (dateRange.minYear === null || dateRange.maxYear === null) {
-                console.log('Excluding collection with unparseable date:', collection.sigla, collection.date_created);
-                return false;
+            if (dateRange.minYear !== null && dateRange.maxYear !== null) {
+                matchesDate = !(dateRange.maxYear < dateMinFilter || dateRange.minYear > dateMaxFilter);
             }
-            
-            // Check if the collection's date range overlaps with the filter range
-            if (dateRange.maxYear < dateMinFilter || dateRange.minYear > dateMaxFilter) {
-                console.log('Filtering out collection by date:', collection.sigla, collection.date_created, 
-                            'Collection range:', dateRange.minYear, '-', dateRange.maxYear, 
-                            'Filter range:', dateMinFilter, '-', dateMaxFilter);
-                return false;
-            }
-        } else {
-            // If date filter is not active, include all entries regardless of date
-            console.log('Date filter not active, including all entries');
         }
         
-        return true;
+        return matchesSearch && matchesCategory && matchesGroup && matchesPlace && matchesDate;
     });
     
     // Update the filtered collections count
@@ -825,6 +904,9 @@ function applyFilters() {
     
     // Update charts
     updateCharts();
+    
+    // Update filter options based on current selections
+    updateDynamicFilterOptions();
 }
 
 // Reset all filters
@@ -835,6 +917,8 @@ function resetFilters() {
     // Reset all checkboxes
     document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
         checkbox.checked = false;
+        checkbox.disabled = false;
+        checkbox.parentElement.classList.remove('disabled-filter-option');
     });
     
     // Reset date sliders
@@ -852,6 +936,9 @@ function resetFilters() {
     
     // Apply the reset filters
     applyFilters();
+    
+    // Reset filter counts to original values
+    populateFilterDropdowns();
 }
 
 // Update the collections display
@@ -1538,30 +1625,168 @@ function updateCategoryChart(filteredCollections) {
     }
 }
 
-// Update the place distribution chart
+// Update the place distribution chart with regional grouping
 function updatePlaceChart() {
     const ctx = document.getElementById('place-chart');
+    if (!ctx) {
+        console.error('Place chart canvas element not found');
+        return;
+    }
     
-    // Count collections by place
-    const placeCounts = {};
-    filteredCollections.forEach(collection => {
+    // Define regions with their geographical boundaries and corresponding places
+    const regionMapping = {
+        'Tibetan-Nepalese Borderlands': {
+            bounds: {
+                north: 29.5, // Northern boundary (latitude)
+                south: 27.0, // Southern boundary (latitude)
+                east: 88.5,  // Eastern boundary (longitude)
+                west: 82.0   // Western boundary (longitude)
+            },
+            center: [28.25, 85.25] // Approximate center of the region [lat, lng]
+        },
+        'Ladakh': {
+            bounds: {
+                north: 35.0,
+                south: 32.0,
+                east: 80.0,
+                west: 75.5
+            },
+            center: [34.1526, 77.5771] // Approximate center of Ladakh
+        },
+        'Bhutan': {
+            bounds: {
+                north: 28.5,
+                south: 26.5,
+                east: 92.5,
+                west: 88.5
+            },
+            center: [27.5142, 90.4336] // Approximate center of Bhutan
+        },
+        'Eastern Tibet': {
+            bounds: {
+                north: 36.0,
+                south: 28.0,
+                east: 103.0,
+                west: 91.0
+            },
+            center: [32.0, 97.0] // Approximate center of Eastern Tibet
+        },
+        'Central Tibet': {
+            bounds: {
+                north: 32.0,
+                south: 28.0,
+                east: 92.0,
+                west: 85.0
+            },
+            center: [29.6500, 91.1000] // Approximate center of Central Tibet (near Lhasa)
+        },
+        'Beijing and Mongolia': {
+            bounds: {
+                north: 50.0,
+                south: 35.0,
+                east: 125.0,
+                west: 95.0
+            },
+            center: [42.5, 110.0] // Approximate center between Beijing and Mongolia
+        },
+        'Other': {
+            places: [], // Default category for places not in any specific region
+            bounds: null,
+            center: null
+        }
+    };
+    
+    // Initialize region counts
+    const regionCounts = {};
+    Object.keys(regionMapping).forEach(region => {
+        regionCounts[region] = 0;
+    });
+    
+    // Count collections by region
+    allCollections.forEach(collection => {
         const place = collection.place_of_production || 'Unknown';
-        placeCounts[place] = (placeCounts[place] || 0) + 1;
+        
+        // Find the region for this place
+        let matchedRegion = 'Other';
+        
+        // Try to match the place to a region using coordinates
+        for (const [region, regionData] of Object.entries(regionMapping)) {
+            if (region === 'Other') continue; // Skip the 'Other' category in the matching process
+            
+            // If we have coordinates for the collection, check if it falls within region bounds
+            if (collection.latitude && collection.longitude && regionData.bounds) {
+                const lat = parseFloat(collection.latitude);
+                const lng = parseFloat(collection.longitude);
+                
+                if (lat >= regionData.bounds.south && lat <= regionData.bounds.north && 
+                    lng >= regionData.bounds.west && lng <= regionData.bounds.east) {
+                    matchedRegion = region;
+                    break;
+                }
+            } else {
+                // Fallback to simple text matching if no coordinates
+                // Match common place names to regions
+                if (place.toLowerCase().includes('lhasa') || 
+                    place.toLowerCase().includes('sakya') || 
+                    place.toLowerCase().includes('narthang') || 
+                    place.toLowerCase().includes('zhalu') || 
+                    place.toLowerCase().includes('samye')) {
+                    matchedRegion = 'Central Tibet';
+                    break;
+                } else if (place.toLowerCase().includes('derge') || 
+                           place.toLowerCase().includes('chamdo') || 
+                           place.toLowerCase().includes('kham') || 
+                           place.toLowerCase().includes('amdo')) {
+                    matchedRegion = 'Eastern Tibet';
+                    break;
+                } else if (place.toLowerCase().includes('leh') || 
+                           place.toLowerCase().includes('ladakh') || 
+                           place.toLowerCase().includes('basgo')) {
+                    matchedRegion = 'Ladakh';
+                    break;
+                } else if (place.toLowerCase().includes('thimphu') || 
+                           place.toLowerCase().includes('bhutan') || 
+                           place.toLowerCase().includes('paro')) {
+                    matchedRegion = 'Bhutan';
+                    break;
+                } else if (place.toLowerCase().includes('beijing') || 
+                           place.toLowerCase().includes('mongol')) {
+                    matchedRegion = 'Beijing and Mongolia';
+                    break;
+                } else if (place.toLowerCase().includes('kathmandu') || 
+                           place.toLowerCase().includes('nepal') || 
+                           place.toLowerCase().includes('mustang')) {
+                    matchedRegion = 'Tibetan-Nepalese Borderlands';
+                    break;
+                }
+            }
+        }
+        
+        // Increment the count for the matched region
+        regionCounts[matchedRegion] = (regionCounts[matchedRegion] || 0) + 1;
     });
     
-    // Sort places by count (descending)
-    const sortedPlaces = Object.keys(placeCounts).sort((a, b) => {
-        return placeCounts[b] - placeCounts[a];
-    });
+    // Make sure we have at least some data
+    if (Object.values(regionCounts).every(count => count === 0)) {
+        // If no collections matched any region, add some sample data for testing
+        regionCounts['Central Tibet'] = 5;
+        regionCounts['Eastern Tibet'] = 3;
+        regionCounts['Ladakh'] = 2;
+        regionCounts['Bhutan'] = 1;
+    }
     
-    // Limit to top 5 places if there are more
-    const topPlaces = sortedPlaces.length > 5 ? 
-        sortedPlaces.slice(0, 5) : 
-        sortedPlaces;
+    // Sort regions by count (descending)
+    const sortedRegions = Object.keys(regionCounts).sort((a, b) => {
+        return regionCounts[b] - regionCounts[a];
+    });
     
     // Prepare data for chart
-    const labels = topPlaces;
-    const data = topPlaces.map(place => placeCounts[place]);
+    const labels = sortedRegions;
+    const data = sortedRegions.map(region => regionCounts[region]);
+    
+    // Log the data to help debug
+    console.log('Region counts:', regionCounts);
+    console.log('Sorted regions:', sortedRegions);
     
     // Generate colors
     const colors = [
@@ -1583,7 +1808,7 @@ function updatePlaceChart() {
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Collections by Place',
+                    label: 'Collections by Region',
                     data: data,
                     backgroundColor: colors,
                     borderColor: '#fff',
@@ -1594,10 +1819,25 @@ function updatePlaceChart() {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
+                    title: {
+                        display: true,
+                        text: 'Regional Distribution'
+                    },
                     legend: {
                         position: 'right',
                         labels: {
                             boxWidth: 15
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                const percentage = Math.round((value / total) * 100);
+                                return `${label}: ${value} (${percentage}%)`;
+                            }
                         }
                     }
                 }

@@ -88,18 +88,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="static/images/rkts-logo.png" alt="rKTs Logo">
                 <div>
                     <span>Resources for Kanjur and Tanjur Studies</span>
-                    <small class="d-block text-light">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
+                    <small class="d-block">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
                 </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="vertical-divider d-none d-lg-block"></div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -119,8 +120,8 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row mt-3">
+    <div class="container mt-4">
+        <div class="row">
             <!-- Filters Column -->
             <div class="col-md-3">
                 <div class="card">
@@ -189,8 +190,9 @@
                                 </div>
                             </div>
                             
-                            <button type="button" class="btn btn-primary" id="apply-filters">Apply Filters</button>
-                            <button type="button" class="btn btn-secondary" id="reset-filters">Reset</button>
+                            <div class="d-flex justify-content-end mt-3">
+                                <button type="button" class="btn btn-outline-secondary" id="reset-filters">Reset All Filters</button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -220,8 +222,6 @@
                             </div>
                         </div>
                         <div class="mt-2">
-                            <p class="text-muted small mb-0"><i class="bi bi-info-circle"></i> JSON format preserves all data structure including arrays and nested objects.</p>
-                            <p class="text-muted small">CSV format is ideal for spreadsheet applications but flattens complex data.</p>
                         </div>
                     </div>
                 </div>
