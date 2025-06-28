@@ -269,36 +269,63 @@ async function loadData() {
 // Create Lunr.js search index
 function createSearchIndex() {
     console.log('Creating Lunr search index...');
+    
+    // Configure lunr with advanced indexing
     lunrIndex = lunr(function() {
-        // Define fields to search
-        this.field('sigla', { boost: 10 });
-        this.field('title', { boost: 5 });
-        this.field('title_tibetan');
-        this.field('place_of_production');
-        this.field('genre');
-        this.field('classifications');
+        // Define fields to search with appropriate boosts
+        this.field('sigla', { boost: 12 }); // Highest priority for sigla
+        this.field('title', { boost: 8 }); // High priority for title
+        this.field('title_tibetan', { boost: 6 }); // Good priority for Tibetan title
+        this.field('place_of_production', { boost: 5 });
+        this.field('genre', { boost: 4 });
+        this.field('classifications', { boost: 4 });
         this.field('description', { boost: 3 });
+        this.field('all'); // Combined field for better full-text search
         
         // Add ref field for document lookup
         this.ref('id');
         
+        // Add pipeline function to handle Tibetan script and special characters
+        this.pipeline.add(
+            function(token, tokenIndex, tokens) {
+                if (!token) return null;
+                // Normalize token by removing diacritics and special characters
+                return token.toString().replace(/[\u0300-\u036f]/g, '').toLowerCase();
+            }
+        );
+        
         // Add each collection to the index
         collections.forEach((collection, index) => {
             // Create a document with an ID for reference
+            const sigla = collection.sigla || '';
+            const title = collection.title || '';
+            const title_tibetan = collection.title_tibetan || '';
+            const place = collection.place_of_production || '';
+            const genre = collection.genre || '';
+            const classifications = Array.isArray(collection.classifications) ? 
+                collection.classifications.join(' ') : '';
+            const description = collection.abstract || collection.description || '';
+            
+            // Create a combined field for better full-text search
+            const all = `${sigla} ${title} ${title_tibetan} ${place} ${genre} ${classifications} ${description}`;
+            
             const doc = {
                 id: index,
-                sigla: collection.sigla || '',
-                title: collection.title || '',
-                title_tibetan: collection.title_tibetan || '',
-                place_of_production: collection.place_of_production || '',
-                genre: collection.genre || '',
-                classifications: Array.isArray(collection.classifications) ? collection.classifications.join(' ') : '',
-                description: collection.abstract || collection.description || ''
+                sigla: sigla,
+                title: title,
+                title_tibetan: title_tibetan,
+                place_of_production: place,
+                genre: genre,
+                classifications: classifications,
+                description: description,
+                all: all
             };
+            
             this.add(doc);
         });
     });
-    console.log('Lunr search index created');
+    
+    console.log('Enhanced Lunr search index created');
 }
 
 // Populate filter checkboxes
@@ -474,17 +501,31 @@ function performSearch() {
         let results = [];
         
         if (lunrIndex) {
-            // Perform the search using Lunr
-            results = lunrIndex.search(searchTerm);
+            // Parse search term for advanced queries
+            const parsedTerm = parseSearchTerm(searchTerm);
             
-            // If no results found with exact search, try wildcard search
+            // Perform the search using Lunr with the parsed term
+            results = lunrIndex.search(parsedTerm);
+            
+            // If no results found with exact search, try a more flexible approach
             if (results.length === 0 && searchTerm.length >= 2) {
+                // Try wildcard search
                 results = lunrIndex.search(`${searchTerm}*`);
-            }
-            
-            // If still no results, try fuzzy search
-            if (results.length === 0 && searchTerm.length >= 3) {
-                results = lunrIndex.search(`${searchTerm}~1`);
+                
+                // If still no results and term is long enough, try fuzzy search
+                if (results.length === 0 && searchTerm.length >= 3) {
+                    results = lunrIndex.search(`${searchTerm}~1`);
+                }
+                
+                // If still no results, try term splitting for multi-word searches
+                if (results.length === 0 && searchTerm.includes(' ')) {
+                    const terms = searchTerm.split(' ')
+                        .filter(t => t.length > 1)
+                        .map(t => t + '*');
+                    if (terms.length > 0) {
+                        results = lunrIndex.search(terms.join(' '));
+                    }
+                }
             }
         } else {
             // Fallback to basic search if Lunr index is not available
@@ -493,6 +534,9 @@ function performSearch() {
                 return score > 0 ? { ref: index.toString(), score } : null;
             }).filter(result => result !== null);
         }
+        
+        // Sort results by score (highest first)
+        results.sort((a, b) => b.score - a.score);
         
         // Update search results count
         searchResultsCount.textContent = results.length;
@@ -602,35 +646,69 @@ function escapeRegExp(string) {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
+// Parse search term to support advanced search queries
+function parseSearchTerm(searchTerm) {
+    // If the search term is empty, return an empty string
+    if (!searchTerm || searchTerm.trim() === '') {
+        return '';
+    }
+    
+    // If the search term already contains field specifiers like 'title:' or boolean operators,
+    // assume it's an advanced query and return as is
+    if (/\w+:|\+|\-|~|\*|\^|\"/.test(searchTerm)) {
+        return searchTerm;
+    }
+    
+    // Check if it's a sigla search (typically short codes with specific formats)
+    if (/^[A-Z]{1,3}\d*$/.test(searchTerm)) {
+        return `sigla:${searchTerm}`; // Search for exact sigla
+    }
+    
+    // For multi-word searches, create a simple query that works with basic lunr
+    if (searchTerm.includes(' ')) {
+        // Just use the terms directly - lunr will handle tokenization
+        return searchTerm;
+    }
+    
+    // For single-word searches, just use the term directly
+    // Add a wildcard for prefix matching if the term is long enough
+    return searchTerm.length >= 3 ? `${searchTerm}*` : searchTerm;
+}
+
 // Calculate basic search score for fallback search
 function calculateBasicSearchScore(collection, searchTerm) {
+    searchTerm = searchTerm.toLowerCase();
     let score = 0;
-    const term = searchTerm.toLowerCase();
     
-    // Check sigla (highest weight)
-    if (collection.sigla && collection.sigla.toLowerCase().includes(term)) {
+    // Check sigla (highest priority)
+    if (collection.sigla && collection.sigla.toLowerCase().includes(searchTerm)) {
         score += 10;
     }
     
-    // Check title (high weight)
-    if (collection.title && collection.title.toLowerCase().includes(term)) {
+    // Check title
+    if (collection.title && collection.title.toLowerCase().includes(searchTerm)) {
         score += 5;
     }
     
     // Check Tibetan title
-    if (collection.title_tibetan && collection.title_tibetan.toLowerCase().includes(term)) {
+    if (collection.title_tibetan && collection.title_tibetan.toLowerCase().includes(searchTerm)) {
         score += 3;
     }
     
     // Check place of production
-    if (collection.place_of_production && collection.place_of_production.toLowerCase().includes(term)) {
+    if (collection.place_of_production && collection.place_of_production.toLowerCase().includes(searchTerm)) {
+        score += 2;
+    }
+    
+    // Check genre
+    if (collection.genre && collection.genre.toLowerCase().includes(searchTerm)) {
         score += 2;
     }
     
     // Check description/abstract
-    if ((collection.abstract && collection.abstract.toLowerCase().includes(term)) ||
-        (collection.description && collection.description.toLowerCase().includes(term))) {
-        score += 3;
+    if ((collection.abstract && collection.abstract.toLowerCase().includes(searchTerm)) ||
+        (collection.description && collection.description.toLowerCase().includes(searchTerm))) {
+        score += 1;
     }
     
     return score;
