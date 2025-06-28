@@ -20,7 +20,6 @@ let allTags = new Set();
 let currentView = 'cards'; // cards, list, compact
 let currentFilters = {
     search: '',
-    tag: '',
     sort: 'date',
     direction: 'desc'
 };
@@ -62,15 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
             currentFilters.search = this.value.trim().toLowerCase();
             applyFilters();
         }, 300));
-    }
-    
-    // Set up tag filter
-    const tagFilter = document.getElementById('tag-filter');
-    if (tagFilter) {
-        tagFilter.addEventListener('change', function() {
-            currentFilters.tag = this.value;
-            applyFilters();
-        });
     }
     
     // Set up clear search button
@@ -311,52 +301,24 @@ function fetchPublications(page = 1) {
 function applyFilters() {
     // Apply search and tag filters
     filteredPublications = allPublications.filter(pub => {
-        // Skip if not a valid publication
         if (!pub.data) return false;
-        
-        // Tag filter
-        if (currentFilters.tag) {
-            const tags = pub.data.tags || [];
-            const hasTag = tags.some(tag => tag.tag === currentFilters.tag);
-            if (!hasTag) {
-                return false;
-            }
-        }
-        
-        // Search filter
         if (currentFilters.search) {
             const searchTerm = currentFilters.search.toLowerCase();
             const title = (pub.data.title || '').toLowerCase();
             const abstract = (pub.data.abstractNote || '').toLowerCase();
-            
-            // Get author names
             const authors = getAuthorsText(pub).toLowerCase();
-            
-            // Get publication details
             const pubTitle = (pub.data.publicationTitle || '').toLowerCase();
             const publisher = (pub.data.publisher || '').toLowerCase();
             const place = (pub.data.place || '').toLowerCase();
-            
-            // Check if search term is in title, abstract, authors, or other metadata
-            if (!title.includes(searchTerm) && 
-                !abstract.includes(searchTerm) && 
-                !authors.includes(searchTerm) &&
-                !pubTitle.includes(searchTerm) &&
-                !publisher.includes(searchTerm) &&
-                !place.includes(searchTerm)) {
+            if (!title.includes(searchTerm) && !abstract.includes(searchTerm) && !authors.includes(searchTerm) && !pubTitle.includes(searchTerm) && !publisher.includes(searchTerm) && !place.includes(searchTerm)) {
                 return false;
             }
         }
-        
         return true;
     });
-    
-    // Sort if needed (client-side sorting for search results)
-    if (currentFilters.search || currentFilters.tag) {
+    if (currentFilters.search) {
         sortPublications();
     }
-    
-    // Update UI
     updateFilterBadge();
     renderPublications(filteredPublications);
 }
@@ -399,7 +361,7 @@ function sortPublications() {
 function updateFilterBadge() {
     const filterBadge = document.getElementById('filter-badge');
     if (filterBadge) {
-        const isFiltered = currentFilters.search || currentFilters.tag;
+        const isFiltered = currentFilters.search;
         filterBadge.style.display = isFiltered ? 'inline-block' : 'none';
     }
 }
@@ -730,6 +692,17 @@ function createPublicationCard(publication) {
         linkHtml = `<a href="https://doi.org/${publication.data.DOI}" target="_blank" class="text-decoration-none">DOI: ${publication.data.DOI}</a>`;
     } else if (publication.data.url) {
         linkHtml = `<a href="${publication.data.url}" target="_blank" class="text-decoration-none">View Online</a>`;
+    }
+    
+    // Add View in Zotero link
+    const zoteroItemKey = publication.key;
+    const zoteroLink = `${ZOTERO_GROUP_URL}/item/${zoteroItemKey}`;
+    const zoteroIconHtml = `<a href="${zoteroLink}" target="_blank" class="btn btn-sm btn-outline-secondary mt-1"><i class="bi bi-journal-text me-1"></i>View in Zotero</a>`;
+    
+    if (linkHtml) {
+        linkHtml += `<br>${zoteroIconHtml}`;
+    } else {
+        linkHtml = zoteroIconHtml;
     }
     
     // Get tags
