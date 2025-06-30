@@ -129,9 +129,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const exportCsvBtn = document.getElementById('export-csv');
     const shareLinkBtn = document.getElementById('share-link');
     
-    if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportJSON);
-    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportCSV);
-    if (shareLinkBtn) shareLinkBtn.addEventListener('click', shareLink);
+    if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportFilteredAsJSON);
+    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportFilteredAsCSV);
+    if (shareLinkBtn) shareLinkBtn.addEventListener('click', function() {
+        // Copy current URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy link: ', err);
+            alert('Could not copy link. Please copy the URL from your browser address bar.');
+        });
+    });
 });
 
 // Initialize the Leaflet map
@@ -574,247 +582,51 @@ function parseDateString(dateStr) {
 
 // Perform search with mkdocs-style preview dropdown
 function performSearch() {
-    const searchInput = document.getElementById('search');
-    const searchTerm = searchInput ? searchInput.value.trim() : '';
-    const searchPreview = document.getElementById('search-preview');
-    const searchResultsContainer = document.getElementById('search-preview-results');
-    const searchResultsCount = document.getElementById('search-results-count');
-    
-    // Clear previous results
-    searchResultsContainer.innerHTML = '';
-    
-    // Hide preview if search term is empty
-    if (!searchTerm) {
-        searchPreview.style.display = 'none';
-        return;
-    }
-    
-    // Show loading indicator
-    searchResultsContainer.innerHTML = '<div class="p-3 text-center">Searching...</div>';
-    searchPreview.style.display = 'block';
-    
-    try {
-        let results = [];
-        
-        if (lunrIndex) {
-            // Parse search term for advanced queries
-            const parsedTerm = parseSearchTerm(searchTerm);
+    // Use the generic search function from utils.js
+    performGenericSearch({
+        searchInputId: 'search',
+        searchPreviewId: 'search-preview',
+        searchResultsContainerId: 'search-preview-results',
+        searchResultsCountId: 'search-results-count',
+        collections: collections,
+        lunrIndex: lunrIndex,
+        showDetailsCallback: showCollectionDetails,
+        // Update filteredCollections when search is performed
+        updateFilteredCollections: true,
+        // Apply other filters and update UI after search
+        onResultsUpdated: function(results) {
+            // Update the filtered collections count
+            document.getElementById('filtered-collections').textContent = filteredCollections.length;
             
-            // Perform the search using Lunr with the parsed term
-            results = lunrIndex.search(parsedTerm);
+            // Update the mapped collections count
+            const mappedCollections = filteredCollections.filter(c => c.coordinates).length;
+            document.getElementById('mapped-collections').textContent = mappedCollections;
             
-            // If no results found with exact search, try a more flexible approach
-            if (results.length === 0 && searchTerm.length >= 2) {
-                // Try wildcard search
-                results = lunrIndex.search(`${searchTerm}*`);
-                
-                // If still no results and term is long enough, try fuzzy search
-                if (results.length === 0 && searchTerm.length >= 3) {
-                    results = lunrIndex.search(`${searchTerm}~1`);
-                }
-                
-                // If still no results, try term splitting for multi-word searches
-                if (results.length === 0 && searchTerm.includes(' ')) {
-                    const terms = searchTerm.split(' ')
-                        .filter(t => t.length > 1)
-                        .map(t => t + '*');
-                    if (terms.length > 0) {
-                        results = lunrIndex.search(terms.join(' '));
-                    }
-                }
-            }
-        } else {
-            // Fallback to basic search if Lunr index is not available
-            results = collections.map((collection, index) => {
-                const score = calculateBasicSearchScore(collection, searchTerm);
-                return score > 0 ? { ref: index.toString(), score } : null;
-            }).filter(result => result !== null);
+            // Update the collections list
+            updateCollectionsDisplay();
+            
+            // Update the map
+            updateMapWithFiltered();
+            
+            // Update charts
+            updateCharts();
         }
-        
-        // Sort results by score (highest first)
-        results.sort((a, b) => b.score - a.score);
-        
-        // Update search results count
-        searchResultsCount.textContent = results.length;
-        
-        // Clear results container
-        searchResultsContainer.innerHTML = '';
-        
-        if (results.length === 0) {
-            searchResultsContainer.innerHTML = '<div class="p-3 text-center">No results found</div>';
-            return;
-        }
-        
-        // Display results (limit to top 10)
-        results.slice(0, 10).forEach(result => {
-            const collection = collections[parseInt(result.ref)];
-            if (!collection) return;
-            
-            // Create result item
-            const resultItem = document.createElement('div');
-            resultItem.className = 'search-result-item';
-            resultItem.dataset.id = result.ref;
-            
-            // Create title with highlighted search term
-            const title = highlightSearchTerm(collection.title || 'Untitled', searchTerm);
-            const sigla = collection.sigla ? `<span class="search-result-sigla">${collection.sigla}</span>` : '';
-            
-            // Create category badge
-            const category = collection.genre ? 
-                `<span class="search-result-category">${collection.genre}</span>` : '';
-            
-            // Create snippet from description/abstract
-            let snippet = '';
-            if (collection.abstract || collection.description) {
-                const text = collection.abstract || collection.description;
-                snippet = `<div class="search-result-snippet">${createSnippet(text, searchTerm)}</div>`;
-            }
-            
-            // Assemble result item content
-            resultItem.innerHTML = `
-                <div class="search-result-title">${sigla}${title}</div>
-                ${category}
-                ${snippet}
-            `;
-            
-            // Add click handler to show collection details
-            resultItem.addEventListener('click', () => {
-                // Use the existing showCollectionDetails function to display the modal
-                showCollectionDetails(collection);
-                // Hide the search preview after selection
-                searchPreview.style.display = 'none';
-                // Clear the search input after selection
-                searchInput.value = '';
-            });
-            
-            searchResultsContainer.appendChild(resultItem);
-        });
-    } catch (e) {
-        console.error('Search error:', e);
-        searchResultsContainer.innerHTML = '<div class="p-3 text-center">Search error occurred</div>';
-    }
+    });
 }
 
-// Helper function to highlight search terms in text
-function highlightSearchTerm(text, searchTerm) {
-    if (!text || !searchTerm) return text;
-    
-    const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
-    return text.replace(regex, '<span class="search-result-highlight">$1</span>');
-}
+// These utility functions are now imported from utils.js:
+// - highlightSearchTerm
+// - createSnippet
+// - escapeRegExp
 
-// Helper function to create a snippet with highlighted search term
-function createSnippet(text, searchTerm, maxLength = 100) {
-    if (!text || !searchTerm) return text;
-    
-    // Find position of search term in text
-    const position = text.toLowerCase().indexOf(searchTerm.toLowerCase());
-    
-    if (position === -1) {
-        // If term not found, return beginning of text
-        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-    }
-    
-    // Calculate start and end positions for snippet
-    let start = Math.max(0, position - 40);
-    let end = Math.min(text.length, position + searchTerm.length + 40);
-    
-    // Adjust if snippet is too long
-    if (end - start > maxLength) {
-        end = start + maxLength;
-    }
-    
-    // Add ellipsis if needed
-    const prefix = start > 0 ? '...' : '';
-    const suffix = end < text.length ? '...' : '';
-    
-    // Extract snippet
-    let snippet = text.substring(start, end);
-    
-    // Highlight search term
-    snippet = highlightSearchTerm(snippet, searchTerm);
-    
-    return prefix + snippet + suffix;
-}
+// parseSearchTerm function is now imported from utils.js
 
-// Helper function to escape special characters in regex
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-// Parse search term to support advanced search queries
-function parseSearchTerm(searchTerm) {
-    // If the search term is empty, return an empty string
-    if (!searchTerm || searchTerm.trim() === '') {
-        return '';
-    }
-    
-    // If the search term already contains field specifiers like 'title:' or boolean operators,
-    // assume it's an advanced query and return as is
-    if (/\w+:|\+|\-|~|\*|\^|\"/.test(searchTerm)) {
-        return searchTerm;
-    }
-    
-    // Check if it's a sigla search (typically short codes with specific formats)
-    if (/^[A-Z]{1,3}\d*$/.test(searchTerm)) {
-        return `sigla:${searchTerm}`; // Search for exact sigla
-    }
-    
-    // For multi-word searches, create a simple query that works with basic lunr
-    if (searchTerm.includes(' ')) {
-        // Just use the terms directly - lunr will handle tokenization
-        return searchTerm;
-    }
-    
-    // For single-word searches, just use the term directly
-    // Add a wildcard for prefix matching if the term is long enough
-    return searchTerm.length >= 3 ? `${searchTerm}*` : searchTerm;
-}
-
-// Calculate basic search score for fallback search
-function calculateBasicSearchScore(collection, searchTerm) {
-    searchTerm = searchTerm.toLowerCase();
-    let score = 0;
-    
-    // Check sigla (highest priority)
-    if (collection.sigla && collection.sigla.toLowerCase().includes(searchTerm)) {
-        score += 10;
-    }
-    
-    // Check title
-    if (collection.title && collection.title.toLowerCase().includes(searchTerm)) {
-        score += 5;
-    }
-    
-    // Check Tibetan title
-    if (collection.title_tibetan && collection.title_tibetan.toLowerCase().includes(searchTerm)) {
-        score += 3;
-    }
-    
-    // Check place of production
-    if (collection.place_of_production && collection.place_of_production.toLowerCase().includes(searchTerm)) {
-        score += 2;
-    }
-    
-    // Check genre
-    if (collection.genre && collection.genre.toLowerCase().includes(searchTerm)) {
-        score += 2;
-    }
-    
-    // Check description/abstract
-    if ((collection.abstract && collection.abstract.toLowerCase().includes(searchTerm)) ||
-        (collection.description && collection.description.toLowerCase().includes(searchTerm))) {
-        score += 1;
-    }
-    
-    return score;
-}
+// calculateBasicSearchScore function is now imported from utils.js
 
 // Apply filters to collections
 function applyFilters() {
     const searchInput = document.getElementById('search');
     const searchTerm = searchInput ? searchInput.value.trim() : '';
-    let searchResults = [];
 
     // Get selected category checkboxes
     const categoryCheckboxes = document.querySelectorAll('.category-checkbox:checked');
@@ -834,57 +646,33 @@ function applyFilters() {
     const dateMinFilter = dateSliderMin ? parseInt(dateSliderMin.value) : minYear;
     const dateMaxFilter = dateSliderMax ? parseInt(dateSliderMax.value) : maxYear;
     
-    // Filter collections based on search term and filters
-    filteredCollections = collections.filter(collection => {
-        // Filter by search term
-        let matchesSearch = true;
-        if (searchTerm) {
-            if (lunrIndex) {
-                try {
-                    const parsedQuery = parseSearchTerm(searchTerm);
-                    const results = lunrIndex.search(parsedQuery);
-                    searchResults = results.map(result => result.ref);
-                    matchesSearch = searchResults.includes(collection.id.toString());
-                } catch (e) {
-                    console.error('Search error:', e);
-                    matchesSearch = false;
-                }
-            } else {
-                // Fallback to basic search if lunr index not available
-                const searchLower = searchTerm.toLowerCase();
-                matchesSearch = (
-                    (collection.title && collection.title.toLowerCase().includes(searchLower)) ||
-                    (collection.sigla && collection.sigla.toLowerCase().includes(searchLower)) ||
-                    (collection.place_of_production && collection.place_of_production.toLowerCase().includes(searchLower))
-                );
-            }
+    // Use the generic filterCollections utility function with a custom filter for groups
+    filteredCollections = filterCollections(
+        collections,
+        {
+            searchTerm: searchTerm,
+            minYear: dateMinFilter,
+            maxYear: dateMaxFilter
+        },
+        // Custom filter function for app-specific filtering needs
+        collection => {
+            // Category filter - if any categories are selected
+            const matchesCategory = selectedCategories.length === 0 || 
+                                  (collection.genre && selectedCategories.includes(collection.genre));
+            
+            // Group filter - specific to this page
+            const matchesGroup = selectedGroups.length === 0 || 
+                               (collection.classifications && 
+                                collection.classifications.some(cls => selectedGroups.includes(cls)));
+            
+            // Place filter - if any places are selected
+            const matchesPlace = selectedPlaces.length === 0 || 
+                               (collection.place_of_production && 
+                                selectedPlaces.includes(collection.place_of_production));
+            
+            return matchesCategory && matchesGroup && matchesPlace;
         }
-        
-        // Category filter
-        const matchesCategory = selectedCategories.length === 0 || 
-                              (collection.genre && selectedCategories.includes(collection.genre));
-        
-        // Group filter
-        const matchesGroup = selectedGroups.length === 0 || 
-                           (collection.classifications && 
-                            collection.classifications.some(cls => selectedGroups.includes(cls)));
-        
-        // Place filter
-        const matchesPlace = selectedPlaces.length === 0 || 
-                           (collection.place_of_production && 
-                            selectedPlaces.includes(collection.place_of_production));
-        
-        // Date filter
-        let matchesDate = true;
-        if (collection.date_created) {
-            const dateRange = parseDateString(collection.date_created);
-            if (dateRange.minYear !== null && dateRange.maxYear !== null) {
-                matchesDate = !(dateRange.maxYear < dateMinFilter || dateRange.minYear > dateMaxFilter);
-            }
-        }
-        
-        return matchesSearch && matchesCategory && matchesGroup && matchesPlace && matchesDate;
-    });
+    );
     
     // Update the filtered collections count
     document.getElementById('filtered-collections').textContent = filteredCollections.length;
@@ -1013,17 +801,11 @@ function updateCollectionsDisplay() {
     });
 }
 
-// Legacy function maintained for compatibility
-// Now just calls updateMapWithFiltered
-function updateMap() {
-    updateMapWithFiltered();
-}
+// Legacy function updateMap has been removed - use updateMapWithFiltered directly
 
-// Legacy function maintained for compatibility
-// Now just calls updateMapWithFiltered
-function updateMapMarkers() {
-    updateMapWithFiltered();
-}
+// Alias for backward compatibility
+const updateMapMarkers = updateMapWithFiltered;
+const updateMap = updateMapWithFiltered; // Keep this alias for backward compatibility
 
 function switchToMarkerView() {
     // Remove heatmap layer if it exists
@@ -1476,30 +1258,7 @@ function showLoading(isLoading) {
     }
 }
 
-// Helper function to show error message
-function showError(message) {
-    const container = document.getElementById('collections-container');
-    container.innerHTML = `
-        <div class="col-12">
-            <div class="alert alert-danger" role="alert">
-                ${message}
-            </div>
-        </div>
-    `;
-}
-
-// Debounce function to limit how often a function is called
-function debounce(func, wait) {
-    let timeout;
-    return function() {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func.apply(context, args);
-        }, wait);
-    };
-}
+// showError function is now imported from utils.js
 
 // Update charts with filtered data (if they exist on the page)
 function updateCharts() {
@@ -1515,114 +1274,17 @@ function updateCharts() {
 
 
 
-// Download XML file for a collection
-function downloadCollectionXML(fileName) {
-    if (!fileName) {
-        console.error('No file name provided for XML download');
-        alert('Error: Could not identify the XML file to download.');
-        return;
-    }
-    
-    // Get the base URL (removing any path components)
-    const baseUrl = window.location.protocol + '//' + window.location.host;
-    
-    // Encode the filename to handle spaces and special characters
-    const encodedFileName = encodeURIComponent(fileName);
-    
-    // Construct the XML file path to use the symbolic link in the static directory
-    const xmlFilePath = `${baseUrl}/static/xml_files/${encodedFileName}`;
-    
-    console.log(`Attempting to download XML from: ${xmlFilePath}`);
-    
-    // Fetch the XML file
-    fetch(xmlFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(xmlContent => {
-            // Create a blob with the XML content
-            const blob = new Blob([xmlContent], {type: 'application/xml'});
-            
-            // Use FileSaver.js to save the file
-            saveAs(blob, fileName);
-            
-            console.log(`Successfully downloaded XML file: ${fileName}`);
-        })
-        .catch(error => {
-            console.error('Error downloading XML file:', error);
-            alert(`Error downloading XML file: ${error.message}\nPlease check the browser console for more details.`);
-        });
-}
+// downloadCollectionXML function is now imported from utils.js
 
-// Update the category distribution chart
+// Update the category distribution chart using the generic function from utils.js
 function updateCategoryChart(filteredCollections) {
-    const ctx = document.getElementById('category-chart');
-    
-    // Count collections by genre/category
-    const categoryCounts = {};
-    filteredCollections.forEach(collection => {
-        const genre = collection.genre || 'Unknown';
-        categoryCounts[genre] = (categoryCounts[genre] || 0) + 1;
-    });
-    
-    // Sort categories by count (descending)
-    const sortedCategories = Object.keys(categoryCounts).sort((a, b) => {
-        return categoryCounts[b] - categoryCounts[a];
-    });
-    
-    // Limit to top 5 categories if there are more
-    const topCategories = sortedCategories.length > 5 ? 
-        sortedCategories.slice(0, 5) : 
-        sortedCategories;
-    
-    // Prepare data for chart
-    const labels = topCategories;
-    const data = topCategories.map(category => categoryCounts[category]);
-    
-    // Generate colors
-    const colors = [
-        '#e41a1c', // Red
-        '#377eb8', // Blue
-        '#4daf4a', // Green
-        '#984ea3', // Purple
-        '#ff7f00'  // Orange
-    ];
-    
-    // Create or update chart
-    if (categoryChart) {
-        categoryChart.data.labels = labels;
-        categoryChart.data.datasets[0].data = data;
-        categoryChart.update();
-    } else {
-        categoryChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Collections by Category',
-                    data: data,
-                    backgroundColor: colors,
-                    borderColor: colors.map(color => color.replace('0.8', '1')),
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            precision: 0
-                        }
-                    }
-                }
-            }
-        });
-    }
+    // Use the generic chart function from utils.js
+    categoryChart = updateGenericCategoryChart(
+        filteredCollections, 
+        'category-chart', 
+        categoryChart, 
+        'Collections by Category'
+    );
 }
 
 // Update the place distribution chart with regional grouping
@@ -1847,14 +1509,13 @@ function updatePlaceChart() {
 }
 
 // Export filtered collections as JSON
-function exportJSON() {
-    const dataStr = JSON.stringify(filteredCollections, null, 2);
-    const blob = new Blob([dataStr], {type: 'application/json'});
-    saveAs(blob, 'tibetan_collections.json');
+function exportFilteredAsJSON() {
+    // Use the utility function from utils.js
+    exportJSON(filteredCollections, 'tibetan_collections.json');
 }
 
 // Export filtered collections as CSV
-function exportCSV() {
+function exportFilteredAsCSV() {
     // Define CSV headers
     const headers = [
         'sigla',
@@ -1868,64 +1529,22 @@ function exportCSV() {
         'bdrc_reference'
     ];
     
-    // Create CSV content
-    let csvContent = headers.join(',') + '\n';
-    
-    // Add data rows
-    filteredCollections.forEach(collection => {
-        const row = headers.map(header => {
-            let value = collection[header] || '';
-            // Handle arrays
-            if (Array.isArray(value)) {
-                value = value.join('; ');
-            }
-            // Escape quotes and wrap in quotes if contains comma
-            value = String(value).replace(/"/g, '""');
-            if (value.includes(',')) {
-                value = `"${value}"`;
-            }
-            return value;
-        });
-        csvContent += row.join(',') + '\n';
-    });
-    
-    // Create and download blob
-    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8'});
-    saveAs(blob, 'tibetan_collections.csv');
+    // Use the utility function from utils.js
+    exportCSV(filteredCollections, headers, 'tibetan_collections.csv');
 }
 
 // Create shareable URL with current filters
 function updateShareableUrl() {
-    const searchParams = new URLSearchParams();
-    
-    // Add current filter values to URL parameters
-    const searchTerm = document.getElementById('search').value;
-    if (searchTerm) searchParams.set('search', searchTerm);
-    
-    const categoryFilter = document.getElementById('category-filter').value;
-    if (categoryFilter) searchParams.set('category', categoryFilter);
-    
-    const groupFilter = document.getElementById('group-filter').value;
-    if (groupFilter) searchParams.set('group', groupFilter);
-    
-    const placeFilter = document.getElementById('place-filter').value;
-    if (placeFilter) searchParams.set('place', placeFilter);
-    
-    // Update browser history without reloading the page
-    const newUrl = window.location.pathname + (searchParams.toString() ? '?' + searchParams.toString() : '');
-    window.history.replaceState({}, '', newUrl);
-}
-
-// Share current view as a link
-function shareLink() {
-    // Get the current URL with filters
-    const shareUrl = window.location.href;
-    
-    // Copy to clipboard
-    navigator.clipboard.writeText(shareUrl).then(() => {
-        alert('Link copied to clipboard!');
-    }).catch(err => {
-        console.error('Could not copy link: ', err);
-        alert('Could not copy link. Please copy the URL from your browser address bar.');
+    // Use the generic updateShareableUrl utility function from utils.js
+    return updateShareableUrl({
+        // Map filter parameter names to element IDs
+        elementIds: {
+            'search': 'search',
+            'category': 'category-filter',
+            'group': 'group-filter',
+            'place': 'place-filter'
+        }
     });
 }
+
+// End of utility functions

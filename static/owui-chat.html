@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="css/owui-widget.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="owui-chat-container">
+        <div class="owui-chat-header">
+            <h3 class="owui-chat-title">rKTs Collections Assistant</h3>
+            <button class="owui-chat-close" onclick="window.parent.postMessage('close', '*')">×</button>
+        </div>
+        
+        <div class="owui-chat-messages" id="messages">
+            <!-- Messages will be added here -->
+        </div>
+        
+        <div class="owui-typing-indicator" id="typing-indicator">
+            Assistant is typing...
+        </div>
+        
+        <div class="owui-chat-input-container">
+            <textarea 
+                class="owui-chat-input" 
+                id="user-input" 
+                placeholder="Type your message..." 
+                rows="1"
+                onkeydown="handleKeyDown(event)"></textarea>
+            <button class="owui-chat-send" id="send-button" onclick="sendMessage()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const apiKey = urlParams.get('api_key') || '';
+        const endpoint = urlParams.get('endpoint') || 'http://130.61.212.178:3000/api/chat/completions';
+        const model = urlParams.get('model') || '';
+        const systemPrompt = urlParams.get('system_prompt') || 'You are a helpful assistant specializing in Tibetan Buddhist collections.';
+        const title = urlParams.get('title') || 'Tibetan Collections Assistant';
+        const greeting = urlParams.get('greeting') || 'Hello! I\'m your Tibetan Collections assistant. How can I help you with your research today?';
+        const primaryColor = urlParams.get('primary_color') || '#007bff';
+        
+        // Set dynamic styles
+        document.documentElement.style.setProperty('--primary-color', primaryColor);
+        document.querySelector('.owui-chat-title').textContent = title;
+        
+        // DOM elements
+        const messagesContainer = document.getElementById('messages');
+        const userInput = document.getElementById('user-input');
+        const sendButton = document.getElementById('send-button');
+        const typingIndicator = document.getElementById('typing-indicator');
+        
+        // Conversation history
+        let conversationHistory = [
+            {
+                role: 'system',
+                content: systemPrompt
+            }
+        ];
+        
+        // Initialize chat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add greeting message
+            if (greeting) {
+                addMessage(greeting, 'bot');
+                conversationHistory.push({
+                    role: 'assistant',
+                    content: greeting
+                });
+            }
+            
+            // Focus input
+            userInput.focus();
+            
+            // Auto-resize input
+            userInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+            });
+        });
+        
+        // Handle Enter key
+        function handleKeyDown(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(content, sender, isError = false) {
+            const messageDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                messageDiv.className = 'owui-message owui-user-message';
+                messageDiv.textContent = content;
+            } else {
+                messageDiv.className = isError ? 
+                    'owui-message owui-error-message' : 
+                    'owui-message owui-bot-message owui-markdown';
+                
+                // Process markdown for bot messages
+                if (!isError) {
+                    messageDiv.innerHTML = renderMarkdown(content);
+                } else {
+                    messageDiv.textContent = content;
+                }
+            }
+            
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        // Enhanced markdown renderer
+        function renderMarkdown(text) {
+            // Code blocks with language support
+            text = text.replace(/```([a-z]*)\n([\s\S]*?)\n```/g, function(match, lang, code) {
+                return `<pre><code class="language-${lang}">${code.trim()}</code></pre>`;
+            });
+            
+            // Inline code
+            text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
+            
+            // Headers
+            text = text.replace(/^### (.*$)/gm, '<h3>$1</h3>');
+            text = text.replace(/^## (.*$)/gm, '<h2>$1</h2>');
+            text = text.replace(/^# (.*$)/gm, '<h1>$1</h1>');
+            
+            // Bold
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+            
+            // Italic
+            text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+            text = text.replace(/_([^_]+)_/g, '<em>$1</em>');
+            
+            // Lists
+            // Unordered lists
+            text = text.replace(/^\s*[\*\-]\s+(.+)$/gm, '<li>$1</li>');
+            text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+            
+            // Ordered lists
+            text = text.replace(/^\s*\d+\.\s+(.+)$/gm, '<li>$1</li>');
+            text = text.replace(/(<li>.*<\/li>)/gs, function(match) {
+                if (match.indexOf('<ul>') === -1) {
+                    return '<ol>' + match + '</ol>';
+                }
+                return match;
+            });
+            
+            // Links
+            text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+            
+            // Blockquotes
+            text = text.replace(/^>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
+            
+            // Horizontal rule
+            text = text.replace(/^---+$/gm, '<hr>');
+            
+            // Paragraphs (must come after lists and blockquotes)
+            let paragraphs = [];
+            const blocks = text.split('\n\n');
+            
+            for (let block of blocks) {
+                if (!block.trim()) continue;
+                if (block.indexOf('<h') === 0 || 
+                    block.indexOf('<ul') === 0 || 
+                    block.indexOf('<ol') === 0 || 
+                    block.indexOf('<blockquote') === 0 || 
+                    block.indexOf('<pre') === 0 || 
+                    block.indexOf('<hr') === 0) {
+                    paragraphs.push(block);
+                } else {
+                    paragraphs.push(`<p>${block}</p>`);
+                }
+            }
+            
+            text = paragraphs.join('');
+            
+            // Line breaks (only within paragraphs)
+            text = text.replace(/<p>([\s\S]*?)<\/p>/g, function(match, content) {
+                return '<p>' + content.replace(/\n/g, '<br>') + '</p>';
+            });
+            
+            return text;
+        }
+        
+        // Send message
+        function sendMessage() {
+            const message = userInput.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message to chat
+            addMessage(message, 'user');
+            
+            // Add to conversation history
+            conversationHistory.push({
+                role: 'user',
+                content: message
+            });
+            
+            // Clear input
+            userInput.value = '';
+            userInput.style.height = 'auto';
+            
+            // Disable input while waiting for response
+            userInput.disabled = true;
+            sendButton.disabled = true;
+            
+            // Show typing indicator
+            typingIndicator.style.display = 'block';
+            
+            // Check if API key is available
+            if (!apiKey) {
+                typingIndicator.style.display = 'none';
+                userInput.disabled = false;
+                sendButton.disabled = false;
+                addMessage('Error: API key is missing. Please provide an API key via URL parameter.', 'bot', true);
+                return;
+            }
+            
+            // Send request to API
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: model,
+                    messages: conversationHistory
+                }),
+                // Add these options to handle HTTPS connections
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                typingIndicator.style.display = 'none';
+                
+                // Extract the response content
+                const responseContent = data.choices && data.choices[0] && data.choices[0].message 
+                    ? data.choices[0].message.content 
+                    : 'Sorry, I couldn\'t process your request.';
+                
+                // Add to conversation history
+                conversationHistory.push({
+                    role: 'assistant',
+                    content: responseContent
+                });
+                
+                addMessage(responseContent, 'bot');
+                
+                // Re-enable input
+                userInput.disabled = false;
+                sendButton.disabled = false;
+                userInput.focus();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                typingIndicator.style.display = 'none';
+                
+                let errorMessage;
+                if (error.message === 'Failed to fetch') {
+                    // This is likely a CORS or HTTPS issue
+                    errorMessage = `Connection error: Unable to connect to the API at ${endpoint}. This may be due to:
+1. CORS policy restrictions
+2. Mixed content (HTTP/HTTPS) security
+3. The API server is not accessible
+
+Please check your API endpoint configuration and ensure it's accessible from this domain.`;
+                } else {
+                    errorMessage = `Sorry, there was an error connecting to the API: ${error.message}. Please check your API key and endpoint configuration.`;
+                }
+                
+                addMessage(errorMessage, 'bot', true);
+                
+                // Re-enable input
+                userInput.disabled = false;
+                sendButton.disabled = false;
+                userInput.focus();
+            });
+        }
+        
+        // Handle window resize events to adjust the chat container
+        window.addEventListener('resize', function() {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        });
+    </script>
+</body>
+</html>

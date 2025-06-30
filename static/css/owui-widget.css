@@ -1,0 +1,324 @@
+/**
+ * Open WebUI Embeddable Chat Widget Styles
+ * 
+ * Based on the official implementation: https://github.com/taylorwilsdon/open-webui-embeddable-widget
+ * Customized to match the Tibetan Buddhist Collections Explorer style
+ */
+
+/* Import site variables */
+:root {
+  --primary-color: #1a3e72; /* Deep blue from Website project */
+  --secondary-color: #2a5ea7; /* Medium blue */
+  --accent-color: #e74c3c; /* Red accent for highlights */
+  --light-gray: #f5f7fa;
+  --medium-gray: #e1e5eb;
+  --dark-gray: #7f8c8d;
+  --text-color: #2c3e50;
+  --line-height: 1.8;
+  --rkts-blue: #0c4da2; /* Primary blue color from etext-lab-preview */
+  --rkts-blue-light: #3373c4; /* Lighter shade for hover states */
+  --rkts-blue-dark: #083a7d; /* Darker shade for active states */
+}
+
+/* Chat container styles */
+.owui-chat-container {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa;
+  color: var(--text-color);
+  line-height: var(--line-height);
+  font-size: 1.1rem;
+}
+
+/* Chat header */
+.owui-chat-header {
+  padding: 12px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.owui-chat-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+.owui-chat-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Chat messages area */
+.owui-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Message bubbles */
+.owui-message {
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  line-height: var(--line-height);
+  word-wrap: break-word;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.owui-user-message {
+  align-self: flex-end;
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.owui-bot-message {
+  align-self: flex-start;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--medium-gray);
+}
+
+.owui-error-message {
+  align-self: flex-start;
+  background-color: #f8d7da;
+  color: var(--accent-color);
+  border-bottom-left-radius: 4px;
+  border: 1px solid #f5c6cb;
+}
+
+/* Typing indicator */
+.owui-typing-indicator {
+  display: none;
+  align-self: flex-start;
+  background-color: var(--light-gray);
+  color: var(--dark-gray);
+  padding: 8px 14px;
+  border-radius: 18px;
+  border-bottom-left-radius: 4px;
+  font-style: italic;
+  border: 1px solid var(--medium-gray);
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+/* Chat input area */
+.owui-chat-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid var(--medium-gray);
+  background-color: #fff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.owui-chat-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid var(--medium-gray);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  resize: none;
+  outline: none;
+  max-height: 120px;
+  overflow-y: auto;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.owui-chat-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(26, 62, 114, 0.25);
+}
+
+.owui-chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  transition: all 0.3s ease;
+  font-family: 'Noto Sans', Arial, sans-serif;
+}
+
+.owui-chat-button:hover {
+  transform: scale(1.05);
+  background-color: var(--rkts-blue-light);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.owui-chat-send {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.2s ease;
+}
+
+.owui-chat-send:hover {
+  background-color: var(--rkts-blue-light);
+}
+
+.owui-chat-send:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Markdown styling */
+.owui-markdown p {
+  margin: 0 0 1.3em 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: var(--line-height);
+}
+
+.owui-markdown p:last-child {
+  margin-bottom: 0;
+}
+
+.owui-markdown h1, .owui-markdown h2, .owui-markdown h3 {
+  font-family: 'Noto Sans', Arial, sans-serif;
+  margin-top: 1.8em;
+  margin-bottom: 1em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.owui-markdown h1 {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+}
+
+.owui-markdown h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.owui-markdown h3 {
+  font-size: 1.6rem;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--medium-gray);
+  padding-bottom: 8px;
+}
+
+.owui-markdown ul, .owui-markdown ol {
+  padding-left: 20px;
+  margin: 8px 0 1.3em 0;
+}
+
+.owui-markdown li {
+  margin-bottom: 1.3em;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+}
+
+.owui-markdown code {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background-color: var(--light-gray);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 90%;
+  color: var(--text-color);
+}
+
+.owui-markdown pre {
+  background-color: var(--light-gray);
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 15px 0;
+  border: 1px solid var(--medium-gray);
+}
+
+.owui-markdown pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 90%;
+  display: block;
+  white-space: pre;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.owui-markdown blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding: 10px 15px;
+  color: var(--dark-gray);
+  margin: 15px 0;
+  font-style: italic;
+  background-color: var(--light-gray);
+  border-radius: 0 6px 6px 0;
+}
+
+.owui-markdown a {
+  color: var(--rkts-blue);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.owui-markdown a:hover {
+  color: var(--rkts-blue-light);
+  text-decoration: underline;
+}
+
+.owui-markdown strong {
+  font-weight: 600;
+}
+
+.owui-markdown em {
+  font-style: italic;
+}
+
+.owui-markdown hr {
+  border: 0;
+  border-top: 1px solid #e9ecef;
+  margin: 16px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .owui-message {
+    max-width: 90%;
+  }
+}

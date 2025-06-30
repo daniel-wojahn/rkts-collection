@@ -22,9 +22,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const exportCsvBtn = document.getElementById('export-csv');
     const shareLinkBtn = document.getElementById('share-link');
     
-    if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportJSON);
-    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportCSV);
-    if (shareLinkBtn) shareLinkBtn.addEventListener('click', shareLink);
+    if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportCollectionsJSON);
+    if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportCollectionsCSV);
+    if (shareLinkBtn) shareLinkBtn.addEventListener('click', function() {
+        // Copy current URL to clipboard
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            alert('Link copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy link: ', err);
+            alert('Could not copy link. Please copy the URL from your browser address bar.');
+        });
+    });
     
     // Set up search functionality
     const searchInput = document.getElementById('collection-search');
@@ -349,72 +357,15 @@ function updateCharts() {
     updatePlaceChart();
 }
 
-// Update the category distribution chart
+// Update the category distribution chart using the generic function from utils.js
 function updateCategoryChart() {
-    const ctx = document.getElementById('category-chart');
-    
-    // Count collections by genre/category
-    const categoryCounts = {};
-    collections.forEach(collection => {
-        const genre = collection.genre || 'Unknown';
-        categoryCounts[genre] = (categoryCounts[genre] || 0) + 1;
-    });
-    
-    // Sort categories by count (descending)
-    const sortedCategories = Object.keys(categoryCounts).sort((a, b) => {
-        return categoryCounts[b] - categoryCounts[a];
-    });
-    
-    // Limit to top 5 categories if there are more
-    const topCategories = sortedCategories.length > 5 ? 
-        sortedCategories.slice(0, 5) : 
-        sortedCategories;
-    
-    // Prepare data for chart
-    const labels = topCategories;
-    const data = topCategories.map(category => categoryCounts[category]);
-    
-    // Generate colors
-    const colors = [
-        '#e41a1c', // Red
-        '#377eb8', // Blue
-        '#4daf4a', // Green
-        '#984ea3', // Purple
-        '#ff7f00'  // Orange
-    ];
-    
-    // Create or update chart
-    if (categoryChart) {
-        categoryChart.data.labels = labels;
-        categoryChart.data.datasets[0].data = data;
-        categoryChart.update();
-    } else {
-        categoryChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: 'Collections by Category',
-                    data: data,
-                    backgroundColor: colors,
-                    borderColor: colors.map(color => color.replace('0.8', '1')),
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        ticks: {
-                            precision: 0
-                        }
-                    }
-                }
-            }
-        });
-    }
+    // Use the generic chart function from utils.js
+    categoryChart = updateGenericCategoryChart(
+        collections, 
+        'category-chart', 
+        categoryChart, 
+        'Collections by Category'
+    );
 }
 
 // Update the place distribution chart with regional grouping
@@ -704,190 +655,26 @@ function createSearchIndex() {
 
 // Perform search with mkdocs-style preview dropdown
 function performSearch() {
-    const searchInput = document.getElementById('collection-search');
-    const searchTerm = searchInput ? searchInput.value.trim() : '';
-    const searchPreview = document.getElementById('search-preview');
-    const searchResultsContainer = document.getElementById('search-preview-results');
-    const searchResultsCount = document.getElementById('search-results-count');
-    
-    // Clear previous results
-    searchResultsContainer.innerHTML = '';
-    
-    // Hide preview if search term is empty
-    if (!searchTerm) {
-        searchPreview.style.display = 'none';
-        return;
-    }
-    
-    // Show loading indicator
-    searchResultsContainer.innerHTML = '<div class="p-3 text-center">Searching...</div>';
-    searchPreview.style.display = 'block';
-    
-    try {
-        let results = [];
-        
-        if (lunrIndex) {
-            // Perform the search using Lunr
-            results = lunrIndex.search(searchTerm);
-            
-            // If no results found with exact search, try wildcard search
-            if (results.length === 0 && searchTerm.length >= 2) {
-                results = lunrIndex.search(`${searchTerm}*`);
-            }
-            
-            // If still no results, try fuzzy search
-            if (results.length === 0 && searchTerm.length >= 3) {
-                results = lunrIndex.search(`${searchTerm}~1`);
-            }
-        } else {
-            // Fallback to basic search if Lunr index is not available
-            results = collections.map((collection, index) => {
-                const score = calculateBasicSearchScore(collection, searchTerm);
-                return score > 0 ? { ref: index.toString(), score } : null;
-            }).filter(result => result !== null);
+    // Use the generic search function from utils.js
+    performGenericSearch({
+        searchInputId: 'collection-search',
+        searchPreviewId: 'search-preview',
+        searchResultsContainerId: 'search-preview-results',
+        searchResultsCountId: 'search-results-count',
+        collections: collections,
+        lunrIndex: lunrIndex,
+        showDetailsCallback: showCollectionDetails,
+        // Update filteredCollections when search is performed
+        updateFilteredCollections: true,
+        // Reorganize collections by category after search
+        onResultsUpdated: function(results) {
+            organizeCollectionsByCategory();
+            updateCharts();
         }
-        
-        // Update search results count
-        searchResultsCount.textContent = results.length;
-        
-        // Clear results container
-        searchResultsContainer.innerHTML = '';
-        
-        if (results.length === 0) {
-            searchResultsContainer.innerHTML = '<div class="p-3 text-center">No results found</div>';
-            return;
-        }
-        
-        // Display results (limit to top 10)
-        results.slice(0, 10).forEach(result => {
-            const collection = collections[parseInt(result.ref)];
-            if (!collection) return;
-            
-            // Create result item
-            const resultItem = document.createElement('div');
-            resultItem.className = 'search-result-item';
-            resultItem.dataset.id = result.ref;
-            
-            // Create title with highlighted search term
-            const title = highlightSearchTerm(collection.title || 'Untitled', searchTerm);
-            const sigla = collection.sigla ? `<span class="search-result-sigla">${collection.sigla}</span>` : '';
-            
-            // Create category badge
-            const category = collection.genre ? 
-                `<span class="search-result-category">${collection.genre}</span>` : '';
-            
-            // Create snippet from description/abstract
-            let snippet = '';
-            if (collection.abstract || collection.description) {
-                const text = collection.abstract || collection.description;
-                snippet = `<div class="search-result-snippet">${createSnippet(text, searchTerm)}</div>`;
-            }
-            
-            // Assemble result item content
-            resultItem.innerHTML = `
-                <div class="search-result-title">${sigla}${title}</div>
-                ${category}
-                ${snippet}
-            `;
-            
-            // Add click handler to show collection details
-            resultItem.addEventListener('click', () => {
-                // Show collection details
-                showCollectionDetails(collection);
-                // Hide the search preview
-                searchPreview.style.display = 'none';
-                // Clear the search input
-                searchInput.value = '';
-            });
-            
-            searchResultsContainer.appendChild(resultItem);
-        });
-    } catch (e) {
-        console.error('Search error:', e);
-        searchResultsContainer.innerHTML = '<div class="p-3 text-center">Search error occurred</div>';
-    }
+    });
 }
 
-// Helper function to highlight search terms in text
-function highlightSearchTerm(text, searchTerm) {
-    if (!text || !searchTerm) return text;
-    
-    const regex = new RegExp(`(${escapeRegExp(searchTerm)})`, 'gi');
-    return text.replace(regex, '<span class="search-result-highlight">$1</span>');
-}
-
-// Helper function to create a snippet with highlighted search term
-function createSnippet(text, searchTerm, maxLength = 100) {
-    if (!text || !searchTerm) return text;
-    
-    // Find position of search term in text
-    const position = text.toLowerCase().indexOf(searchTerm.toLowerCase());
-    
-    if (position === -1) {
-        // If term not found, return beginning of text
-        return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-    }
-    
-    // Calculate start and end positions for snippet
-    let start = Math.max(0, position - 40);
-    let end = Math.min(text.length, position + searchTerm.length + 40);
-    
-    // Adjust if snippet is too long
-    if (end - start > maxLength) {
-        end = start + maxLength;
-    }
-    
-    // Add ellipsis if needed
-    const prefix = start > 0 ? '...' : '';
-    const suffix = end < text.length ? '...' : '';
-    
-    // Extract snippet
-    let snippet = text.substring(start, end);
-    
-    // Highlight search term
-    snippet = highlightSearchTerm(snippet, searchTerm);
-    
-    return prefix + snippet + suffix;
-}
-
-// Helper function to escape special characters in regex
-function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-// Calculate basic search score for fallback search
-function calculateBasicSearchScore(collection, searchTerm) {
-    let score = 0;
-    const term = searchTerm.toLowerCase();
-    
-    // Check sigla (highest weight)
-    if (collection.sigla && collection.sigla.toLowerCase().includes(term)) {
-        score += 10;
-    }
-    
-    // Check title (high weight)
-    if (collection.title && collection.title.toLowerCase().includes(term)) {
-        score += 5;
-    }
-    
-    // Check Tibetan title
-    if (collection.title_tibetan && collection.title_tibetan.toLowerCase().includes(term)) {
-        score += 3;
-    }
-    
-    // Check place of production
-    if (collection.place_of_production && collection.place_of_production.toLowerCase().includes(term)) {
-        score += 2;
-    }
-    
-    // Check description/abstract
-    if ((collection.abstract && collection.abstract.toLowerCase().includes(term)) ||
-        (collection.description && collection.description.toLowerCase().includes(term))) {
-        score += 3;
-    }
-    
-    return score;
-}
+// calculateBasicSearchScore function is now imported from utils.js
 
 // Update category counts in the UI
 function updateCategoryCounts(kanjurCount, tanjurCount, tantraCount, otherCount) {
@@ -903,25 +690,16 @@ function updateCategoryCounts(kanjurCount, tanjurCount, tantraCount, otherCount)
     if (otherBadge) otherBadge.textContent = otherCount;
 }
 
-// Debounce function to limit how often a function is called
-function debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-        const context = this;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(context, args), wait);
-    };
-}
+// Debounce function is now in utils.js
 
 // Export filtered collections as JSON
-function exportJSON() {
-    const dataStr = JSON.stringify(filteredCollections, null, 2);
-    const blob = new Blob([dataStr], {type: 'application/json'});
-    saveAs(blob, 'tibetan_collections.json');
+function exportCollectionsJSON() {
+    // Use the utility function from utils.js
+    exportJSON(filteredCollections, 'tibetan_collections.json');
 }
 
 // Export filtered collections as CSV
-function exportCSV() {
+function exportCollectionsCSV() {
     // Define CSV headers
     const headers = [
         'sigla',
@@ -935,84 +713,10 @@ function exportCSV() {
         'bdrc_reference'
     ];
     
-    // Create CSV content
-    let csvContent = headers.join(',') + '\n';
-    
-    // Add data rows
-    filteredCollections.forEach(collection => {
-        const row = headers.map(header => {
-            let value = collection[header] || '';
-            // Handle arrays
-            if (Array.isArray(value)) {
-                value = value.join('; ');
-            }
-            // Escape quotes and wrap in quotes if contains comma
-            value = String(value).replace(/"/g, '""');
-            if (value.includes(',')) {
-                value = `"${value}"`;
-            }
-            return value;
-        });
-        csvContent += row.join(',') + '\n';
-    });
-    
-    // Create and download blob
-    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8'});
-    saveAs(blob, 'tibetan_collections.csv');
+    // Use the utility function from utils.js
+    exportCSV(filteredCollections, headers, 'tibetan_collections.csv');
 }
 
-// Share current view as a link
-function shareLink() {
-    // Get the current URL
-    const shareUrl = window.location.href;
-    
-    // Copy to clipboard
-    navigator.clipboard.writeText(shareUrl).then(() => {
-        alert('Link copied to clipboard!');
-    }).catch(err => {
-        console.error('Could not copy link: ', err);
-        alert('Could not copy link. Please copy the URL from your browser address bar.');
-    });
-}
+// End of utility functions
 
-// Download XML file for a collection
-function downloadCollectionXML(fileName) {
-    if (!fileName) {
-        console.error('No file name provided for XML download');
-        alert('Error: Could not identify the XML file to download.');
-        return;
-    }
-    
-    // Get the base URL (removing any path components)
-    const baseUrl = window.location.protocol + '//' + window.location.host;
-    
-    // Encode the filename to handle spaces and special characters
-    const encodedFileName = encodeURIComponent(fileName);
-    
-    // Construct the XML file path to use the symbolic link in the static directory
-    const xmlFilePath = `${baseUrl}/static/xml_files/${encodedFileName}`;
-    
-    console.log(`Attempting to download XML from: ${xmlFilePath}`);
-    
-    // Fetch the XML file
-    fetch(xmlFilePath)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(xmlContent => {
-            // Create a blob with the XML content
-            const blob = new Blob([xmlContent], {type: 'application/xml'});
-            
-            // Use FileSaver.js to save the file
-            saveAs(blob, fileName);
-            
-            console.log(`Successfully downloaded XML file: ${fileName}`);
-        })
-        .catch(error => {
-            console.error('Error downloading XML file:', error);
-            alert(`Error downloading XML file: ${error.message}\nPlease check the browser console for more details.`);
-        });
-}
+// downloadCollectionXML function is now imported from utils.js

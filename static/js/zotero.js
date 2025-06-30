@@ -147,19 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /**
- * Debounce function to limit how often a function is called
+ * Debounce function is now imported from utils.js
  */
-function debounce(func, wait) {
-    let timeout;
-    return function() {
-        const context = this;
-        const args = arguments;
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            func.apply(context, args);
-        }, wait);
-    };
-}
 
 /**
  * Set the active view and update the UI
@@ -846,12 +835,5 @@ function formatItemType(itemType) {
 }
 
 /**
- * Truncate text to a specified length and add ellipsis
+ * Truncate text function is now imported from utils.js
  */
-function truncateText(text, maxLength) {
-    if (!text || text.length <= maxLength) {
-        return text;
-    }
-    
-    return text.substring(0, maxLength) + '...';
-}
