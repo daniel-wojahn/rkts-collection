@@ -49,7 +49,7 @@
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
-        const endpoint = urlParams.get('endpoint') || 'https://130.61.212.178:3000/api/chat/completions'; 
+        const endpoint = urlParams.get('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions'; 
         const model = urlParams.get('model') || 'rkts-research-tool';
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
