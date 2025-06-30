@@ -29,10 +29,6 @@
             Assistant is typing...
         </div>
         
-        <div class="owui-timeout-indicator" id="timeout-indicator" style="display: none;">
-            This is taking longer than expected. The response may take up to 2 minutes to generate...
-        </div>
-        
         <div class="owui-chat-input-container">
             <textarea 
                 class="owui-chat-input" 
@@ -53,32 +49,30 @@
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
-        const endpoint = urlParams.get('endpoint') || '/.netlify/functions/api-proxy'; // Using Netlify serverless proxy to avoid mixed content errors
+        const endpoint = urlParams.get('endpoint') || 'https://130.61.212.178:3000/api/chat/completions'; 
         const model = urlParams.get('model') || 'rkts-research-tool';
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
         const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
         const primaryColor = urlParams.get('primary_color') || '#007bff';
         
-        console.log('API Key from URL:', apiKey ? 'Present (hidden for security)' : 'Not present');
-        
         // Set dynamic styles
         document.documentElement.style.setProperty('--primary-color', primaryColor);
         document.querySelector('.owui-chat-title').textContent = title;
-        
-        // Initialize conversation history
-        const conversationHistory = [];
         
         // Initialize DOM elements - must be defined before any functions that use them
         let messagesContainer;
         let userInput;
         let sendButton;
         let typingIndicator;
-        let timeoutIndicator;
         
-        // Timeout handling
-        let requestTimeoutId = null;
-        const TIMEOUT_WARNING_DELAY = 10000; // Show timeout warning after 10 seconds
+        // Conversation history
+        let conversationHistory = [
+            {
+                role: 'system',
+                content: systemPrompt
+            }
+        ];
         
         // Function to initialize DOM elements
         function initializeDOMElements() {
@@ -86,14 +80,10 @@
             userInput = document.getElementById('user-input');
             sendButton = document.getElementById('send-button');
             typingIndicator = document.getElementById('typing-indicator');
-            timeoutIndicator = document.getElementById('timeout-indicator');
             
-            // Hide indicators initially
+            // Hide typing indicator initially
             if (typingIndicator) {
                 typingIndicator.style.display = 'none';
-            }
-            if (timeoutIndicator) {
-                timeoutIndicator.style.display = 'none';
             }
         }
         
@@ -109,32 +99,54 @@
             }
         });
         
-        // Function to fetch API key from Netlify function if not provided in URL
+        // Fetch API key if not provided via URL param
         function fetchApiKey() {
-            fetch('/.netlify/functions/get-api-key')
-                .then(response => response.json())
+            // Determine if we're in development or production
+            const isLocalhost = window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1';
+            
+            // Use relative path for production, full URL for development
+            const apiKeyEndpoint = isLocalhost 
+                ? 'http://localhost:8888/.netlify/functions/get-api-key' 
+                : '/.netlify/functions/get-api-key';
+            
+            fetch(apiKeyEndpoint)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch API key');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     if (data && data.apiKey) {
                         apiKey = data.apiKey;
                         initializeChat();
                     } else {
-                        addMessage('Error: Could not retrieve API key.', 'bot', true);
+                        addMessage('Error: No API key returned from server. Please contact the administrator.', 'bot', true);
                     }
                 })
                 .catch(error => {
                     console.error('Error fetching API key:', error);
-                    addMessage('Error: Could not retrieve API key. Please check the server configuration.', 'bot', true);
+                    addMessage(`Error fetching API key: ${error.message}. Please contact the administrator.`, 'bot', true);
                 });
         }
         
-        // Initialize chat with greeting
+        // Initialize chat function
         function initializeChat() {
+            // Add greeting message
             if (greeting) {
                 addMessage(greeting, 'bot');
+                conversationHistory.push({
+                    role: 'assistant',
+                    content: greeting
+                });
             }
             
-            // Auto-resize textarea as user types
+            // Focus input
             if (userInput) {
+                userInput.focus();
+                
+                // Auto-resize input
                 userInput.addEventListener('input', function() {
                     this.style.height = 'auto';
                     this.style.height = (this.scrollHeight) + 'px';
@@ -142,8 +154,11 @@
             }
         }
         
-        // Handle keydown events (Enter to send)
+        // Handle Enter key
         function handleKeyDown(event) {
+            // Make sure DOM elements are initialized
+            if (!userInput || !sendButton) return;
+            
             if (event.key === 'Enter' && !event.shiftKey) {
                 event.preventDefault();
                 sendMessage();
@@ -151,70 +166,107 @@
         }
         
         // Add message to chat
-        function addMessage(text, sender, isError = false) {
-            if (!messagesContainer) return;
-            
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `owui-chat-message ${sender === 'user' ? 'owui-user-message' : 'owui-bot-message'}`;
-            
-            if (isError) {
-                messageDiv.classList.add('owui-error-message');
+        function addMessage(content, sender, isError = false) {
+            // Make sure messagesContainer is initialized
+            if (!messagesContainer) {
+                // If DOM isn't ready yet, wait and try again
+                setTimeout(() => {
+                    initializeDOMElements();
+                    if (messagesContainer) {
+                        addMessage(content, sender, isError);
+                    } else {
+                        console.error('Messages container not found');
+                    }
+                }, 100);
+                return;
             }
             
-            // Process markdown in bot messages
-            if (sender === 'bot') {
-                messageDiv.innerHTML = markdownToHtml(text);
+            const messageDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                messageDiv.className = 'owui-message owui-user-message';
+                messageDiv.textContent = content;
             } else {
-                messageDiv.textContent = text;
+                messageDiv.className = isError ? 
+                    'owui-message owui-error-message' : 
+                    'owui-message owui-bot-message owui-markdown';
+                
+                // Process markdown for bot messages
+                if (!isError) {
+                    messageDiv.innerHTML = renderMarkdown(content);
+                } else {
+                    messageDiv.textContent = content;
+                }
             }
             
             messagesContainer.appendChild(messageDiv);
-            
-            // Scroll to bottom
             messagesContainer.scrollTop = messagesContainer.scrollHeight;
         }
         
-        // Convert markdown to HTML
-        function markdownToHtml(text) {
-            if (!text) return '';
-            
-            // Code blocks with language
-            text = text.replace(/```(\w+)?\n([\s\S]*?)\n```/g, function(match, language, code) {
-                return `<pre class="owui-code-block ${language ? 'language-' + language : ''}"><code>${escapeHtml(code)}</code></pre>`;
+        // Enhanced markdown renderer
+        function renderMarkdown(text) {
+            // Code blocks with language support
+            text = text.replace(/```([a-z]*)\n([\s\S]*?)\n```/g, function(match, lang, code) {
+                return `<pre><code class="language-${lang}">${code.trim()}</code></pre>`;
             });
             
             // Inline code
             text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-            
-            // Bold
-            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-            
-            // Italic
-            text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
             
             // Headers
             text = text.replace(/^### (.*$)/gm, '<h3>$1</h3>');
             text = text.replace(/^## (.*$)/gm, '<h2>$1</h2>');
             text = text.replace(/^# (.*$)/gm, '<h1>$1</h1>');
             
-            // Lists
-            text = text.replace(/^\s*[\-\*] (.*$)/gm, '<li>$1</li>');
-            text = text.replace(/(<li>.*<\/li>)/gms, '<ul>$1</ul>');
+            // Bold
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
             
-            // Numbered lists
-            text = text.replace(/^\s*\d+\. (.*$)/gm, '<li>$1</li>');
-            text = text.replace(/(<li>.*<\/li>)/gms, function(match) {
-                if (match.includes('</ul>')) return match;
-                return '<ol>' + match + '</ol>';
+            // Italic
+            text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+            text = text.replace(/_([^_]+)_/g, '<em>$1</em>');
+            
+            // Lists
+            // Unordered lists
+            text = text.replace(/^\s*[\*\-]\s+(.+)$/gm, '<li>$1</li>');
+            text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+            
+            // Ordered lists
+            text = text.replace(/^\s*\d+\.\s+(.+)$/gm, '<li>$1</li>');
+            text = text.replace(/(<li>.*<\/li>)/gs, function(match) {
+                if (match.indexOf('<ul>') === -1) {
+                    return '<ol>' + match + '</ol>';
+                }
+                return match;
             });
             
             // Links
             text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
             
-            // Paragraphs
-            text = text.replace(/\n\s*\n/g, '</p><p>');
-            text = '<p>' + text + '</p>';
-            text = text.replace(/<p><\/p>/g, '');
+            // Blockquotes
+            text = text.replace(/^>\s+(.+)$/gm, '<blockquote>$1</blockquote>');
+            
+            // Horizontal rule
+            text = text.replace(/^---+$/gm, '<hr>');
+            
+            // Paragraphs (must come after lists and blockquotes)
+            let paragraphs = [];
+            const blocks = text.split('\n\n');
+            
+            for (let block of blocks) {
+                if (!block.trim()) continue;
+                if (block.indexOf('<h') === 0 || 
+                    block.indexOf('<ul') === 0 || 
+                    block.indexOf('<ol') === 0 || 
+                    block.indexOf('<blockquote') === 0 || 
+                    block.indexOf('<pre') === 0 || 
+                    block.indexOf('<hr') === 0) {
+                    paragraphs.push(block);
+                } else {
+                    paragraphs.push(`<p>${block}</p>`);
+                }
+            }
+            
+            text = paragraphs.join('');
             
             // Line breaks (only within paragraphs)
             text = text.replace(/<p>([\s\S]*?)<\/p>/g, function(match, content) {
@@ -224,357 +276,90 @@
             return text;
         }
         
-        // Escape HTML to prevent XSS
-        function escapeHtml(text) {
-                
-                // Hide typing indicator initially
-                if (typingIndicator) {
-                    typingIndicator.style.display = 'none';
+        // Helper function to make API requests
+        function makeApiRequest(apiEndpoint) {
+            // Send request to API
+            fetch(apiEndpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({
+                    model: model,
+                    messages: conversationHistory
+                }),
+                // Add these options to handle HTTPS connections
+                mode: 'cors',
+                cache: 'no-cache',
+                credentials: 'same-origin'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
                 }
-            }
-            
-            // Initialize DOM elements when the document is loaded
-            document.addEventListener('DOMContentLoaded', function() {
-                initializeDOMElements();
+                return response.json();
+            })
+            .then(data => {
+                typingIndicator.style.display = 'none';
                 
-                // If API key is provided via URL, initialize immediately
-                if (apiKey) {
-                    initializeChat();
-                } else {
-                    fetchApiKey();
-                }
-            });
-            
-            // Function to fetch API key from Netlify function if not provided in URL
-            function fetchApiKey() {
-                fetch('/.netlify/functions/get-api-key')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data && data.apiKey) {
-                            apiKey = data.apiKey;
-                            initializeChat();
-                        } else {
-                            addMessage('Error: Could not retrieve API key.', 'bot', true);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching API key:', error);
-                        addMessage('Error: Could not retrieve API key. Please check the server configuration.', 'bot', true);
-                    });
-            }
-            
-            // Initialize chat with greeting
-            function initializeChat() {
-                if (greeting) {
-                    addMessage(greeting, 'bot');
-                }
-                
-                // Auto-resize textarea as user types
-                if (userInput) {
-                    userInput.addEventListener('input', function() {
-                        this.style.height = 'auto';
-                        this.style.height = (this.scrollHeight) + 'px';
-                    });
-                }
-            }
-            
-            // Handle keydown events (Enter to send)
-            function handleKeyDown(event) {
-                if (event.key === 'Enter' && !event.shiftKey) {
-                    event.preventDefault();
-                    sendMessage();
-                }
-            }
-            
-            // Add message to chat
-            function addMessage(text, sender, isError = false) {
-                if (!messagesContainer) return;
-                
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `owui-chat-message ${sender === 'user' ? 'owui-user-message' : 'owui-bot-message'}`;
-                
-                if (isError) {
-                    messageDiv.classList.add('owui-error-message');
-                }
-                
-                // Process markdown in bot messages
-                if (sender === 'bot') {
-                    messageDiv.innerHTML = markdownToHtml(text);
-                } else {
-                    messageDiv.textContent = text;
-                }
-                
-                messagesContainer.appendChild(messageDiv);
-                
-                // Scroll to bottom
-                messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }
-            
-            // Convert markdown to HTML
-            function markdownToHtml(text) {
-                if (!text) return '';
-                
-                // Code blocks with language
-                text = text.replace(/```(\w+)?\n([\s\S]*?)\n```/g, function(match, language, code) {
-                    return `<pre class="owui-code-block ${language ? 'language-' + language : ''}"><code>${escapeHtml(code)}</code></pre>`;
-                });
-                
-                // Inline code
-                text = text.replace(/`([^`]+)`/g, '<code>$1</code>');
-                
-                // Bold
-                text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-                
-                // Italic
-                text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-                
-                // Headers
-                text = text.replace(/^### (.*$)/gm, '<h3>$1</h3>');
-                text = text.replace(/^## (.*$)/gm, '<h2>$1</h2>');
-                text = text.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-                
-                // Lists
-                text = text.replace(/^\s*[\-\*] (.*$)/gm, '<li>$1</li>');
-                text = text.replace(/(<li>.*<\/li>)/gms, '<ul>$1</ul>');
-                
-                // Numbered lists
-                text = text.replace(/^\s*\d+\. (.*$)/gm, '<li>$1</li>');
-                text = text.replace(/(<li>.*<\/li>)/gms, function(match) {
-                    if (match.includes('</ul>')) return match;
-                    return '<ol>' + match + '</ol>';
-                });
-                
-                // Links
-                text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
-                
-                // Paragraphs
-                text = text.replace(/\n\s*\n/g, '</p><p>');
-                text = '<p>' + text + '</p>';
-                text = text.replace(/<p><\/p>/g, '');
-                
-                // Line breaks (only within paragraphs)
-                text = text.replace(/<p>([\s\S]*?)<\/p>/g, function(match, content) {
-                    return '<p>' + content.replace(/\n/g, '<br>') + '</p>';
-                });
-                
-                return text;
-            }
-            
-            // Escape HTML to prevent XSS
-            function escapeHtml(text) {
-                const div = document.createElement('div');
-                div.textContent = text;
-                return div.innerHTML;
-            }
-            
-            // Function to make API requests
-            function makeApiRequest(endpoint, apiKey, message) {
-                console.log(`Making API request to: ${endpoint}`);
-                console.log(`API Key present: ${apiKey ? 'Yes' : 'No'}`);
-                
-                // Prepare the request payload
-                const payload = {
-                    model: "rkts-research-tool",
-                    messages: [
-                        { role: "system", content: systemPrompt },
-                        ...conversationHistory
-                    ],
-                    temperature: 0.7,
-                    max_tokens: 800
-                };
-                
-                // First try direct request to the endpoint
-                // If it's HTTP and we're on HTTPS, it will fail with mixed content error
-                // In that case, we'll use the proxy
-                
-                // Check if the endpoint is already HTTPS
-                const isHttps = endpoint.startsWith('https://');
-                
-                // If it's HTTPS, try direct request first
-                if (isHttps) {
-                    console.log('Endpoint is HTTPS, trying direct request...');
-                    return fetch(endpoint, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${apiKey}`
-                        },
-                        body: JSON.stringify(payload)
-                    })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`API request failed with status ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .catch(error => {
-                        console.error('Direct HTTPS request failed:', error);
-                        console.log('Falling back to proxy...');
-                        
-                        // Fall back to proxy
-                        return useProxy(endpoint, apiKey, payload);
-                    });
-                } else {
-                    // For HTTP endpoints, use proxy directly
-                    console.log('Endpoint is HTTP, using proxy...');
-                    return useProxy(endpoint, apiKey, payload);
-                }
-            }
-            
-            // Helper function to use the proxy
-            function useProxy(originalEndpoint, apiKey, payload) {
-                // Use Netlify function as proxy
-                const proxyUrl = '/.netlify/functions/api-proxy';
-                
-                console.log(`Using proxy at: ${proxyUrl}`);
-                
-                return fetch(proxyUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${apiKey}`
-                    },
-                    body: JSON.stringify(payload)
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Proxy request failed with status ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .catch(error => {
-                    console.error('Proxy request failed:', error);
-                    throw new Error(`Failed to get response: ${error.message}`);
-                });
-            }
-            
-            // Send message function
-            function sendMessage() {
-                // Make sure DOM elements are initialized
-                if (!userInput || !sendButton || !typingIndicator || !messagesContainer) {
-                    console.error('DOM elements not initialized');
-                    return;
-                }
-                
-                const message = userInput.value.trim();
-                
-                if (!message) return;
-                
-                // Add user message to chat
-                addMessage(message, 'user');
+                // Extract the response content
+                const responseContent = data.choices && data.choices[0] && data.choices[0].message 
+                    ? data.choices[0].message.content 
+                    : 'Sorry, I couldn\'t process your request.';
                 
                 // Add to conversation history
                 conversationHistory.push({
-                    role: 'user',
-                    content: message
+                    role: 'assistant',
+                    content: responseContent
                 });
                 
-                // Clear input
-                userInput.value = '';
-                userInput.style.height = 'auto';
+                addMessage(responseContent, 'bot');
                 
-                // Disable input while waiting for response
-                userInput.disabled = true;
-                sendButton.disabled = true;
-                
-                // Show typing indicator
-                typingIndicator.style.display = 'block';
-                
-                // Set timeout for long-running requests
-                if (requestTimeoutId) clearTimeout(requestTimeoutId);
-                requestTimeoutId = setTimeout(() => {
-                    timeoutIndicator.style.display = 'block';
-                }, TIMEOUT_WARNING_DELAY);
-                
-                // Check if API key is available
-                if (!apiKey) {
-                    console.log('No API key available, attempting to fetch one');
-                    fetch('/.netlify/functions/get-api-key')
-                        .then(response => response.json())
-                        .then(data => {
-                            if (data && data.apiKey) {
-                                console.log('Successfully retrieved API key from server');
-                                apiKey = data.apiKey;
-                                // Now that we have the API key, continue with the request
-                                processApiRequest(message);
-                            } else {
-                                handleApiError('Could not retrieve API key from server');
-                            }
-                        })
-                        .catch(error => {
-                            handleApiError(`Failed to fetch API key: ${error.message}`);
-                        });
-                } else {
-                    // We already have an API key, proceed with the request
-                    processApiRequest(message);
-                }
-            }
-            
-            // Helper function to process API request after ensuring we have an API key
-            function processApiRequest(message) {
-                
-                // Use the API proxy endpoint which handles HTTP/HTTPS issues for us
-                makeApiRequest(endpoint, apiKey, message)
-                .then(response => {
-                    // Clear timeout and hide indicators
-                    if (requestTimeoutId) clearTimeout(requestTimeoutId);
-                    typingIndicator.style.display = 'none';
-                    timeoutIndicator.style.display = 'none';
-                    
-                    // Extract the response content
-                    const responseContent = response.choices && response.choices[0] && response.choices[0].message 
-                        ? response.choices[0].message.content 
-                        : 'Sorry, I couldn\'t process your request.';
-                    
-                    // Add to conversation history
-                    conversationHistory.push({
-                        role: 'assistant',
-                        content: responseContent
-                    });
-                    
-                    addMessage(responseContent, 'bot');
-                    
-                    // Re-enable input
-                    userInput.disabled = false;
-                    sendButton.disabled = false;
-                    userInput.focus();
-                })
-                .catch(error => {
-                    handleApiError(error.message);
-                });
-            }
-            
-            // Helper function to handle API errors
-            function handleApiError(error) {
-                console.error('API Error:', error);
-                
-                // Clear timeout and hide indicators
-                if (requestTimeoutId) clearTimeout(requestTimeoutId);
-                typingIndicator.style.display = 'none';
-                timeoutIndicator.style.display = 'none';
+                // Re-enable input
                 userInput.disabled = false;
                 sendButton.disabled = false;
+                userInput.focus();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                typingIndicator.style.display = 'none';
                 
                 let errorMessage;
-                if (typeof error === 'string' && (error.includes('Failed to fetch') || error === 'Failed to fetch')) {
-                    // Connection issues with API proxy or target API
-                    errorMessage = `Connection error: Unable to connect to the API. This may be due to:
-1. The API server is not accessible or offline
-2. Network connectivity issues
-3. The API proxy function is not properly deployed
+                if (error.message === 'Failed to fetch') {
+                    // Check if we're on HTTPS but trying to access HTTP endpoint
+                    const isHttpsPage = window.location.protocol === 'https:';
+                    const isHttpEndpoint = apiEndpoint.startsWith('http:');
+                    
+                    if (isHttpsPage && isHttpEndpoint) {
+                        // Mixed content error - HTTPS page trying to access HTTP API
+                        errorMessage = `Mixed Content Error: This secure HTTPS page cannot connect to the insecure HTTP API at ${apiEndpoint}.
 
-Please check that the API server is running and accessible.`;
-                } else if (error.includes('401')) {
-                    errorMessage = `Authentication error (401): The API key may be invalid or missing. Please check your API key configuration.`;
-                } else if (error.includes('502') || error.includes('timeout') || error.includes('Proxy request failed')) {
-                    errorMessage = `Timeout error: The API request took too long to complete. The server may be:
-1. Experiencing high load
-2. Processing a complex query
-3. Having connectivity issues
+Possible solutions:
+1. Update the API server to support HTTPS
+2. Use a CORS proxy service
+3. Contact the administrator to resolve this issue
 
-Please try again with a simpler query or try later.`;
+Technical details: Browsers block mixed content for security reasons.`;
+                    } else {
+                        // Other connection issues
+                        errorMessage = `Connection error: Unable to connect to the API at ${apiEndpoint}. This may be due to:
+1. CORS policy restrictions
+2. The API server is not accessible or offline
+3. Network connectivity issues
+
+Please check your API endpoint configuration and ensure it's accessible from this domain.`;
+                    }
+                } else if (error.message.includes('SSL')) {
+                    // SSL certificate issues
+                    errorMessage = `SSL Error: There was a problem with the SSL certificate at ${apiEndpoint}.
+
+Possible solutions:
+1. Ensure the API server has a valid SSL certificate
+2. Try using HTTP instead if in a development environment
+3. Contact the administrator to resolve certificate issues`;
                 } else {
-                    errorMessage = `Sorry, there was an error connecting to the API: ${error}. Please check your API key and endpoint configuration.`;
+                    errorMessage = `Sorry, there was an error connecting to the API: ${error.message}. Please check your API key and endpoint configuration.`;
                 }
                 
                 addMessage(errorMessage, 'bot', true);
@@ -583,7 +368,66 @@ Please try again with a simpler query or try later.`;
                 userInput.disabled = false;
                 sendButton.disabled = false;
                 userInput.focus();
+            });
+        }
+        
+        // Send message function
+        function sendMessage() {
+            // Make sure DOM elements are initialized
+            if (!userInput || !sendButton || !typingIndicator || !messagesContainer) {
+                console.error('DOM elements not initialized');
+                return;
             }
+            
+            const message = userInput.value.trim();
+            
+            if (!message) return;
+            
+            // Add user message to chat
+            addMessage(message, 'user');
+            
+            // Add to conversation history
+            conversationHistory.push({
+                role: 'user',
+                content: message
+            });
+            
+            // Clear input
+            userInput.value = '';
+            userInput.style.height = 'auto';
+            
+            // Disable input while waiting for response
+            userInput.disabled = true;
+            sendButton.disabled = true;
+            
+            // Show typing indicator
+            typingIndicator.style.display = 'block';
+            
+            // Check if API key is available
+            if (!apiKey) {
+                typingIndicator.style.display = 'none';
+                userInput.disabled = false;
+                sendButton.disabled = false;
+                addMessage('Error: API key is missing. Please provide an API key via URL parameter.', 'bot', true);
+                return;
+            }
+            
+            // Check for mixed content issues (HTTPS page trying to access HTTP API)
+            const isHttpsPage = window.location.protocol === 'https:';
+            const isHttpEndpoint = endpoint.startsWith('http:');
+            
+            if (isHttpsPage && isHttpEndpoint) {
+                // Try to convert the endpoint to HTTPS
+                const httpsEndpoint = endpoint.replace('http:', 'https:');
+                console.log(`Detected mixed content issue. Attempting to use HTTPS endpoint: ${httpsEndpoint}`);
+                
+                // Make the API request with HTTPS endpoint
+                makeApiRequest(httpsEndpoint);
+            } else {
+                // Use the original endpoint
+                makeApiRequest(endpoint);
+            }
+        }
         
         // Handle window resize events to adjust the chat container
         window.addEventListener('resize', function() {
