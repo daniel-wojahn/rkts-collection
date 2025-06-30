@@ -50,7 +50,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
         const endpoint = urlParams.get('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions'; 
-        const model = urlParams.get('model') || 'rkts-research-tool';
+        const model = urlParams.get('model') || 'rkts-research-tool'; 
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
         const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
@@ -278,25 +278,44 @@
         
         // Helper function to make API requests
         function makeApiRequest(apiEndpoint) {
+            // Log the request for debugging
+            console.log('Sending request to:', apiEndpoint);
+            console.log('Request payload:', JSON.stringify({
+                model: model,
+                messages: conversationHistory
+            }, null, 2));
+            
             // Send request to API
             fetch(apiEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify({
                     model: model,
-                    messages: conversationHistory
+                    messages: conversationHistory,
+                    stream: false
                 }),
                 // Add these options to handle HTTPS connections
                 mode: 'cors',
                 cache: 'no-cache',
                 credentials: 'same-origin'
             })
-            .then(response => {
+            .then(async response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    // Try to get the error message from the response if possible
+                    let errorDetail = '';
+                    try {
+                        const errorData = await response.json();
+                        errorDetail = errorData.error || JSON.stringify(errorData);
+                    } catch (e) {
+                        // If we can't parse the response as JSON, just use the status text
+                        errorDetail = response.statusText;
+                    }
+                    
+                    throw new Error(`HTTP error! Status: ${response.status}, Details: ${errorDetail}`);
                 }
                 return response.json();
             })
@@ -358,6 +377,16 @@ Possible solutions:
 1. Ensure the API server has a valid SSL certificate
 2. Try using HTTP instead if in a development environment
 3. Contact the administrator to resolve certificate issues`;
+                } else if (error.message.includes('400')) {
+                    // Bad Request errors - likely API format issues
+                    errorMessage = `Bad Request Error (400): The API rejected our request.
+
+Possible causes:
+1. Incorrect API key format or invalid API key
+2. The API expects a different request format
+3. The model name "${model}" may not be available on this server
+
+Technical details: ${error.message}`;
                 } else {
                     errorMessage = `Sorry, there was an error connecting to the API: ${error.message}. Please check your API key and endpoint configuration.`;
                 }
