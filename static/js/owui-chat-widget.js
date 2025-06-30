@@ -12,7 +12,7 @@ class OpenWebUIChatWidget {
     this.config = {
       apiKey: this.getUrlParam('api_key') || '', // Will be fetched from serverless function if not provided
       endpoint: this.getUrlParam('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions', // Using HTTPS for secure connections
-      model: this.getUrlParam('model') || '',
+      model: this.getUrlParam('model') || 'rkts-research-tool',
       systemPrompt: this.getUrlParam('system_prompt') || '',
       position: this.getUrlParam('position') || 'bottom-right',
       primaryColor: this.getUrlParam('primary_color') || '#007bff',

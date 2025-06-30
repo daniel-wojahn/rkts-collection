@@ -50,7 +50,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
         const endpoint = urlParams.get('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions'; 
-        const model = urlParams.get('model') || ''; 
+        const model = urlParams.get('model') || 'rkts-research-tool'; 
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
         const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
@@ -278,30 +278,23 @@
         
         // Helper function to make API requests
         function makeApiRequest(apiEndpoint) {
-            // Log the request for debugging
-            console.log('Sending request to:', apiEndpoint);
-            console.log('Request payload:', JSON.stringify({
-                model: model,
-                messages: conversationHistory
-            }, null, 2));
+            console.log('Making API request to:', apiEndpoint);
+            console.log('Using model:', model);
+            console.log('API Key (first 5 chars):', apiKey.substring(0, 5) + '...');
+            console.log('Conversation history:', JSON.stringify(conversationHistory));
             
             // Send request to API
             fetch(apiEndpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`,
-                    'Accept': 'application/json'
+                    'Authorization': `Bearer ${apiKey}`
                 },
                 body: JSON.stringify({
                     model: model,
-                    messages: conversationHistory,
-                    stream: false
+                    messages: conversationHistory
                 }),
-                // Add these options to handle HTTPS connections
-                mode: 'cors',
-                cache: 'no-cache',
-                credentials: 'same-origin'
+                mode: 'cors'
             })
             .then(async response => {
                 if (!response.ok) {
