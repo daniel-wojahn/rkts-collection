@@ -49,7 +49,7 @@
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
-        const endpoint = urlParams.get('endpoint') || 'https://130.61.212.178:3000/api/chat/completions'; 
+        const endpoint = urlParams.get('endpoint') || '/.netlify/functions/api-proxy'; // Using Netlify serverless proxy to avoid mixed content errors
         const model = urlParams.get('model') || 'rkts-research-tool';
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
@@ -327,37 +327,13 @@
                 
                 let errorMessage;
                 if (error.message === 'Failed to fetch') {
-                    // Check if we're on HTTPS but trying to access HTTP endpoint
-                    const isHttpsPage = window.location.protocol === 'https:';
-                    const isHttpEndpoint = apiEndpoint.startsWith('http:');
-                    
-                    if (isHttpsPage && isHttpEndpoint) {
-                        // Mixed content error - HTTPS page trying to access HTTP API
-                        errorMessage = `Mixed Content Error: This secure HTTPS page cannot connect to the insecure HTTP API at ${apiEndpoint}.
+                    // Connection issues with API proxy or target API
+                    errorMessage = `Connection error: Unable to connect to the API. This may be due to:
+1. The API server is not accessible or offline
+2. Network connectivity issues
+3. The API proxy function is not properly deployed
 
-Possible solutions:
-1. Update the API server to support HTTPS
-2. Use a CORS proxy service
-3. Contact the administrator to resolve this issue
-
-Technical details: Browsers block mixed content for security reasons.`;
-                    } else {
-                        // Other connection issues
-                        errorMessage = `Connection error: Unable to connect to the API at ${apiEndpoint}. This may be due to:
-1. CORS policy restrictions
-2. The API server is not accessible or offline
-3. Network connectivity issues
-
-Please check your API endpoint configuration and ensure it's accessible from this domain.`;
-                    }
-                } else if (error.message.includes('SSL')) {
-                    // SSL certificate issues
-                    errorMessage = `SSL Error: There was a problem with the SSL certificate at ${apiEndpoint}.
-
-Possible solutions:
-1. Ensure the API server has a valid SSL certificate
-2. Try using HTTP instead if in a development environment
-3. Contact the administrator to resolve certificate issues`;
+Please check that the API server is running and accessible.`;
                 } else {
                     errorMessage = `Sorry, there was an error connecting to the API: ${error.message}. Please check your API key and endpoint configuration.`;
                 }
@@ -412,21 +388,8 @@ Possible solutions:
                 return;
             }
             
-            // Check for mixed content issues (HTTPS page trying to access HTTP API)
-            const isHttpsPage = window.location.protocol === 'https:';
-            const isHttpEndpoint = endpoint.startsWith('http:');
-            
-            if (isHttpsPage && isHttpEndpoint) {
-                // Try to convert the endpoint to HTTPS
-                const httpsEndpoint = endpoint.replace('http:', 'https:');
-                console.log(`Detected mixed content issue. Attempting to use HTTPS endpoint: ${httpsEndpoint}`);
-                
-                // Make the API request with HTTPS endpoint
-                makeApiRequest(httpsEndpoint);
-            } else {
-                // Use the original endpoint
-                makeApiRequest(endpoint);
-            }
+            // Use the API proxy endpoint which handles HTTP/HTTPS issues for us
+            makeApiRequest(endpoint);
         }
         
         // Handle window resize events to adjust the chat container

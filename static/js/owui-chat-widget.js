@@ -11,7 +11,7 @@ class OpenWebUIChatWidget {
     // Default configuration
     this.config = {
       apiKey: this.getUrlParam('api_key') || '', // Will be fetched from serverless function if not provided
-      endpoint: this.getUrlParam('endpoint') || 'https://130.61.212.178:3000/api/chat/completions', // Using HTTPS for secure connections
+      endpoint: this.getUrlParam('endpoint') || '/.netlify/functions/api-proxy', // Using Netlify serverless proxy to avoid mixed content errors
       model: this.getUrlParam('model') || 'rkts-research-tool',
       systemPrompt: this.getUrlParam('system_prompt') || '',
       position: this.getUrlParam('position') || 'bottom-right',

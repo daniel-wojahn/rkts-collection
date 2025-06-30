@@ -6,6 +6,9 @@
   # No build command needed since we're publishing the current directory
   command = "echo 'Skipping build step - publishing current directory'"
 
+[build.environment]
+  TARGET_API_ENDPOINT = "http://130.61.212.178:3000/api/chat/completions"
+
 # Redirect and rewrite rules
 [[redirects]]
   from = "/*"
