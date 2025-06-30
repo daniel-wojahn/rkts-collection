@@ -8,17 +8,17 @@
   <titleInfo type="alternative" lang="tib">
     <title>བོན་གྱི་བཀའ།</title>
   </titleInfo>
-  <abstract>The 1987 Sichuan Edition of the Bon Kanjur is a rare, composite collection comprising 192 volumes, published in northwestern Sichuan by Ha san yon and Bönlop Namkha Tenzin (Bon slob Nam mkha&apos; bstan &apos;dzin, b. 1932). Its core materials, particularly the Sūtra and Prajñāpāramitā sections, were sourced from the early 20th-century manuscript prepared at Walkhyung Monastery (dBal khyung dgon) in Nyag rong. This Walkhyung manuscript was itself based on an older Bon Kanjur manuscript from the Nag chu kha region, copied and brought to Walkhyung through the efforts of the treasure-revealer Nyakter Sangngak Lingpa (Nyag gter Gsang sngags gling-pa, b. 1864), who aimed to revive the transmission of complete Kanjur reading authorizations (lung).
+  <abstract>The 1987 Sichuan Edition of the Bon Kanjur is a rare, composite collection comprising 192 volumes, published in northwestern Sichuan by Ha san yon and Bonlop Namkha Tenzin (Bon slob Nam mkha’ bstan ’dzin, b. 1932). Its core materials, particularly the Sūtra and Prajñāpāramitā sections, were sourced from the early 20th-century manuscript prepared at Walkhyung Monastery (Dbal khyung dgon) in Nyarong. This Walkhyung manuscript was itself based on an older Bon Kanjur manuscript from the Nagchukha region, copied and brought to Walkhyung through the efforts of the treasure-revealer Nyakter Sangngak Lingpa (Nyag gter Gsang sngags gling-pa, b. 1864), who aimed to revive the transmission of complete Kanjur reading authorizations (lung).
 
-Because only some sections of the Walkhyung manuscript were accessible, the compilers of the 1987 edition supplemented the rest of the canon—chiefly the Tantra and Treasury (mdzod) sections—from multiple sources. These included texts from Rtogs ldan Monastery, prints from the 18th-century Khro chen xylograph, and modern Indian printings. This patchwork approach resulted in a collection published without a table of contents, in a state of considerable organizational disorder, and containing many texts not traditionally part of the Bon Kanjur.
+Because only some sections of the Walkhyung manuscript were accessible, the compilers of the 1987 edition supplemented the rest of the canon—chiefly the Tantra and Treasury (mdzod) sections—from multiple sources. These included texts from Rtogs ldan Monastery, prints from the 18th-century “Khro chen” xylograph, and modern Indian printings. This patchwork approach resulted in a collection published without a table of contents, in a state of considerable organizational disorder, and containing many texts not traditionally part of the Bon Kanjur.
 
-Despite its lack of canonical cohesion, the 1987 edition is invaluable for its breadth and as a testimony to the Bonpo community&apos;s efforts to preserve and transmit their scriptural traditions in the modern era. Scholarly cataloguing has since been necessary to rationalize its contents and clarify the distinction between canonical and supplementary works.</abstract>
+Despite its lack of canonical cohesion, the 1987 edition is invaluable for its breadth and as a testimony to the Bonpo community’s efforts to preserve and transmit their scriptural traditions in the modern era. Scholarly cataloguing has since been necessary to rationalize its contents and clarify the distinction between canonical and supplementary works.</abstract>
   <genre>Bon-Kanjur</genre>
   <originInfo>
     <dateCreated>1987</dateCreated>
   </originInfo>
   <subject>
-    <geographic>Dbal khyung dgon (Nyag rong)</geographic>
+    <geographic>Walkhyung Monastery (Nyarong)</geographic>
   </subject>
   <subject>
     <cartographics>
@@ -42,12 +42,9 @@ Despite its lack of canonical cohesion, the 1987 edition is invaluable for its b
     </location>
     <physicalDescription>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <form type="medium">Blockprint</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>192</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

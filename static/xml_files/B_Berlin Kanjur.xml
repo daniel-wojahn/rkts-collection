@@ -5,11 +5,14 @@
   <titleInfo>
     <title>Berlin Kanjur</title>
   </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཝན་ལི་བཀའ་འགྱུར།</title>
+  </titleInfo>
   <abstract>The manuscript held at the Staatsbibliothek zu Berlin (formerly Königliche Bibliothek zu Berlin) was acquired in 1889 by the German Ambassador v. Brandt and consists of 108 volumes originating from the Yōnghégōng (雍和宮) Temple in Beijing. This Berlin Kanjur manuscript, completed in 1680, is a direct copy of the Wanli xylograph Kanjur produced in Beijing in 1606. Another manuscript based on the Wanli Kanjur is in the National Palace Museum in Taipei, though it remains unstudied.
-Often referred to as the &quot;Handwritten Kanjur of Berlin,&quot; the manuscript occupies an important place in the transmission of the Tibetan canon. The 1680 Berlin copy was made from the Wanli xylograph, which itself was a reprint using the original woodblocks from the first printed Kanjur commissioned by the Yongle Emperor in 1410. The primary distinction between the Yongle and Wanli editions was ink: Yongle used cinnabar red, while the Wanli used black. Both editions, and thus the Berlin manuscript, trace their lineage to the Tshal pa Kanjur tradition, based on the Tshal pa manuscript compiled from 1347 to 1351.
-Produced with great care, the Berlin manuscript features loose-leaf *pothi* format leaves measuring 26.8 × 73.2 cm. It is written in a highly skilled Tibetan dbu can script on polished paper made from bamboo, straw, jute, and paper mulberry. The manuscript displays four to eight lines per page, with both black and red ink sometimes alternating by line.</abstract>
+Often referred to as the “Handwritten Kanjur of Berlin,” the manuscript occupies an important place in the transmission of the Tibetan canon. The 1680 Berlin copy was made from the Wanli xylograph, which itself was a reprint using the original woodblocks from the first printed Kanjur commissioned by the Yongle Emperor in 1410. The primary distinction between the Yongle and Wanli editions was ink: Yongle used cinnabar red, while the Wanli used black. Both editions, and thus the Berlin manuscript, trace their lineage to the Tshalpa Kanjur tradition, based on the Tshalpa manuscript compiled from 1347 to 1351.
+Produced with great care, the Berlin manuscript features loose-leaf pothi format leaves measuring 26.8 × 73.2 cm. It is written in a highly skilled Tibetan dbu can script on polished paper made from bamboo, straw, jute, and paper mulberry. The manuscript displays four to eight lines per page, with both black and red ink sometimes alternating by line.</abstract>
   <genre>Kanjur</genre>
-  <classification>Tshal pa</classification>
+  <classification>Tshalpa</classification>
   <originInfo>
     <dateCreated>1680</dateCreated>
   </originInfo>
@@ -39,12 +42,8 @@ Produced with great care, the Berlin manuscript features loose-leaf *pothi* form
     <physicalDescription>
       <note type="numberoflines">0</note>
       <form type="medium">Manuscript</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>108</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

@@ -8,15 +8,17 @@
   <titleInfo type="alternative" lang="tib">
     <title>ལ་དྭགས་བ་མགོ་མཁར་དུ་བཞུགས་པའི་བཀའ་འགྱུར།</title>
   </titleInfo>
-  <abstract>The manuscript collections preserved in the Gser zangs Lha khang (Serzang Temple) at Basgo fort, Ladakh, are a significant and complex treasury of Tibetan canonical literature. Far from being a single, uniform archive, these holdings comprise several distinct groups of manuscripts. The main body consists of about 60,000 leaves from at least five or six different Kanjur sets, now mixed and disordered, alongside various Kanjur and Tanjur fragments from different periods.
-Housed in the temple founded by King &apos;Jam dbyangs rnam rgyal (Jamyang Namgyel, r. 1595–1616) and later expanded by his son King Sengge rnam rgyal (Sengge Namgyel, r. 1616–1642), Basgo was one of Sengge Namgyel’s principal residences. The collection spans diverse periods. Among its oldest holdings are around 900 folios from the 14th or 15th century, exhibiting ancient orthography and palaeography. Their discovery marked the first identification of proto-canonical fragments in Ladakh proper, which had previously been found only in Zanskar. The largest portion dates to the early 17th century, closely linked to the patronage of King Sengge rnam rgyal and the Drukpa Kagyüpa master Stag tshang ras pa (Taktsang Repa, 1574–1651), the king’s principal religious authority. These Kanjurs were likely commissioned shortly after the founding of Hemis Monastery in 1630.
-The 17th-century manuscripts were part of a major scribal project, with the scribe and scholar Nam mkha&apos; dpal mgon (Namkha Pelgön, b. ca. 1560) named as a reviser in the colophons for both sutra and tantra texts. The identical character of the Hemis and Basgo Kanjurs suggests a shared model or direct copying. In the twentieth century, likely during the 1970s and 1980s, a complete Kanjur was compiled at Basgo using material from at least five separate 17th-century sets. Damaged folios were replaced with new ones of inferior quality. Multiple rounds of re-pagination indicate repeated attempts to reassemble a complete Kanjur. A repair note dates one such effort to October 25, 1986.
-The Basgo Kanjur is considered a &apos;local&apos; or &apos;independent&apos; canon, distinguished by its lack of direct descent from either the Tshalpa or Thempangma transmission lines, yet it shares marked similarities with the Hemis Kanjur, reflecting a shared local origin. During the Tibet-Ladakh-Mughal War (1679–1684), part of the Basgo Kanjur was temporarily moved to Phyang Monastery for safekeeping, but was returned incomplete.
-The contents at Gser zangs Lha khang are extensive, including the compiled Kanjur, the Golden Kanjur, and about 60,000 folios of loose fragments. Although much of the material survives in good condition, significant portions have been damaged by water, fungi, and rodents. The 17th-century manuscripts are notable for lacking string holes—a feature present in earlier manuscripts—and for their elaborate goyik (decorative headings). Most employ new orthography, though some texts, especially among the old tantras, retain older forms like the mya conjunct. While the Basgo and Hemis Kanjurs are generally similar, the Basgo collection is distinguished by its substantial number of tantric texts, in contrast to the relatively few found at Hemis.</abstract>
+  <abstract>The manuscript collections in the Serzang Temple (Gser zangs Lha khang) at Basgo, Ladakh, are a complex treasury of Tibetan canonical literature. Far from being a uniform archive, the main body consists of about 60,000 leaves from at least five or six different Kanjur sets that are now mixed, alongside various other canonical fragments.
+
+The temple was founded by King Jamyang Namgyal (&apos;Jam dbyangs rnam rgyal, r. 1595–1616) and expanded by his son, King Sengge Namgyal (Sengge rnam rgyal, r. 1616–1642), for whom Basgo was a principal residence. The collection spans diverse periods, with its oldest holdings being around 900 folios from the 14th or 15th century, notable for their ancient orthography. The largest portion dates to the early 17th century, linked to the patronage of King Sengge Namgyal and his principal religious authority, the Drukpa Kagyüpa master Taktsang Repa (Stag tshang ras pa, 1574–1651). This major scribal project, likely commissioned after the founding of Hemis Monastery in 1630, involved the scholar Namkha Pelgön (Nam mkha’ dpal mgon, b. ca. 1560) as a reviser for both sutra and tantra sections.
+
+This 17th-century Kanjur is considered a ‘local’ or ‘independent’ canon. It lacks direct descent from the major Tshalpa or Thempangma transmission lines but shares a nearly identical character with the Hemis Kanjur, suggesting a shared local origin. A portion of the Kanjur was temporarily moved to Phyang Monastery for safekeeping during the Tibet-Ladakh-Mughal War (1679–1684) but was returned incomplete.
+
+In the 20th century, likely during the 1970s and 1980s, an attempt was made to compile a single, complete Kanjur from the various 17th-century sets. Damaged folios were replaced with new ones of inferior quality, and multiple rounds of re-pagination—with one repair note dated October 25, 1986—indicate repeated efforts to reassemble the texts. The 17th-century manuscripts are notable for their elaborate headmarks (yig mgo) and lack of string holes. While most employ new orthography, some texts retain older forms, like the *mya* conjunct. The Basgo collection is distinguished from the similar Hemis Kanjur by its substantial number of tantric texts.</abstract>
   <genre>Canonical Collection</genre>
-  <classification>Mustang</classification>
+  <classification>Independent</classification>
   <originInfo>
-    <dateCreated></dateCreated>
+    <dateCreated>14th–17th cent.</dateCreated>
   </originInfo>
   <subject>
     <geographic>Serzang Temple (Basgo fort, Ladakh)</geographic>
@@ -40,15 +42,9 @@ The contents at Gser zangs Lha khang are extensive, including the compiled Kanju
     <physicalDescription>
       <note type="digitizedby">TMPV</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
       <form type="medium">Manuscript</form>
-      <form type="medium">Paper</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>204</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

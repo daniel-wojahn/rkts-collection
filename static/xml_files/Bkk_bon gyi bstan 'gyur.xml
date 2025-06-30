@@ -8,13 +8,13 @@
   <titleInfo type="alternative" lang="tib">
     <title>བོན་གྱི་བསྟན་འགྱུར།</title>
   </titleInfo>
-  <abstract>A computer input version with a unique font based on a rare handwritten Bon Tanjur. Published by Khyung po steng chen rtse drug dgon (Steng chen rdzong)</abstract>
+  <abstract>A computer input version with a unique font based on a rare handwritten Bon Tanjur. Published by Khyungpo Tengchen Tsedruk Monastery (Khyung po steng chen rtse drug dgon in Steng chen rdzong)</abstract>
   <genre>Bon-Tanjur</genre>
   <originInfo>
     <dateCreated>2015</dateCreated>
   </originInfo>
   <subject>
-    <geographic>Khyung po steng chen rtse drug dgon</geographic>
+    <geographic>Khyungpo Tengchen Tsedruk Monastery</geographic>
   </subject>
   <subject>
     <cartographics>
@@ -38,12 +38,9 @@
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>110</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

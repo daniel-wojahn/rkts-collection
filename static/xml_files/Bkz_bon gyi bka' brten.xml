@@ -8,7 +8,7 @@
   <titleInfo type="alternative" lang="tib">
     <title>བོན་གྱི་བཀའ་བརྟེན</title>
   </titleInfo>
-  <abstract>Collection of canonical Bon literature (computer input in Umé); digitized in 2014 at the Goshi Zonga ancient texts collector Yungdrung Tengye Ling at Khyungpo Tengchen Monastery in Kham.</abstract>
+  <abstract>Collection of canonical Bon literature (computer input in Umé); digitized in 2014 at the Goshi Zonga ancient texts collector Yungdrung Tengyé Ling at Khyungpo Tengchen Monastery in Kham. The available scans miss Volume 24.</abstract>
   <genre>Bon-Kanjur</genre>
   <originInfo>
     <dateCreated>2014</dateCreated>
@@ -39,11 +39,9 @@
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
       <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>200</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

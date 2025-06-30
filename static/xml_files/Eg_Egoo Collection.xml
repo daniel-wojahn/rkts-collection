@@ -5,14 +5,17 @@
   <titleInfo>
     <title>Egoo Collection</title>
   </titleInfo>
-  <abstract>The collection from the Egoo Temple, Ladakh includes a rare Tibetan manuscript volume. It consists of 515 folios, and as the title &apos;jam dpal mtshan brjod dang dkon mchog rje dran gyi mdo sogs indicates it contains works such as the “Praise of Mañjuśrī” and sūtras devoted to the recollection of the Three Jewels.</abstract>
+  <abstract>The collection from the Egoo (or Igoo) Temple, Ladakh includes a rare Tibetan manuscript volume. It consists of 515 folios, and as the title ’Jam dpal mtshan brjod dang dkon mchog rje dran gyi mdo sogs indicates it contains works such as the “Praise of Mañjuśrī” and sūtras devoted to the recollection of the Three Jewels.</abstract>
   <genre>Canonical Collection</genre>
   <originInfo>
     <dateCreated></dateCreated>
   </originInfo>
   <subject>
+    <geographic>Egoo Temple</geographic>
+  </subject>
+  <subject>
     <cartographics>
-      <coordinates>33.998934, 78.095007</coordinates>
+      <coordinates>33.89798594298058,77.80598644367583</coordinates>
     </cartographics>
   </subject>
   <note type="handlist" displayLabel="Handlist Available">true</note>

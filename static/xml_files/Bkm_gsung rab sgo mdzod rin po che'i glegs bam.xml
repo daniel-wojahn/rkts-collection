@@ -8,9 +8,9 @@
   <titleInfo type="alternative" lang="tib">
     <title>གསུང་རབ་སྒོ་མཛོད་རིན་པོ་ཆེའི་གླེགས་བམ</title>
   </titleInfo>
-  <abstract>This collection is a modern scholarly compilation of the Bön Kanjur. Published in a 150-volume handbook format (deb gzugs), it is derived from an earlier 200-volume Pothi (glegs bam) edition titled &quot;Compilation of Ancient Texts of the Four Doors and Five Treasuries&quot; (sgo bzhi mdzod lnga&apos;i dpe rnying phyogs bsgrigs). The project represents a major effort to consolidate and make accessible the foundational scriptures of the Yungdrung Bön tradition.
-The primary compiling is the &quot;Yungdrung Bön Kanjur-Tenjur Rare Texts Compilation Office&quot; (G.yung drung bon gyi bka&apos; brten dpe rnying phyogs bsgrigs khang) associated with the &quot;Compilation of Ancient Texts of the Four Doors and Five Treasuries&quot; project, which commenced in 2011 and published in 2015. 
-The compilation is based on a wide array of historical sources, including the Gyalrong blockprint Kanjur, and numerous rare manuscripts from key Bön monasteries such as Pelkyong Monastery (Dpal khyung dgon pa) and Triten Norbutse Monastery (khri brtan nor bu rtse). Specific important texts like the Drimed Zhiji (Dri med gzi brjid) and Do Zermik (Mdo gzer mig) were collated against multiple versions. The editorial process was intensive, with texts reportedly reviewed 15 to 20 times (though not a critical edition). A core editorial principle was the preservation of archaic linguistic features, including Zhang Zhung language (via a newly created computer font based on the historical Zhang Zhung Trayik (Zhang zhung khra yig) script), archaic Tibetan terms, non-standardized grammar, and ancient scriptural conventions, rather than modernizing them.
+  <abstract>This collection is a modern scholarly compilation of the Bon Kanjur. Published in a 150-volume handbook format (deb gzugs), it is derived from an earlier 200-volume Pothi (glegs bam) edition titled “Compilation of Ancient Texts of the Four Doors and Five Treasuries” (Sgo bzhi mdzod lnga’i dpe rnying phyogs bsgrigs). The project represents a major effort to consolidate and make accessible the foundational scriptures of the Yungdrung Bon tradition.
+The primary compiling is the “Yungdrung Bon Kanjur-Tanjur Rare Texts Compilation Office” (G.yung drung bon gyi bka’ brten dpe rnying phyogs bsgrigs khang) associated with the “Compilation of Ancient Texts of the Four Doors and Five Treasuries” project, which commenced in 2011 and published its results in 2015. 
+The compilation is based on a wide array of historical sources, including the Gyalrong blockprint Kanjur, and numerous rare manuscripts from key Bon monasteries such as Pelkyong Monastery (Dpal khyung dgon pa) and Triten Norbutse Monastery (Khri brtan nor bu rtse dgon pa). Specific important texts like Tönpa Shenrab’s biographies (Dri med gzi brjid and Mdo gzer mig) were collated against multiple versions. The editorial process was intensive, with texts reportedly reviewed 15 to 20 times (though not a critical edition). A core editorial principle was the preservation of archaic linguistic features, including Zhang Zhung language (via a newly created computer font based on the historical Zhang zhung khra yig script), archaic Tibetan terms, non-standardized grammar, and ancient scriptural conventions, rather than modernizing them.
 It aims to be the most complete modern version by incorporating texts not found in earlier major compilations, actively seeking out and adding newly found Pothis.</abstract>
   <genre>Bon-Kanjur</genre>
   <originInfo>
@@ -41,12 +41,9 @@ It aims to be the most complete modern version by incorporating texts not found 
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>150</extent>
     </physicalDescription>
   </relatedItem>
 </mods>
