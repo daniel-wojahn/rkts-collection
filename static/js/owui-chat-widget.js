@@ -10,7 +10,7 @@ class OpenWebUIChatWidget {
   constructor(options = {}) {
     // Default configuration
     this.config = {
-      apiKey: this.getUrlParam('api_key') || '', // Will be fetched from serverless function if not provided
+      apiKey: this.getUrlParam('api_key') || 'sk-041ad4e984df4368b7ee1df4a87373a2', // Direct API key
       endpoint: this.getUrlParam('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions', // Using HTTPS for secure connections
       model: this.getUrlParam('model') || 'rkts-research-tool',
       systemPrompt: this.getUrlParam('system_prompt') || '',
@@ -33,46 +33,8 @@ class OpenWebUIChatWidget {
     this.iframe = null;
     this.isOpen = false;
     
-    // Fetch API key if not provided via URL param
-    if (!this.config.apiKey) {
-      this.fetchApiKey();
-    } else {
-      // Create and initialize the widget
-      this.init();
-    }
-  }
-  
-  /**
-   * Fetch API key from serverless function
-   */
-  fetchApiKey() {
-    // Determine if we're in development or production
-    const isLocalhost = window.location.hostname === 'localhost' || 
-                        window.location.hostname === '127.0.0.1';
-    
-    // Use relative path for production, full URL for development
-    const apiKeyEndpoint = isLocalhost 
-      ? 'http://localhost:8888/.netlify/functions/get-api-key' 
-      : '/.netlify/functions/get-api-key';
-    
-    fetch(apiKeyEndpoint)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch API key');
-        }
-        return response.json();
-      })
-      .then(data => {
-        if (data && data.apiKey) {
-          this.config.apiKey = data.apiKey;
-          this.init();
-        } else {
-          console.error('No API key returned from server');
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching API key:', error);
-      });
+    // Create and initialize the widget
+    this.init();
   }
   
   /**
