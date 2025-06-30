@@ -1,0 +1,33 @@
+[build]
+  # Directory with the serverless functions code
+  functions = "netlify/functions"
+  # Directory to publish
+  publish = "build"
+  # Command to build the site
+  command = "python deploy.py"
+
+# Redirect and rewrite rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  # Only redirect for paths that don't exist
+  force = false
+
+# Environment variable configuration
+[context.production.environment]
+  # Production environment variables can be set in the Netlify UI
+  NODE_ENV = "production"
+
+[context.deploy-preview.environment]
+  # Preview environment variables
+  NODE_ENV = "production"
+
+# Dev server settings for netlify dev
+[dev]
+  framework = "#static"
+  command = "python -m http.server 8888"
+  port = 8888
+  targetPort = 8888
+  publish = "."
+  autoLaunch = true

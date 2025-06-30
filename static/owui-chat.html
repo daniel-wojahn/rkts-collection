@@ -48,17 +48,51 @@
     <script>
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const apiKey = urlParams.get('api_key') || '';
-        const endpoint = urlParams.get('endpoint') || 'http://130.61.212.178:3000/api/chat/completions';
-        const model = urlParams.get('model') || '';
-        const systemPrompt = urlParams.get('system_prompt') || 'You are a helpful assistant specializing in Tibetan Buddhist collections.';
-        const title = urlParams.get('title') || 'Tibetan Collections Assistant';
-        const greeting = urlParams.get('greeting') || 'Hello! I\'m your Tibetan Collections assistant. How can I help you with your research today?';
+        let apiKey = urlParams.get('api_key') || '';
+        const endpoint = urlParams.get('endpoint') || 'https://130.61.212.178:3000/api/chat/completions';
+        const model = urlParams.get('model') || 'rkts-research-tool';
+        const systemPrompt = urlParams.get('system_prompt') || '';
+        const title = urlParams.get('title') || 'rKTs Collections Assistant';
+        const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
         const primaryColor = urlParams.get('primary_color') || '#007bff';
         
         // Set dynamic styles
         document.documentElement.style.setProperty('--primary-color', primaryColor);
         document.querySelector('.owui-chat-title').textContent = title;
+        
+        // Fetch API key if not provided via URL param
+        if (!apiKey) {
+            // Determine if we're in development or production
+            const isLocalhost = window.location.hostname === 'localhost' || 
+                                window.location.hostname === '127.0.0.1';
+            
+            // Use relative path for production, full URL for development
+            const apiKeyEndpoint = isLocalhost 
+                ? 'http://localhost:8888/.netlify/functions/get-api-key' 
+                : '/.netlify/functions/get-api-key';
+            
+            fetch(apiKeyEndpoint)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch API key');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.apiKey) {
+                        apiKey = data.apiKey;
+                        initializeChat();
+                    } else {
+                        addMessage('Error: No API key returned from server. Please contact the administrator.', 'bot', true);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching API key:', error);
+                    addMessage(`Error fetching API key: ${error.message}. Please contact the administrator.`, 'bot', true);
+                });
+        } else {
+            initializeChat();
+        }
         
         // DOM elements
         const messagesContainer = document.getElementById('messages');
@@ -74,8 +108,8 @@
             }
         ];
         
-        // Initialize chat
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize chat function
+        function initializeChat() {
             // Add greeting message
             if (greeting) {
                 addMessage(greeting, 'bot');
@@ -93,6 +127,15 @@
                 this.style.height = 'auto';
                 this.style.height = (this.scrollHeight) + 'px';
             });
+        }
+        
+        // Call initializeChat on DOM content loaded if API key was provided via URL
+        document.addEventListener('DOMContentLoaded', function() {
+            // If API key is provided via URL, initialize immediately
+            // Otherwise, the fetch API key function will call initializeChat when ready
+            if (urlParams.get('api_key')) {
+                initializeChat();
+            }
         });
         
         // Handle Enter key

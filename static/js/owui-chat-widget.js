@@ -10,14 +10,14 @@ class OpenWebUIChatWidget {
   constructor(options = {}) {
     // Default configuration
     this.config = {
-      apiKey: this.getUrlParam('api_key') || 'sk-d98d26e0083f41f8b7f9b4163ca35df4',
+      apiKey: this.getUrlParam('api_key') || '', // Will be fetched from serverless function if not provided
       endpoint: this.getUrlParam('endpoint') || 'https://130.61.212.178:3000/api/chat/completions',
       model: this.getUrlParam('model') || 'rkts-research-tool',
       systemPrompt: this.getUrlParam('system_prompt') || '',
       position: this.getUrlParam('position') || 'bottom-right',
       primaryColor: this.getUrlParam('primary_color') || '#007bff',
       secondaryColor: this.getUrlParam('secondary_color') || '#6c757d',
-      title: this.getUrlParam('title') || 'Tibetan Collections Assistant',
+      title: this.getUrlParam('title') || 'rKTs Collections Assistant',  
       greeting: this.getUrlParam('greeting') || 'Hello! How can I help you with your research today?',
       buttonSize: parseInt(this.getUrlParam('button_size') || '70'),
       dialogWidth: parseInt(this.getUrlParam('dialog_width') || '500'),
@@ -33,8 +33,46 @@ class OpenWebUIChatWidget {
     this.iframe = null;
     this.isOpen = false;
     
-    // Create and initialize the widget
-    this.init();
+    // Fetch API key if not provided via URL param
+    if (!this.config.apiKey) {
+      this.fetchApiKey();
+    } else {
+      // Create and initialize the widget
+      this.init();
+    }
+  }
+  
+  /**
+   * Fetch API key from serverless function
+   */
+  fetchApiKey() {
+    // Determine if we're in development or production
+    const isLocalhost = window.location.hostname === 'localhost' || 
+                        window.location.hostname === '127.0.0.1';
+    
+    // Use relative path for production, full URL for development
+    const apiKeyEndpoint = isLocalhost 
+      ? 'http://localhost:8888/.netlify/functions/get-api-key' 
+      : '/.netlify/functions/get-api-key';
+    
+    fetch(apiKeyEndpoint)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch API key');
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (data && data.apiKey) {
+          this.config.apiKey = data.apiKey;
+          this.init();
+        } else {
+          console.error('No API key returned from server');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching API key:', error);
+      });
   }
   
   /**
