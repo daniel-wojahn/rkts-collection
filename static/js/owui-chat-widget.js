@@ -12,7 +12,7 @@ class OpenWebUIChatWidget {
     this.config = {
       apiKey: this.getUrlParam('api_key') || '', // Will be fetched from serverless function if not provided
       endpoint: this.getUrlParam('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions', // Using HTTPS for secure connections
-      model: this.getUrlParam('model') || 'rkts-research-tool',
+      model: this.getUrlParam('model') || 'qwen/qwen3-30b-a3b:free',
       systemPrompt: this.getUrlParam('system_prompt') || '',
       position: this.getUrlParam('position') || 'bottom-right',
       primaryColor: this.getUrlParam('primary_color') || '#007bff',
@@ -275,7 +275,8 @@ class OpenWebUIChatWidget {
       });
       
       // Determine the correct path based on current location
-      const path = window.location.pathname.includes('/pages/') ? '../owui-chat.html' : 'static/owui-chat.html';
+      // Always use absolute path from the root to avoid path issues
+      const path = '/static/owui-chat.html';
       this.iframe.src = `${path}?${params.toString()}`;
       this.chatDialog.appendChild(this.iframe);
     }
