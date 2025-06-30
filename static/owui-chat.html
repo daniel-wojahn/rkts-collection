@@ -50,7 +50,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
         const endpoint = urlParams.get('endpoint') || 'https://rkts-research.duckdns.org/api/chat/completions'; 
-        const model = urlParams.get('model') || 'qwen/qwen3-30b-a3b:free'; 
+        const model = urlParams.get('model') || ''; 
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';
         const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
