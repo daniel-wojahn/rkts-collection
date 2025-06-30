@@ -333,16 +333,5 @@
     
     <!-- Custom JS -->
     <script src="static/js/app.js"></script>
-
-    <!-- Open WebUI Chat Widget (self-hosted) -->
-    <div id="chat-widget"></div>
-    <script type="module">
-      import ChatWidget, { mount } from './static/js/ChatWidget.js';
-      mount(ChatWidget, {
-        target: document.getElementById('chat-widget'),
-        server: 'https://rkts-research.duckdns.org/',
-        apiKey: 'sk-b5ed6e03acfb48799ea3241984a5a206'
-      });
-    </script>
 </body>
 </html>
