@@ -6,6 +6,15 @@
   # No build command needed since we're publishing the current directory
   command = "echo 'Skipping build step - publishing current directory'"
 
+# Configure functions with longer timeout
+[functions]
+  # Set default timeout for all functions
+  timeout = 26
+
+# Configure api-proxy as a background function for longer running requests
+[functions.api-proxy]
+  background = true
+
 [build.environment]
   TARGET_API_ENDPOINT = "http://130.61.212.178:3000/api/chat/completions"
 

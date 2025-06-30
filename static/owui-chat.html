@@ -29,6 +29,10 @@
             Assistant is typing...
         </div>
         
+        <div class="owui-timeout-indicator" id="timeout-indicator" style="display: none;">
+            This is taking longer than expected. The response may take up to 2 minutes to generate...
+        </div>
+        
         <div class="owui-chat-input-container">
             <textarea 
                 class="owui-chat-input" 
@@ -70,6 +74,11 @@
         let userInput;
         let sendButton;
         let typingIndicator;
+        let timeoutIndicator;
+        
+        // Timeout handling
+        let requestTimeoutId = null;
+        const TIMEOUT_WARNING_DELAY = 10000; // Show timeout warning after 10 seconds
         
         // Function to initialize DOM elements
         function initializeDOMElements() {
@@ -77,10 +86,14 @@
             userInput = document.getElementById('user-input');
             sendButton = document.getElementById('send-button');
             typingIndicator = document.getElementById('typing-indicator');
+            timeoutIndicator = document.getElementById('timeout-indicator');
             
-            // Hide typing indicator initially
+            // Hide indicators initially
             if (typingIndicator) {
                 typingIndicator.style.display = 'none';
+            }
+            if (timeoutIndicator) {
+                timeoutIndicator.style.display = 'none';
             }
         }
         
@@ -467,6 +480,12 @@
                 // Show typing indicator
                 typingIndicator.style.display = 'block';
                 
+                // Set timeout for long-running requests
+                if (requestTimeoutId) clearTimeout(requestTimeoutId);
+                requestTimeoutId = setTimeout(() => {
+                    timeoutIndicator.style.display = 'block';
+                }, TIMEOUT_WARNING_DELAY);
+                
                 // Check if API key is available
                 if (!apiKey) {
                     console.log('No API key available, attempting to fetch one');
@@ -497,7 +516,10 @@
                 // Use the API proxy endpoint which handles HTTP/HTTPS issues for us
                 makeApiRequest(endpoint, apiKey, message)
                 .then(response => {
+                    // Clear timeout and hide indicators
+                    if (requestTimeoutId) clearTimeout(requestTimeoutId);
                     typingIndicator.style.display = 'none';
+                    timeoutIndicator.style.display = 'none';
                     
                     // Extract the response content
                     const responseContent = response.choices && response.choices[0] && response.choices[0].message 
@@ -525,7 +547,11 @@
             // Helper function to handle API errors
             function handleApiError(error) {
                 console.error('API Error:', error);
+                
+                // Clear timeout and hide indicators
+                if (requestTimeoutId) clearTimeout(requestTimeoutId);
                 typingIndicator.style.display = 'none';
+                timeoutIndicator.style.display = 'none';
                 userInput.disabled = false;
                 sendButton.disabled = false;
                 
@@ -540,6 +566,13 @@
 Please check that the API server is running and accessible.`;
                 } else if (error.includes('401')) {
                     errorMessage = `Authentication error (401): The API key may be invalid or missing. Please check your API key configuration.`;
+                } else if (error.includes('502') || error.includes('timeout') || error.includes('Proxy request failed')) {
+                    errorMessage = `Timeout error: The API request took too long to complete. The server may be:
+1. Experiencing high load
+2. Processing a complex query
+3. Having connectivity issues
+
+Please try again with a simpler query or try later.`;
                 } else {
                     errorMessage = `Sorry, there was an error connecting to the API: ${error}. Please check your API key and endpoint configuration.`;
                 }
