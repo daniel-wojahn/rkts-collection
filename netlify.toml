@@ -1,10 +1,10 @@
 [build]
   # Directory with the serverless functions code
   functions = "netlify/functions"
-  # Directory to publish
-  publish = "build"
-  # Command to build the site
-  command = "python deploy.py"
+  # Directory to publish - use the current directory instead of build
+  publish = "."
+  # No build command needed since we're publishing the current directory
+  command = "echo 'Skipping build step - publishing current directory'"
 
 # Redirect and rewrite rules
 [[redirects]]
