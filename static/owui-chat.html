@@ -305,17 +305,43 @@
             })
             .then(async response => {
                 if (!response.ok) {
-                    // Try to get the error message from the response if possible
+                    const errorText = await response.text();
                     let errorDetail = '';
                     try {
-                        const errorData = await response.json();
-                        errorDetail = errorData.error || JSON.stringify(errorData);
+                        const errorJson = JSON.parse(errorText);
+                        errorDetail = errorJson.detail || errorText;
                     } catch (e) {
-                        // If we can't parse the response as JSON, just use the status text
-                        errorDetail = response.statusText;
+                        errorDetail = errorText;
                     }
                     
-                    throw new Error(`HTTP error! Status: ${response.status}, Details: ${errorDetail}`);
+                    let errorMessage = `Bad Request Error (${response.status}): The API rejected our request. `;
+                    
+                    // Check for Open WebUI server connection error
+                    if (errorDetail && errorDetail.includes('Open WebUI: Server Connection Error')) {
+                        errorMessage = 'The Open WebUI server cannot connect to the language model. ' +
+                            'This usually means the LLM server is down or not responding. ' +
+                            'Please contact the administrator of the Open WebUI instance to ensure the backend LLM service is running properly.';
+                    }
+                    // Add more specific guidance based on error code
+                    else if (response.status === 400) {
+                        errorMessage += 'Possible causes: ' +
+                            '1. Incorrect API key format or invalid API key ' +
+                            '2. The API expects a different request format ' +
+                            '3. The model name "' + model + '" may not be available on this server ' +
+                            'Technical details: ' + errorDetail;
+                    } else if (response.status === 401) {
+                        errorMessage += 'Your API key is invalid or expired.';
+                    } else if (response.status === 403) {
+                        errorMessage += 'You do not have permission to access this resource.';
+                    } else if (response.status === 404) {
+                        errorMessage += 'The API endpoint could not be found. Please check the URL.';
+                    } else if (response.status === 429) {
+                        errorMessage += 'Too many requests. Please try again later.';
+                    } else if (response.status >= 500) {
+                        errorMessage += 'The server encountered an error. Please try again later.';
+                    }
+                    
+                    throw new Error(errorMessage);
                 }
                 return response.json();
             })
