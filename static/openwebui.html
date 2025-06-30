@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rKTs Collections Assistant - OpenWebUI</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .header a {
+            color: white;
+            text-decoration: none;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .openwebui-container {
+            width: 100%;
+            height: calc(100% - 60px);
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>rKTs Collections Assistant</h1>
+        <a href="/">Back to Collections</a>
+    </div>
+    
+    <iframe 
+        src="https://rkts-research.duckdns.org" 
+        class="openwebui-container" 
+        title="OpenWebUI Interface"
+        allowfullscreen>
+    </iframe>
+
+    <script>
+        // Auto-login functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframe = document.querySelector('.openwebui-container');
+            
+            // Set the credentials - replace these with your actual credentials
+            const username = 'rkts-research@proton.me';
+            const password = 'dokve2-domrUq-dahpug';
+            
+            iframe.onload = function() {
+                try {
+                    // Wait a moment for the page to fully render
+                    setTimeout(() => {
+                        // Get the iframe document
+                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                        
+                        // Find the username and password fields
+                        const usernameField = iframeDoc.querySelector('input[type="text"], input[name="username"], input[placeholder*="username" i], input[placeholder*="email" i]');
+                        const passwordField = iframeDoc.querySelector('input[type="password"], input[name="password"], input[placeholder*="password" i]');
+                        
+                        // Find the login button
+                        const loginButton = iframeDoc.querySelector('button[type="submit"], input[type="submit"], button:contains("Sign In"), button:contains("Log In")');
+                        
+                        // Fill in the credentials if fields are found
+                        if (usernameField) {
+                            usernameField.value = username;
+                            // Trigger input event to activate any listeners
+                            const event = new Event('input', { bubbles: true });
+                            usernameField.dispatchEvent(event);
+                        }
+                        
+                        if (passwordField) {
+                            passwordField.value = password;
+                            // Trigger input event
+                            const event = new Event('input', { bubbles: true });
+                            passwordField.dispatchEvent(event);
+                        }
+                        
+                        // Click the login button if found
+                        if (loginButton) {
+                            loginButton.click();
+                        }
+                        
+                        console.log('Auto-login attempt completed');
+                    }, 1500); // Wait 1.5 seconds for the page to load
+                } catch (error) {
+                    console.error('Auto-login failed:', error);
+                }
+            };
+        });
+    </script>
+</body>
+</html>
