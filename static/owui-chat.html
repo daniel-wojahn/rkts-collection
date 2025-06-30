@@ -60,8 +60,47 @@
         document.documentElement.style.setProperty('--primary-color', primaryColor);
         document.querySelector('.owui-chat-title').textContent = title;
         
+        // Initialize DOM elements - must be defined before any functions that use them
+        let messagesContainer;
+        let userInput;
+        let sendButton;
+        let typingIndicator;
+        
+        // Conversation history
+        let conversationHistory = [
+            {
+                role: 'system',
+                content: systemPrompt
+            }
+        ];
+        
+        // Function to initialize DOM elements
+        function initializeDOMElements() {
+            messagesContainer = document.getElementById('messages');
+            userInput = document.getElementById('user-input');
+            sendButton = document.getElementById('send-button');
+            typingIndicator = document.getElementById('typing-indicator');
+            
+            // Hide typing indicator initially
+            if (typingIndicator) {
+                typingIndicator.style.display = 'none';
+            }
+        }
+        
+        // Initialize DOM elements when the document is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDOMElements();
+            
+            // If API key is provided via URL, initialize immediately
+            if (apiKey) {
+                initializeChat();
+            } else {
+                fetchApiKey();
+            }
+        });
+        
         // Fetch API key if not provided via URL param
-        if (!apiKey) {
+        function fetchApiKey() {
             // Determine if we're in development or production
             const isLocalhost = window.location.hostname === 'localhost' || 
                                 window.location.hostname === '127.0.0.1';
@@ -90,23 +129,7 @@
                     console.error('Error fetching API key:', error);
                     addMessage(`Error fetching API key: ${error.message}. Please contact the administrator.`, 'bot', true);
                 });
-        } else {
-            initializeChat();
         }
-        
-        // DOM elements
-        const messagesContainer = document.getElementById('messages');
-        const userInput = document.getElementById('user-input');
-        const sendButton = document.getElementById('send-button');
-        const typingIndicator = document.getElementById('typing-indicator');
-        
-        // Conversation history
-        let conversationHistory = [
-            {
-                role: 'system',
-                content: systemPrompt
-            }
-        ];
         
         // Initialize chat function
         function initializeChat() {
@@ -120,26 +143,22 @@
             }
             
             // Focus input
-            userInput.focus();
-            
-            // Auto-resize input
-            userInput.addEventListener('input', function() {
-                this.style.height = 'auto';
-                this.style.height = (this.scrollHeight) + 'px';
-            });
-        }
-        
-        // Call initializeChat on DOM content loaded if API key was provided via URL
-        document.addEventListener('DOMContentLoaded', function() {
-            // If API key is provided via URL, initialize immediately
-            // Otherwise, the fetch API key function will call initializeChat when ready
-            if (urlParams.get('api_key')) {
-                initializeChat();
+            if (userInput) {
+                userInput.focus();
+                
+                // Auto-resize input
+                userInput.addEventListener('input', function() {
+                    this.style.height = 'auto';
+                    this.style.height = (this.scrollHeight) + 'px';
+                });
             }
-        });
+        }
         
         // Handle Enter key
         function handleKeyDown(event) {
+            // Make sure DOM elements are initialized
+            if (!userInput || !sendButton) return;
+            
             if (event.key === 'Enter' && !event.shiftKey) {
                 event.preventDefault();
                 sendMessage();
@@ -148,6 +167,20 @@
         
         // Add message to chat
         function addMessage(content, sender, isError = false) {
+            // Make sure messagesContainer is initialized
+            if (!messagesContainer) {
+                // If DOM isn't ready yet, wait and try again
+                setTimeout(() => {
+                    initializeDOMElements();
+                    if (messagesContainer) {
+                        addMessage(content, sender, isError);
+                    } else {
+                        console.error('Messages container not found');
+                    }
+                }, 100);
+                return;
+            }
+            
             const messageDiv = document.createElement('div');
             
             if (sender === 'user') {
@@ -245,6 +278,12 @@
         
         // Send message
         function sendMessage() {
+            // Make sure DOM elements are initialized
+            if (!userInput || !sendButton || !typingIndicator || !messagesContainer) {
+                console.error('DOM elements not initialized');
+                return;
+            }
+            
             const message = userInput.value.trim();
             
             if (!message) return;
