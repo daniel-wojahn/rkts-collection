@@ -49,7 +49,7 @@
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         let apiKey = urlParams.get('api_key') || '';
-        const endpoint = urlParams.get('endpoint') || '/netlify/functions/api-proxy'; // Using Netlify serverless proxy to avoid mixed content errors
+        const endpoint = urlParams.get('endpoint') || '/.netlify/functions/api-proxy'; // Using Netlify serverless proxy to avoid mixed content errors
         const model = urlParams.get('model') || 'rkts-research-tool';
         const systemPrompt = urlParams.get('system_prompt') || '';
         const title = urlParams.get('title') || 'rKTs Collections Assistant';

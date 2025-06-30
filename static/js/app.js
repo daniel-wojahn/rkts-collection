@@ -688,7 +688,7 @@ function applyFilters() {
     updateMapWithFiltered();
     
     // Update URL with current filters for sharing
-    updateShareableUrl();
+    updatePageUrl();
     
     // Update charts
     updateCharts();
@@ -1534,7 +1534,7 @@ function exportFilteredAsCSV() {
 }
 
 // Create shareable URL with current filters
-function updateShareableUrl() {
+function updatePageUrl() {
     // Use the generic updateShareableUrl utility function from utils.js
     return updateShareableUrl({
         // Map filter parameter names to element IDs
