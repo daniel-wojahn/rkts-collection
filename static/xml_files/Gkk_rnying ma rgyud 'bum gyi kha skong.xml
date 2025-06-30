@@ -15,16 +15,16 @@
     <dateCreated>1973–1975</dateCreated>
   </originInfo>
   <subject>
-    <geographic>Thimphu</geographic>
+    <geographic>Tingkyé</geographic>
   </subject>
   <subject>
     <cartographics>
-      <coordinates>27.442500,89.666944</coordinates>
+      <coordinates>28.363362471142967,87.77204070072646</coordinates>
     </cartographics>
   </subject>
-  <identifier type="placeref" authority="BDRC">G4706</identifier>
+  <identifier type="placeref" authority="BDRC">G1441</identifier>
   <location>
-    <url>http://purl.bdrc.io/resource/G4706</url>
+    <url>http://purl.bdrc.io/resource/G1441</url>
   </location>
   <note type="handlist" displayLabel="Handlist Available">true</note>
   <note type="images" displayLabel="Images Available">true</note>
