@@ -56,6 +56,8 @@
         const greeting = urlParams.get('greeting') || 'Hello! How can I help you with your research today?';
         const primaryColor = urlParams.get('primary_color') || '#007bff';
         
+        console.log('API Key from URL:', apiKey ? 'Present (hidden for security)' : 'Not present');
+        
         // Set dynamic styles
         document.documentElement.style.setProperty('--primary-color', primaryColor);
         document.querySelector('.owui-chat-title').textContent = title;
@@ -359,10 +361,10 @@
                 
                 // Prepare the request payload
                 const payload = {
-                    model: "gpt-3.5-turbo",
+                    model: "rkts-research-tool",
                     messages: [
-                        { role: "system", content: "You are a helpful assistant for Tibetan Buddhist texts." },
-                        { role: "user", content: message }
+                        { role: "system", content: systemPrompt },
+                        ...conversationHistory
                     ],
                     temperature: 0.7,
                     max_tokens: 800
@@ -467,12 +469,30 @@
                 
                 // Check if API key is available
                 if (!apiKey) {
-                    typingIndicator.style.display = 'none';
-                    userInput.disabled = false;
-                    sendButton.disabled = false;
-                    addMessage('Error: API key is missing. Please provide an API key via URL parameter.', 'bot', true);
-                    return;
+                    console.log('No API key available, attempting to fetch one');
+                    fetch('/.netlify/functions/get-api-key')
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data && data.apiKey) {
+                                console.log('Successfully retrieved API key from server');
+                                apiKey = data.apiKey;
+                                // Now that we have the API key, continue with the request
+                                processApiRequest(message);
+                            } else {
+                                handleApiError('Could not retrieve API key from server');
+                            }
+                        })
+                        .catch(error => {
+                            handleApiError(`Failed to fetch API key: ${error.message}`);
+                        });
+                } else {
+                    // We already have an API key, proceed with the request
+                    processApiRequest(message);
                 }
+            }
+            
+            // Helper function to process API request after ensuring we have an API key
+            function processApiRequest(message) {
                 
                 // Use the API proxy endpoint which handles HTTP/HTTPS issues for us
                 makeApiRequest(endpoint, apiKey, message)
@@ -498,20 +518,30 @@
                     userInput.focus();
                 })
                 .catch(error => {
-                    console.error('Error:', error);
-                    typingIndicator.style.display = 'none';
-                    
-                    let errorMessage;
-                    if (error.message === 'Failed to fetch') {
-                        // Connection issues with API proxy or target API
-                        errorMessage = `Connection error: Unable to connect to the API. This may be due to:
+                    handleApiError(error.message);
+                });
+            }
+            
+            // Helper function to handle API errors
+            function handleApiError(error) {
+                console.error('API Error:', error);
+                typingIndicator.style.display = 'none';
+                userInput.disabled = false;
+                sendButton.disabled = false;
+                
+                let errorMessage;
+                if (typeof error === 'string' && (error.includes('Failed to fetch') || error === 'Failed to fetch')) {
+                    // Connection issues with API proxy or target API
+                    errorMessage = `Connection error: Unable to connect to the API. This may be due to:
 1. The API server is not accessible or offline
 2. Network connectivity issues
 3. The API proxy function is not properly deployed
 
 Please check that the API server is running and accessible.`;
+                } else if (error.includes('401')) {
+                    errorMessage = `Authentication error (401): The API key may be invalid or missing. Please check your API key configuration.`;
                 } else {
-                    errorMessage = `Sorry, there was an error connecting to the API: ${error.message}. Please check your API key and endpoint configuration.`;
+                    errorMessage = `Sorry, there was an error connecting to the API: ${error}. Please check your API key and endpoint configuration.`;
                 }
                 
                 addMessage(errorMessage, 'bot', true);
@@ -520,53 +550,7 @@ Please check that the API server is running and accessible.`;
                 userInput.disabled = false;
                 sendButton.disabled = false;
                 userInput.focus();
-            });
-        }
-        
-        // Send message function
-        function sendMessage() {
-            // Make sure DOM elements are initialized
-            if (!userInput || !sendButton || !typingIndicator || !messagesContainer) {
-                console.error('DOM elements not initialized');
-                return;
             }
-            
-            const message = userInput.value.trim();
-            
-            if (!message) return;
-            
-            // Add user message to chat
-            addMessage(message, 'user');
-            
-            // Add to conversation history
-            conversationHistory.push({
-                role: 'user',
-                content: message
-            });
-            
-            // Clear input
-            userInput.value = '';
-            userInput.style.height = 'auto';
-            
-            // Disable input while waiting for response
-            userInput.disabled = true;
-            sendButton.disabled = true;
-            
-            // Show typing indicator
-            typingIndicator.style.display = 'block';
-            
-            // Check if API key is available
-            if (!apiKey) {
-                typingIndicator.style.display = 'none';
-                userInput.disabled = false;
-                sendButton.disabled = false;
-                addMessage('Error: API key is missing. Please provide an API key via URL parameter.', 'bot', true);
-                return;
-            }
-            
-            // Use the API proxy endpoint which handles HTTP/HTTPS issues for us
-            makeApiRequest(endpoint);
-        }
         
         // Handle window resize events to adjust the chat container
         window.addEventListener('resize', function() {
