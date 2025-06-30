@@ -11,7 +11,7 @@ class OpenWebUIChatWidget {
     // Default configuration
     this.config = {
       apiKey: this.getUrlParam('api_key') || 'sk-d98d26e0083f41f8b7f9b4163ca35df4',
-      endpoint: this.getUrlParam('endpoint') || 'http://130.61.212.178:3000/api/chat/completions',
+      endpoint: this.getUrlParam('endpoint') || 'https://130.61.212.178:3000/api/chat/completions',
       model: this.getUrlParam('model') || 'rkts-research-tool',
       systemPrompt: this.getUrlParam('system_prompt') || '',
       position: this.getUrlParam('position') || 'bottom-right',
