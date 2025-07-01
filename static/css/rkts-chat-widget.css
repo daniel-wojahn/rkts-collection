@@ -1,0 +1,118 @@
+/* rkts-chat-widget.css: Modern floating chat widget */
+#rkts-chat-widget-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  background: #3b3b58;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+#rkts-chat-widget-button:hover {
+  background: #57577d;
+}
+#rkts-chat-widget {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 340px;
+  max-width: 95vw;
+  height: 440px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: inherit;
+  border: 1px solid #e3e3e3;
+  animation: fadeInUp 0.3s;
+}
+@keyframes fadeInUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+#rkts-chat-header {
+  background: #3b3b58;
+  color: #fff;
+  padding: 14px 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#rkts-chat-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+#rkts-chat-messages {
+  flex: 1;
+  padding: 14px 12px;
+  overflow-y: auto;
+  background: #f7f7fa;
+}
+.rkts-msg {
+  margin-bottom: 10px;
+  max-width: 80%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  word-break: break-word;
+}
+.rkts-msg.user {
+  background: #e6eaff;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.rkts-msg.assistant {
+  background: #e5fbe6;
+  align-self: flex-start;
+  margin-right: auto;
+}
+#rkts-chat-input {
+  border-top: 1px solid #eee;
+  padding: 10px 12px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+#rkts-chat-input textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 15px;
+  min-height: 36px;
+  max-height: 90px;
+  outline: none;
+}
+#rkts-chat-input button {
+  background: #3b3b58;
+  color: #fff;
+  border: none;
+  margin-left: 8px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#rkts-chat-input button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
