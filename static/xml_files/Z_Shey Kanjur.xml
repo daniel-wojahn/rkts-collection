@@ -50,12 +50,8 @@ The Shey Kanjur (originally 105 volumes, with five missing at digitization) comp
       <note type="imagesby">BDRC</note>
       <note type="numberoflines">0</note>
       <form type="medium">Manuscript</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>0</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

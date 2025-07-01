@@ -42,11 +42,9 @@ The 1718–1720 Beijing Kanjur was widely distributed and became the standard ve
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
       <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>108</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

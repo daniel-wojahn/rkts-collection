@@ -40,12 +40,10 @@ This edition preserves a collection of rare Nyingma canonical texts originating 
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">6</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>8</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

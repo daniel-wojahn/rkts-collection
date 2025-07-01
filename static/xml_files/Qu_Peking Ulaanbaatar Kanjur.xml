@@ -35,12 +35,10 @@ Multiple institutions—including the National Library of Mongolia, the Asian Cl
       <url>http://purl.bdrc.io/resource/MW1KG26108</url>
     </location>
     <physicalDescription>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>107</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

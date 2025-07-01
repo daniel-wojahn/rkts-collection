@@ -11,9 +11,6 @@
   <abstract>From the collection of Chokyi Nyima, Serang Gompa, Kutang. Preserved on microfilm as part of the Nepal-German Manuscript Preservation Project (https://catalogue.ngmcp.uni-hamburg.de/servlets/solr/select?q=mtm:18725.0%0A)</abstract>
   <genre>Old Tantra</genre>
   <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Serang Gompa</geographic>
   </subject>
@@ -36,12 +33,10 @@
     <physicalDescription>
       <note type="digitizedby">NGMPP</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">6</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>19</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

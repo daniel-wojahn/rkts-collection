@@ -587,6 +587,7 @@ function updateShareableUrl(config) {
  * @param {string} [filters.category] - Category/genre to filter by
  * @param {string} [filters.place] - Place to filter by
  * @param {number} [filters.minYear] - Minimum year for date filtering
+ * @param {string|string[]} [filters.medium] - Medium or array of media to filter by
  * @param {number} [filters.maxYear] - Maximum year for date filtering
  * @param {Function} [customFilterFn] - Optional custom filter function
  * @returns {Array} - Filtered collections
@@ -627,6 +628,12 @@ function filterCollections(collections, filters = {}, customFilterFn = null) {
         });
     }
     
+    // Apply medium filter if provided
+    if (filters.medium && filters.medium !== 'all') {
+        let mediaArr = Array.isArray(filters.medium) ? filters.medium : [filters.medium];
+        filtered = filtered.filter(collection => collection.medium && mediaArr.includes(collection.medium));
+    }
+
     // Apply date range filter if provided
     if ((filters.minYear !== undefined && filters.minYear !== null) || 
         (filters.maxYear !== undefined && filters.maxYear !== null)) {

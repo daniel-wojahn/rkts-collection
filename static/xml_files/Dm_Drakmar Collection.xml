@@ -12,9 +12,6 @@
 
 Drakmar’s manuscript collection totals 116 volumes, moved to secure storage by the Tibetan Manuscript Project Vienna in September 2022 and fully digitized by May 2023. It comprises a 30-volume sūtra section (vols 1–30), an 18-volume tantra set (31–50, with two missing), 34 volumes of the Śatasāhasrikāprajñāpāramitā (51–84) drawn from four distinct sets, 12 volumes of the Pañcaviṃśatisāhasrikāprajñāpāramitā (85–96) in fragmentary form, four volumes of the Aṣṭasāhasrikāprajñāpāramitā (97–100), a four-volume Avataṃsaka (104–107) and three-volume Ratnakūṭa (108–110), three volumes of Vajracchedikā (101–103), two Bhadrakalpika volumes (111–112), three Tog gzungs (113–115), and a single Gzungs bsdus volume (116). Notably, it contains no Vinaya texts, and its sūtra manuscripts show a script style and paleographical features midway between those from Nesar and Namgyal.</abstract>
   <genre>Canonical Collection</genre>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Drakmar Temple</geographic>
   </subject>
@@ -40,14 +37,11 @@ Drakmar’s manuscript collection totals 116 volumes, moved to secure storage by
     </location>
     <physicalDescription>
       <note type="digitizedby">TMPV</note>
-      <note type="digitizedtime">2023.0</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>118</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

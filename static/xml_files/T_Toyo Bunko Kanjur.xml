@@ -14,9 +14,6 @@ The Toyo Bunko Kanjur is a handwritten manuscript, not a printed edition, testif
 Research on this collection was long limited by restricted access and by Saitō’s influential 1977 study being available only in Japanese. Jonathan Silk prepared an expanded English translation in the 1980s, but it remains unpublished. Recent digitization is now improving access and facilitating comparative study of the Toyo Bunko Kanjur.</abstract>
   <genre>Kanjur</genre>
   <classification>Thempangma</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Gyantse Monastery</geographic>
   </subject>
@@ -42,12 +39,10 @@ Research on this collection was long limited by restricted access and by Saitō�
     </location>
     <physicalDescription>
       <note type="digitizedby">Toyo Bunko</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>0</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

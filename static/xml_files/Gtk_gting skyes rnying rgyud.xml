@@ -13,9 +13,6 @@ Associated with Tingkyé Monastery (gting skyes dgon pa byang) in Tibet, the Tin
 The Tingkyé edition’s structure is distinct from other major editions, even where texts overlap.  Compared to the Derge xylograph, Tingkyé’s arrangement is markedly different. For example, one Derge volume (Ca) matches material split across four separate Tingkyé volumes (Ka, Kha, Ga, Cha), and text sequence varies as well. The Tsamdrak edition shares the same opening texts, but alignment quickly diverges, with some Tsamdrak texts absent from Tingkyé altogether. Eiichi Kaneko catalogued the collection in 1982, and it is also described by the Tibetan &amp; Himalayan Library.</abstract>
   <genre>Old Tantra</genre>
   <classification>South-Western Tibetan (NGB)</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Tingkyé</geographic>
   </subject>
@@ -41,12 +38,10 @@ The Tingkyé edition’s structure is distinct from other major editions, even w
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>36</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

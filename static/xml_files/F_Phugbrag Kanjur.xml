@@ -48,12 +48,10 @@ The Phugbrag Kanjur contains many unique readings and is not descended from the 
     <physicalDescription>
       <note type="digitizedby">TMPV</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>120</extent>
     </physicalDescription>
   </relatedItem>
   <relatedItem type="constituent">
@@ -69,9 +67,6 @@ The Phugbrag Kanjur contains many unique readings and is not descended from the 
       <note type="numberoflines">0</note>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>120</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

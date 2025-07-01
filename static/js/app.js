@@ -19,6 +19,7 @@ let lunrIndex; // Lunr search index
 let categoryOptions = new Set();
 let groupOptions = new Set();
 let placeOptions = new Set();
+let mediumOptions = new Set();
 let minYear = 1000;
 let maxYear = 2000;
 
@@ -221,6 +222,7 @@ async function loadData() {
             if (collection.classifications) {
                 collection.classifications.forEach(cls => groupOptions.add(cls));
             }
+            if (collection.medium) mediumOptions.add(collection.medium);
         });
         
         // Round min/max years to nearest century for better UX
@@ -351,21 +353,25 @@ function populateFilterDropdowns() {
     const categoryContainer = document.getElementById('category-filter');
     const groupContainer = document.getElementById('group-filter');
     const placeContainer = document.getElementById('place-filter');
+    const mediumContainer = document.getElementById('medium-filter');
     
     // Clear existing content
     categoryContainer.innerHTML = '';
     groupContainer.innerHTML = '';
     placeContainer.innerHTML = '';
+    if (mediumContainer) mediumContainer.innerHTML = '';
     
     // Sort options alphabetically
     const sortedCategories = Array.from(categoryOptions).sort();
     const sortedGroups = Array.from(groupOptions).sort();
     const sortedPlaces = Array.from(placeOptions).sort();
+    const sortedMedia = Array.from(mediumOptions).sort();
     
     // Count occurrences of each category
     const categoryCounts = {};
     const groupCounts = {};
     const placeCounts = {};
+    const mediumCounts = {};
     
     collections.forEach(collection => {
         if (collection.genre) {
@@ -380,6 +386,9 @@ function populateFilterDropdowns() {
             collection.classifications.forEach(group => {
                 groupCounts[group] = (groupCounts[group] || 0) + 1;
             });
+        }
+        if (collection.medium) {
+            mediumCounts[collection.medium] = (mediumCounts[collection.medium] || 0) + 1;
         }
     });
     
@@ -403,6 +412,14 @@ function populateFilterDropdowns() {
         const item = createCheckboxItem(place, 'place', count);
         placeContainer.appendChild(item);
     });
+
+    if (mediumContainer) {
+        sortedMedia.forEach(medium => {
+            const count = mediumCounts[medium] || 0;
+            const item = createCheckboxItem(medium, 'medium', count);
+            mediumContainer.appendChild(item);
+        });
+    }
 }
 
 // Create a checkbox item for filters
@@ -450,11 +467,13 @@ function updateDynamicFilterOptions() {
     const availableCategories = new Set();
     const availableGroups = new Set();
     const availablePlaces = new Set();
+    const availableMedia = new Set();
     
     // Count occurrences for each option in the filtered collections
     const categoryCounts = {};
     const groupCounts = {};
     const placeCounts = {};
+    const mediumCounts = {};
     
     // For each filtered collection, track available options
     filteredCollections.forEach(collection => {
@@ -476,6 +495,11 @@ function updateDynamicFilterOptions() {
                 availableGroups.add(group);
                 groupCounts[group] = (groupCounts[group] || 0) + 1;
             });
+        }
+        // Track media
+        if (collection.medium) {
+            availableMedia.add(collection.medium);
+            mediumCounts[collection.medium] = (mediumCounts[collection.medium] || 0) + 1;
         }
     });
     
@@ -506,6 +530,10 @@ function updateDynamicFilterOptions() {
             case 'place':
                 isAvailable = availablePlaces.has(value);
                 count = placeCounts[value] || 0;
+                break;
+            case 'medium':
+                isAvailable = availableMedia.has(value);
+                count = mediumCounts[value] || 0;
                 break;
         }
         
@@ -645,8 +673,10 @@ function applyFilters() {
     const dateSliderMax = document.getElementById('date-slider-max');
     const dateMinFilter = dateSliderMin ? parseInt(dateSliderMin.value) : minYear;
     const dateMaxFilter = dateSliderMax ? parseInt(dateSliderMax.value) : maxYear;
+
+    const mediumCheckboxes = document.querySelectorAll('.medium-checkbox:checked');
+    const selectedMedia = Array.from(mediumCheckboxes).map(cb => cb.value);
     
-    // Use the generic filterCollections utility function with a custom filter for groups
     filteredCollections = filterCollections(
         collections,
         {
@@ -669,8 +699,11 @@ function applyFilters() {
             const matchesPlace = selectedPlaces.length === 0 || 
                                (collection.place_of_production && 
                                 selectedPlaces.includes(collection.place_of_production));
+            // Medium filter - if any media are selected
+            const matchesMedium = selectedMedia.length === 0 || 
+                                  (collection.medium && selectedMedia.includes(collection.medium));
             
-            return matchesCategory && matchesGroup && matchesPlace;
+            return matchesCategory && matchesGroup && matchesPlace && matchesMedium;
         }
     );
     
@@ -1542,7 +1575,8 @@ function updateShareableUrl() {
             'search': 'search',
             'category': 'category-filter',
             'group': 'group-filter',
-            'place': 'place-filter'
+            'place': 'place-filter',
+            'medium': 'medium-filter'
         }
     });
 }

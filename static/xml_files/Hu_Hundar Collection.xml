@@ -26,6 +26,7 @@ Detailed information on the collection&apos;s transmission or preservation is la
   <note type="images" displayLabel="Images Available">false</note>
   <note type="text" displayLabel="Text Available">false</note>
   <relatedItem type="constituent">
+    <identifier type="local">MW8LS15990</identifier>
     <titleInfo>
       <title>MW8LS15990</title>
     </titleInfo>
@@ -35,6 +36,8 @@ Detailed information on the collection&apos;s transmission or preservation is la
     <physicalDescription>
       <note type="digitizedby">TMPV</note>
       <note type="imagesby">rKTs</note>
+      <note type="numberoflines">9</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
     </physicalDescription>

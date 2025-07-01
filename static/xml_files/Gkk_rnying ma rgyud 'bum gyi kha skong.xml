@@ -39,12 +39,10 @@
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">6</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>6</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

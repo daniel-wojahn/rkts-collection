@@ -50,12 +50,10 @@ Both manuscript and xylograph forms of the Narthang Tanjur are fundamental to th
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>225</extent>
     </physicalDescription>
   </relatedItem>
   <relatedItem type="constituent">
@@ -70,9 +68,6 @@ Both manuscript and xylograph forms of the Narthang Tanjur are fundamental to th
       <note type="numberoflines">0</note>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>225</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

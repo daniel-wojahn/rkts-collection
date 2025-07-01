@@ -8,7 +8,13 @@
   <titleInfo type="alternative" lang="tib">
     <title>ཧེ་མིས་གསེར་བྲིས་མ་ལས་རྒྱུད་ཁ་ཐོར་སྣ་ཚོགས།</title>
   </titleInfo>
-  <abstract>The Hemis Golden Kanjur is a deluxe manuscript set preserved at Hemis. Details about this collection are scarce; it has not been thoroughly studied by the Tibetan Manuscript Project Vienna (TMPV).</abstract>
+  <abstract>The Kanjur written in gold at Hemis Jangchup Samten Ling Monastery in Ladakh is traditionally attributed to the patronage of Dharma King Sengge Namgyal (Seng+ge rnam rgyal, c. 1616–1642). In memory of his father, Jamyang Namgyal (’Jam dbyangs rnam rgyal, r. 1590–1620), Sengge Namgyal invited the master Stagtsang Rechen (Stag tshang ras chen) and commissioned a gold-and-copper statue of Maitreya, the size of an eight-year-old child. He also brought artists from across eastern and western India to create the Five Treatises of Maitreya.
+
+As representations of the Buddha’s speech, Sengge Namgyal had the entire Kanjur produced in one copy of pure gold and seven additional copies using an alloy of gold, silver, and copper. He also had the complete Tanjur written in an extremely fine, hair-like script on paper. Other major commissions included the Prajñāpāramitā in 100,000 Verses, the Bhadrakalpika Sūtra, five sets of the Five Treatises of Maitreya, and two sets of the dgra thog gser gsum, a specific collection of texts.
+
+Sources indicate that the surviving pure gold Kanjur now preserved at Hemis Monastery is this original commission. The extant portion consists of scattered tantra sections divided into ten volumes, though many are missing or extraneous, as noted in marginalia at the beginning and end of each respective volume.
+
+Notably, while the volumes Ka, Kha, Nga, Ca, Cha, Nya, and Tha are complete in poti (Tibetan book) format, volume Ba is absent due to conflicting folio numbering. The tenth volume appears to originate from a different gold-written Kanjur, as its volume markers and overall format differ from the rest, warranting further investigation.</abstract>
   <genre>Canonical Collection</genre>
   <classification>Mustang</classification>
   <originInfo>
@@ -36,12 +42,10 @@
     <physicalDescription>
       <note type="digitizedby">TMPV</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>0</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

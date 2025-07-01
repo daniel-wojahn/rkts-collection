@@ -47,11 +47,9 @@ The collection serves as an indispensable point of comparison for other early ma
     </location>
     <physicalDescription>
       <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>0</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

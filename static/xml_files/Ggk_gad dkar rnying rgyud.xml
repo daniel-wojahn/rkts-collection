@@ -11,15 +11,12 @@
   <abstract>Old Tantra collection of the temple of Ghagar (Gad dkar); along with the neighboring temple of Drakmar (brag dmar / drag dmar) it is located in a small hamlet in the center of the Tarap (rta rab) valley that is known as Ghagar-Drakmar, referring to both religious institutions. Despite its high altitude of around 4.100-4.300 meters, the entire area is nowadays considered being part of Lower Dolpo. We provide two sets of scans for the collection: W1BL6 is organized according to the volumes in situ, and W1ER156 is reorganized by rKTs in a way that is closer to the original organization. The images were taken by the Tibetan Manuscript Project Vienna (TMPV) in 2023.</abstract>
   <genre>Old Tantra</genre>
   <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Ghagar Temple</geographic>
   </subject>
   <subject>
     <cartographics>
-      <coordinates>28.83333,83.249999</coordinates>
+      <coordinates>29.149981903038228,83.17131947079409</coordinates>
     </cartographics>
   </subject>
   <note type="handlist" displayLabel="Handlist Available">true</note>
@@ -37,6 +34,7 @@
       <note type="digitizedby">TMPV</note>
       <note type="imagesby">BDRC</note>
       <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
     </physicalDescription>

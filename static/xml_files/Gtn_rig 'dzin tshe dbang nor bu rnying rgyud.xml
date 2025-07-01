@@ -3,10 +3,10 @@
   <identifier type="local">44</identifier>
   <identifier type="sigla">Gtn</identifier>
   <titleInfo>
-    <title>Nyingma Gyübum (Rikdzin Tsewang Norbu) </title>
+    <title>Nyingma Gyübum (Rikdzin Tsewang Norbu)</title>
   </titleInfo>
   <titleInfo type="alternative" lang="tib">
-    <title> ཀཿཐོག་རིག་འཛིན་ཚེ་དབང་ནོར་བུའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+    <title>ཀཿཐོག་རིག་འཛིན་ཚེ་དབང་ནོར་བུའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
   </titleInfo>
   <abstract>The Rikdzin Tsewang Norbu edition of the Nyingma Gyübum (Rig ’dzin tshe dbang nor bu&apos;i rnying ma’i rgyud ’bum) is a lavishly illustrated Tibetan manuscript collection, historically known as the “Waddell edition” after L.A. Waddell, who took it from Tibet in 1904. Contemporary scholarship identifies its patron as Kathok Tsewang Norbu (Kaḥ thog Tshe dbang nor bu, 1698–1755), a renowned 18th-century lama whose miniature portrait and homage appear on the illuminated opening folio of most volumes.
 
@@ -45,6 +45,7 @@ The surviving manuscript is incomplete, believed to have originally comprised 33
     </location>
     <physicalDescription>
       <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">1</note>
     </physicalDescription>

@@ -16,7 +16,7 @@ The Sangyé Ling Gyübum was digitized in 2013 by Cathy Cantwell, Rob Mayer, and
   <genre>Old Tantra</genre>
   <classification>Bhutanese (NGB)</classification>
   <originInfo>
-    <dateCreated>18th cent.</dateCreated>
+    <dateCreated>1728</dateCreated>
   </originInfo>
   <subject>
     <geographic>Sangyé Ling Monastery</geographic>
@@ -39,12 +39,10 @@ The Sangyé Ling Gyübum was digitized in 2013 by Cathy Cantwell, Rob Mayer, and
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>46</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

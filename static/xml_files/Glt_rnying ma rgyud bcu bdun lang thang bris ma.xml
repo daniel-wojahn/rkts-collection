@@ -11,9 +11,6 @@
   <abstract>From a private collection, photographed in 1983 in Langthang, Nepal. Preserved on microfilm as part of the Nepal-German Manuscript Preservation Project, reels L 0007-03 to 09, L 0008-01 to 10.</abstract>
   <genre>Old Tantra</genre>
   <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Langthang</geographic>
   </subject>
@@ -36,12 +33,10 @@
     <physicalDescription>
       <note type="digitizedby">NGMPP</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>17</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

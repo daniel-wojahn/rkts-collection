@@ -45,12 +45,10 @@ Despite its lack of true textual independence from Derge, the Ragya Kanjur’s u
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>104</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

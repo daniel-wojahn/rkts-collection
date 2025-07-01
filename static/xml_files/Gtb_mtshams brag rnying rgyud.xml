@@ -51,7 +51,8 @@ The entire Tsamdrak edition has now been digitized and catalogued as part of the
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
     </physicalDescription>
@@ -66,7 +67,8 @@ The entire Tsamdrak edition has now been digitized and catalogued as part of the
     </location>
     <physicalDescription>
       <note type="digitizedby">EAP</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">0</note>
     </physicalDescription>

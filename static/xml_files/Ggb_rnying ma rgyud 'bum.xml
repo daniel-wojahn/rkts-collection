@@ -35,11 +35,9 @@
     </location>
     <physicalDescription>
       <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>49</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

@@ -11,9 +11,6 @@
   <abstract>From the collection of the National Archives, Kathmandu. Preserved on microfilm as part of the Nepal-German Manuscript Preservation Project (https://catalogue.ngmcp.uni-hamburg.de/receive/aaingmcp_tbtdocument_00069259)</abstract>
   <genre>Old Tantra</genre>
   <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
-  <originInfo>
-    <dateCreated></dateCreated>
-  </originInfo>
   <subject>
     <geographic>Kathmandu</geographic>
   </subject>
@@ -40,12 +37,10 @@
     <physicalDescription>
       <note type="digitizedby">NGMPP</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>7</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

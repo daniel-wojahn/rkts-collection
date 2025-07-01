@@ -49,14 +49,10 @@ The Narthang Xylograph became one of the most widely reproduced and circulated v
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
-      <form type="medium">xxx</form>
-      <scriptTerm type="text">xxx</scriptTerm>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>102</extent>
     </physicalDescription>
   </relatedItem>
   <relatedItem type="constituent">
@@ -70,12 +66,10 @@ The Narthang Xylograph became one of the most widely reproduced and circulated v
     <physicalDescription>
       <note type="digitizedby">CIHTS</note>
       <note type="imagesby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>102</extent>
     </physicalDescription>
   </relatedItem>
   <relatedItem type="constituent">
@@ -87,12 +81,11 @@ The Narthang Xylograph became one of the most widely reproduced and circulated v
       <url>http://purl.bdrc.io/resource/MW2KG210297</url>
     </location>
     <physicalDescription>
-      <note type="numberoflines">0</note>
+      <note type="digitizedby">Norshing Project</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>102</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

@@ -12,6 +12,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Modern Print",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -43,6 +44,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Modern Print",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -56,7 +58,7 @@
         "id": "79",
         "title": "MW1PD95844",
         "url": "http://purl.bdrc.io/resource/MW1PD95844",
-        "medium": "Modern print",
+        "medium": "Modern Print",
         "script": "",
         "extent": ""
       }
@@ -75,6 +77,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1955",
       "url": "http://purl.bdrc.io/resource/G1955"
@@ -111,6 +114,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -142,6 +146,7 @@
     "place_of_production": "Bardan Monastery (Zanskar)",
     "coordinates": "33.2349,76.5514",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1BL5",
       "url": "http://purl.bdrc.io/resource/G1BL5"
@@ -178,6 +183,7 @@
     "place_of_production": "Chengdu",
     "coordinates": "30.4238,104.0519",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1111",
       "url": "http://purl.bdrc.io/resource/G1111"
@@ -211,6 +217,7 @@
     "place_of_production": "Khyungpo Tengchen Tsedruk Monastery",
     "coordinates": "31.4273,95.57874",
     "classifications": [],
+    "medium": "Modern Print",
     "bdrc_reference": {
       "id": "G1KR1169",
       "url": "http://purl.bdrc.io/resource/G1KR1169"
@@ -245,6 +252,7 @@
     "place_of_production": "Lanzhou",
     "coordinates": "36.0614,103.8342",
     "classifications": [],
+    "medium": "Modern Print",
     "bdrc_reference": {
       "id": "G895",
       "url": "http://purl.bdrc.io/resource/G895"
@@ -279,6 +287,7 @@
     "place_of_production": "Walkhyung Monastery (Nyarong)",
     "coordinates": "30.9666667,100.2000000",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1616",
       "url": "http://purl.bdrc.io/resource/G1616"
@@ -296,7 +305,7 @@
         "id": "98",
         "title": "MW4CZ58520",
         "url": "http://purl.bdrc.io/resource/MW4CZ58520",
-        "medium": "Blockprint",
+        "medium": "Print",
         "script": "",
         "extent": ""
       }
@@ -313,6 +322,7 @@
     "place_of_production": "Chengdu",
     "coordinates": "30.4238,104.0519",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1111",
       "url": "http://purl.bdrc.io/resource/G1111"
@@ -331,7 +341,7 @@
         "id": "99",
         "title": "MW30498",
         "url": "http://purl.bdrc.io/resource/MW30498",
-        "medium": "Blockprint",
+        "medium": "Print",
         "script": "",
         "extent": ""
       }
@@ -348,6 +358,7 @@
     "place_of_production": "Khyungpo Tengchen Monastery",
     "coordinates": "31.4273,95.57874",
     "classifications": [],
+    "medium": "Modern Print",
     "bdrc_reference": {
       "id": "G1KR1169",
       "url": "http://purl.bdrc.io/resource/G1KR1169"
@@ -385,6 +396,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G435",
       "url": "http://purl.bdrc.io/resource/G435"
@@ -428,6 +440,7 @@
     "place_of_production": "Coné Ganden Shedrub Ling",
     "coordinates": "34.59525,103.50381",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G435",
       "url": "http://purl.bdrc.io/resource/G435"
@@ -463,6 +476,7 @@
     "place_of_production": "Chamdo Monastery",
     "coordinates": "31.166666,97.2333324",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G2185",
       "url": "http://purl.bdrc.io/resource/G2185"
@@ -480,9 +494,9 @@
         "id": "11",
         "title": "MW1GS54155",
         "url": "http://purl.bdrc.io/resource/MW1GS54155",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -499,6 +513,7 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "",
     "bdrc_reference": {
       "id": "G1BL16",
       "url": "http://purl.bdrc.io/resource/G1BL16"
@@ -521,6 +536,7 @@
     "place_of_production": "Chemre Monastery (Ladakh)",
     "coordinates": "33.5732,77.4720",
     "classifications": [],
+    "medium": "",
     "bdrc_reference": {
       "id": "G1BL6",
       "url": "http://purl.bdrc.io/resource/G1BL6"
@@ -543,6 +559,7 @@
     "place_of_production": "Chizhing Samtenchöling",
     "coordinates": "27.311405,89.595200",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG116097",
       "url": "http://purl.bdrc.io/resource/G1KG116097"
@@ -580,6 +597,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1657",
       "url": "http://purl.bdrc.io/resource/G1657"
@@ -648,6 +666,7 @@
     "place_of_production": "Derge Printing House",
     "coordinates": "31.8330556,98.59972222222221",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1657",
       "url": "http://purl.bdrc.io/resource/G1657"
@@ -702,6 +721,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG116098",
       "url": "http://purl.bdrc.io/resource/G1KG116098"
@@ -739,6 +759,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG116096",
       "url": "http://purl.bdrc.io/resource/G1KG116096"
@@ -748,7 +769,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -757,9 +778,9 @@
         "id": "17",
         "title": "MWEAP570-1-1",
         "url": "http://purl.bdrc.io/resource/MWEAP570-1-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "109"
+        "extent": ""
       }
     ]
   },
@@ -774,6 +795,7 @@
     "place_of_production": "Drakmar Temple",
     "coordinates": "29.15,83.17111111111112",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1BL15",
       "url": "http://purl.bdrc.io/resource/G1BL15"
@@ -783,9 +805,8 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
-      "digitizedtime": "2023.0",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -794,9 +815,9 @@
         "id": "89",
         "title": "MW1BL10",
         "url": "http://purl.bdrc.io/resource/MW1BL10",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "118"
+        "extent": ""
       }
     ]
   },
@@ -813,6 +834,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "false",
@@ -844,6 +866,7 @@
     "place_of_production": "Dzongsar Institute",
     "coordinates": "31.6436006,98.9628067",
     "classifications": [],
+    "medium": "Modern Print",
     "bdrc_reference": {
       "id": "G3JT12554",
       "url": "http://purl.bdrc.io/resource/G3JT12554"
@@ -862,9 +885,9 @@
         "id": "18",
         "title": "MW2PD19497",
         "url": "http://purl.bdrc.io/resource/MW2PD19497",
-        "medium": "",
+        "medium": "Modern Print",
         "script": "",
-        "extent": "12"
+        "extent": ""
       }
     ]
   },
@@ -879,13 +902,14 @@
     "place_of_production": "Egoo Temple",
     "coordinates": "33.89798594298058,77.80598644367583",
     "classifications": [],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "9",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -894,9 +918,9 @@
         "id": "19",
         "title": "MW1KG12671",
         "url": "http://purl.bdrc.io/resource/MW1KG12671",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "1"
+        "extent": ""
       }
     ]
   },
@@ -913,6 +937,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G2KG1681",
       "url": "http://purl.bdrc.io/resource/G2KG1681"
@@ -932,9 +957,9 @@
         "id": "20",
         "title": "MW1KG13607",
         "url": "http://purl.bdrc.io/resource/MW1KG13607",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "120"
+        "extent": ""
       },
       {
         "id": "21",
@@ -942,7 +967,7 @@
         "url": "http://purl.bdrc.io/resource/MW2KG210295",
         "medium": "",
         "script": "",
-        "extent": "120"
+        "extent": ""
       }
     ]
   },
@@ -957,6 +982,7 @@
     "place_of_production": "Chonggye",
     "coordinates": "29.031562, 91.680466",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G848",
       "url": "http://purl.bdrc.io/resource/G848"
@@ -976,8 +1002,8 @@
         "title": "MW23702",
         "url": "http://purl.bdrc.io/resource/MW23702",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "225"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -994,6 +1020,7 @@
     "classifications": [
       "Eastern Tibetan (NGB)"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G3JT12503",
       "url": "http://purl.bdrc.io/resource/G3JT12503"
@@ -1013,8 +1040,8 @@
         "title": "MW1KG11703",
         "url": "http://purl.bdrc.io/resource/MW1KG11703",
         "medium": "Print",
-        "script": "Uchen",
-        "extent": "4"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -1029,6 +1056,7 @@
     "place_of_production": "Leh",
     "coordinates": "34.156639,77.585444",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1085",
       "url": "http://purl.bdrc.io/resource/G1085"
@@ -1038,7 +1066,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "6",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1047,9 +1075,9 @@
         "id": "25",
         "title": "MW21519",
         "url": "http://purl.bdrc.io/resource/MW21519",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "8"
+        "extent": ""
       }
     ]
   },
@@ -1066,12 +1094,13 @@
     "classifications": [
       "South-Western Tibetan (NGB)"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1080,9 +1109,9 @@
         "id": "26",
         "title": "MW21520",
         "url": "http://purl.bdrc.io/resource/MW21520",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "2"
+        "extent": ""
       }
     ]
   },
@@ -1099,13 +1128,14 @@
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "NGMPP",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "6",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1114,9 +1144,9 @@
         "id": "81",
         "title": "MW1ER128",
         "url": "http://purl.bdrc.io/resource/MW1ER128",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "19"
+        "extent": ""
       }
     ]
   },
@@ -1133,6 +1163,7 @@
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G2CN11080",
       "url": "http://purl.bdrc.io/resource/G2CN11080"
@@ -1143,7 +1174,7 @@
       "text_Text Available": "false",
       "digitizedby": "NGMPP",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1152,9 +1183,9 @@
         "id": "82",
         "title": "MW1ER119",
         "url": "http://purl.bdrc.io/resource/MW1ER119",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "7"
+        "extent": ""
       }
     ]
   },
@@ -1171,6 +1202,7 @@
     "classifications": [
       "Eastern Tibetan (NGB)"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1657",
       "url": "http://purl.bdrc.io/resource/G1657"
@@ -1180,7 +1212,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1189,9 +1221,9 @@
         "id": "27",
         "title": "MW21939",
         "url": "http://purl.bdrc.io/resource/MW21939",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "26"
+        "extent": ""
       }
     ]
   },
@@ -1208,6 +1240,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "",
     "bdrc_reference": {
       "id": "G1KG116096",
       "url": "http://purl.bdrc.io/resource/G1KG116096"
@@ -1232,6 +1265,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Modern Print",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -1245,9 +1279,9 @@
         "id": "28",
         "title": "MW3CN3207",
         "url": "http://purl.bdrc.io/resource/MW3CN3207",
-        "medium": "",
+        "medium": "Modern Print",
         "script": "",
-        "extent": "49"
+        "extent": ""
       }
     ]
   },
@@ -1260,10 +1294,11 @@
     "genre": "Old Tantra",
     "date_created": "",
     "place_of_production": "Ghagar Temple",
-    "coordinates": "28.83333,83.249999",
+    "coordinates": "29.149981903038228,83.17131947079409",
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -1279,7 +1314,7 @@
         "id": "87",
         "title": "MW1BL6",
         "url": "http://purl.bdrc.io/resource/MW1ER156",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -1298,6 +1333,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG116095",
       "url": "http://purl.bdrc.io/resource/G1KG116095"
@@ -1307,7 +1343,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1316,9 +1352,9 @@
         "id": "93",
         "title": "MWEAP105-1-1",
         "url": "http://purl.bdrc.io/resource/MWEAP105-1-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "46"
+        "extent": ""
       }
     ]
   },
@@ -1335,6 +1371,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G183",
       "url": "http://purl.bdrc.io/resource/G183"
@@ -1353,9 +1390,9 @@
         "id": "91",
         "title": "MWEAP039-1-3-1",
         "url": "http://purl.bdrc.io/resource/MWEAP039-1-3-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "46"
+        "extent": ""
       }
     ]
   },
@@ -1372,6 +1409,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G183",
       "url": "http://purl.bdrc.io/resource/G183"
@@ -1390,9 +1428,9 @@
         "id": "92",
         "title": "MWEAP039-1-3-2",
         "url": "http://purl.bdrc.io/resource/MWEAP039-1-3-2",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "46"
+        "extent": ""
       }
     ]
   },
@@ -1409,6 +1447,7 @@
     "classifications": [
       "Eastern Tibetan (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1563",
       "url": "http://purl.bdrc.io/resource/G1563"
@@ -1418,7 +1457,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "6",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1446,6 +1485,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1441",
       "url": "http://purl.bdrc.io/resource/G1441"
@@ -1455,7 +1495,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "6",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1464,9 +1504,9 @@
         "id": "30",
         "title": "MW25815",
         "url": "http://purl.bdrc.io/resource/MW25815",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "6"
+        "extent": ""
       }
     ]
   },
@@ -1483,13 +1523,14 @@
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "NGMPP",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1498,9 +1539,9 @@
         "id": "83",
         "title": "MW1ER124",
         "url": "http://purl.bdrc.io/resource/MW1ER124",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "17"
+        "extent": ""
       }
     ]
   },
@@ -1517,6 +1558,7 @@
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -1537,6 +1579,7 @@
     "classifications": [
       "Tibetan-Nepalese Borderlands (NGB)"
     ],
+    "medium": "",
     "bdrc_reference": {
       "id": "G317",
       "url": "http://purl.bdrc.io/resource/G317"
@@ -1561,6 +1604,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G4342",
       "url": "http://purl.bdrc.io/resource/G4342"
@@ -1570,7 +1614,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "10",
       "integratedrkts": "0",
       "isreferenceset": "0",
       "digitizedby": "TMPV"
@@ -1580,17 +1624,17 @@
         "id": "31",
         "title": "MW2KG5016",
         "url": "http://purl.bdrc.io/resource/MW2KG5016",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "47"
+        "extent": ""
       },
       {
         "id": "32",
         "title": "MW1PD128753",
         "url": "http://purl.bdrc.io/resource/MW1PD128753",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "36"
+        "extent": ""
       }
     ]
   },
@@ -1607,6 +1651,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Modern Print",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -1620,9 +1665,9 @@
         "id": "33",
         "title": "MW1KG14783",
         "url": "http://purl.bdrc.io/resource/MW1KG14783",
-        "medium": "",
+        "medium": "Modern Print",
         "script": "",
-        "extent": "58"
+        "extent": ""
       }
     ]
   },
@@ -1639,6 +1684,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -1653,18 +1699,19 @@
     "alternative_title": "སངས་རྒྱས་གླིང་རྙིང་མ་རྒྱུད་འབུམ།",
     "abstract": "The Sangyé Ling Illuminated Manuscript Edition (Sangs rgyas gling rn ying ma rgyud ’bum) belongs to the Central Bhutanese lineage of Nyingma Gyübum transmissions, one of six closely related sets believed to share a common ancestry. The precise date of the Sangyé Ling edition is uncertain, but it is thought to be a copy of the Tsamdrak (Mtshams brag) manuscript, which was produced around 1726–1728; the Sangyé Ling manuscript would thus date slightly later. All these Bhutanese sets—including Sangyé Ling—are ultimately traced to the Gangtey (A), produced in 1642.\n\nThis illuminated edition originally consisted of 46 volumes; 43 survive, as volumes 11, 12, and 41 are missing.\n\nThe Sangyé Ling Gyübum was digitized in 2013 by Cathy Cantwell, Rob Mayer, and Ngawang Tsepag.",
     "genre": "Old Tantra",
-    "date_created": "18th cent.",
+    "date_created": "1728",
     "place_of_production": "Sangyé Ling Monastery",
     "coordinates": "27.586737543120808,91.85772191816841",
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1673,9 +1720,9 @@
         "id": "34",
         "title": "MW1KG16449",
         "url": "http://purl.bdrc.io/resource/MW1KG16449",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "46"
+        "extent": ""
       }
     ]
   },
@@ -1692,6 +1739,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G183",
       "url": "http://purl.bdrc.io/resource/G183"
@@ -1701,7 +1749,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1710,9 +1758,9 @@
         "id": "35",
         "title": "MWEAP039-1-1",
         "url": "http://purl.bdrc.io/resource/MWEAP039-1-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "107"
+        "extent": ""
       }
     ]
   },
@@ -1729,6 +1777,7 @@
     "classifications": [
       "Bhutanese (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G382",
       "url": "http://purl.bdrc.io/resource/G382"
@@ -1738,7 +1787,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "0"
     },
@@ -1747,7 +1796,7 @@
         "id": "36",
         "title": "MW21521",
         "url": "http://purl.bdrc.io/resource/MW21521",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       },
@@ -1755,7 +1804,7 @@
         "id": "94",
         "title": "MWEAP310-4-1",
         "url": "http://purl.bdrc.io/resource/MWEAP310-4-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -1774,6 +1823,7 @@
     "classifications": [
       "South-Western Tibetan (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1441",
       "url": "http://purl.bdrc.io/resource/G1441"
@@ -1783,7 +1833,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1792,17 +1842,17 @@
         "id": "37",
         "title": "MW21518",
         "url": "http://purl.bdrc.io/resource/MW21518",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "36"
+        "extent": ""
       }
     ]
   },
   {
     "file_name": "Gtn_rig 'dzin tshe dbang nor bu rnying rgyud.xml",
     "sigla": "Gtn",
-    "title": "Nyingma Gyübum (Rikdzin Tsewang Norbu) ",
-    "alternative_title": " ཀཿཐོག་རིག་འཛིན་ཚེ་དབང་ནོར་བུའི་རྙིང་མ་རྒྱུད་འབུམ།",
+    "title": "Nyingma Gyübum (Rikdzin Tsewang Norbu)",
+    "alternative_title": "ཀཿཐོག་རིག་འཛིན་ཚེ་དབང་ནོར་བུའི་རྙིང་མ་རྒྱུད་འབུམ།",
     "abstract": "The Rikdzin Tsewang Norbu edition of the Nyingma Gyübum (Rig ’dzin tshe dbang nor bu'i rnying ma’i rgyud ’bum) is a lavishly illustrated Tibetan manuscript collection, historically known as the “Waddell edition” after L.A. Waddell, who took it from Tibet in 1904. Contemporary scholarship identifies its patron as Kathok Tsewang Norbu (Kaḥ thog Tshe dbang nor bu, 1698–1755), a renowned 18th-century lama whose miniature portrait and homage appear on the illuminated opening folio of most volumes.\n\nThe manuscript's origins are closely linked to the vibrant Nyingma scriptural revival in the borderlands of southern Tibet and Nepal, particularly the Kyirong (Skyid grong) region, in the late 18th century. Tsewang Norbu, although nominally based at Kathok in eastern Tibet, traveled extensively, restored monasteries in the Kathmandu Valley, and died in Kyirong. The edition likely arose as part of the revival movement led by his student Trinlé Düjom (Phrin las bdud ’joms, 1726–1789), whose disciples produced several manuscript collections of the Nyingma Gyübum in the area after their master’s death.\n\nInternal evidence for this milieu includes the presence of a certain Nya Sönam Chöphel (Snya bsod nams chos ’phel)—possibly the artist—in the opening volume, with “snya” likely referring to Gnya' nang, near Kyirong. The lama-artist Künsang Trinlé Wangchuk of Kyirong (Kun bzang phrin las dbang phyug, 1772–1812)—a disciple of Trinlé Düjom—was active in producing manuscript frontispieces for the Nyingma canon during this period.\n\nThe surviving manuscript is incomplete, believed to have originally comprised 33 volumes but now existing in 29 volumes, distributed primarily among the British Library (29 vols.), Bodleian Libraries, Oxford (vol. Ka), and the Victoria and Albert Museum, London (two title folios). It is a principal exemplar of the South-Western Tibetan recension, sharing features with the Tingkyé manuscript and Bathang Kanjur (Newark). Notably, its volume dza preserves two versions of the \"Immaculate Confession Tantra\" (Dri med bshags rgyud), one incorporating corrections by the Fifth Dalai Lama (1617–1682).",
     "genre": "Old Tantra",
     "date_created": "18th cent.",
@@ -1811,6 +1861,7 @@
     "classifications": [
       "South-Western Tibetan (NGB)"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G2161",
       "url": "http://purl.bdrc.io/resource/G2161"
@@ -1828,7 +1879,7 @@
         "id": "38",
         "title": "MW2PD19896",
         "url": "http://purl.bdrc.io/resource/MW2PD19896",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -1845,6 +1896,7 @@
     "place_of_production": "",
     "coordinates": "",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -1877,6 +1929,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1PD129184",
       "url": "http://purl.bdrc.io/resource/G1PD129184"
@@ -1886,7 +1939,7 @@
       "images_Images Available": "true",
       "text_Text Available": "true",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1912,6 +1965,7 @@
     "place_of_production": "Hanle, Ladakh",
     "coordinates": "32.790667,79.002065",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G27458",
       "url": "http://purl.bdrc.io/resource/G27458"
@@ -1921,7 +1975,7 @@
       "images_Images Available": "false",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
-      "numberoflines": "0",
+      "numberoflines": "9",
       "integratedrkts": "0",
       "isreferenceset": "1"
     },
@@ -1930,9 +1984,9 @@
         "id": "41",
         "title": "MW1PD127348",
         "url": "http://purl.bdrc.io/resource/MW1PD127348",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -1949,13 +2003,14 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1965,8 +2020,8 @@
         "title": "MW4CZ45313",
         "url": "http://purl.bdrc.io/resource/MW4CZ45313",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "84"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -1975,7 +2030,7 @@
     "sigla": "Hg",
     "title": "Hemis Golden Collection",
     "alternative_title": "ཧེ་མིས་གསེར་བྲིས་མ་ལས་རྒྱུད་ཁ་ཐོར་སྣ་ཚོགས།",
-    "abstract": "The Hemis Golden Kanjur is a deluxe manuscript set preserved at Hemis. Details about this collection are scarce; it has not been thoroughly studied by the Tibetan Manuscript Project Vienna (TMPV).",
+    "abstract": "The Kanjur written in gold at Hemis Jangchup Samten Ling Monastery in Ladakh is traditionally attributed to the patronage of Dharma King Sengge Namgyal (Seng+ge rnam rgyal, c. 1616–1642). In memory of his father, Jamyang Namgyal (’Jam dbyangs rnam rgyal, r. 1590–1620), Sengge Namgyal invited the master Stagtsang Rechen (Stag tshang ras chen) and commissioned a gold-and-copper statue of Maitreya, the size of an eight-year-old child. He also brought artists from across eastern and western India to create the Five Treatises of Maitreya.\n\nAs representations of the Buddha’s speech, Sengge Namgyal had the entire Kanjur produced in one copy of pure gold and seven additional copies using an alloy of gold, silver, and copper. He also had the complete Tanjur written in an extremely fine, hair-like script on paper. Other major commissions included the Prajñāpāramitā in 100,000 Verses, the Bhadrakalpika Sūtra, five sets of the Five Treatises of Maitreya, and two sets of the dgra thog gser gsum, a specific collection of texts.\n\nSources indicate that the surviving pure gold Kanjur now preserved at Hemis Monastery is this original commission. The extant portion consists of scattered tantra sections divided into ten volumes, though many are missing or extraneous, as noted in marginalia at the beginning and end of each respective volume.\n\nNotably, while the volumes Ka, Kha, Nga, Ca, Cha, Nya, and Tha are complete in poti (Tibetan book) format, volume Ba is absent due to conflicting folio numbering. The tenth volume appears to originate from a different gold-written Kanjur, as its volume markers and overall format differ from the rest, warranting further investigation.",
     "genre": "Canonical Collection",
     "date_created": "",
     "place_of_production": "Hemis monastery",
@@ -1983,13 +2038,14 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -1998,9 +2054,9 @@
         "id": "43",
         "title": "MW4CZ45315",
         "url": "http://purl.bdrc.io/resource/MW4CZ45315",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -2017,13 +2073,14 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2033,8 +2090,8 @@
         "title": "MW4CZ45314",
         "url": "http://purl.bdrc.io/resource/MW4CZ45314",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "0"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -2049,21 +2106,23 @@
     "place_of_production": "Hundar monastery",
     "coordinates": "34.541111,77.560278",
     "classifications": [],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "rKTs",
+      "numberoflines": "9",
       "integratedrkts": "0",
       "isreferenceset": "0"
     },
     "constituents": [
       {
-        "id": "",
+        "id": "MW8LS15990",
         "title": "MW8LS15990",
         "url": "http://purl.bdrc.io/resource/MW8LS15990",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -2082,6 +2141,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G3JT12610",
       "url": "http://purl.bdrc.io/resource/G3JT12610"
@@ -2091,7 +2151,7 @@
       "images_Images Available": "true",
       "text_Text Available": "true",
       "digitizedby": "TMPV",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "0",
       "isreferenceset": "0",
       "imagesby": "His Holiness Gyalwang Karmapa Ogyen Trinley Dorje"
@@ -2128,6 +2188,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2148,6 +2209,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G221",
       "url": "http://purl.bdrc.io/resource/G221"
@@ -2158,7 +2220,7 @@
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2168,8 +2230,8 @@
         "title": "MW3CN981",
         "url": "http://purl.bdrc.io/resource/MW3CN981",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "111"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -2184,6 +2246,7 @@
     "place_of_production": "",
     "coordinates": "",
     "classifications": [],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2198,9 +2261,9 @@
         "id": "48",
         "title": "MW2KG210299",
         "url": "http://purl.bdrc.io/resource/MW2KG210299",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -2215,6 +2278,7 @@
     "place_of_production": "",
     "coordinates": "",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2233,6 +2297,7 @@
     "place_of_production": "Matho Monastery",
     "coordinates": "33.998611,77.630833",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1BL18",
       "url": "http://purl.bdrc.io/resource/G1BL18"
@@ -2242,7 +2307,6 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
-      "digitizedtime": "2014.0",
       "imagesby": "BDRC",
       "numberoflines": "0",
       "integratedrkts": "1",
@@ -2254,8 +2318,8 @@
         "title": "MW1BL9",
         "url": "http://purl.bdrc.io/resource/MW1BL9",
         "medium": "Manuscript",
-        "script": "Mixed",
-        "extent": "433"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -2270,6 +2334,7 @@
     "place_of_production": "Zhongar Dzong",
     "coordinates": "27.270800,91.240800",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2290,6 +2355,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "true",
@@ -2304,9 +2370,9 @@
         "id": "88",
         "title": "MW4CZ5370",
         "url": "http://purl.bdrc.io/resource/MW4CZ5370",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "108"
+        "extent": ""
       }
     ]
   },
@@ -2323,6 +2389,7 @@
     "classifications": [
       "Mixed"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G2CN10912",
       "url": "http://purl.bdrc.io/resource/G2CN10912"
@@ -2331,8 +2398,8 @@
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
-      "digitizedby": "CIHTS",
-      "numberoflines": "0",
+      "digitizedby": "Norshing Project",
+      "numberoflines": "7",
       "integratedrkts": "0",
       "isreferenceset": "0",
       "imagesby": "BDRC"
@@ -2342,25 +2409,25 @@
         "id": "49",
         "title": "MW22703",
         "url": "http://purl.bdrc.io/resource/MW22703",
-        "medium": "xxx",
-        "script": "xxx",
-        "extent": "102"
+        "medium": "Print",
+        "script": "",
+        "extent": ""
       },
       {
         "id": "50",
         "title": "MW2KG5014",
         "url": "http://purl.bdrc.io/resource/MW2KG5014",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "102"
+        "extent": ""
       },
       {
         "id": "51",
         "title": "MW2KG210297",
         "url": "http://purl.bdrc.io/resource/MW2KG210297",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "102"
+        "extent": ""
       }
     ]
   },
@@ -2375,6 +2442,7 @@
     "place_of_production": "Narthang Monastery Printing House",
     "coordinates": "29.190596,88.763157",
     "classifications": [],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G2CN10912",
       "url": "http://purl.bdrc.io/resource/G2CN10912"
@@ -2393,9 +2461,9 @@
         "id": "52",
         "title": "MW22704",
         "url": "http://purl.bdrc.io/resource/MW22704",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "225"
+        "extent": ""
       },
       {
         "id": "53",
@@ -2403,7 +2471,7 @@
         "url": "http://purl.bdrc.io/resource/MW2KG5015",
         "medium": "",
         "script": "",
-        "extent": "225"
+        "extent": ""
       }
     ]
   },
@@ -2420,6 +2488,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G4023",
       "url": "http://purl.bdrc.io/resource/G4023"
@@ -2429,7 +2498,7 @@
       "images_Images Available": "false",
       "text_Text Available": "false",
       "digitizedby": "TMPV",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "0",
       "isreferenceset": "1"
     },
@@ -2438,7 +2507,7 @@
         "id": "54",
         "title": "MW3CN1317",
         "url": "http://purl.bdrc.io/resource/MW3CN1317",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -2457,6 +2526,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G2KG2759",
       "url": "http://purl.bdrc.io/resource/G2KG2759"
@@ -2467,7 +2537,7 @@
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "9",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2477,8 +2547,8 @@
         "title": "MW2KG229028",
         "url": "http://purl.bdrc.io/resource/MW2KG229028",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "52"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -2493,6 +2563,7 @@
     "place_of_production": "Neyphug Monastery",
     "coordinates": "27.39330,89.49910",
     "classifications": [],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG116094",
       "url": "http://purl.bdrc.io/resource/G1KG116094"
@@ -2502,7 +2573,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2511,9 +2582,9 @@
         "id": "56",
         "title": "MWEAP310-2-1",
         "url": "http://purl.bdrc.io/resource/MWEAP310-2-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "106"
+        "extent": ""
       }
     ]
   },
@@ -2528,6 +2599,7 @@
     "place_of_production": "",
     "coordinates": "",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2548,6 +2620,7 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "",
     "bdrc_reference": {
       "id": "G1BL11",
       "url": "http://purl.bdrc.io/resource/G1BL11"
@@ -2572,6 +2645,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2590,6 +2664,7 @@
     "place_of_production": "Phugtal Monastery",
     "coordinates": "33.268364,77.179542",
     "classifications": [],
+    "medium": "",
     "bdrc_reference": {
       "id": "G1BL21",
       "url": "http://purl.bdrc.io/resource/G1BL21"
@@ -2606,7 +2681,7 @@
     "sigla": "Pj",
     "title": "Phajoding Ogmin Kanjur",
     "alternative_title": "ཕ་ཇོ་ལྡིང་འོག་མིན་ལྷ་ཁང་བཀའ་འགྱུར།",
-    "abstract": "Phajoding Monastery, perched above Thimphu in Bhutan, was founded in the 13th century as a hermitage by Phajo Drukgom Zhigpo (Pha jo ‘Brug sgom zhig po, 1184–1251), the yogin who introduced the Drukpa Kagyü tradition to Bhutan. Over the following centuries, the site gained prominence as a place of retreat for many Chief Abbots (rje mkhan po) of Bhutan, especially during the medieval period. One of the most notable figures associated with Phajoding is Shakya Rinchen (Shākya rin chen, 1710–1759), a great scholar and the 9th Je Khenpo, who—along with several other Je Khenpos—retired to Phajoding.\n\nThe main temple complex was constructed around 1755 by Bhutan’s 13th Desi, Sherab Wangchuk (Shes rab dbang phyug, 1697–1765), together with Shakya Rinchen. Over subsequent centuries, additional temples and monastic residences were developed, resulting in the substantial monastic community present today.\n\nPhajoding’s library has gradually expanded and now holds over 1,000 volumes of manuscripts and block prints, including canonical, ritual, and biographical works. The Phajoding Ogmin Kanjur is a significant part of this collection and illustrates the monastery’s ongoing commitment to the preservation of Drukpa Kagyü texts in Bhutan. The monastery’s printing house also holds historical importance, notably for producing the works of the Tibetan philosopher Shakya Chokden (Shākya mchog ldan, 1428–1507) after his writings were banned in Tibet. Today, the manuscripts at Phajoding—including those of the Ogmin Kanjur—remain critical for Bhutanese Buddhist traditions and for the study of Himalayan Buddhism more broadly.\n\nReferences and further details can be found in the EAP570 project archive (https://eap.bl.uk/project/EAP570) ",
+    "abstract": "Phajoding Monastery, perched above Thimphu in Bhutan, was founded in the 13th century as a hermitage by Phajo Drukgom Zhigpo (Pha jo ‘Brug sgom zhig po, 1184–1251), the yogin who introduced the Drukpa Kagyü tradition to Bhutan. Over the following centuries, the site gained prominence as a place of retreat for many Chief Abbots (rje mkhan po) of Bhutan, especially during the medieval period. One of the most notable figures associated with Phajoding is Shakya Rinchen (Shākya rin chen, 1710–1759), a great scholar and the 9th Je Khenpo, who—along with several other Je Khenpos—retired to Phajoding.\n\nThe main temple complex was constructed around 1755 by Bhutan’s 13th Desi, Sherab Wangchuk (Shes rab dbang phyug, 1697–1765), together with Shakya Rinchen. Over subsequent centuries, additional temples and monastic residences were developed, resulting in the substantial monastic community present today.\n\nPhajoding’s library has gradually expanded and now holds over 1,000 volumes of manuscripts and block prints, including canonical, ritual, and biographical works. The Phajoding Ogmin Kanjur is a significant part of this collection and illustrates the monastery’s ongoing commitment to the preservation of Drukpa Kagyü texts in Bhutan. The monastery’s printing house also holds historical importance, notably for producing the works of the Tibetan philosopher Shakya Chokden (Shākya mchog ldan, 1428–1507) after his writings were banned in Tibet. Today, the manuscripts at Phajoding—including those of the Ogmin Kanjur—remain critical for Bhutanese Buddhist traditions and for the study of Himalayan Buddhism more broadly.\n\nReferences and further details can be found in the EAP570 project archive (https://eap.bl.uk/project/EAP570)",
     "genre": "Kanjur",
     "date_created": "18th–19th cent.",
     "place_of_production": "Phajoding Monastery",
@@ -2614,12 +2689,13 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2628,9 +2704,9 @@
         "id": "57",
         "title": "MWEAP570-6-1",
         "url": "http://purl.bdrc.io/resource/MWEAP570-6-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "103"
+        "extent": ""
       }
     ]
   },
@@ -2647,12 +2723,13 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "EAP",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2661,9 +2738,9 @@
         "id": "58",
         "title": "MWEAP570-7-1",
         "url": "http://purl.bdrc.io/resource/MWEAP570-7-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "103"
+        "extent": ""
       }
     ]
   },
@@ -2680,12 +2757,13 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "true",
       "digitizedby": "TMPV",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "0",
       "imagesby": "BDRC"
@@ -2695,17 +2773,17 @@
         "id": "59",
         "title": "MW1PD96684",
         "url": "http://purl.bdrc.io/resource/MW1PD96684",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "107"
+        "extent": ""
       },
       {
         "id": "60",
         "title": "MW3CN1094",
         "url": "http://purl.bdrc.io/resource/MW3CN1094",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "107"
+        "extent": ""
       }
     ]
   },
@@ -2720,12 +2798,13 @@
     "place_of_production": "Beijing",
     "coordinates": "40.190632,116.412144",
     "classifications": [],
+    "medium": "Print",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2734,9 +2813,9 @@
         "id": "61",
         "title": "MW1KG13126",
         "url": "http://purl.bdrc.io/resource/MW1KG13126",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "224"
+        "extent": ""
       }
     ]
   },
@@ -2753,11 +2832,12 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
       "text_Text Available": "false",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "0",
       "isreferenceset": "1"
     },
@@ -2766,9 +2846,9 @@
         "id": "62",
         "title": "MW1KG26108",
         "url": "http://purl.bdrc.io/resource/MW1KG26108",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "107"
+        "extent": ""
       }
     ]
   },
@@ -2785,6 +2865,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G398",
       "url": "http://purl.bdrc.io/resource/G398"
@@ -2794,7 +2875,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "numberoflines": "0",
+      "numberoflines": "7",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -2803,9 +2884,9 @@
         "id": "63",
         "title": "MW2PD17098",
         "url": "http://purl.bdrc.io/resource/MW2PD17098",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "104"
+        "extent": ""
       }
     ]
   },
@@ -2820,6 +2901,7 @@
     "place_of_production": "Reru",
     "coordinates": "33.336000,76.965670",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2840,6 +2922,7 @@
     "classifications": [
       "Them spangs ma"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G1BL25",
       "url": "http://purl.bdrc.io/resource/G1BL25"
@@ -2858,9 +2941,9 @@
         "id": "64",
         "title": "MW22083",
         "url": "http://purl.bdrc.io/resource/MW22083",
-        "medium": "",
+        "medium": "Print",
         "script": "",
-        "extent": "109"
+        "extent": ""
       }
     ]
   },
@@ -2875,6 +2958,7 @@
     "place_of_production": "Skurbuchan",
     "coordinates": "34.435278,76.710556",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2893,6 +2977,7 @@
     "place_of_production": "Stongdé Monastery",
     "coordinates": "33.52180136253203,76.98756421701579",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2909,26 +2994,9 @@
     "genre": "Canonical Collection",
     "date_created": "",
     "place_of_production": "Serkhang Temple",
-    "coordinates": "29.474712715352606,82.84403162704238",
+    "coordinates": "29.46478432288831,82.90057784921726",
     "classifications": [],
-    "notes": {
-      "handlist_Handlist Available": "false",
-      "images_Images Available": "false",
-      "text_Text Available": "false"
-    },
-    "constituents": []
-  },
-  {
-    "file_name": "Sl_Saldang Collection.xml",
-    "sigla": "Sl",
-    "title": "Saldang Collection",
-    "alternative_title": "",
-    "abstract": "The Saldang Collection is located in Dolpo, Nepal. More detailed information regarding its specific origins, the patrons or communities involved in its creation, and the historical period of its production is not yet available.",
-    "genre": "Canonical Collection",
-    "date_created": "",
-    "place_of_production": "Saldang",
-    "coordinates": "29.42,83.09",
-    "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2949,6 +3017,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2967,6 +3036,7 @@
     "place_of_production": "Stagringmo",
     "coordinates": "33.455780, 76.868400\n",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -2987,6 +3057,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1511",
       "url": "http://purl.bdrc.io/resource/G1511"
@@ -2996,7 +3067,7 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "Toyo Bunko",
-      "numberoflines": "0",
+      "numberoflines": "8",
       "integratedrkts": "1",
       "isreferenceset": "1"
     },
@@ -3005,9 +3076,9 @@
         "id": "65",
         "title": "MW2KG230012",
         "url": "http://purl.bdrc.io/resource/MW2KG230012",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -3024,6 +3095,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1KG17626",
       "url": "http://purl.bdrc.io/resource/G1KG17626"
@@ -3034,18 +3106,18 @@
       "text_Text Available": "false",
       "digitizedby": "TMPV",
       "imagesby": "BDRC",
-      "numberoflines": "0",
       "integratedrkts": "1",
-      "isreferenceset": "0"
+      "isreferenceset": "0",
+      "numberoflines": "0"
     },
     "constituents": [
       {
         "id": "66",
         "title": "MW3CN895",
         "url": "http://purl.bdrc.io/resource/MW3CN895",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       },
       {
         "id": "67",
@@ -3053,7 +3125,7 @@
         "url": "http://purl.bdrc.io/resource/MW1BL1",
         "medium": "",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -3068,6 +3140,7 @@
     "place_of_production": "Thadrak Monastery",
     "coordinates": "27.47298875804195,89.67499737729304",
     "classifications": [],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "true",
@@ -3082,29 +3155,11 @@
         "id": "68",
         "title": "MWEAP310-1-1",
         "url": "http://purl.bdrc.io/resource/MWEAP310-1-1",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "108"
+        "extent": ""
       }
     ]
-  },
-  {
-    "file_name": "Tg_Tango Kanjur.xml",
-    "sigla": "Tg",
-    "title": "Tango Kanjur",
-    "alternative_title": "",
-    "abstract": "",
-    "genre": "Kanjur",
-    "date_created": "",
-    "place_of_production": "",
-    "coordinates": "",
-    "classifications": [],
-    "notes": {
-      "handlist_Handlist Available": "false",
-      "images_Images Available": "false",
-      "text_Text Available": "false"
-    },
-    "constituents": []
   },
   {
     "file_name": "Th_Tholing Collection.xml",
@@ -3119,6 +3174,7 @@
     "classifications": [
       "Independent"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G2194",
       "url": "http://purl.bdrc.io/resource/G2194"
@@ -3136,9 +3192,9 @@
         "id": "69",
         "title": "MW3CN965",
         "url": "http://purl.bdrc.io/resource/MW3CN965",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -3153,6 +3209,7 @@
     "place_of_production": "Tsugolskiy Datsan",
     "coordinates": "51.0461234972173,115.62698767478334",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -3173,24 +3230,7 @@
     "classifications": [
       "Thempangma"
     ],
-    "notes": {
-      "handlist_Handlist Available": "false",
-      "images_Images Available": "false",
-      "text_Text Available": "false"
-    },
-    "constituents": []
-  },
-  {
-    "file_name": "To_Tashichho Kanjur.xml",
-    "sigla": "To",
-    "title": "Tashichho Kanjur",
-    "alternative_title": "",
-    "abstract": "",
-    "genre": "Kanjur",
-    "date_created": "",
-    "place_of_production": "",
-    "coordinates": "",
-    "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -3211,6 +3251,7 @@
     "classifications": [
       "Mustang"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -3226,7 +3267,7 @@
         "id": "70",
         "title": "MW3CN1302",
         "url": "http://purl.bdrc.io/resource/MW3CN1302",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
         "extent": ""
       }
@@ -3245,6 +3286,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "true",
       "images_Images Available": "true",
@@ -3260,9 +3302,9 @@
         "id": "71",
         "title": "MW2KG209840",
         "url": "http://purl.bdrc.io/resource/MW2KG209840",
-        "medium": "",
+        "medium": "Manuscript",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -3279,6 +3321,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "Print",
     "bdrc_reference": {
       "id": "G3249",
       "url": "http://purl.bdrc.io/resource/G3249"
@@ -3288,7 +3331,6 @@
       "images_Images Available": "true",
       "text_Text Available": "false",
       "digitizedby": "BDRC",
-      "digitizedtime": "2005.0",
       "numberoflines": "0",
       "integratedrkts": "0",
       "isreferenceset": "0",
@@ -3300,16 +3342,16 @@
         "title": "MW29468",
         "url": "http://purl.bdrc.io/resource/MW29468",
         "medium": "Print",
-        "script": "Uchen",
-        "extent": "105"
+        "script": "",
+        "extent": ""
       },
       {
         "id": "73",
         "title": "MW1BL4",
         "url": "http://purl.bdrc.io/resource/MW1BL4",
         "medium": "Print",
-        "script": "Uchen",
-        "extent": "98"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -3326,6 +3368,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G1PD129184",
       "url": "http://purl.bdrc.io/resource/G1PD129184"
@@ -3344,8 +3387,8 @@
         "title": "MW1KG14700",
         "url": "http://purl.bdrc.io/resource/MW1KG14700",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "0"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -3362,22 +3405,22 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
       "text_Text Available": "false",
-      "numberoflines": "0",
-      "integratedrkts": "0",
+      "integratedrkts": "1",
       "isreferenceset": "0"
     },
     "constituents": [
       {
         "id": "75",
-        "title": "MWSBB_WKG",
-        "url": "http://purl.bdrc.io/resource/MWSBB_WKG",
+        "title": "",
+        "url": "",
         "medium": "",
         "script": "",
-        "extent": "0"
+        "extent": ""
       }
     ]
   },
@@ -3392,9 +3435,9 @@
     "place_of_production": "Serzang Temple (Basgo fort, Ladakh)",
     "coordinates": "34.224730957439945,77.27595887849625",
     "classifications": [
-      "Mustang",
-      "Independent"
+      "Mustang"
     ],
+    "medium": "Manuscript",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -3410,8 +3453,8 @@
         "title": "MW4CZ45303",
         "url": "http://purl.bdrc.io/resource/MW4CZ45303",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "0"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -3426,6 +3469,7 @@
     "place_of_production": "Serzang Temple (Basgo fort, Ladakh)",
     "coordinates": "34.224730957439945,77.27595887849625",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -3446,6 +3490,7 @@
     "classifications": [
       "Tshalpa"
     ],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",
@@ -3466,6 +3511,7 @@
     "classifications": [
       "Thempangma"
     ],
+    "medium": "Manuscript",
     "bdrc_reference": {
       "id": "G3JT12631",
       "url": "http://purl.bdrc.io/resource/G3JT12631"
@@ -3486,8 +3532,8 @@
         "title": "MW1PD127393",
         "url": "http://purl.bdrc.io/resource/MW1PD127393",
         "medium": "Manuscript",
-        "script": "Uchen",
-        "extent": "0"
+        "script": "",
+        "extent": ""
       }
     ]
   },
@@ -3502,6 +3548,7 @@
     "place_of_production": "Zangla Palace",
     "coordinates": "33.6511249724998,76.99451366976426",
     "classifications": [],
+    "medium": "",
     "notes": {
       "handlist_Handlist Available": "false",
       "images_Images Available": "false",

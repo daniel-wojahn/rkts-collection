@@ -41,12 +41,10 @@ Recognizing the vulnerability of the manuscripts to decay and destruction, a dig
     </location>
     <physicalDescription>
       <note type="digitizedby">EAP</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>109</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

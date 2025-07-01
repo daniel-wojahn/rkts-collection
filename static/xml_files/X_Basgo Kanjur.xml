@@ -21,7 +21,6 @@ Physically, the 17th-century manuscripts are written in dbu can script on coarse
 Among the 17th-century manuscripts are approximately 900 folios from a proto-canonical collection of the 14th or early 15th century, displaying archaic orthography and palaeographic features. A complete Kanjur manuscript at Basgo, written in black and red ink, is used annually in processions blessing local fields, underscoring its enduring ritual significance.</abstract>
   <genre>Kanjur</genre>
   <classification>Mustang</classification>
-  <classification>Independent</classification>
   <originInfo>
     <dateCreated>14th–17th cent.</dateCreated>
   </originInfo>
@@ -48,12 +47,8 @@ Among the 17th-century manuscripts are approximately 900 folios from a proto-can
       <note type="digitizedby">TMPV</note>
       <note type="numberoflines">0</note>
       <form type="medium">Manuscript</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>0</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

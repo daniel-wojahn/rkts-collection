@@ -52,11 +52,9 @@ The majority of the manuscripts are dated between the 18th and early 20th centur
     <physicalDescription>
       <note type="digitizedby">EAP</note>
       <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>108</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

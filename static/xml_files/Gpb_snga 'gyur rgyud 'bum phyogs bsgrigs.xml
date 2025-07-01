@@ -41,11 +41,9 @@ No attempt was made to discriminate between canonical transmissions (bka’ ma) 
     </location>
     <physicalDescription>
       <note type="numberoflines">0</note>
+      <form type="medium">Modern Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>58</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

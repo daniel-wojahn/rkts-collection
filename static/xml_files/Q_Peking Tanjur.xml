@@ -45,12 +45,10 @@ Produced as an imperial xylograph, the Peking Tanjur woodblocks were housed in B
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Print</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>224</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

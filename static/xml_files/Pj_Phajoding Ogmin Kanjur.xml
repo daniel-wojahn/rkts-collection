@@ -14,7 +14,7 @@ The main temple complex was constructed around 1755 by Bhutan’s 13th Desi, She
 
 Phajoding’s library has gradually expanded and now holds over 1,000 volumes of manuscripts and block prints, including canonical, ritual, and biographical works. The Phajoding Ogmin Kanjur is a significant part of this collection and illustrates the monastery’s ongoing commitment to the preservation of Drukpa Kagyü texts in Bhutan. The monastery’s printing house also holds historical importance, notably for producing the works of the Tibetan philosopher Shakya Chokden (Shākya mchog ldan, 1428–1507) after his writings were banned in Tibet. Today, the manuscripts at Phajoding—including those of the Ogmin Kanjur—remain critical for Bhutanese Buddhist traditions and for the study of Himalayan Buddhism more broadly.
 
-References and further details can be found in the EAP570 project archive (https://eap.bl.uk/project/EAP570) </abstract>
+References and further details can be found in the EAP570 project archive (https://eap.bl.uk/project/EAP570)</abstract>
   <genre>Kanjur</genre>
   <classification>Thempangma</classification>
   <originInfo>
@@ -41,12 +41,10 @@ References and further details can be found in the EAP570 project archive (https
     </location>
     <physicalDescription>
       <note type="digitizedby">EAP</note>
-      <note type="numberoflines">0</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>103</extent>
     </physicalDescription>
   </relatedItem>
 </mods>

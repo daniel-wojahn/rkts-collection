@@ -49,15 +49,10 @@ Urga’s editors primarily followed Situ Paṇchen Chökyi Jungné’s (Si tu pa
     </location>
     <physicalDescription>
       <note type="digitizedby">BDRC</note>
-      <note type="digitizedtime">2005.0</note>
       <note type="numberoflines">0</note>
       <form type="medium">Print</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">1</note>
       <note type="isreferenceset">1</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>105</extent>
     </physicalDescription>
   </relatedItem>
   <relatedItem type="constituent">
@@ -73,12 +68,8 @@ Urga’s editors primarily followed Situ Paṇchen Chökyi Jungné’s (Si tu pa
       <note type="imagesby">BDRC</note>
       <note type="numberoflines">0</note>
       <form type="medium">Print</form>
-      <scriptTerm type="text">Uchen</scriptTerm>
       <note type="integratedrkts">0</note>
       <note type="isreferenceset">0</note>
-    </physicalDescription>
-    <physicalDescription>
-      <extent>98</extent>
     </physicalDescription>
   </relatedItem>
 </mods>
