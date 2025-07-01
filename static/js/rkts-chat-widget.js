@@ -1,6 +1,8 @@
 // rkts-chat-widget.js: Modern floating chat widget for Open WebUI
 const RKTS_API_URL = 'https://rkts-research.duckdns.org/api/chat/completions';
 const RKTS_API_KEY = 'sk-b5ed6e03acfb48799ea3241984a5a206';
+// Set to the exact model name available in your Open WebUI instance (check /models endpoint or WebUI settings)
+const RKTS_MODEL = 'gpt-4o-mini';
 
 function createChatWidget() {
   // Add CSS
@@ -75,25 +77,38 @@ async function onSendMessage(e) {
         'Authorization': 'Bearer ' + RKTS_API_KEY,
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
+        model: RKTS_MODEL,
         messages: [
           { role: 'user', content: text }
         ],
         stream: false
       })
     });
-    const data = await res.json();
+    let data;
+    let errorText = '';
+    try {
+      data = await res.json();
+    } catch (jsonErr) {
+      errorText = await res.text();
+    }
     // Remove the '...' placeholder
     const msgs = document.querySelectorAll('.rkts-msg.assistant');
     if (msgs.length) msgs[msgs.length - 1].remove();
-    if (data && data.choices && data.choices[0] && data.choices[0].message) {
+    if (res.ok && data && data.choices && data.choices[0] && data.choices[0].message) {
       appendMessage('assistant', data.choices[0].message.content);
     } else {
-      appendMessage('assistant', '[No response]');
+      // Log error details to console
+      console.error('Open WebUI API error', res.status, data || errorText);
+      let displayErr = '[API error]';
+      if (data && data.detail) displayErr += ' ' + data.detail;
+      else if (errorText) displayErr += ' ' + errorText;
+      else if (data && data.error) displayErr += ' ' + data.error;
+      appendMessage('assistant', displayErr);
     }
   } catch (err) {
     const msgs = document.querySelectorAll('.rkts-msg.assistant');
     if (msgs.length) msgs[msgs.length - 1].remove();
+    console.error('Network or JS error', err);
     appendMessage('assistant', '[Error connecting to assistant]');
   }
 }
