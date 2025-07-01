@@ -2,7 +2,7 @@
 const RKTS_API_URL = 'https://rkts-research.duckdns.org/api/chat/completions';
 const RKTS_API_KEY = 'sk-b5ed6e03acfb48799ea3241984a5a206';
 // Set to the exact model name available in your Open WebUI instance (check /models endpoint or WebUI settings)
-const RKTS_MODEL = 'gpt-4o-mini';
+const RKTS_MODEL = 'qwen/qwen3-30b-a3b:free';
 
 function createChatWidget() {
   // Add CSS
