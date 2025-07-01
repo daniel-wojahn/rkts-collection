@@ -25,9 +25,9 @@
   position: fixed;
   bottom: 90px;
   right: 24px;
-  width: 340px;
-  max-width: 95vw;
-  height: 440px;
+  width: 440px;
+  max-width: 98vw;
+  height: 600px;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.18);
@@ -35,8 +35,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  font-family: inherit;
-  border: 1px solid #e3e3e3;
+  font-family: 'Noto Sans', Arial, sans-serif;
+  border: 1px solid var(--medium-gray, #e1e5eb);
   animation: fadeInUp 0.3s;
 }
 @keyframes fadeInUp {

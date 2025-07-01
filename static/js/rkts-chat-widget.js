@@ -1,8 +1,16 @@
 // rkts-chat-widget.js: Modern floating chat widget for Open WebUI
 const RKTS_API_URL = 'https://rkts-research.duckdns.org/api/chat/completions';
 const RKTS_API_KEY = 'sk-b5ed6e03acfb48799ea3241984a5a206';
-// Set to the exact model name available in your Open WebUI instance (check /models endpoint or WebUI settings)
-const RKTS_MODEL = 'qwen/qwen3-30b-a3b:free';
+const RKTS_MODEL = 'rkts-research-tool';
+
+// Dynamically load marked.js if not present
+function ensureMarkedLoaded(cb) {
+  if (window.marked) return cb();
+  const script = document.createElement('script');
+  script.src = 'static/js/marked.min.js';
+  script.onload = cb;
+  document.head.appendChild(script);
+}
 
 function createChatWidget() {
   // Add CSS
@@ -40,7 +48,10 @@ function createChatWidget() {
     `;
     document.body.appendChild(widget);
     document.getElementById('rkts-chat-close').onclick = hideWidget;
-    document.getElementById('rkts-chat-input').onsubmit = onSendMessage;
+    document.getElementById('rkts-chat-input').onsubmit = function(e) {
+      e.preventDefault();
+      ensureMarkedLoaded(() => onSendMessage(e));
+    };
   }
 }
 
@@ -53,10 +64,14 @@ function hideWidget() {
   document.getElementById('rkts-chat-widget-button').style.display = 'flex';
 }
 
-function appendMessage(role, text) {
+function appendMessage(role, text, isHtml = false) {
   const msg = document.createElement('div');
   msg.className = 'rkts-msg ' + role;
-  msg.textContent = text;
+  if (isHtml) {
+    msg.innerHTML = text;
+  } else {
+    msg.textContent = text;
+  }
   document.getElementById('rkts-chat-messages').appendChild(msg);
   document.getElementById('rkts-chat-messages').scrollTop = 99999;
 }
@@ -68,7 +83,13 @@ async function onSendMessage(e) {
   if (!text) return;
   appendMessage('user', text);
   textarea.value = '';
-  appendMessage('assistant', '...');
+  // Add assistant placeholder
+  const msgContainer = document.getElementById('rkts-chat-messages');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'rkts-msg assistant';
+  msgDiv.innerHTML = '<span class="rkts-streaming-cursor">...</span>';
+  msgContainer.appendChild(msgDiv);
+  msgContainer.scrollTop = 99999;
   try {
     const res = await fetch(RKTS_API_URL, {
       method: 'POST',
@@ -81,35 +102,55 @@ async function onSendMessage(e) {
         messages: [
           { role: 'user', content: text }
         ],
-        stream: false
+        stream: true
       })
     });
-    let data;
-    let errorText = '';
-    try {
-      data = await res.json();
-    } catch (jsonErr) {
-      errorText = await res.text();
+    if (!res.ok || !res.body) {
+      msgDiv.innerHTML = '[API error: ' + res.status + ']';
+      return;
     }
-    // Remove the '...' placeholder
-    const msgs = document.querySelectorAll('.rkts-msg.assistant');
-    if (msgs.length) msgs[msgs.length - 1].remove();
-    if (res.ok && data && data.choices && data.choices[0] && data.choices[0].message) {
-      appendMessage('assistant', data.choices[0].message.content);
-    } else {
-      // Log error details to console
-      console.error('Open WebUI API error', res.status, data || errorText);
-      let displayErr = '[API error]';
-      if (data && data.detail) displayErr += ' ' + data.detail;
-      else if (errorText) displayErr += ' ' + errorText;
-      else if (data && data.error) displayErr += ' ' + data.error;
-      appendMessage('assistant', displayErr);
+    // Streaming response (SSE or chunked text)
+    let reader = res.body.getReader();
+    let decoder = new TextDecoder();
+    let buffer = '';
+    let markdown = '';
+    let done = false;
+    while (!done) {
+      const { value, done: doneReading } = await reader.read();
+      if (value) {
+        buffer += decoder.decode(value, { stream: true });
+        // Parse SSE or JSONL
+        let lines = buffer.split(/\r?\n/);
+        buffer = lines.pop();
+        for (let line of lines) {
+          if (line.trim().startsWith('data:')) {
+            let dataStr = line.replace(/^data:/, '').trim();
+            if (dataStr === '[DONE]') {
+              done = true;
+              break;
+            }
+            try {
+              let data = JSON.parse(dataStr);
+              let delta = data.choices && data.choices[0] && data.choices[0].delta && data.choices[0].delta.content;
+              if (delta) {
+                markdown += delta;
+                msgDiv.innerHTML = window.marked ? window.marked.parse(markdown) : markdown;
+                msgContainer.scrollTop = 99999;
+              }
+            } catch (err) {
+              // Ignore parse errors
+            }
+          }
+        }
+      }
+      done = done || doneReading;
     }
+    // Remove cursor if present
+    msgDiv.innerHTML = window.marked ? window.marked.parse(markdown) : markdown;
+    msgContainer.scrollTop = 99999;
   } catch (err) {
-    const msgs = document.querySelectorAll('.rkts-msg.assistant');
-    if (msgs.length) msgs[msgs.length - 1].remove();
+    msgDiv.innerHTML = '[Error connecting to assistant]';
     console.error('Network or JS error', err);
-    appendMessage('assistant', '[Error connecting to assistant]');
   }
 }
 
