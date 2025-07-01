@@ -7,31 +7,42 @@
 const ZOTERO_API_BASE = 'https://api.zotero.org';
 const ZOTERO_GROUP_ID = '2296997'; // rKTs Bibliography group ID
 const ZOTERO_GROUP_URL = 'https://www.zotero.org/groups/2296997/rkts_bibliography/library';
-const ITEMS_PER_PAGE = 100; // Increased to show more items per page
+const ITEMS_PER_PAGE = 100; // Max items per API request
 
 // Global variables
-let currentPage = 1;
-let totalPages = 1;
-let isLoading = false;
-let publicationsCount = 0;
 let allPublications = [];
 let filteredPublications = [];
 let allTags = new Set();
 let currentView = 'cards'; // cards, list, compact
+let isLoading = false;
+let publicationsCount = 0;
 let currentFilters = {
     search: '',
     sort: 'date',
-    direction: 'desc'
+    direction: 'desc',
+    type: 'all',
+    tag: ''
 };
 
 // Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
+function initializeZotero() {
     console.log('Initializing Bibliography integration...');
+    
+    // Check if we're on the Zotero page
+    if (!document.querySelector('#recent-publications')) {
+        console.log('Not on Zotero page, skipping initialization');
+        return;
+    }
+    
+    console.log('Zotero page detected, initializing...');
     
     // Set up Zotero group link
     const zoteroGroupLink = document.getElementById('zotero-group-link');
     if (zoteroGroupLink) {
         zoteroGroupLink.href = ZOTERO_GROUP_URL;
+        console.log('Zotero group link set to:', ZOTERO_GROUP_URL);
+    } else {
+        console.warn('Zotero group link element not found');
     }
     
     // Set up copy group link button
@@ -57,22 +68,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up search input
     const searchInput = document.getElementById('search-input');
     if (searchInput) {
+        console.log('Setting up search input handler');
         searchInput.addEventListener('input', debounce(function() {
-            currentFilters.search = this.value.trim().toLowerCase();
+            const searchTerm = this.value.trim().toLowerCase();
+            console.log('Search input changed:', searchTerm);
+            currentFilters.search = searchTerm;
             applyFilters();
         }, 300));
-    }
-    
-    // Set up clear search button
-    const clearSearchBtn = document.getElementById('clear-search-btn');
-    if (clearSearchBtn) {
-        clearSearchBtn.addEventListener('click', function() {
-            if (searchInput) {
+        
+        // Set up clear search button
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        if (clearSearchBtn) {
+            clearSearchBtn.addEventListener('click', function() {
                 searchInput.value = '';
                 currentFilters.search = '';
                 applyFilters();
-            }
-        });
+            });
+        }
+    } else {
+        console.warn('Search input element not found');
     }
     
     // Set up type filter
@@ -80,8 +94,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (typeFilter) {
         typeFilter.addEventListener('change', function() {
             currentFilters.type = this.value;
+            console.log('Type filter changed to:', this.value);
             applyFilters();
         });
+    } else {
+        console.warn('Type filter element not found');
     }
     
     // Set up sort order
@@ -91,8 +108,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const [sort, direction] = this.value.split('-');
             currentFilters.sort = sort;
             currentFilters.direction = direction;
+            console.log('Sort order changed to:', sort, direction);
             applyFilters();
         });
+    } else {
+        console.warn('Sort order element not found');
     }
     
     // Set up view options
@@ -100,51 +120,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewList = document.getElementById('view-list');
     const viewCompact = document.getElementById('view-compact');
     
-    if (viewCards) {
-        viewCards.addEventListener('click', function() {
-            setActiveView('cards');
-        });
-    }
+    if (viewCards) viewCards.addEventListener('click', () => setActiveView('cards'));
+    if (viewList) viewList.addEventListener('click', () => setActiveView('list'));
+    if (viewCompact) viewCompact.addEventListener('click', () => setActiveView('compact'));
     
-    if (viewList) {
-        viewList.addEventListener('click', function() {
-            setActiveView('list');
-        });
-    }
-    
-    if (viewCompact) {
-        viewCompact.addEventListener('click', function() {
-            setActiveView('compact');
-        });
-    }
-    
-    // Create pagination container if it doesn't exist
-    let paginationContainer = document.getElementById('pagination-container');
-    if (!paginationContainer) {
-        paginationContainer = document.createElement('div');
-        paginationContainer.id = 'pagination-container';
-        paginationContainer.className = 'mt-4';
-        
-        // Find a good place to insert it
-        const publicationsContainer = document.getElementById('recent-publications');
-        if (publicationsContainer && publicationsContainer.parentNode) {
-            publicationsContainer.parentNode.insertBefore(paginationContainer, publicationsContainer.nextSibling);
-        }
-    }
-    
-    // Add some CSS for the loading state
+    // Add loading styles
     const style = document.createElement('style');
     style.textContent = `
-        #pagination-container.loading {
+        .loading {
             opacity: 0.5;
             pointer-events: none;
         }
     `;
     document.head.appendChild(style);
     
-    // Initial fetch - page 1
-    fetchPublications(1);
-});
+    // Initial fetch
+    fetchPublications();
+}
+
+// Run initialization when DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeZotero);
+} else {
+    // DOMContentLoaded has already fired
+    initializeZotero();
+}
 
 /**
  * Debounce function is now imported from utils.js
@@ -171,35 +171,33 @@ function setActiveView(view) {
 }
 
 /**
- * Fetch publications from the Zotero group with pagination
+ * Fetch all publications from the Zotero group
  */
-function fetchPublications(page = 1) {
+function fetchPublications() {
     if (isLoading) return;
     
     isLoading = true;
-    const paginationContainer = document.getElementById('pagination-container');
-    if (paginationContainer) {
-        paginationContainer.classList.add('loading');
+    const container = document.getElementById('recent-publications');
+    if (container) {
+        container.innerHTML = '<div class="text-center py-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div><p class="mt-2">Loading publications...</p></div>';
     }
-    
-    // Calculate start index based on page number
-    const start = (page - 1) * ITEMS_PER_PAGE;
-    currentPage = page;
     
     const endpoint = `${ZOTERO_API_BASE}/groups/${ZOTERO_GROUP_ID}/items/top`;
     const params = new URLSearchParams({
-        start: start,
         limit: ITEMS_PER_PAGE,
         sort: currentFilters.sort,
         direction: currentFilters.direction,
         format: 'json'
     });
     
-    console.log(`Fetching publications page ${page} (items ${start} to ${start + ITEMS_PER_PAGE})...`);
+    console.log('Fetching all publications...');
     
-    fetch(`${endpoint}?${params.toString()}`, {
-        headers: {
-            'Accept': 'application/json'
+    // First, get the total count
+    console.log('Fetching total count of publications...');
+    fetch(`${endpoint}?${params.toString()}&limit=1`, {
+        headers: { 
+            'Accept': 'application/json',
+            'Zotero-API-Version': '3'
         }
     })
     .then(response => {
@@ -207,31 +205,67 @@ function fetchPublications(page = 1) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
         
-        // Calculate pagination information
-        const totalResults = response.headers.get('Total-Results');
+        const totalResults = parseInt(response.headers.get('Total-Results') || '0');
+        console.log(`Total results to fetch: ${totalResults}`);
         
-        if (totalResults) {
-            const total = parseInt(totalResults);
-            console.log(`Total results: ${total}`);
-            totalPages = Math.ceil(total / ITEMS_PER_PAGE);
-            updatePublicationsCount(total);
-        } else {
-            totalPages = 1;
+        if (totalResults === 0) {
+            return Promise.resolve([]);
         }
         
-        return response.json();
-    })
-    .then(data => {
-        // Filter out notes and attachments
-        const validPublications = data.filter(pub => 
-            pub.data && pub.data.itemType !== 'note' && pub.data.itemType !== 'attachment'
-        );
+        console.log(`Preparing to fetch ${Math.ceil(totalResults / ITEMS_PER_PAGE)} pages of data...`);
+        // Calculate how many parallel requests we need to make
+        const requests = [];
+        for (let start = 0; start < totalResults; start += ITEMS_PER_PAGE) {
+            const requestParams = new URLSearchParams(params);
+            requestParams.set('start', start);
+            requestParams.set('limit', ITEMS_PER_PAGE);
+            
+            console.log(`Queueing request for items ${start} to ${start + ITEMS_PER_PAGE - 1}`);
+            
+            requests.push(
+                fetch(`${endpoint}?${requestParams.toString()}`, {
+                    headers: { 
+                        'Accept': 'application/json',
+                        'Zotero-API-Version': '3'
+                    }
+                })
+                .then(res => {
+                    if (!res.ok) {
+                        console.error(`Error fetching page (start=${start}):`, res.status, res.statusText);
+                        return Promise.reject(`HTTP ${res.status}: ${res.statusText}`);
+                    }
+                    return res.json();
+                })
+                .catch(error => {
+                    console.error(`Error in fetch for start=${start}:`, error);
+                    return Promise.reject(error);
+                })
+            );
+        }
         
-        // Replace current publications with the new page data
-        allPublications = validPublications;
+        return Promise.all(requests);
+    })
+    .then(pages => {
+        console.log(`Received ${pages.length} pages of data`);
+        
+        // Flatten all pages into a single array
+        const allItems = pages.flat();
+        console.log(`Total items before filtering: ${allItems.length}`);
+        
+        // Filter out notes and attachments
+        allPublications = allItems.filter(pub => {
+            const isValid = pub.data && pub.data.itemType !== 'note' && pub.data.itemType !== 'attachment';
+            if (!isValid) {
+                console.log('Filtered out item:', pub);
+            }
+            return isValid;
+        });
+        
+        console.log(`Loaded ${allPublications.length} valid publications`);
+        updatePublicationsCount(allPublications.length);
         
         // Collect all tags
-        validPublications.forEach(pub => {
+        allPublications.forEach(pub => {
             if (pub.data && pub.data.tags) {
                 pub.data.tags.forEach(tag => {
                     if (tag.tag) {
@@ -247,13 +281,9 @@ function fetchPublications(page = 1) {
         // Apply filters to the full dataset
         applyFilters();
         
-        // Update pagination UI
-        updatePagination();
-        
         // Remove loading state
-        const paginationContainer = document.getElementById('pagination-container');
-        if (paginationContainer) {
-            paginationContainer.classList.remove('loading');
+        if (container) {
+            container.innerHTML = '';
         }
         
         isLoading = false;
@@ -262,22 +292,13 @@ function fetchPublications(page = 1) {
         console.error('Error fetching Zotero data:', error);
         const container = document.getElementById('recent-publications');
         if (container) {
-            if (start === 0) {
-                // Only show error if this is the initial load
-                container.innerHTML = `
-                    <div class="alert alert-danger">
-                        <i class="bi bi-exclamation-triangle me-2"></i>
-                        Failed to load publications from Zotero. Please try again later.
-                        <br><small class="text-muted">${error.message}</small>
-                    </div>
-                `;
-            }
-        }
-        
-        // Remove loading state from pagination
-        const paginationContainer = document.getElementById('pagination-container');
-        if (paginationContainer) {
-            paginationContainer.classList.remove('loading');
+            container.innerHTML = `
+                <div class="alert alert-danger">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    Failed to load publications from Zotero. Please try again later.
+                    <br><small class="text-muted">${error.message || error}</small>
+                </div>
+            `;
         }
         
         isLoading = false;
@@ -288,9 +309,16 @@ function fetchPublications(page = 1) {
  * Apply filters to the publications and update the UI
  */
 function applyFilters() {
+    console.log('Applying filters:', currentFilters);
+    
     // Apply search and tag filters
     filteredPublications = allPublications.filter(pub => {
-        if (!pub.data) return false;
+        if (!pub.data) {
+            console.log('Skipping publication with no data:', pub);
+            return false;
+        }
+        
+        // Apply search filter if set
         if (currentFilters.search) {
             const searchTerm = currentFilters.search.toLowerCase();
             const title = (pub.data.title || '').toLowerCase();
@@ -298,18 +326,65 @@ function applyFilters() {
             const authors = getAuthorsText(pub).toLowerCase();
             const pubTitle = (pub.data.publicationTitle || '').toLowerCase();
             const publisher = (pub.data.publisher || '').toLowerCase();
-            const place = (pub.data.place || '').toLowerCase();
-            if (!title.includes(searchTerm) && !abstract.includes(searchTerm) && !authors.includes(searchTerm) && !pubTitle.includes(searchTerm) && !publisher.includes(searchTerm) && !place.includes(searchTerm)) {
+            
+            const matchesSearch = 
+                title.includes(searchTerm) || 
+                abstract.includes(searchTerm) || 
+                authors.includes(searchTerm) || 
+                pubTitle.includes(searchTerm) ||
+                publisher.includes(searchTerm);
+                
+            if (!matchesSearch) {
+                return false;
+            }
+            
+            console.log('Publication matches search:', {
+                title: pub.data.title,
+                searchTerm,
+                titleMatch: title.includes(searchTerm),
+                abstractMatch: abstract.includes(searchTerm),
+                authorsMatch: authors.includes(searchTerm),
+                pubTitleMatch: pubTitle.includes(searchTerm),
+                publisherMatch: publisher.includes(searchTerm)
+            });
+        }
+        
+        // Apply type filter if set
+        if (currentFilters.type && currentFilters.type !== 'all') {
+            if (pub.data.itemType !== currentFilters.type) {
                 return false;
             }
         }
+        
+        // Apply tag filter if set
+        if (currentFilters.tag) {
+            if (!pub.data.tags || !pub.data.tags.some(t => t.tag === currentFilters.tag)) {
+                return false;
+            }
+        }
+        
         return true;
     });
-    if (currentFilters.search) {
-        sortPublications();
-    }
-    updateFilterBadge();
+    
+    console.log(`Filtered from ${allPublications.length} to ${filteredPublications.length} publications`);
+    
+    // Sort the filtered results
+    sortPublications();
+    
+    // Update the UI
     renderPublications(filteredPublications);
+    updateFilterBadge();
+    
+    // Log the first few results for debugging
+    if (filteredPublications.length > 0) {
+        console.log('First few filtered results:', 
+            filteredPublications.slice(0, 3).map(p => ({
+                title: p.data.title,
+                type: p.data.itemType,
+                authors: getAuthorsText(p)
+            }))
+        );
+    }
 }
 
 /**
@@ -349,173 +424,32 @@ function sortPublications() {
  */
 function updateFilterBadge() {
     const filterBadge = document.getElementById('filter-badge');
-    if (filterBadge) {
-        const isFiltered = currentFilters.search;
-        filterBadge.style.display = isFiltered ? 'inline-block' : 'none';
-    }
-}
-
-/**
- * Update the pagination UI
- */
-function updatePagination() {
-    const paginationContainer = document.getElementById('pagination-container');
-    if (!paginationContainer) return;
+    if (!filterBadge) return;
     
-    // Clear existing pagination
-    paginationContainer.innerHTML = '';
+    const hasActiveFilters = currentFilters.search || currentFilters.tag;
+    filterBadge.style.display = hasActiveFilters ? 'inline-block' : 'none';
     
-    if (totalPages <= 1) {
-        paginationContainer.style.display = 'none';
-        return;
+    if (hasActiveFilters) {
+        const activeFilters = [];
+        if (currentFilters.search) activeFilters.push(`Search: ${currentFilters.search}`);
+        if (currentFilters.tag) activeFilters.push(`Tag: ${currentFilters.tag}`);
+        
+        filterBadge.title = activeFilters.join('\n');
+        filterBadge.textContent = activeFilters.length.toString();
     }
     
-    paginationContainer.style.display = 'block';
-    
-    // Create pagination nav
-    const nav = document.createElement('nav');
-    nav.setAttribute('aria-label', 'Publications pagination');
-    
-    const ul = document.createElement('ul');
-    ul.className = 'pagination justify-content-center';
-    
-    // Previous button
-    const prevLi = document.createElement('li');
-    prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
-    
-    const prevLink = document.createElement('a');
-    prevLink.className = 'page-link';
-    prevLink.href = '#';
-    prevLink.setAttribute('aria-label', 'Previous');
-    prevLink.innerHTML = '<span aria-hidden="true">&laquo;</span>';
-    
-    if (currentPage > 1) {
-        prevLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            fetchPublications(currentPage - 1);
-        });
-    }
-    
-    prevLi.appendChild(prevLink);
-    ul.appendChild(prevLi);
-    
-    // Determine which page numbers to show
-    let startPage = Math.max(1, currentPage - 2);
-    let endPage = Math.min(totalPages, startPage + 4);
-    
-    // Adjust if we're near the end
-    if (endPage - startPage < 4) {
-        startPage = Math.max(1, endPage - 4);
-    }
-    
-    // First page if not in range
-    if (startPage > 1) {
-        const firstLi = document.createElement('li');
-        firstLi.className = 'page-item';
+    // Update results count
+    const resultsCount = document.getElementById('results-count');
+    if (resultsCount) {
+        const totalCount = allPublications.length;
+        const filteredCount = filteredPublications.length;
         
-        const firstLink = document.createElement('a');
-        firstLink.className = 'page-link';
-        firstLink.href = '#';
-        firstLink.textContent = '1';
-        
-        firstLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            fetchPublications(1);
-        });
-        
-        firstLi.appendChild(firstLink);
-        ul.appendChild(firstLi);
-        
-        // Ellipsis if needed
-        if (startPage > 2) {
-            const ellipsisLi = document.createElement('li');
-            ellipsisLi.className = 'page-item disabled';
-            
-            const ellipsisSpan = document.createElement('span');
-            ellipsisSpan.className = 'page-link';
-            ellipsisSpan.textContent = '...';
-            
-            ellipsisLi.appendChild(ellipsisSpan);
-            ul.appendChild(ellipsisLi);
+        if (filteredCount === totalCount) {
+            resultsCount.textContent = `Showing all ${totalCount} publications`;
+        } else {
+            resultsCount.textContent = `Showing ${filteredCount} of ${totalCount} publications`;
         }
     }
-    
-    // Page numbers
-    for (let i = startPage; i <= endPage; i++) {
-        const pageLi = document.createElement('li');
-        pageLi.className = `page-item ${i === currentPage ? 'active' : ''}`;
-        
-        const pageLink = document.createElement('a');
-        pageLink.className = 'page-link';
-        pageLink.href = '#';
-        pageLink.textContent = i;
-        
-        if (i !== currentPage) {
-            pageLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                fetchPublications(i);
-            });
-        }
-        
-        pageLi.appendChild(pageLink);
-        ul.appendChild(pageLi);
-    }
-    
-    // Ellipsis and last page if not in range
-    if (endPage < totalPages) {
-        // Ellipsis if needed
-        if (endPage < totalPages - 1) {
-            const ellipsisLi = document.createElement('li');
-            ellipsisLi.className = 'page-item disabled';
-            
-            const ellipsisSpan = document.createElement('span');
-            ellipsisSpan.className = 'page-link';
-            ellipsisSpan.textContent = '...';
-            
-            ellipsisLi.appendChild(ellipsisSpan);
-            ul.appendChild(ellipsisLi);
-        }
-        
-        // Last page
-        const lastLi = document.createElement('li');
-        lastLi.className = 'page-item';
-        
-        const lastLink = document.createElement('a');
-        lastLink.className = 'page-link';
-        lastLink.href = '#';
-        lastLink.textContent = totalPages;
-        
-        lastLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            fetchPublications(totalPages);
-        });
-        
-        lastLi.appendChild(lastLink);
-        ul.appendChild(lastLi);
-    }
-    
-    // Next button
-    const nextLi = document.createElement('li');
-    nextLi.className = `page-item ${currentPage === totalPages ? 'disabled' : ''}`;
-    
-    const nextLink = document.createElement('a');
-    nextLink.className = 'page-link';
-    nextLink.href = '#';
-    nextLink.setAttribute('aria-label', 'Next');
-    nextLink.innerHTML = '<span aria-hidden="true">&raquo;</span>';
-    
-    if (currentPage < totalPages) {
-        nextLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            fetchPublications(currentPage + 1);
-        });
-    }
-    
-    nextLi.appendChild(nextLink);
-    ul.appendChild(nextLi);
-    
-    nav.appendChild(ul);
-    paginationContainer.appendChild(nav);
 }
 
 /**
