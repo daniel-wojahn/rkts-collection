@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">39</identifier>
+  <identifier type="sigla">Gpg</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Pagar)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྤ་སྒར་ཀྱི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Pagar (Spa sgar/Dpa&apos; sgar) edition of the Nyingma Gyübum was a 46-volume Bhutanese manuscript set once preserved at Pagar monastery in Thimphu district, Bhutan. Details of its origin and the identities of patrons or scribes are unknown, as no catalog or historical records have come to light.
+
+The collection’s production date is unconfirmed. The manuscript was completely destroyed in a fire at Pagar monastery on February 29, 2012. Rescued fragments were later mixed into new temple construction for auspiciousness. Crucially, the entire set had been digitized just before its loss, with the project completed in January 2012 under a DFG-funded initiative in cooperation with the Preservation of Bhutan’s Written Heritage, making digital images the sole surviving record.
+
+Comprising 46 volumes, with distinctive golden front folios, the Pagar set is believed to be a copy of another Central Bhutanese group manuscript, likely modeled on the Tsamdrak or Sangyé Ling editions—its volume count and textual features align closely, and textual analysis shows little divergence from its peers. No evidence suggests a distinct transmission line.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated>Unknown</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Pagar Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.28905910760539,89.56321498440158</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

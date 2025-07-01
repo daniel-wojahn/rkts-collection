@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">29</identifier>
+  <identifier type="sigla">Ggb</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (2015 Comparative Ed.)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྙིང་མ་རྒྱུད་འབུམ། ༼དཔེ་བསྡུར་མ།༽</title>
+  </titleInfo>
+  <abstract>This is the 49-volume Tibetan-language Nyingma Gyübum edition, published by the China Tibetology Publishing House (中国藏学出版社) in August 2015 as part of the Chinese Tibetan Tripitaka Project (中華大藏經), a significant sub-project of the Chinese Tripitaka Edition Project, aimed at preserving and critically editing important Buddhist texts. The editorial team based their work primarily on the Derge edition of the Nyingma Gyübum (sde dge par ma rnying ma rgyud ’bum), with extensive cross-referencing to the Bairo Gyübum, Tsamdrak (Bhutan), and Gangtey Monastery (Bhutan) editions to ensure accuracy and completeness.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>2015</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">28</identifier>
+    <titleInfo>
+      <title>MW3CN3207</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN3207</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>49</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

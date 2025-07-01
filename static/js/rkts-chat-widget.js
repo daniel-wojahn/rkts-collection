@@ -342,21 +342,8 @@ function appendMessage(role, text, isHtml = false) {
   // Add message to the chat
   messages.appendChild(msg);
   
-  // Scroll to the new message with smooth behavior
-  requestAnimationFrame(() => {
-    msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-  
-  // Add typing indicator for assistant messages
-  if (role === 'assistant') {
-    const messagesContainer = document.getElementById('rkts-chat-messages');
-    document.querySelectorAll('.typing-indicator').forEach(el => el.remove());
-    let typingIndicator = document.createElement('div');
-    typingIndicator.className = 'rkts-msg assistant typing-indicator';
-    typingIndicator.innerHTML = '<span></span><span></span><span></span>';
-    messagesContainer.appendChild(typingIndicator);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }
+  // Scroll to the new message
+  messages.scrollTop = messages.scrollHeight;
   
   return msg;
 }

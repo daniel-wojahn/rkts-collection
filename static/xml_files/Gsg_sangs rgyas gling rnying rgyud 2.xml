@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">40</identifier>
+  <identifier type="sigla">Gsg</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Sangyé Ling)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སངས་རྒྱས་གླིང་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Sangyé Ling Illuminated Manuscript Edition (Sangs rgyas gling rn ying ma rgyud ’bum) belongs to the Central Bhutanese lineage of Nyingma Gyübum transmissions, one of six closely related sets believed to share a common ancestry. The precise date of the Sangyé Ling edition is uncertain, but it is thought to be a copy of the Tsamdrak (Mtshams brag) manuscript, which was produced around 1726–1728; the Sangyé Ling manuscript would thus date slightly later. All these Bhutanese sets—including Sangyé Ling—are ultimately traced to the Gangtey (A), produced in 1642.
+
+This illuminated edition originally consisted of 46 volumes; 43 survive, as volumes 11, 12, and 41 are missing.
+
+The Sangyé Ling Gyübum was digitized in 2013 by Cathy Cantwell, Rob Mayer, and Ngawang Tsepag.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated>18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Sangyé Ling Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.586737543120808,91.85772191816841</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">34</identifier>
+    <titleInfo>
+      <title>MW1KG16449</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG16449</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>46</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

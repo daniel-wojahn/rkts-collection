@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">16</identifier>
+  <identifier type="sigla">Dm</identifier>
+  <titleInfo>
+    <title>Drakmar Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བྲག་དམར་དགོན་དུ་བཞུགས་པའི་དཔེ་རྙིང་ཕྱོགས་བསྒྲིགས།</title>
+  </titleInfo>
+  <abstract>Drakmar Temple (Brag dmar or Drag dmar) and its neighbor Ghagar (Gad dkar) stand in the hamlet of Ghagar-Drakmar at the heart of the Tarap Valley (Rta rab) in Lower Dolpo. Though its exact founding date is lost, Drakmar’s basic architectural form is unquestionably ancient. Local tradition credits the early-15th-century king of Mustang, Amapal (’A ma dpal, 1388–ca 1445), with establishing a “Temple of Maitreya” here, and some evidence still points to Drakmar as that original site. By the 16th century, Sakya lamas were visiting to teach—and one even served as abbot—attesting a strong Sakyapa affiliation. In the late 17th century, under the influence of the great Nyingma master Orgyen Tenzin (O rgyan bstan ’dzin, 1657–1729) and inspired by the mystic Pargo Lama, the temple adopted Nyingma rituals, installing new images and thangkas of meditation deities. Its dual names—”Red Boulder” (brag dmar) and “Wrathful Red Guru” (drag dmar), an emanation of Padmasambhava—reflect that Nyingma transformation.
+
+Drakmar’s manuscript collection totals 116 volumes, moved to secure storage by the Tibetan Manuscript Project Vienna in September 2022 and fully digitized by May 2023. It comprises a 30-volume sūtra section (vols 1–30), an 18-volume tantra set (31–50, with two missing), 34 volumes of the Śatasāhasrikāprajñāpāramitā (51–84) drawn from four distinct sets, 12 volumes of the Pañcaviṃśatisāhasrikāprajñāpāramitā (85–96) in fragmentary form, four volumes of the Aṣṭasāhasrikāprajñāpāramitā (97–100), a four-volume Avataṃsaka (104–107) and three-volume Ratnakūṭa (108–110), three volumes of Vajracchedikā (101–103), two Bhadrakalpika volumes (111–112), three Tog gzungs (113–115), and a single Gzungs bsdus volume (116). Notably, it contains no Vinaya texts, and its sūtra manuscripts show a script style and paleographical features midway between those from Nesar and Namgyal.</abstract>
+  <genre>Canonical Collection</genre>
+  <subject>
+    <geographic>Drakmar Temple</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.15,83.17111111111112</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL15</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL15</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">89</identifier>
+    <titleInfo>
+      <title>MW1BL10</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1BL10</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

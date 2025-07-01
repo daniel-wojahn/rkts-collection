@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">86</identifier>
+  <identifier type="sigla">Th</identifier>
+  <titleInfo>
+    <title>Tholing Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མཐོ་ལྡིང་དཔེ་ཚོགས།</title>
+  </titleInfo>
+  <abstract>The Tholing Collection (Mtho lding), also known as the Tholing Kanjur, is a significant yet fragmentary collection of Tibetan Buddhist canonical manuscripts that represents an early stage in the development and transmission of the Kanjur, particularly within Western Tibet&apos;s distinct textual tradition.
+
+The manuscripts were recovered by the renowned Italian Tibetologist Giuseppe Tucci (1894–1984) during an early 20th-century expedition to Western Tibet. He found the collection in a state of neglect, piled in a grotto within the ruins above the main Tholing monastery. Tucci described the find as &quot;a whole library; the jumbled remains of ancient copies of the Kanjur and the Tanjur&quot;. He collected approximately 3,000 folios, which are now a core part of the Tucci Tibetan Fund in the IsIAO Library in Rome. The collection&apos;s origin is tied to the historical importance of Tholing monastery, founded in 996. Tholing became the religious and cultural heart of the Guge kingdom and a center for the &quot;second diffusion&quot; of Buddhism in Tibet. This renaissance was spearheaded by figures like the great translator Rinchen Sangpo (Rin chen bzang po, 958–1055) and the Indian master Atiśa (982–1054), both active in the region under royal patronage. The Tholing manuscripts are dated to a period spanning the 11th to 15th centuries and are considered contemporary with or even earlier than the Old Narthang Kanjur, a conceptual archetype for later canonical editions.
+
+The Tholing collection is not a complete, standardized Kanjur but rather a proto-Kanjur or an assembly of proto-canonical texts. It is characterized by its fragmentary nature and archaic features, including an inconsistent mix of old and new orthography and paleography. The manuscripts are considered highly valuable because they represent a distinct Western Tibetan line of transmission that predates and stands independent of the two main Central Tibetan Kanjur lineages—the Tshalpa and Thempangma—which were formalized in the 14th century. This makes the collection a crucial witness to the formative stages of the Tibetan canon before the establishment of standardized recensions.
+
+Though incomplete, the collection contains texts from nearly all major sections of a typical Kanjur, albeit in uneven quantities. While detailed analysis is ongoing, the known contents include a substantial portion of the Prajñāpāramitā, specifically the Śatasāhasrikāprajñāpāramitā, comprising 30 identified texts. The Sūtra and Dhāraṇī sections are also well-represented. Additionally, the find includes an incomplete Vinaya text, 11 texts from the Mahāratnakūṭa, three from the Mahāparinirvāṇasūtra, and a single Tantra text. The relative scarcity of Tantric texts is noteworthy, given Tholing&apos;s association with tantric specialists like Rinchen Sangpo. Due to its fragmentary condition, the original ordering of the texts is difficult to reconstruct.
+
+The collection serves as an indispensable point of comparison for other early manuscript finds from the region, such as those from Tabo, Gondhla, and Phuktar.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>11th–15th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tholing Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.485172417624074,79.79655618979143</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2194</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2194</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">69</identifier>
+    <titleInfo>
+      <title>MW3CN965</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN965</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

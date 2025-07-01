@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">56</identifier>
+  <identifier type="sigla">Ma</identifier>
+  <titleInfo>
+    <title>Matho Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མང་སྤྲོ་དགོན་པའི་མཆོད་རྟེན་ནས་ཐོབ་པའི་དཔེ་རྙིང་དུམ་བུ།</title>
+  </titleInfo>
+  <abstract>The Matho Canonical Collection is among the most significant finds of early West Tibetan Buddhist literature. They comprise numerous fragmentary manuscripts, mainly from the 11th and 12th centuries.
+
+Discovered in 2014 at Matho (Mang spro), Ladakh, the fragments surfaced when a group of stupas (mchod rten) was demolished on a plateau near the village. Most were recovered from the &quot;King&apos;s stupa&quot; (rgyal po’i mchod rten), likely built in the 12th century; a thangka from within, dated to the 12th or early 13th century, supports this context. The fragments are thought to be the remains of the library of nearby Nyarma Monastery, founded by the translator Rinchen Zangpo (Rin chen bzang po, 958–1055), a pivotal center for the second diffusion of Buddhism in Tibet around 1000 CE. It is hypothesized that Nyarma monks deposited worn manuscripts in the stupa, possibly as part of royal funerary rites.
+
+The fragmentary material cannot be fully reconstructed but clearly represents a proto-Kanjur collection—compiled before the standardized Tibetan canon emerged. Notably, there is no formal separation between Kanjur and Tanjur. The fragments encompass:
+
+- Canonical texts later included in Kanjur and Tanjur editions
+- Numerous non-canonical works: ritual texts, pūja manuals, practice guides (khrid yig), pith instructions (man ngag), eulogies (bstod), and philosophical commentaries, some possibly local
+- Tantric texts paralleling those in the Basgo Kanjur, suggesting a distinct regional transmission line 
+
+The Matho Collection include both paper and birch bark manuscripts, with the latter possibly Kashmiri and predating the paper items. They appear in both loose-leaf and stitched-booklet forms. Folio size varies widely, from small pieces to large sheets (18–20 × 60–65 cm), matching the &quot;standard Kanjur&quot; format seen later. Some large sheets were even cut in half prior to use. The fragments are written in both Uchen and Umé scripts and consistently exhibit features of Old Tibetan orthography: use of subscribed ya (ma ya btags) in syllables, da drag final clusters, and the gi gu log vowel sign.
+
+These are the oldest Buddhist manuscripts yet found in Ladakh. They offer a direct window into the diversity of Buddhist scripture circulating in Western Tibet during the 11th–12th centuries and document a stage of textual transmission prior to the formalization of the Tibetan Buddhist canon. As a proto-Kanjur, the Matho Collection is invaluable evidence for understanding early editorial practices and the organization of Buddhist literature in the region.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>11th–12th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Matho Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.998611,77.630833</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL18</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL18</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">78</identifier>
+    <titleInfo>
+      <title>MW1BL9</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1BL9</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <form type="medium">Paper</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

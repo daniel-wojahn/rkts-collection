@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">66</identifier>
+  <identifier type="sigla">Ph</identifier>
+  <titleInfo>
+    <title>Phukthar Collection</title>
+  </titleInfo>
+  <abstract>The Phukthar (phug thar / phug dal) collection, a significant corpus of canonical manuscripts in the library of Phukthar Monastery in Zanskar, India, represents a proto-Kanjur—an early, incomplete stage of canonical formation rather than a full, standardized Kanjur.
+
+The collection comprises approximately 75 manuscript volumes of various dates, reflecting a complex and layered compilation history. A small but crucial part—six or seven volumes from the 14th century—exhibits stylistic similarities to manuscripts from the Gondhla collection. The majority of other volumes were produced later, most likely in the 16th or 17th centuries.
+
+Local tradition holds that the collection was originally much larger and that missing volumes were gifted to new temples across the region as Phukthar Monastery helped found them. However, the presumed missing texts have yet to be found. Rumors persist of the Gondhla manuscripts once belonging to a more extensive Phukthar set, allegedly split in the 18th century, though there is no direct textual evidence supporting this claim.
+
+Phukthar’s oldest volumes mainly contain texts from the Ratnakūṭa (5 vols.) and Prajñāpāramitā (4 vols.) sections. Later additions include works from the Buddhāvataṁsaka and further Prajñāpāramitā materials.
+
+The collection is especially notable for its absence of both Vinaya and Tantra sections—an omission marking it, like the Gondhla manuscripts, as a proto-canonical set predating the standardized, Narthang-influenced Kanjur tradition.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>14th–17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Phugtal Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.268364,77.179542</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL21</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL21</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

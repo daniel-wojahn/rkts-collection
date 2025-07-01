@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">13</identifier>
+  <identifier type="sigla">D</identifier>
+  <titleInfo>
+    <title>Derge Tanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྡེ་དགེ་བསྟན་འགྱུར།</title>
+  </titleInfo>
+  <abstract>Celebrated for its editorial precision, clarity, and comprehensiveness, the Derge Tanjur (Sde dge bstan ’gyur) has become a cornerstone for traditional study and modern research.
+
+The Derge Tanjur project was sponsored by the 42nd King of Derge, Tenpa Tsering (Bstan pa tshe ring, 1678–1739). Begun in 1737, the carving of its woodblocks was completed in 1744, with oversight by the king and his successors. This monumental effort underscores the Derge kingdom’s pivotal role as a hub of Buddhist scholarship and printing in eastern Tibet (Kham).
+
+The editorial process was led by Zhuchen Tsültrim Rinchen (Zhu chen Tshul khrims rin chen, 1697–1774), whose rigorous approach involved comparing and synthesizing multiple manuscript and print traditions. The Shalu Tanjur served as the primary basis, supplemented with comparisons to other collections, including Ga Anyen Dampa Künga Dragpa’s (Ga a gnyan dam pa Kun dga’ grags pa, 1230–1303) Tanjur, the manuscript Tanjurs of the Fourth Zhamarpa, Chödrak Yeshe (Chos grags ye shes, 1453–1524), and Situ Paṇchen Chökyi Jungné (Si tu paṇ chen Chos kyi ’byung gnas, 1700–1774), as well as King Tenpa Tsering’s silver-inscribed manuscript Tanjur. The editors also consulted the New Narthang Tanjur (1741–1742) and chose to largely ignore the First Peking Edition (1724), demonstrating deliberate scholarly judgment.
+
+The collection comprises 213 volumes, containing 3,354 texts and approximately 64,512 folios. It is systematically organized, starting with Mahāyāna and Hīnayāna philosophy (inner sciences), followed by logic, grammar, medicine, arts, and other treatises, including works by early Tibetan authors from the 7th century and newly added texts, concluding with dedication prayers. Zhuchen’s catalogue, commonly known as Chu gter ’phel ba, provides not only an exhaustive index but also historical and editorial insights, making it a critical resource.
+
+The Derge Tanjur has earned a reputation as one of the finest editions of the Buddhist canon. Its accuracy and completeness ensured its selection as the base text for the Comparative Edition of the Tanjur (Bstan ’gyur dpe bsdur ma), a monumental project initiated in 1986 by the China Tibetology Research Center to establish a modern authoritative version of the collection.</abstract>
+  <genre>Tanjur</genre>
+  <originInfo>
+    <dateCreated>1744</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Derge Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.8330556,98.59972222222221</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1657</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1657</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">13</identifier>
+    <titleInfo>
+      <title>MW23703</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW23703</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">14</identifier>
+    <titleInfo>
+      <title>MW2KG209989</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG209989</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">Esukhia</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">15</identifier>
+    <titleInfo>
+      <title>MW2KG5013</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG5013</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">CIHTS</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

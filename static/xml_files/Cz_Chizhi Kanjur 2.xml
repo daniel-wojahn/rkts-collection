@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">12</identifier>
+  <identifier type="sigla">Cz</identifier>
+  <titleInfo>
+    <title>Chizhing Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྤྱི་ཞིང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The manuscript Kanjur preserved at the Chizhing Samtenchöling temple (Spyi zhing bsam gtan chos gling lha khang) in Bhutan constitutes a rare and significant canonical collection affiliated with the Sakya tradition. The temple, founded in the 16th century by the Sakya master Lodrö Rabyang (Blo gros rab dbyangs), houses a set of manuscript Kanjur volumes alongside block-printed works by prominent Sakya scholars. The Kanjur forms the core of the monastic library and is among the few known canonical collections in Bhutan with a direct Sakya lineage.
+
+The fragmentary Chizhing Kanjur dates from the 16th to 19th centuries and is particularly notable for its preservation within a Sakya institution that retained its sectarian identity even after the Drukpa Kagyü school became dominant in Bhutan. This continuity makes the collection an important witness to the persistence of Sakya textual transmission in the region. In recent years, the temple has come under the Central Monastic Body aligned with the Drukpa Kagyü school, but the Kanjur remains a testament to its earlier religious affiliation.
+
+The entire collection has been digitized and is accessible through the British Library’s Endangered Archives Programme EAP570 (https://doi.org/10.15130/EAP570).</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>16th–19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chizhing Samtenchöling</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.311405,89.595200</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG116097</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG116097</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">12</identifier>
+    <titleInfo>
+      <title>MWEAP570-4-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP570-4-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>111</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

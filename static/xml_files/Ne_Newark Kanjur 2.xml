@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">60</identifier>
+  <identifier type="sigla">Ne</identifier>
+  <titleInfo>
+    <title>Newark Collection (Bathang)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>འབའ་ཐང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Newark Kanjur, also called the Bathang Kanjur fragment (’ba’ thang bka’ ’gyur), is a significant handwritten local Kanjur from Eastern Tibet, now in the Newark Museum, New Jersey, as part of the Shelton Collection. Scholars generally date it to the 15th or 16th century, though its precise age is undetermined. As a local Kanjur, it represents the unique collection of a single monastery, rather than a standardized, widely published edition.
+
+The manuscript originated in Bathang, a town in the Kham region near the historical Tibet-China border. Its survival is directly linked to the 1905 destruction of the Gelukpa monastery, Ba Chöde Ganden Phandeling (’Ba’ chos sde dga&apos; ldan phan bde gling), by Chinese forces. After the monastery&apos;s library was dispersed, Dr. Albert L. Shelton (1875–1922), an American missionary physician, obtained several of the displaced volumes. In 1920, Shelton donated 24 handwritten Tibetan volumes to the Newark Museum. Flora Beal Shelton (1875–1962), his widow, later described their rescue.
+
+The museum cataloged the 24 volumes as accession numbers 20.468 to 20.491, though one part of the Prajñāpāramitā was initially filed under a different collection, causing some confusion. Eleanor Olson (1913–1976), author of the Newark Museum’s Tibetan Collection catalogue, was the first to organize the collection. She recognized that colored silk tags sewn to the title pages carried abbreviated titles corresponding to major Kanjur sections, letting her classify them as Vinaya, Sūtra, Abhidharma, and Tantra.
+
+Peter Skilling conducted the first detailed scholarly study, examining the volumes in 1992 and publishing an inventory in 2001. His report covered 23 volumes, as the last was not located at the time.
+Helmut Eimer&apos;s 2012 study compared the Newark Collection’s Buddhāvataṃsakasūtra with the Derge edition, to illuminate similarities and differences. He concluded that the Newark Collection’s Sūtra division displays a distinctive text order and arrangement. It includes what appears to be a unique, possibly early, translation of the Tathāgatagarbhasūtra, predating widespread standardization in the ninth century. The manuscript is valued for its independent readings, which scholars can use to trace textual history, even if it occasionally features errors or low-quality variants compared to other Kanjurs.
+
+The manuscript is written on both sides of the folios, which measure about 7 x 22–26 inches (17.78 x 55.88–66.04 cm), and lacks original covers. Titles and volume numbers appear on silk flaps attached to each volume.
+Some volumes include a table of contents at the end, a trait seen in earlier, less-standardized Tibetan canonical collections rather than the later standardized Kanjurs, revealing the Newark Collection&apos;s transitional or regional character.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>15th–16th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Bathang Chöde Ganden Phandeling</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>30.016667,99.099722</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G4023</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G4023</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">54</identifier>
+    <titleInfo>
+      <title>MW3CN1317</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN1317</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

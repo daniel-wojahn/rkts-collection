@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">68</identifier>
+  <identifier type="sigla">Pz</identifier>
+  <titleInfo>
+    <title>Phajoding Khangsang Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཕ་ཇོ་ལྡིང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>Phajoding started in the 13th century as a hermitage of Phajo Drukgom Zhigpo, who brought the Drukpa Kagyu tradition to Bhutan. However, it saw its heyday in the medieval period of Bhutan’s history when the great scholar and 9th Je Khenpo or Chief Abbot, Shakya Rinchen and many other Chief Abbots of Bhutan retired to this monastic hermitage. Its main temple complex was built around 1755 by the 13th Desi ruler Sherab Wangchuk and Shakya Rinchen. Many monastic buildings were added in the later centuries and its library has also incrementally grown to be a rich collection of over 1,000 volumes including manuscripts and block prints.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Thempangma</classification>
+  <subject>
+    <geographic>Phajoding Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.489086, 89.574310</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">58</identifier>
+    <titleInfo>
+      <title>MWEAP570-7-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP570-7-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -543,6 +543,59 @@ function updateGenericCategoryChart(collections, chartId, chartInstance, chartTi
  * @param {Object} [config.elementIds] - Object mapping filter names to element IDs
  * @param {boolean} [config.replaceState=true] - Whether to replace browser history state
  */
+/**
+ * Parses a date string into a numerical year range.
+ * Handles formats like "17th cent.", "14th-17th cent.", "1684-1692", and "ca. 1410".
+ * @param {string} dateStr - The date string to parse.
+ * @returns {Array|null} - An array [startYear, endYear] or null if unparseable.
+ */
+function parseDateRange(dateStr) {
+    if (!dateStr || typeof dateStr !== 'string') {
+        return null;
+    }
+
+    dateStr = dateStr.toLowerCase().trim();
+
+    // Case 1: Century range (e.g., "14th-17th cent.")
+    let match = dateStr.match(/(\d{1,2})(?:st|nd|rd|th)\s*-\s*(\d{1,2})(?:st|nd|rd|th)\s+cent/);
+    if (match) {
+        const startCentury = parseInt(match[1]);
+        const endCentury = parseInt(match[2]);
+        const startYear = (startCentury - 1) * 100 + 1;
+        const endYear = endCentury * 100;
+        return [startYear, endYear];
+    }
+
+    // Case 2: Single century (e.g., "17th cent.")
+    match = dateStr.match(/(\d{1,2})(?:st|nd|rd|th)\s+cent/);
+    if (match) {
+        const century = parseInt(match[1]);
+        const startYear = (century - 1) * 100 + 1;
+        const endYear = century * 100;
+        return [startYear, endYear];
+    }
+
+    // Case 3: Year range (e.g., "1684-1692", "1684/92")
+    match = dateStr.match(/(\d{4})\s*[-\/]\s*(\d{2,4})/);
+    if (match) {
+        const startYear = parseInt(match[1]);
+        let endYear = parseInt(match[2]);
+        if (match[2].length === 2) {
+            endYear = parseInt(match[1].substring(0, 2) + match[2]);
+        }
+        return [startYear, endYear];
+    }
+
+    // Case 4: Single year (e.g., "1684", "ca. 1410")
+    match = dateStr.match(/(\d{4})/);
+    if (match) {
+        const year = parseInt(match[1]);
+        return [year, year];
+    }
+
+    return null; // Return null if no format matches
+}
+
 function updateShareableUrl(config) {
     const {
         filters = {},
@@ -642,15 +695,20 @@ function filterCollections(collections, filters = {}, customFilterFn = null) {
         const maxYear = filters.maxYear !== undefined ? parseInt(filters.maxYear) : Infinity;
         
         filtered = filtered.filter(collection => {
-            // Skip collections without date information
-            if (!collection.date_created) return true;
-            
-            // Try to extract a year from the date string
-            const yearMatch = collection.date_created.match(/\b(\d{3,4})\b/);
-            if (!yearMatch) return true; // Keep collections with unparseable dates
-            
-            const year = parseInt(yearMatch[1]);
-            return year >= minYear && year <= maxYear;
+            // Try to parse the date string into a range
+            const itemDateRange = parseDateRange(collection.date_created);
+
+            // If the date is unparseable, exclude it from the filtered results when a date filter is active.
+            if (!itemDateRange) {
+                return false;
+            }
+
+            const [itemStart, itemEnd] = itemDateRange;
+
+            // Check for overlap:
+            // The item's range must start before or at the same time as the filter's end,
+            // AND the item's range must end after or at the same time as the filter's start.
+            return itemStart <= maxYear && itemEnd >= minYear;
         });
     }
     

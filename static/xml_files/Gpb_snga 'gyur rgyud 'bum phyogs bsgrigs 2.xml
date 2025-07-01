@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">38</identifier>
+  <identifier type="sigla">Gpb</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (2009 Collated Ed.)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྔ་འགྱུར་རྒྱུད་འབུམ་ཕྱོགས་བསྒྲིགས།</title>
+  </titleInfo>
+  <abstract>The Collated Edition of the Nyingma Gyübum was prepared by the Paltsek Research Institute (Dpal brtsegs bod yig dpe rnying zhib ’jug khang). The chief compilers were Zankhar Thupten Nyima, Khenpo Drödül Dorje, and editor-in-chief Karma Delek, and others.
+
+This edition marks a significant advance over earlier compilations of the Nyingma Gyübum, which often lacked systematic organization by tantric vehicle. Here, the texts of Mahāyoga, Anuyoga, and Atiyoga have been arranged according to lineage systems, mainly following those of the Fifth Dalai Lama, Terdak Lingpa (Gter bdag gling pa, 1646–1714), Ratna Lingpa (Rin chen gling pa, 1403–1478), and Gendün Chöphel (Dge &apos;dun chos &apos;phel, 1903–1951). The editorial team recognized that, due to local translation terms, hidden transmissions, and diverse manuscript lineages, absolute consistency is unattainable. Whenever possible, lost or corrupted passages were restored by comparison with early authoritative manuscripts, especially from the Fifth Dalai Lama’s collection, and classical commentaries. Proofreading privileged clarity and intended meaning over literary elegance, reflecting the spirit of the early Tibetan translators.
+
+The present collated edition is principally based on the Derge xylograph, which includes 429 texts. The compilers added 554 texts from the Tsamdrak manuscript, after collating with the Gangteng, Drametsé, and other Bhutanese traditions, as well as 19 texts from the Bairo Gyübum, 22 from the Tingkye Gyübum, and one (the second half of the Guhyagarbha Tantra, gsang ba snying po) from Larung Gar’s Khenpo Chime Rigzin. Altogether, the edition comprises 979 distinct texts organized in 58 volumes, plus a catalogue.
+
+No attempt was made to discriminate between canonical transmissions (bka’ ma) and revealed treasures (gter ma), or to classify by region or authenticity. The compilers adhered to the order of their sources, making only essential corrections.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>2009</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">33</identifier>
+    <titleInfo>
+      <title>MW1KG14783</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG14783</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>58</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">97</identifier>
+  <identifier type="sigla">Y</identifier>
+  <titleInfo>
+    <title>Peking Yongle Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཏཱ་མིང་མ་ཡུན་ལོ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Yongle Kanjur is the first-ever printed edition of the Tibetan Buddhist canon, produced by imperial command in Beijing in 1410 under the Yongle Emperor of the Ming dynasty (r. 1402–1424). Printed in distinctive red cinnabar ink, it marks a foundational moment for xylographic technology and canonical transmission, establishing the precedent for the &quot;Peking line&quot; of Kanjur editions.
+
+The Yongle Kanjur was commissioned as part of the emperor’s diplomatic overtures to Central Tibetan authorities, including inviting key religious figures to the Ming court and cultivating Sino-Tibetan political and spiritual relations. Its production, far more than a devotional act, was a calculated political move: demonstrating Ming technological power, expressing respect for Tibetan Buddhism, and asserting imperial authority over Buddhist scripture. Unlike later editions, it was produced in very limited quantity; the blocks themselves were preserved by the Ming court as authoritative imperial standards rather than for mass printing.
+
+Compiled from a manuscript exemplar of the Tshalpa Kanjur, the Yongle edition belongs squarely to the Tshalpa transmission lineage. Its production entailed the engraving of over 35,000 wooden plates, most likely executed at Fayuan-si temple in Beijing. A nearly identical reprint, the Wanli Kanjur (printed 1605–1606 in black ink), was commissioned by the Wanli Emperor, confirming that the original blocks had been preserved.
+
+Few sets were ever printed. Presently, only two nearly complete Yongle Kanjurs survive, both in Lhasa:  
+- One, originally given to Kunga Tashi (Kun dga’ bkra shis, 1349–1425) of the Sakya school in 1414 and transferred to the Potala Palace.
+- A second, offered to Jamchen Chöje Śakya Yeshé (Byams chen Chos rjes shākya ye shes, 1352/54-1435) founder of the Sera monastery in 1416, now held at Sera, containing 103 extant volumes.  
+A third set placed at Dawenshu Temple, Wutai-shan, is now lost. A single leaf survives at the University of Michigan.
+
+Most sources list the Yongle Kanjur as comprising 105 or 106 volumes plus a catalogue, though a count of 108 is sometimes reported. The catalogue carries a title almost identical to that of the Old Narthang Kanjur&apos;s, suggesting continuity in cataloguing tradition.
+
+The physical layout is distinctive: thin vertical lines along the folio borders separate the Tibetan text from marginal notes, with Chinese annotations elegantly placed, reflecting the edition’s Sino-Tibetan context.
+
+The Yongle Kanjur is a landmark in the history of Buddhist textual culture—introducing printing technology to canon production, reinforcing Sino-Tibetan relations, and establishing a stable Tshalpa textual witness for all later &quot;Peking line&quot; editions (Wanli Kanjur 1606, Peking 1684–92, and others).</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1410</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

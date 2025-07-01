@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">5</identifier>
+  <identifier type="sigla">Ba</identifier>
+  <titleInfo>
+    <title>Basgo manuscript Kanjur (Fragments)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལ་དྭགས་བ་མགོ་མཁར་དུ་བཞུགས་པའི་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The manuscript collections in the Serzang Temple (Gser zangs Lha khang) at Basgo, Ladakh, are a complex treasury of Tibetan canonical literature. Far from being a uniform archive, the main body consists of about 60,000 leaves from at least five or six different Kanjur sets that are now mixed, alongside various other canonical fragments.
+
+The temple was founded by King Jamyang Namgyal (&apos;Jam dbyangs rnam rgyal, r. 1595–1616) and expanded by his son, King Sengge Namgyal (Sengge rnam rgyal, r. 1616–1642), for whom Basgo was a principal residence. The collection spans diverse periods, with its oldest holdings being around 900 folios from the 14th or 15th century, notable for their ancient orthography. The largest portion dates to the early 17th century, linked to the patronage of King Sengge Namgyal and his principal religious authority, the Drukpa Kagyüpa master Taktsang Repa (Stag tshang ras pa, 1574–1651). This major scribal project, likely commissioned after the founding of Hemis Monastery in 1630, involved the scholar Namkha Pelgön (Nam mkha’ dpal mgon, b. ca. 1560) as a reviser for both sutra and tantra sections.
+
+This 17th-century Kanjur is considered a ‘local’ or ‘independent’ canon. It lacks direct descent from the major Tshalpa or Thempangma transmission lines but shares a nearly identical character with the Hemis Kanjur, suggesting a shared local origin. A portion of the Kanjur was temporarily moved to Phyang Monastery for safekeeping during the Tibet-Ladakh-Mughal War (1679–1684) but was returned incomplete.
+
+In the 20th century, likely during the 1970s and 1980s, an attempt was made to compile a single, complete Kanjur from the various 17th-century sets. Damaged folios were replaced with new ones of inferior quality, and multiple rounds of re-pagination—with one repair note dated October 25, 1986—indicate repeated efforts to reassemble the texts. The 17th-century manuscripts are notable for their elaborate headmarks (yig mgo) and lack of string holes. While most employ new orthography, some texts retain older forms, like the *mya* conjunct. The Basgo collection is distinguished from the similar Hemis Kanjur by its substantial number of tantric texts.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>14th–17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Serzang Temple (Basgo fort, Ladakh)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.224730957439945,77.27595887849625</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">7</identifier>
+    <titleInfo>
+      <title>MW4CZ45308</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ45308</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">43</identifier>
+  <identifier type="sigla">Gtk</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Tingkyé)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གཏིང་སྐྱེས་དགོན་དུ་བཞུགས་པའི་རྙིང་མ་རྒྱུད་འབུམ།</title>
+  </titleInfo>
+  <abstract>The Tingkyé Nyingma Gyübum (Gting skyes rnying ma rgyud &apos;bum), also known as the gTing skyes Plain Ms Edition, it is a primary witness for the South-Central (or South-Western) Tibetan recension of the Nyingma Gyübum transmission. 
+Associated with Tingkyé Monastery (gting skyes dgon pa byang) in Tibet, the Tingkyé Gyübum and the Rikdzin Tsewang Norbu edition represent an earlier phase of transmission than the Tibetan-Nepalese borderlands group. Older Tingkyé manuscripts comprised 33 volumes. A modern facsimile, published in Thimphu under Dilgo Khyentse Rinpoche (1910–1991) between 1973–75, is based on a Sikkim manuscript from 1965.
+The Tingkyé edition’s structure is distinct from other major editions, even where texts overlap.  Compared to the Derge xylograph, Tingkyé’s arrangement is markedly different. For example, one Derge volume (Ca) matches material split across four separate Tingkyé volumes (Ka, Kha, Ga, Cha), and text sequence varies as well. The Tsamdrak edition shares the same opening texts, but alignment quickly diverges, with some Tsamdrak texts absent from Tingkyé altogether. Eiichi Kaneko catalogued the collection in 1982, and it is also described by the Tibetan &amp; Himalayan Library.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>South-Western Tibetan (NGB)</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tingkyé</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>28.363362471142967, 87.77204070072646</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1441</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1441</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">37</identifier>
+    <titleInfo>
+      <title>MW21518</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21518</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>36</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">72</identifier>
+  <identifier type="sigla">R</identifier>
+  <titleInfo>
+    <title>Ragya Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྭ་རྒྱ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Ragya Kanjur is a xylographic edition of the Tibetan Buddhist canon produced at Ragya Tashi Jungne Monastery (Rwa rgya bkra shis &apos;byung gnas) in Amdo between 1814 and 1820. The edition was initiated and financed by Shingza Lobsang Dargye Gyatso (Shing bza&apos; Blo bzang dar rgyas rgya mtsho, 1752/59–1824), with the catalog authored by the Seventh Panchen Lama, Tenpé Nyima (Paṇ chen Bstan pa’i nyi ma, 1782–1853). Carving of the woodblocks began in 1814 and was completed in 1820, involving a team of over 100 artisans, including both Derge master carvers and Ragya calligraphers.
+
+The Ragya Kanjur consists of 104 volumes, one more than the Derge Kanjur, following the Derge&apos;s structure but adding a volume containing the Śūraṃgama-samādhi Sūtra (gtsug gtor dpa&apos; bar &apos;gro ba&apos;i ting &apos;dzin), a text translated under imperial patronage. Unlike some other later regional editions, the Ragya Kanjur is not an independent redaction—it is a direct, careful copy of the Derge Kanjur, inheriting both the Tshalpa textual lineage and the Derge&apos;s structural innovations, particularly in its organization of the Collected Dhāraṇīs (Gzungs ’dus) as a distinct section.
+
+The Ragya edition is renowned for its high editorial standards and clarity, ensured by a meticulous three-stage proofreading process led by Jamyang Peljor (Byams pa dpal &apos;byor). This process involved cross-referencing the Derge exemplar, correcting where needed, and consulting closely with Shingza Pandita. The project fostered competition among carvers and calligraphers, aiming for excellence in both script and carving.
+
+Despite its lack of true textual independence from Derge, the Ragya Kanjur’s unique significance lies in its role as a regional vehicle for the dissemination and preservation of the Derge recension in Amdo. The work&apos;s high editorial quality and the addition of the Śūraṃgama-samādhi Sūtra mark its modest originality. During the upheavals of the mid-20th century, all the original Ragya woodblocks were destroyed, but the edition narrowly escaped total loss: after decades of searching, a complete printed copy was found in 2013 at Khyagchu Monastery in Pawung, Amdo, making re-edition and digital preservation possible in the 21st century.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1820</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Ragya Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.679722,100.650000</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G398</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G398</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">63</identifier>
+    <titleInfo>
+      <title>MW2PD17098</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2PD17098</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

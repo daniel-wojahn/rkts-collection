@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">114</identifier>
+  <identifier type="sigla">Bkc</identifier>
+  <titleInfo>
+    <title>Bon Kanjur (Chengdu)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བོན་པོའི་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The 1999 Chengdu Edition of the Bon Kanjur is a modern reprint containing 178 volumes, published in Chengdu, Sichuan. This edition is notable for its more systematic arrangement and clearer editorial approach compared to earlier Sichuan reprints.
+
+This edition is primarily based on the early 20th-century Walkhyung Monastery (Dbal khyung dgon) manuscript, a foundational copy prepared at the initiative of Nyakter Sangngak Lingpa (Nyag gter Gsang sngags gling pa, b. 1864), who sought to restore the tradition of complete Kanjur reading authorizations (lung). The Walkhyung manuscript itself was copied from a still older Nag chu kha region Bon Kanjur and became the principal blueprint for this Chengdu printing.
+
+Unlike the earlier, more eclectic 1987 edition, the 1999 Chengdu edition maintains closer fidelity to the Walkhyung manuscript&apos;s original content and structure, presenting a more authentic representation of the traditional Bonpo canonical arrangement. The editors prioritized completeness and organization, resulting in a set that corresponds more directly to recognized divisions of the Bon Kanjur.
+
+The 1999 Chengdu edition has become a reliable resource for scholars and practitioners, serving as the most orderly and cohesive representation of the Walkhyung Kanjur lineage in modern Bonpo textual history. 
+
+Third edition of the Bon Kanjur printed by Mongyal Lhasey Rinpoche (Smon rgyal Lha sras Rin po che aka Kun grol Lha sras Mi pham rnam rgyal) and Shense Namkha Wangden (Gshen sras Nam mkha&apos; dbang ldan) in Chengdu.</abstract>
+  <genre>Bon-Kanjur</genre>
+  <originInfo>
+    <dateCreated>1999</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chengdu</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>30.4238,104.0519</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1111</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1111</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">100</identifier>
+    <titleInfo>
+      <title>MW21872</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW21872</url>
+    </location>
+    <physicalDescription>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

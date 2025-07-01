@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">11</identifier>
+  <identifier type="sigla">Cr</identifier>
+  <titleInfo>
+    <title>Chemre Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལྕེ་བདེ་དགོན་དུ་བཞུགས་པའི་དཔེ་རྙིང་ཕྱོགས་བསྒྲིགས།</title>
+  </titleInfo>
+  <abstract>A fragmentary Kanjur manuscript is kept at Chemre Monastery (Lce bde dgon pa) in Ladakh. The team from the &apos;Tibetan Manuscripts Project&apos; at the University of Vienna is currently working to gain access to this collection.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chemre Monastery (Ladakh)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.5732,77.4720</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL6</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL6</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

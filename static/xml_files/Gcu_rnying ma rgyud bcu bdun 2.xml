@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">106</identifier>
+  <identifier type="sigla">Gcu</identifier>
+  <titleInfo>
+    <title>Seventeen Tantras (Kathmandu)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྙིང་མ་རྒྱུད་བཅུ་བདུན</title>
+  </titleInfo>
+  <abstract>From the collection of the National Archives, Kathmandu. Preserved on microfilm as part of the Nepal-German Manuscript Preservation Project (https://catalogue.ngmcp.uni-hamburg.de/receive/aaingmcp_tbtdocument_00069259)</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Tibetan-Nepalese Borderlands (NGB)</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Kathmandu</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.695380,85.321592</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2CN11080</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2CN11080</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">82</identifier>
+    <titleInfo>
+      <title>MW1ER119</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1ER119</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">NGMPP</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>7</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

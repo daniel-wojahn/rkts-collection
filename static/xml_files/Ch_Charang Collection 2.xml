@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">10</identifier>
+  <identifier type="sigla">Ch</identifier>
+  <titleInfo>
+    <title>Charang Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཙུན་དགོན་དུ་བཞུགས་པའི་དཔེ་རྙིང་ཕྱོགས་བསྒྲིགས།</title>
+  </titleInfo>
+  <abstract>In the Charang Monastery (Kinnaur) are kept several manuscripts of canonical literature. This collection is presently studied by the team of the &quot;Tibetan Manuscripts Project&quot; of the University of Vienna.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Charang Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.42694,78.58278</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL16</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL16</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

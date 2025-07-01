@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">108</identifier>
+  <identifier type="sigla">Gyp</identifier>
+  <titleInfo>
+    <title>rgyal po g.yu 'phreng sngon po'i rgyud</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྒྱལ་པོ་གཡུ་འཕྲེང་སྔོན་པོའི་རྒྱུད</title>
+  </titleInfo>
+  <genre>Old Tantra</genre>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">84</identifier>
+    <titleInfo>
+      <title>MW1NLM219</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1NLM219</url>
+    </location>
+    <physicalDescription>
+      <extent>0</extent>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

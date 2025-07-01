@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">8</identifier>
+  <identifier type="sigla">C</identifier>
+  <titleInfo>
+    <title>Cone Tanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བསྟན་འགྱུར ༼ཅོ་ནེ་པར་ཕུད༽</title>
+  </titleInfo>
+  <abstract>Production began several decades after its Kanjur counterpart, with woodblock carving spanning 1753–1772. The project was patronized by Queen and temporary Regent Rinchen Palzom (Rin chen dpal &apos;dzom, 18th cent.) and her grandson Tenpé Sungtsé Tsering (Bstan pa&apos;i srung rtse tshe ring, 1728–1791). The Cone Tanjur used the Derge Tanjur as its primary exemplar, a relationship confirmed by scholarly consensus.
+
+In 1773, the Second Jamyang Zhepa, Könchok Jigme Wangpo (Dkon mchog &apos;jigs med dbang po, 1728–1791) authored the collection&apos;s catalogue &quot;The Rosary of Wish-Fulfilling Gems: A Detailed Catalogue of the Precious Teaching&apos;s Word&quot; (Bstan bcos &apos;gyur ro cog gi dkar chag yid bzhin nor bu&apos;i phreng ba).
+
+The collection comprises either 208 volumes with 65,425 folios according to its catalogue, or 209 volumes as reported by J.F. Rock. By the mid-20th century, complete copies were preserved at the Library of Congress, Wutai shan monastery, and Yonghe Temple (雍和宮) in Peking. The 1929 destruction of the original woodblocks has made surviving complete copies of the Coné canon particularly valuable.</abstract>
+  <genre>Tanjur</genre>
+  <originInfo>
+    <dateCreated>1753–1772</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Coné Ganden Shedrub Ling</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.59525,103.50381</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G435</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G435</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">10</identifier>
+    <titleInfo>
+      <title>MW1GS66030</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1GS66030</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>209</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

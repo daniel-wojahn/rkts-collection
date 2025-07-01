@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">34</identifier>
+  <identifier type="sigla">Gkk</identifier>
+  <titleInfo>
+    <title>Nyingma Gyübum (Tingkyé Supplement)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>གཏིང་སྐྱེས་དགོན་པའི་རྙིང་མ་རྒྱུད་འབུམ་ཀྱི་ཁ་སྐོང་།</title>
+  </titleInfo>
+  <abstract>This Nyingma Gyübum collection is intended as supplementary material to the main Tingkyé Gyübum collection (gting skyes rgyud &apos;bum gyi pod tha ma drug). These volumes were published in Thimphu by Dilgo Khyentse Rinpoche between 1973 and 1975, and were recently found in China.</abstract>
+  <genre>Old Tantra</genre>
+  <classification>Bhutanese (NGB)</classification>
+  <originInfo>
+    <dateCreated>1973–1975</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tingkyé</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>28.363362471142967,87.77204070072646</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1441</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1441</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">30</identifier>
+    <titleInfo>
+      <title>MW25815</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW25815</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>6</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

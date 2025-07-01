@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">71</identifier>
+  <identifier type="sigla">Qu</identifier>
+  <titleInfo>
+    <title>Peking Ulaanbaatar Kanjur</title>
+  </titleInfo>
+  <abstract>The Peking Ulaanbaatar Kanjur contains 107 volumes, plus an index volume, with typical folio dimensions of approximately 71.7 by 21.2 cm. The woodblock prints are noted for their precision, clarity, and frequent use of red ink.
+
+Of the 107 volumes, 103 have been digitized from the xylograph form at the National Library of Mongolia. Four missing volumes (vol.02 rgyud ka, vol.18 rgyud tsa, vol.48 sher phyin mi, and vol.66 mdo sna tshogs ngu) survive only as manuscript copies, as do partial folios in two additional volumes (vol.38 sher phyin chi and vol.39 sher phyin ji).
+
+Multiple institutions—including the National Library of Mongolia, the Asian Classics Input Project (ACIP), and the YB Centre—have prepared and distributed high-quality digital images of the Peking Ulaanbaatar Kanjur (https://kawachen.org/peking_kangyur_j.htm).</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">62</identifier>
+    <titleInfo>
+      <title>MW1KG26108</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1KG26108</url>
+    </location>
+    <physicalDescription>
+      <note type="numberoflines">8</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

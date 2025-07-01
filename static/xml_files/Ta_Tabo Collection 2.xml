@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">83</identifier>
+  <identifier type="sigla">Ta</identifier>
+  <titleInfo>
+    <title>Tabo Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཏ་ཕོའི་དཔེ་རྙིང་ཕྱོགས་བསྡུས</title>
+  </titleInfo>
+  <abstract>The Tabo (Ta pho, Rta po, or Sta po) Collection is an outstanding body of early Tibetan manuscripts preserved at Tabo Monastery in the Spiti Valley, Himachal Pradesh, India. The monastery houses what scholars have identified as a &quot;proto-Kanjur&quot;—an early, pre-standardized phase in the formation of the Tibetan Buddhist canon.
+
+Founded in 996 CE by the Guge king Lha Lama Yeshé Ö (Lha bla ma Ye shes &apos;od, c. 947–1024), Tabo Monastery is strongly associated with the influential translator Rinchen Sangpo (Rin chen bzang po, 958–1055). The surviving manuscripts were compiled over several centuries, with the oldest core dating to the 10th and 11th centuries and additions possibly made up to the 16th or 17th centuries. The antiquity of the collection is confirmed by palaeography, radiocarbon analysis, and a dedicatory note from Yeshé Ö dated to c. 1019.
+
+Western scholarship first learned of the collection when August Francke visited Tabo in 1909 and reported vast heaps of disordered leaves, mainly Prajñāpāramitā texts. Giuseppe Tucci, who visited in 1933, noted its disarray but found evidence of a wider textual range. In 1991, Ernst Steinkellner initiated systematic research that clarified the collection’s scope and structure.
+
+The Tabo Collection, as it survives, is profoundly fragmentary: about 35,000 loose folios remain, without a single intact text among them. Damage from fire and other causes is evident, suggesting these are the remnants of a far larger library—possibly assembled at Tabo when other western Himalayan monasteries declined.
+
+Distinct from standard Kanjurs, the Tabo collection epitomizes the &quot;proto-Kanjur&quot; phase, predating the canonical arrangement of the 14th century and best described as a &quot;collection of collections&quot; reflecting an earlier textual landscape. Approximately eighty percent of the manuscripts are Prajñāpāramitā sūtras, with the remainder consisting mainly of Sūtra texts, particularly from the Ratnakūṭa, Avataṃsaka, and Parinirvāṇa. Fewer texts stem from the Vinaya and Tantra/Dhāraṇī categories, while some commentaries and treatises anticipate works later systematized in the Tanjur. Almost all are written in the formal dbu can script.
+
+The Tabo manuscripts are crucial for understanding the development of the Tibetan Buddhist canon; their importance is often considered second only to the Dunhuang material. The collection represents an independent textual transmission, apart from the later editorial lines of Central Tibet (Tshalpa and Thempangma) that formed the basis for printed Kanjurs. As a &quot;proto-Kanjur,&quot; the Tabo manuscripts bridge early traditions and the later canon, demonstrating that the breadth of religious literature in early Western Tibet was much wider than in later standardized collections. Alongside manuscript finds from Gondhla and Phukthar, Tabo illustrates a stage in canon formation where completeness was sought but structure remained fluid. The publication of a detailed catalogue of its sūtra texts by Cristina A. Scherrer-Schaub and Paul Harrison has made this remarkable resource more accessible to scholars.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Independent</classification>
+  <originInfo>
+    <dateCreated>10th–17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tabo Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>32.09403696666478,78.38392151549493</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KG17626</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KG17626</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">66</identifier>
+    <titleInfo>
+      <title>MW3CN895</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN895</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">67</identifier>
+    <titleInfo>
+      <title>MW1BL1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1BL1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

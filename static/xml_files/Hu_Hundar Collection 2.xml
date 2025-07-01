@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">50</identifier>
+  <identifier type="sigla">Hu</identifier>
+  <titleInfo>
+    <title>Hundar Collection</title>
+  </titleInfo>
+  <abstract>The Hundar Manuscript Collection is a set of canonical Tibetan Buddhist manuscripts housed in the village of Hundar, Nubra valley, Ladakh. At least one volume is identified as a collection of sūtras (mdo mangs).
+
+Dating to the 17th or 18th century, the collection&apos;s precise historical circumstances, patrons, and compilers remain unknown. It was recently documented by the Tibetan Manuscript Project Vienna (TMPV).
+
+Detailed information on the collection&apos;s transmission or preservation is lacking. The best-documented volume is a mdo mangs, which closely matches volume 94 (mdo sde; Ge) of the Phug brag Kanjur, sharing its pagination and marginal titles. This parallel suggests both derive from a common source, illustrating the complex transmission and circulation of canonical texts in the region.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>17th–18th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Hundar monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.541111,77.560278</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">MW8LS15990</identifier>
+    <titleInfo>
+      <title>MW8LS15990</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW8LS15990</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">rKTs</note>
+      <note type="numberoflines">9</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

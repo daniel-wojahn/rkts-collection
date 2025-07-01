@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">91</identifier>
+  <identifier type="sigla">Ty</identifier>
+  <titleInfo>
+    <title>Tashiyangtse Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར ༼བཀྲ་ཤིས་གཡང་རྩེ་བྲིས་མ༽</title>
+  </titleInfo>
+  <abstract>The Tashiyangtse Kanjur originates from Tashiyangtse Dzong (Bkra shis g.yang rtse rdzong) in Bhutan. Likely produced in the 18th or 19th century, the Tashiyangtse Kanjur was created during a period of prolific manuscript production in Bhutan, when many Kanjurs and other canonical texts were painstakingly copied by hand in monasteries and private libraries between the 16th and 18th centuries. The Tashiyangtse Kanjur belongs to the Thempangma group in line with other recently studied Kanjurs from Bhutan. 
+
+Modern preservation efforts have brought the Tashiyangtse Kanjur to scholarly attention. From 2005 to 2012, Bhutanese manuscripts were digitized under the Endangered Archives Programme (EAP); in early 2020, the Tashiyangtse Kanjur was specifically digitized by the Loden Foundation as part of the Tibetan Manuscript Project Vienna (TMPV). 
+
+The collection consists of 103 volumes. As a Thempangma Kanjur, its contents and sectional arrangement are expected to closely parallel those of other Kanjurs within this lineage, though precise details of its unique textual features require further comparative analysis.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Thempangma</classification>
+  <originInfo>
+    <dateCreated>18th–19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Trashiyangtse Dzong</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.615215788578162, 91.49665113346497</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">71</identifier>
+    <titleInfo>
+      <title>MW2KG209840</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG209840</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

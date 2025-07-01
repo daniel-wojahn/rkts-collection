@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">51</identifier>
+  <identifier type="sigla">J</identifier>
+  <titleInfo>
+    <title>Lithang Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལི་ཐང་བཀའའགྱུར།</title>
+  </titleInfo>
+  <abstract>The Lithang Kanjur (also known as the ‘Jang sa tham Kanjur) is a foundational early 17th-century xylographic edition of the Tibetan Buddhist canon. Its dual name derives from the production of its woodblocks in ‘Jang sa tham (capital of the Kingdom of Jang) and their subsequent relocation by Mongolian forces to Lithang Monastery (li thang), Kham.
+
+Commissioned under King Mu Zeng (Mu tseng; 木增, 1587–1646), the project began on the 8th day of the 4th lunar month in 1608. The king requested an exemplar of the Tshalpa Kanjur from the 6th Shamarpa, Garwang Chökyi Wangchuk (Gar dbang Chos kyi dbang phyug, 1584–1630), a major figure in the Karma Kagyü school. The printing of the set was completed in 1621; a Chinese preface was added by Mu Zeng in 1623. The transfer of the blocks to Lithang occurred when Mongolian troops under Dar rgyal bo shog thus—a grandson of Gushri Khan (1582–1655)—seized them, reflecting the political-religious transformation toward Gelukpa authority before 1698. The blocks were physically seen in Lithang by Jacques Bacot in 1909, despite earlier reports of their destruction by fire in 1908.
+
+The Lithang Kanjur is a revised edition within the Tshalpa lineage. Its main exemplar was the Tshalpa manuscript from Chingwa Taktse (‘Phying ba stag rtse). The source manuscript had undergone successive corrections by prominent scholars, including the heads of the Karmapa, Gö Lotsāwa Shönnu Pel (‘Gos lo tsā ba Gzhon nu dpal, 1392–1481), Pawo II Tsuklak Trengwa (Dpa’ bo Gtsug lag phreng ba, 1504–1566), and several Sharmarpa. The Lithang Kanjur preserves original colophons by Gyalsey Jangchub Palden from the Tshalpa compilation. The arrangement of the texts in Lithang largely follows the Records of Teachings Received (gsan yig) of Pawo Tsuklag Trengwa, with structural innovations and corrections reflecting centuries of editorial revision.
+
+The Lithang Kanjur comprises 108 volumes. Its structure places the Mdo (Sūtra) section first, followed by the Rgyud (Tantra) section, like the Derge, Narthang, and Lhasa editions, and in contrast to the Peking and Coné editions (which lead with Tantra). Within the Tantra section, the order of texts closely matches the Peking Kanjur—a key link to the Tshalpa manuscript tradition. Noteworthy is the inclusion of a Gzungs ‘dus collection (dhāraṇī), compiled by Buton Rinchen Drup (Bu ston rin chen grub, 1290–1364); this section is absent from the Derge, Narthang, and Lhasa editions but present in Peking and Coné.
+
+The Lithang Kanjur holds a special place as the first xylographic Kanjur produced within Tibet and as the editorial basis for later widely used editions. Its production during a time of civil war and sectarian tension underscores the canon’s role in both religious and political legitimacy. The edition’s history—particularly the seizure and relocation of its blocks—reflects the interplay of political power and religious tradition during a pivotal era in Tibetan history.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1621</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Lithang/Jangsatham Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>26.873056,100.229167</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G3JT12610</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G3JT12610</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">true</note>
+  <relatedItem type="constituent">
+    <identifier type="local">45</identifier>
+    <titleInfo>
+      <title>MW4CZ7445</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4CZ7445</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">46</identifier>
+    <titleInfo>
+      <title>MW4PD3142</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW4PD3142</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">His Holiness Gyalwang Karmapa Ogyen Trinley Dorje</note>
+      <note type="numberoflines">8</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

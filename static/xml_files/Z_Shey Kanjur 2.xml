@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">98</identifier>
+  <identifier type="sigla">Z</identifier>
+  <titleInfo>
+    <title>Shey Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཤེལ་མཁར་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Shey Palace (shel mkhar) Manuscript Kanjur is a major handwritten collection of Tibetan Buddhist canonical texts, preserved in the temple at Shey Palace, Ladakh. A key witness to the Thempangma transmission, it is distinguished by its composite structure and unique regional features.
+
+Produced in the context of Ladakhi royal patronage, the Shey Kanjur is physically associated with the Shey Palace complex, the foundation of which dates to 1647. Evidence within the colophons links the manuscript&apos;s completion to the reign of King Nyima Namgyal (Nyi ma rnam rgyal, r. 1691–1729), with volume notes mentioning dates such as 1729 and 1732 and dedicatory wishes addressed to the king. This places the Shey Kanjur roughly contemporaneous with the Stog Palace Kanjur, another royal commission in Ladakh. The entire collection was digitized by the TMPV team in 2009–2010, aided by the permission of King Thinley Namgyal (d. 2011).
+
+The Shey Kanjur lacks a global colophon or catalog; most of what is known about its compilation derives from the &quot;volume colophons&quot; from 45 volumes. These short notes reveal a collaborative approach: pairs of revisers from Zanskar (zangs dkar pa) and Stog (stog pa), with reading and checking roles, and scribes such as Ringmo of Likir. This distributed workmanship, evident in variable paper quality and pragmatic assembly, suggests a project realized over considerable time with diverse material resources and contributors.
+
+Formally a Thempangma manuscript, the Shey Kanjur displays a composite textual lineage. The Vinaya, Sūtra, Parinirvāṇa), and Tantra sections affiliate closely with the Stog Palace Kanjur and Bhutanese Thempangma sets, while the Prajñāpāramitā, Avataṃsaka, and Ratnakūṭa sections are linked to a distinct Western Tibetan tradition. This mixture reflects a process of supplementing an original set of local manuscripts with Bhutanese exemplars, probably during the early 18th-century transmission wave that also led to the production of the Stog Kanjur.
+
+The Shey Kanjur (originally 105 volumes, with five missing at digitization) comprises large-format, coarse, and variably made folios, typically glued from two layers. Decoration is minimal—black ink text bounded by red lines, occasional red ink, and only one surviving illustration. Structurally, most section arrangements mirror the Stog Kanjur, though with exceptions such as a twelve-volume Śatasāhasrikā Prajñāpāramitā (four fewer than Stog). The Vinaya and Sūtra sections feature blank spaces, probably reserved for illuminations never executed.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Thempangma</classification>
+  <originInfo>
+    <dateCreated>17th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Shey Palace</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.07167,77.63281</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G3JT12631</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G3JT12631</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">77</identifier>
+    <titleInfo>
+      <title>MW1PD127393</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD127393</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">4</identifier>
+  <identifier type="sigla">C</identifier>
+  <titleInfo>
+    <title>Cone Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ཅོ་ནེ་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>It was created at the Gelukpa monastery of Coné Ganden Shedrub Ling (Co ne Dga’ ldan bshad sgrub gling) in the Amdo region, near modern Gansu and Qinghai provinces. Commissioned by the local ruler, the 11th Coné King Makzor Gönpo (Dmag zor mgon po, 1686–1728?), the project was overseen by Abbot Awang Chile Jiacuo (1688–1738), who had received the title of national preceptor from the Kangxi Emperor (康熙帝, 1654–1722) after visiting the Qing court. While this indicates some Qing influence or patronage, the extent of court involvement is unclear.
+
+Scholarly debate surrounds the exact date of the woodblocks: the most cited range is 1721–1731, though dates from 1733–1743 and as late as 1772 are also suggested. The Coné Kanjur was produced in the same era as the Derge Kanjur.
+
+The edition is based primarily on the Lithang Kanjur (c. 1608–1621) and is considered a faithful copy, making it essential for studying the Lithang text. The editors retained certain linguistic features from Lithang and corrected various errors and omissions. Although the Coné Kanjur follows the structural arrangement of the Peking editions, its textual descent is through Lithang from the Tshalpa manuscript tradition. It could not have been based on the Derge Kanjur, as it was completed earlier; textual similarities arise from their common Lithang ancestry.
+
+The Coné Kanjur comprises 107 volumes in the traditional loose-leaf pothi format. A well-preserved set, acquired by the Library of Congress in 1926, provides details of its material characteristics: contemporary paper and ink were used for that printing, with wooden covers made in Shanghai in 1927. The paper is yellowish cream, highly absorbent, and the ink is grayish but uneven, reflecting worn woodblocks and lower-quality ink after centuries of use. The volumes measure about 18.5 x 56.5 cm, with eight lines of text per page inside a double-lined frame; foliation appears in a small frame on the left margin of each recto. The fore-edges are painted yellow with an organic dye.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1721–1731</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Coné Ganden Shedrub Ling</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>34.59525,103.50381</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G435</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G435</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">6</identifier>
+    <titleInfo>
+      <title>MW1PD96685</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD96685</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>107</extent>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">80</identifier>
+    <titleInfo>
+      <title>MWEAP1034-2-2</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP1034-2-2</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">0</note>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>107</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">90</identifier>
+  <identifier type="sigla">Ts</identifier>
+  <titleInfo>
+    <title>Tsarang Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>རྩ་རང་བཀའ་འགྱུར་གསེར་བྲིས།</title>
+  </titleInfo>
+  <abstract>The Tsarang Kanjur  (rtsa rang / gtsang rang) is a Tibetan Buddhist canonical collection preserved in the castle of Tsarang in Mustang, Nepal. Renowned as one of the &quot;Golden Kanjurs of Mustang,&quot; it is a deluxe manuscript written entirely in gold ink on dark paper. This collection is not a distinct redaction, but rather a faithful copy of the Early Mustang Kanjur, a local canonical tradition rooted in the 15th century.
+
+The Tsarang Kanjur descends from the Early Mustang Kanjur, compiled between 1436 and 1447 under the patronage of King Ama Pel (A ma dpal, c. 1380–1440) and overseen by the Sakya master Ngorchen Kunga Sangpo (Ngor chen kun dga’ bzang po, 1382–1456). The project was begun after it was reported that an even earlier Kanjur in Mustang had deteriorated such that &quot;no complete volume of the Kanjur existed in any one place&quot;. Ngorchen Kunga Sangpo began the work with Ama Pel in 1436 and it was completed in 1447 under the reign of Ama Pel’s son, Amgön Sangpo (A mgon bzang po, b. 1420).
+
+The Tsarang manuscript, together with a related copy in Lo Manthang, is considered a later reproduction of this 15th-century original. The collection remains in the possession of the Mustang royal family, specifically Jigme Bista (&apos;Jigs med bstan &apos;dzin nor bu), and according to scholar Khenpo Tashi Tenzin (Mkhan po Bkra shis bstan &apos;dzin), the Tsarang version is closest to the original. Housed in the castle of Tsarang (bsam grub dge ’phel gyi pho brang), it is located about half a day’s ride south of Lo Manthang.
+
+The compilation of the Early Mustang Kanjur was a large-scale effort, coordinated by Ngorchen Kunga Sang po, who is believed to have brought canonical texts from Sakya in Tibet. This lineage stands apart from the main transmission lines of the Tibetan canon, namely the Tshalpa and the Thempangma.
+
+The physical condition of the Tsarang Kanjur is complex, with studies noting duplicate volumes and some in third or fourth copies. Volumes have historically been moved between Tsarang and Lo Manthang, and the entire collection continues to play a vital role in local ritual life, where it is annually carried in procession to bless the land and people. In the late 20th century, the Nepal-German Manuscript Preservation Project (NGMPP) began to document and preserve the set; in September 1996, the first ten volumes of the Tantra section were photographed.
+
+Although the Tsarang Kanjur is a direct copy, it diverges in notable ways from the catalogue of the original Early Mustang Kanjur, revealing a complicated transmission history. The original catalogue lists 141 volumes, while a modern survey of the Tsarang Kanjur identified only 106 surviving volumes. Sectional discrepancies are evident: for example, the Tsarang Kanjur contains 13 Vinaya volumes (three fewer than the original’s 16); 30 Sutra volumes (down from 40); and 15 Tantra volumes (the catalogue notes 21). Such differences suggest the Tsarang Kanjur was copied at a later date, reflecting both losses and subsequent editorial changes.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mustang</classification>
+  <originInfo>
+    <dateCreated>Unknown</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tsarang Castle</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.091046557325694,83.93296373424766</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">70</identifier>
+    <titleInfo>
+      <title>MW3CN1302</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN1302</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

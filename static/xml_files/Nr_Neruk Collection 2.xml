@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">63</identifier>
+  <identifier type="sigla">Nr</identifier>
+  <titleInfo>
+    <title>Neruk Collection</title>
+  </titleInfo>
+  <genre>Canonical Collection</genre>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

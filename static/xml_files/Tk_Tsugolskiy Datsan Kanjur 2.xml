@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">87</identifier>
+  <identifier type="sigla">Tk</identifier>
+  <titleInfo>
+    <title>Tsugolskiy Datsan Kanjur</title>
+  </titleInfo>
+  <abstract>The Tsugolskiy Datsan Kanjur is a canonical collection central to the Buddhist heritage of the Buryat region of Transbaikalia, Russia. Historically housed at the Tsugol’skii Datsan (monastery), this Kanjur represents not just a textual corpus but a living symbol of Buryat Buddhist revival and cultural resilience.
+
+During the 19th and early 20th centuries, Buryat monasteries—including the Tsugol’skii Datsan—emerged as important centers for both the preservation and block printing of Buddhist texts. As detailed in Syrtypova (2016), block printing technology, mainly developed under Mongolian and Tibetan influence, flourished in Transbaikalia and nearby Buryatia, leading to the production of numerous canonical and ritual texts. Monasteries procured xylographic Kanjurs from Tibet and Mongolia, and also amassed manuscripts, which became prized possessions of major datsans. This contributed to the rich textual culture evident in the region’s Buddhist communities.
+
+The Kanjur at Tsugol’skii Datsan was printed in dbu can, typically using local paper (sometimes also Chinese), and ink derived from lampblack or soot. Printing blocks were often carved by skilled artisans working at monasteries in Buryatia, Mongolia, or sometimes imported from famous workshops. The quality of craft and the vivid red and black inks used for auspicious or opening passages symbolized both book artistry and liturgical function.
+
+The fate of the Tsugolskiy Datsan Kanjur reflects the turbulent modern history of Buddhism in Buryatia. The Soviet anti-religious campaigns led to widespread closures and destruction of datsans; many Kanjur sets were confiscated, lost, or transferred to state institutions. The Tsugolskiy Datsan Kanjur survived only thanks to the actions of laypeople, monks, and local academics who hid, protected, or relocated texts.
+
+In 1996, the surviving 132 volumes of the Kanjur—previously held by a state museum in Ulan-Ude—were officially transferred to a monastic community, marking a milestone in the restoration of Buddhist material culture in Buryatia. This event symbolized the spiritual and institutional regeneration of the Buryat people; sacred texts, once treated as museum objects, returned to active liturgical use.
+
+The Tsugolskiy Datsan Kanjur illustrates the unique position of Buryatia at the crossroads of Tibetan, Mongolian, and Russian Buddhist worlds. Block printing played a major role in ensuring the dissemination, transmission, and local adaptation of canonical texts. This tradition of textual production continues to underpin the revival of Buryat Buddhism today.</abstract>
+  <genre>Kanjur</genre>
+  <originInfo>
+    <dateCreated>19th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Tsugolskiy Datsan</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>51.0461234972173,115.62698767478334</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+</mods>

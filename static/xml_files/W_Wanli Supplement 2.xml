@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">94</identifier>
+  <identifier type="sigla">W</identifier>
+  <titleInfo>
+    <title>Wanli Supplement</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>续添藏</title>
+  </titleInfo>
+  <abstract>The Wanli Kanjur Supplement (续添藏), also known as the Xutianzang, is a 42-volume addendum produced for the Wanli Kanjur—a 1606 woodblock reprint of the 1410 Yongle Kanjur. A &quot;Comprehensive Catalogue of the supplemental forty-two volumes of secret mandala sutras&quot; (续添如来大藏经秘密坛场经四十二函总目录), was also compiled.
+
+The supplement was created in Beijing as an integral part of the Wanli Kanjur printing sponsored by the Wanli emperor (r. 1572–1619). This project followed an earlier precedent set by his mother, Empress Dowager Cisheng, who in 1584–85 sponsored a similar supplement to the Chinese Buddhist canon. In 1606, the emperor ordered the 42-volume addition to the Tibetan Kanjur. An imperial edict dated December 2, 1606 (Wanli, 34th year), marks the official commissioning of the Supplement; colophons confirm printing in 1606–1607.
+
+New woodblocks were specifically carved for the Supplement, making it an original production. While the Wanli emperor was patron, details of the compilation team are not recorded.
+
+The Supplement comprises 42 volumes focused primarily on ritual texts and secret mandala sutras, differing from the canonical content of the main Kanjur. An index for the Supplement, once extant (5 folios in Chinese and 15 in Tibetan), does not survive with the Polish set. Notable texts in the Supplement include the ’brang ma chen mo / sui qiu fo mu tuo luo ni jing, gsang sngags / mi mi ming zhou tuo luo ni jing, and tshe dpag med / yan shou wu liang fo jing.
+
+The Supplement was distributed with the Wanli Kanjur. Surviving holdings include a nearly complete set at Luohou-si Temple (罗侯寺) on Wutai-shan, China; 22 volumes (1–22) in the Pander Collection at Jagiellonian University, Poland; and two volumes (17, 35) at the Harvard-Yenching Library. Volumes held at Harvard are bound with silk, brocade, and feature paintings of the emperor and a Tibetan preceptor, reflecting imperial sponsorship.</abstract>
+  <genre>Canonical Collection</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1606–1607</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Beijing</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>40.190632,116.412144</coordinates>
+    </cartographics>
+  </subject>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">75</identifier>
+    <physicalDescription>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

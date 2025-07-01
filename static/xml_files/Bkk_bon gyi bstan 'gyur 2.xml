@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">116</identifier>
+  <identifier type="sigla">Bkk</identifier>
+  <titleInfo>
+    <title>Bon Tanjur (Khyungpo Tengchen)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བོན་གྱི་བསྟན་འགྱུར།</title>
+  </titleInfo>
+  <abstract>A computer input version with a unique font based on a rare handwritten Bon Tanjur. Published by Khyungpo Tengchen Tsedruk Monastery (Khyung po steng chen rtse drug dgon in Steng chen rdzong)</abstract>
+  <genre>Bon-Tanjur</genre>
+  <originInfo>
+    <dateCreated>2015</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Khyungpo Tengchen Tsedruk Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>31.4273,95.57874</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1KR1169</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1KR1169</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">101</identifier>
+    <titleInfo>
+      <title>MW3CN2688</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW3CN2688</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <form type="medium">Modern Print</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">54</identifier>
+  <identifier type="sigla">Lg</identifier>
+  <titleInfo>
+    <title>Lang Monastery Collection (Dolpo)</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>མདོ་མང་ ༼གླང་དགོན་བཀྲ་ཤིས་ཆོས་གླིང་བྲིས་མ༽</title>
+  </titleInfo>
+  <abstract>The Lang Monastery (Glang dgon bkra shis chos gling) Collection comprises canonical Tibetan Buddhist manuscripts originally from Lang Monastery near Bicher village, Upper Dolpo. The manuscripts are now housed with the larger holdings of Nesar Monastery (gnas gsar dgon pa) in Bicher.
+
+Lang Monastery, a short walk from Bicher, was historically affiliated with the village and closely linked to Nesar Monastery and Serkhang Temple (gser khang). Though now largely abandoned, with only a single lama remaining, its manuscript collection survives. Dedication prefaces confirm that many manuscripts were copied specifically for Lang Monastery, documenting an early Drigung Kagyüpa presence in Dolpo during the 13th century, when the school received support from Dzumla rulers.
+
+The collection was moved to Nesar Monastery for safekeeping, inventoried, and its volumes marked with the letter &quot;L&quot;. There is some variation in reported volume count: ninety-eight volumes according to certain sources, while ninety-nine were photographed during a 2018 survey. The majority of the manuscripts are canonical works: sixty volumes consist of Sūtra collections, while twenty-three volumes comprise the Śatasāhasrikāprajñāpāramitāsūtra, apparently compiled from at least three different sets.
+
+In 2018, the entire Lang Monastery collection was systematically digitized, following an earlier (2014) digitization effort that included materials from Lang, Nesar, and Serkhang monasteries under the &quot;Dolpo Bka&apos; &apos;gyur&quot; project. These manuscripts serve as primary documentation for religious doctrines and practice in Dolpo from the 12th to 15th centuries. Dedications in the volumes offer key insights into patrons, dates, and the interplay of religious schools and regional authorities.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>12th–15th cent.</dateCreated>
+  </originInfo>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">48</identifier>
+    <titleInfo>
+      <title>MW2KG210299</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG210299</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

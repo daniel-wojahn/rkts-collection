@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">6</identifier>
+  <identifier type="sigla">Bd</identifier>
+  <titleInfo>
+    <title>Bardan Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>འབར་གདན་དགོན་དུ་བཞུགས་པའི་དཔེ་རྙིང་ཕྱོགས་བསྒྲིགས།</title>
+  </titleInfo>
+  <abstract>The Bardan Collection is a canonical collection of 9 volumes (incomplete) housed at Bardan Sangngak Chöling Monastery (Ba rdan gsang sngags chos gling dgon pa) in Zanskar. It was founded in the 17th century by Taktsang Repa (Stag tshang ras pa, 1574–1651), who also established Hemis Monastery in Ladakh with the patronage of King Sengge Namgyal (Sengge rnam rgyal, r. 1616–1642). As the first major center of the Drukpa Kagyü school in Zanskar, Bardan holds notable historical importance. The canonical collection was likely compiled or acquired during or after the monastery’s founding to fulfil the ritual and scholastic needs of its community.
+
+This collection is presently studied by the team of the “Tibetan Manuscripts Project” of the University of Vienna.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated></dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Bardan Monastery (Zanskar)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>33.2349,76.5514</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G1BL5</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G1BL5</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">8</identifier>
+    <titleInfo>
+      <title>MW8LS15931</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW8LS15931</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <scriptTerm type="text">Uchen</scriptTerm>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+    <physicalDescription>
+      <extent>9</extent>
+    </physicalDescription>
+  </relatedItem>
+</mods>

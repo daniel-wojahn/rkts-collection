@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">22</identifier>
+  <identifier type="sigla">G</identifier>
+  <titleInfo>
+    <title>Golden Tanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བསྟན་འགྱུར་གསེར་བྲིས་མ།</title>
+  </titleInfo>
+  <abstract>The Golden Tanjur is an 18th-century manuscript edition, renowned for its 225 volumes inscribed in gold ink. Commissioned in Central Tibet by Miwang Pholhané Sönam Topgyé (Mi dbang Pho lha nas bsod nams stobs rgyas, r. 1728–1747), its production began around 1734 at the king’s palace in the historically significant valley of Chonggyé (’Phyong rgyas). This ambitious project coincided with his sponsorship of the Narthang Kanjur and Tanjur editions. Over five hundred artisans—including scribes, papermakers, and supervisors—were assembled for this undertaking, which functioned both as a monumental act of royal merit-making and as a dedication to the king’s family and deceased mother. The lavish project cost over 5,000 zho of gold and 1,000 zho of silver.
+
+The manuscript involved careful collation, using the Tanjur from Shalu Serkhang as its primary source, which was verified against the major collections at Sera, Drepung, Riwoche, Sakya, and Narthang, and thoroughly proofread by leading scholars. Each folio is written in molten gold on high-quality paper, and its contents closely mirror the organization of the Narthang and Peking Tanjur editions. Two complete sets were originally commissioned; the surviving set was later transferred to Beijing’s Cultural Palace of Nationalities in 1959, where it was catalogued, digitized, and eventually reprinted as a 100-volume edition in 1988 by the China Nationality Library.</abstract>
+  <genre>Tanjur</genre>
+  <originInfo>
+    <dateCreated>1734</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Chonggye</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.031562, 91.680466</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G848</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G848</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">22</identifier>
+    <titleInfo>
+      <title>MW23702</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW23702</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Manuscript</form>
+      <form type="medium">Paper</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

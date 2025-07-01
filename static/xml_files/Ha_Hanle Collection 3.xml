@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">46</identifier>
+  <identifier type="sigla">Ha</identifier>
+  <titleInfo>
+    <title>Hanle Collection</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>ལ་དྭགས་ཝཾ་ལེར་བཞུགས་པའི་ཤེར་ཕྱིན་སྟོང་ཕྲག་བརྒྱ་པ།</title>
+  </titleInfo>
+  <abstract>The Hanle Prajñāpāramitā manuscript is a 13th-century copy of the Śatasāhasrikā Prajñāpāramitā (shes rab kyi pha rol tu phyin pa stong phrag brgya pa), preserved at Hanle Monastery in Ladakh. Though Hanle Monastery was founded in the 17th century by King Sengge Namgyal (Seng ge rnam rgyal, d. 1642), the manuscript predates the monastery by several centuries, as determined by paleographic and stylistic analysis. Without a colophon, its exact origin and patron remain unknown.
+
+Consisting of eleven volumes, it is the only manuscript from that period known at Hanle. Whether it was part of a larger canonical set or produced as an individual work is uncertain. Many folia are damaged or missing; monks have sewn some with string and replaced others. Original illuminations, or miniatures, were commonly cut out and mounted onto these newer leaves to preserve them. Monastic tradition maintains the set is complete, though scholars have not confirmed this.
+
+The manuscript’s primary scholarly interest is its 76 surviving miniatures, each depicting a single Buddha or bodhisattva within an aureole. These illustrations are usually placed at the end or beginning of chapters, either in the folio margins or the center, but have no explicit textual relationship or systematic mandala structure. Artistic quality is uneven, revealing a product of a local workshop involving several artists and techniques rather than a single master.
+
+The style synthesizes multiple influences, especially those from Kashmir. The use of massive architectural motifs framing the figures reflects Kashmiri stone temple aesthetics—a distinctively Western Tibetan adaptation, contrasting with the finer shrine motifs typical of Pāla manuscript art from eastern India. The depiction of robes with deep, “dished folds” also reflects Kashmiri sculpture. Artistic variety is evident, with figures showing a range of head shapes, facial types, and painting styles, and the manuscript shares connections to regional sites such as Alchi and Lalung.</abstract>
+  <genre>Canonical Collection</genre>
+  <originInfo>
+    <dateCreated>13th cent.</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Hanle, Ladakh</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>32.790667,79.002065</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G27458</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G27458</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">false</note>
+  <note type="images" displayLabel="Images Available">false</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">41</identifier>
+    <titleInfo>
+      <title>MW1PD127348</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1PD127348</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">TMPV</note>
+      <note type="numberoflines">9</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

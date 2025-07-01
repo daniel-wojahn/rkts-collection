@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">92</identifier>
+  <identifier type="sigla">U</identifier>
+  <titleInfo>
+    <title>Urga Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>བཀའ་འགྱུར ༼ཨུརྒ༽</title>
+  </titleInfo>
+  <abstract>The Urga Kanjur is a Tibetan Buddhist canonical collection printed as a block-print edition in Urga (modern Ulaanbaatar, Mongolia) between 1908 and 1910. While known to exist, its details became widely accessible only after Lokesh Chandra’s 1959 study, following its ‘discovery’ by his father, Prof. Dr. Raghu Vira, who received a complete set in 1955 from Mongolia’s Prime Minister.
+
+The carving of the Urga Kanjur’s woodblocks was commissioned by the 8th Khalkha Jetsun Dampa, Ngawang Lobsang Chökyi Nyima Tenzin Wangchuk (Ngag dbang blo bzang chos kyi nyi ma bstan ‘dzin dbang phyug, 1870–1924). After a hiatus, work resumed in 1908 and concluded in 1910. Production took place at Nomiin Ikh Khüree (M. nom-un yeke küriye(n)) Monastery, also known as Riwo Gegye Ganden Shedrubling (Ri bo dge rgyas dga’ ldan bshad sgrub gling) in Urga.
+
+Today, only a few complete sets are known, with holdings in Ulaanbaatar, Buryatia, and the International Academy of Indian Culture, New Delhi.
+
+The Urga Kanjur is part of the Tshalpa transmission and based on the Derge Kanjur, following that edition’s text and layout closely—sometimes matching page-for-page and line-by-line. However, editorial changes and corrections were introduced, making it a distinct witness in the transmission of the Tibetan canon.
+
+The Urga Kanjur consists of 105 volumes, differing from Derge due to editorial changes: one additional Mdo sde (Ki) volume in the Sūtra section; the Dri med ’od divided into two volumes; and the catalogue counted as a separate, final volume (vol. 105). The volumes themselves are relatively compact at about 60 x 11 cm.
+
+Urga’s editors primarily followed Situ Paṇchen Chökyi Jungné’s (Si tu paṇ chen Chos kyi ’byung gnas, 1700–1774) Derge catalogue, omitting later titles from the Tohoku catalogue not recorded in Situ Paṇchen’s original. Notably, the Urga Kanjur includes a unique Mdo sde (Ki) volume, featuring a text translated by Changkya Rölpé Dorjé (Lcang skya Rol pa’i rdo rje, 1717–1786), present only in some Narthang Kanjur sets. Section arrangement sometimes diverges from other known catalogues, reflecting the editors’ individual decisions. A comprehensive catalogue of the Urga Kanjur was compiled by Géza Bethlenfalvy and published in 1980.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Tshalpa</classification>
+  <originInfo>
+    <dateCreated>1908–1910</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Nomiin Ikh Khüree (Ulaanbaatar)</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>47.91466915408144,106.91915980145069</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G3249</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G3249</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">72</identifier>
+    <titleInfo>
+      <title>MW29468</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW29468</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">73</identifier>
+    <titleInfo>
+      <title>MW1BL4</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW1BL4</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">0</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

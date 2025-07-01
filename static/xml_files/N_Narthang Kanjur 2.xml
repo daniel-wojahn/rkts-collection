@@ -1,0 +1,91 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">58</identifier>
+  <identifier type="sigla">N</identifier>
+  <titleInfo>
+    <title>Narthang Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྣར་ཐང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>The Narthang Kanjur refers to two related Tibetan Buddhist canonical collections from Narthang (Snar thang) Monastery: the foundational but now-lost 14th-century Old Narthang Manuscript and the widely influential 18th-century Narthang Xylograph.
+
+The Old Narthang Manuscript, compiled after 1310 at Narthang in Central Tibet, is traditionally acknowledged as the first comprehensive Tibetan Buddhist canon. While not extant, it served as a conceptual model for later Kanjurs and is the root of the &quot;Western Tradition&quot; of textual transmission.
+
+The Narthang Xylograph, produced between 1730 and 1732, is a landmark blockprint edition. Initiated by the Sixth Dalai Lama, Tsangyang Gyatso (Tshangs dbyangs rgya mtsho, 1683–1706), and the regent Desi Sangyé Gyatso (Sde srid Sangs rgyas rgya mtsho, 1653–1705), its completion followed a tumultuous period and was finalized under Miwang Pholhané Sönam Tobgyal (Mi dbang Pho lha nas Bsod nams stobs rgyal, d. 1747). The completed woodblocks were housed at Narthang and presented to the Fifth Paṇchen Lama, Lobsang Yeshe (Blo bzang ye shes, 1663–1737).
+
+The editorial approach was hybrid: the overall structure follows the Tshalpa Kanjur (Eastern tradition), while the actual text was copied mainly from a manuscript preserved at Shel dkar rdzong—a descendant of the Old Narthang (Western) tradition. A detailed catalogue was produced, attributed either to Lélung Shepé Dorjé (Sle lung bzhad pa’i rdo rje, b. 1697) or Olkha Jeydrung Losang Trinlé (&apos;Ol kha rje drung blo bzang &apos;phrin las).
+
+The original Narthang xylograph comprises 100 volumes with 761 texts, organized into Vinaya, Sūtra, and Tantra sections; it uniquely includes three volumes from the &quot;Old Tantras&quot; (rnying ma rgyud &apos;bum). A supplementary volume (kha skong), with 28 additional texts, was added in the early 20th century.
+
+The Narthang Xylograph became one of the most widely reproduced and circulated versions of the Tibetan Kanjur, playing a key role in standardizing Buddhist scripture across the Tibetan cultural sphere.</abstract>
+  <genre>Kanjur</genre>
+  <classification>Mixed</classification>
+  <originInfo>
+    <dateCreated>1732</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Narthang Monastery Printing House</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>29.190596,88.763157</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G2CN10912</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G2CN10912</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">49</identifier>
+    <titleInfo>
+      <title>MW22703</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW22703</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">50</identifier>
+    <titleInfo>
+      <title>MW2KG5014</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG5014</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">CIHTS</note>
+      <note type="imagesby">BDRC</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+  <relatedItem type="constituent">
+    <identifier type="local">51</identifier>
+    <titleInfo>
+      <title>MW2KG210297</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MW2KG210297</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">Norshing Project</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Print</form>
+      <note type="integratedrkts">0</note>
+      <note type="isreferenceset">0</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<mods xmlns="http://www.loc.gov/mods/v3">
+  <identifier type="local">41</identifier>
+  <identifier type="sigla">Gt</identifier>
+  <titleInfo>
+    <title>Gangtey Kanjur</title>
+  </titleInfo>
+  <titleInfo type="alternative" lang="tib">
+    <title>སྒང་སྟེང་བཀའ་འགྱུར།</title>
+  </titleInfo>
+  <abstract>Gangteng or Gangtey Monastery, founded by Gyalse Pema Thinley (d. c. 1640), the grandson of the famous Bhutanese saint Pema Lingpa (1450-1521), is one such monastery housing an enormous manuscript collection. This includes a set of the 100-volume Kanjur, two sets of the 46-volume Nyingma Gyübum, the world’s largest Astasahasrikaprajñaparamita, and about a hundred miscellaneous titles. The collection, mostly written in the 17th century as a funerary tribute to the founder of Gangteng, holds a unique textual, artistic and historical value of immense religious significance for the local community. 
+
+https://eap.bl.uk/collection/EAP039-1-1</abstract>
+  <genre>Kanjur</genre>
+  <classification>Thempangma</classification>
+  <originInfo>
+    <dateCreated>1690–1692</dateCreated>
+  </originInfo>
+  <subject>
+    <geographic>Gangtey Monastery</geographic>
+  </subject>
+  <subject>
+    <cartographics>
+      <coordinates>27.5,90.166667</coordinates>
+    </cartographics>
+  </subject>
+  <identifier type="placeref" authority="BDRC">G183</identifier>
+  <location>
+    <url>http://purl.bdrc.io/resource/G183</url>
+  </location>
+  <note type="handlist" displayLabel="Handlist Available">true</note>
+  <note type="images" displayLabel="Images Available">true</note>
+  <note type="text" displayLabel="Text Available">false</note>
+  <relatedItem type="constituent">
+    <identifier type="local">35</identifier>
+    <titleInfo>
+      <title>MWEAP039-1-1</title>
+    </titleInfo>
+    <location>
+      <url>http://purl.bdrc.io/resource/MWEAP039-1-1</url>
+    </location>
+    <physicalDescription>
+      <note type="digitizedby">EAP</note>
+      <note type="numberoflines">7</note>
+      <form type="medium">Manuscript</form>
+      <note type="integratedrkts">1</note>
+      <note type="isreferenceset">1</note>
+    </physicalDescription>
+  </relatedItem>
+</mods>
