@@ -388,9 +388,6 @@ async function onSendMessage(e) {
   messagesContainer.appendChild(typingIndicator);
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-  let responseText = '';
-  let messageElement = null;
-
   try {
     const response = await fetch(RKTS_API_URL, {
       method: 'POST',
@@ -401,62 +398,28 @@ async function onSendMessage(e) {
       body: JSON.stringify({
         model: RKTS_MODEL,
         messages: [{ role: 'user', content: userMessage }],
-        stream: true
+        stream: false // Disabled streaming
       })
     });
+
+    if (typingIndicator && typingIndicator.parentNode) {
+      typingIndicator.remove();
+    }
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({ detail: 'Request failed with no error details.' }));
       throw new Error(errorData.detail || `Request failed with status ${response.status}`);
     }
 
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let buffer = '';
+    const data = await response.json();
+    const responseText = data.choices?.[0]?.message?.content || '';
 
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      buffer += decoder.decode(value, { stream: true });
-      const lines = buffer.split('\n');
-      buffer = lines.pop(); // Keep incomplete line in buffer
-
-      for (const line of lines) {
-        if (!line.startsWith('data:')) continue;
-
-        const data = line.substring(5).trim();
-        if (data === '[DONE]') {
-          return; // End of stream
-        }
-
-        try {
-          const parsed = JSON.parse(data);
-          const content = parsed.choices?.[0]?.delta?.content || '';
-
-          if (content) {
-            responseText += content;
-
-            if (typingIndicator && typingIndicator.parentNode) {
-              typingIndicator.remove();
-              typingIndicator = null;
-
-              messageElement = appendMessage('assistant', ''); // Create empty message
-            }
-
-            if (messageElement) {
-              ensureMarkedLoaded(() => {
-                messageElement.innerHTML = marked.parse(responseText);
-                // Logic to add copy buttons to code blocks can be added here if needed
-              });
-              messagesContainer.scrollTop = messagesContainer.scrollHeight;
-            }
-          }
-        } catch (e) {
-          console.error('Error parsing chunk:', data, e);
-        }
-      }
+    if (responseText) {
+      appendMessage('assistant', responseText);
+    } else {
+      appendMessage('assistant', 'I received an empty response from the server.');
     }
+
   } catch (error) {
     console.error('Chat Error:', error);
     if (typingIndicator && typingIndicator.parentNode) {
