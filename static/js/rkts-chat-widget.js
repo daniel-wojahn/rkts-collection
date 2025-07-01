@@ -1,13 +1,12 @@
 // rkts-chat-widget.js: Modern floating chat widget for Open WebUI
 const RKTS_API_URL = 'https://rkts-research.duckdns.org/api/chat/completions';
 const RKTS_MODEL = 'rkts-research-tool';
+const RKTS_API_KEY = 'sk-7fa4b4939465494cbd7cc89c90dceecd'; 
 
 // Track if marked.js is loaded and initialized
 let markedInitialized = false;
 
-// Marked.js configuration
-
-// Initialize marked with safe defaults
+// Initialize marked.js with safe defaults
 function initializeMarked() {
   if (markedInitialized) return true;
   
@@ -350,200 +349,126 @@ function appendMessage(role, text, isHtml = false) {
   
   // Add typing indicator for assistant messages
   if (role === 'assistant') {
-    const typingIndicator = document.createElement('div');
-    typingIndicator.className = 'typing-indicator';
-    typingIndicator.setAttribute('aria-label', 'Assistant is typing');
-    typingIndicator.innerHTML = `
-      <div class="typing-dot"></div>
-      <div class="typing-dot"></div>
-      <div class="typing-dot"></div>
-    `;
-    
-    messages.appendChild(typingIndicator);
-    
-    // Scroll to the typing indicator
-    requestAnimationFrame(() => {
-      typingIndicator.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-    
-    return typingIndicator;
+    const messagesContainer = document.getElementById('rkts-chat-messages');
+    document.querySelectorAll('.typing-indicator').forEach(el => el.remove());
+    let typingIndicator = document.createElement('div');
+    typingIndicator.className = 'rkts-msg assistant typing-indicator';
+    typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+    messagesContainer.appendChild(typingIndicator);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
   }
   
   return msg;
 }
 
 async function onSendMessage(e) {
-  e.preventDefault();
-  
-  const input = document.querySelector('#rkts-chat-input input');
-  const submitBtn = document.querySelector('#rkts-chat-input button[type="submit"]');
-  const message = input.value.trim();
-  
-  if (!message) return;
-  
-  // Add user message to chat
-  appendMessage('user', message);
-  
-  // Clear input and disable it while waiting for response
+  if (e) e.preventDefault();
+
+  const form = document.getElementById('rkts-chat-input');
+  const input = form.querySelector('input');
+  const submitBtn = form.querySelector('button');
+  const messagesContainer = document.getElementById('rkts-chat-messages');
+
+  const userMessage = input.value.trim();
+  if (!userMessage) return;
+
+  appendMessage('user', userMessage);
+
   input.value = '';
   input.disabled = true;
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i>';
   }
-  
-  // Show typing indicator
-  let typingIndicator = appendMessage('assistant', '');
+
+  document.querySelectorAll('.typing-indicator').forEach(el => el.remove());
+  let typingIndicator = document.createElement('div');
+  typingIndicator.className = 'rkts-msg assistant typing-indicator';
+  typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+  messagesContainer.appendChild(typingIndicator);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
   let responseText = '';
   let messageElement = null;
-  
+
   try {
     const response = await fetch(RKTS_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${RKTS_API_KEY}`
       },
       body: JSON.stringify({
         model: RKTS_MODEL,
-        messages: [{ role: 'user', content: message }],
-        stream: true,
-        temperature: 0.7,
-        max_tokens: 1000
+        messages: [{ role: 'user', content: userMessage }],
+        stream: true
       })
     });
-    
+
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(
-        errorData.error?.message || 
-        `Request failed with status ${response.status}`
-      );
+      const errorData = await response.json().catch(() => ({ detail: 'Request failed with no error details.' }));
+      throw new Error(errorData.detail || `Request failed with status ${response.status}`);
     }
-    
-    if (!response.body) {
-      throw new Error('No response body');
-    }
-    
-    // Process the streaming response
+
     const reader = response.body.getReader();
-    const decoder = new TextDecoder('utf-8');
+    const decoder = new TextDecoder();
     let buffer = '';
-    
+
     while (true) {
       const { done, value } = await reader.read();
-      
       if (done) break;
-      
-      // Decode the chunk and add to buffer
+
       buffer += decoder.decode(value, { stream: true });
-      
-      // Process complete lines
-      let newlineIndex;
-      while ((newlineIndex = buffer.indexOf('\n')) >= 0) {
-        const line = buffer.slice(0, newlineIndex).trim();
-        buffer = buffer.slice(newlineIndex + 1);
-        
-        if (!line.startsWith('data: ')) continue;
-        
-        const data = line.slice(6); // Remove 'data: ' prefix
-        if (data === '[DONE]') continue;
-        
+      const lines = buffer.split('\n');
+      buffer = lines.pop(); // Keep incomplete line in buffer
+
+      for (const line of lines) {
+        if (!line.startsWith('data:')) continue;
+
+        const data = line.substring(5).trim();
+        if (data === '[DONE]') {
+          return; // End of stream
+        }
+
         try {
           const parsed = JSON.parse(data);
           const content = parsed.choices?.[0]?.delta?.content || '';
-          
+
           if (content) {
             responseText += content;
-            
-            // Remove typing indicator after first content chunk
+
             if (typingIndicator && typingIndicator.parentNode) {
               typingIndicator.remove();
               typingIndicator = null;
-              
-              // Create a new message element for the response
-              messageElement = document.createElement('div');
-              messageElement.className = 'rkts-msg assistant';
-              messageElement.setAttribute('role', 'article');
-              document.getElementById('rkts-chat-messages').appendChild(messageElement);
+
+              messageElement = appendMessage('assistant', ''); // Create empty message
             }
-            
-            // Update the message with the latest content
+
             if (messageElement) {
-              messageElement.innerHTML = marked.parse(responseText);
-              
-              // Add copy functionality to code blocks
-              messageElement.querySelectorAll('pre code').forEach((codeBlock) => {
-                const pre = codeBlock.parentElement;
-                const wrapper = document.createElement('div');
-                wrapper.className = 'code-block-wrapper';
-                
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'copy-code-btn';
-                copyBtn.title = 'Copy to clipboard';
-                copyBtn.setAttribute('aria-label', 'Copy code to clipboard');
-                copyBtn.innerHTML = '<i class="bi bi-clipboard"></i>';
-                
-                copyBtn.onclick = async () => {
-                  try {
-                    await navigator.clipboard.writeText(codeBlock.textContent);
-                    copyBtn.innerHTML = '<i class="bi bi-check"></i>';
-                    copyBtn.classList.add('copied');
-                    copyBtn.title = 'Copied!';
-                    
-                    setTimeout(() => {
-                      copyBtn.innerHTML = '<i class="bi bi-clipboard"></i>';
-                      copyBtn.classList.remove('copied');
-                      copyBtn.title = 'Copy to clipboard';
-                    }, 2000);
-                  } catch (err) {
-                    console.error('Failed to copy text: ', err);
-                    copyBtn.innerHTML = '<i class="bi bi-x"></i>';
-                    copyBtn.title = 'Failed to copy';
-                    
-                    setTimeout(() => {
-                      copyBtn.innerHTML = '<i class="bi bi-clipboard"></i>';
-                      copyBtn.title = 'Copy to clipboard';
-                    }, 2000);
-                  }
-                };
-                
-                pre.parentNode.insertBefore(wrapper, pre);
-                wrapper.appendChild(pre);
-                wrapper.appendChild(copyBtn);
+              ensureMarkedLoaded(() => {
+                messageElement.innerHTML = marked.parse(responseText);
+                // Logic to add copy buttons to code blocks can be added here if needed
               });
-              
-              // Scroll to the message
-              messageElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              messagesContainer.scrollTop = messagesContainer.scrollHeight;
             }
           }
         } catch (e) {
-          console.error('Error parsing chunk:', e);
+          console.error('Error parsing chunk:', data, e);
         }
       }
     }
-    
   } catch (error) {
-    console.error('Error:', error);
-    
-    // Remove typing indicator if there was an error
+    console.error('Chat Error:', error);
     if (typingIndicator && typingIndicator.parentNode) {
       typingIndicator.remove();
     }
-    
-    // Show error message
-    appendMessage('assistant', 
-      `I'm sorry, I encountered an error while processing your request. ` +
-      `Please try again later. (${error.message || 'Unknown error'})`
-    );
+    appendMessage('assistant', `I'm sorry, I encountered an error: ${error.message}`);
   } finally {
-    // Re-enable input and reset button
     input.disabled = false;
     if (submitBtn) {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<i class="bi bi-send-fill"></i>';
     }
-    
-    // Focus the input field again
     input.focus();
   }
 }

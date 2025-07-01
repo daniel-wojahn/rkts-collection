@@ -7,6 +7,7 @@
 const ZOTERO_API_BASE = 'https://api.zotero.org';
 const ZOTERO_GROUP_ID = '2296997'; // rKTs Bibliography group ID
 const ZOTERO_GROUP_URL = 'https://www.zotero.org/groups/2296997/rkts_bibliography/library';
+const ZOTERO_API_KEY = 'HPibzNjw5n2fiaLHdG8Dz8s0'; // Add your Zotero API key here if required
 const ITEMS_PER_PAGE = 100; // Max items per API request
 
 // Global variables
@@ -187,32 +188,55 @@ function fetchPublications() {
         limit: ITEMS_PER_PAGE,
         sort: currentFilters.sort,
         direction: currentFilters.direction,
-        format: 'json'
+        format: 'json',
+        itemType: '-attachment' // Exclude attachments
     });
     
     console.log('Fetching all publications...');
     
+    // Set up headers with API key if available
+    const headers = new Headers({
+        'Accept': 'application/json',
+        'Zotero-API-Version': '3',
+        'Content-Type': 'application/json'
+    });
+    
+    if (ZOTERO_API_KEY) {
+        headers.append('Authorization', `Bearer ${ZOTERO_API_KEY}`);
+        console.log('Using Zotero API key for authentication');
+    } else {
+        console.log('No Zotero API key provided, using public access');
+    }
+    
     // First, get the total count
     console.log('Fetching total count of publications...');
-    fetch(`${endpoint}?${params.toString()}&limit=1`, {
-        headers: { 
-            'Accept': 'application/json',
-            'Zotero-API-Version': '3'
-        }
+    const initialUrl = `${endpoint}?${params.toString()}&limit=1`;
+    console.log('Initial request URL:', initialUrl);
+    
+    fetch(initialUrl, {
+        method: 'GET',
+        headers: headers,
+        credentials: 'same-origin' // Handle cookies if needed
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`HTTP error! Status: ${response.status} ${response.statusText}`);
         }
+        
+        // Log response headers for debugging
+        console.log('Response headers:', Object.fromEntries(response.headers.entries()));
         
         const totalResults = parseInt(response.headers.get('Total-Results') || '0');
         console.log(`Total results to fetch: ${totalResults}`);
         
         if (totalResults === 0) {
+            console.log('No results found. The group might be empty or not publicly accessible.');
             return Promise.resolve([]);
         }
         
-        console.log(`Preparing to fetch ${Math.ceil(totalResults / ITEMS_PER_PAGE)} pages of data...`);
+        const totalPages = Math.ceil(totalResults / ITEMS_PER_PAGE);
+        console.log(`Preparing to fetch ${totalPages} pages of data...`);
+        
         // Calculate how many parallel requests we need to make
         const requests = [];
         for (let start = 0; start < totalResults; start += ITEMS_PER_PAGE) {
@@ -220,25 +244,30 @@ function fetchPublications() {
             requestParams.set('start', start);
             requestParams.set('limit', ITEMS_PER_PAGE);
             
-            console.log(`Queueing request for items ${start} to ${start + ITEMS_PER_PAGE - 1}`);
+            console.log(`Queueing request for items ${start} to ${Math.min(start + ITEMS_PER_PAGE - 1, totalResults - 1)}`);
             
             requests.push(
                 fetch(`${endpoint}?${requestParams.toString()}`, {
-                    headers: { 
-                        'Accept': 'application/json',
-                        'Zotero-API-Version': '3'
-                    }
+                    method: 'GET',
+                    headers: headers,
+                    credentials: 'same-origin' // Handle cookies if needed
                 })
-                .then(res => {
+                .then(async res => {
                     if (!res.ok) {
-                        console.error(`Error fetching page (start=${start}):`, res.status, res.statusText);
-                        return Promise.reject(`HTTP ${res.status}: ${res.statusText}`);
+                        const errorText = await res.text();
+                        console.error(`Error fetching page (start=${start}):`, res.status, res.statusText, errorText);
+                        throw new Error(`HTTP ${res.status}: ${res.statusText} - ${errorText}`);
                     }
                     return res.json();
                 })
+                .then(data => {
+                    console.log(`Successfully fetched ${data.length} items starting from ${start}`);
+                    return data;
+                })
                 .catch(error => {
                     console.error(`Error in fetch for start=${start}:`, error);
-                    return Promise.reject(error);
+                    // Return empty array for failed requests to prevent Promise.all from failing completely
+                    return [];
                 })
             );
         }
@@ -248,61 +277,103 @@ function fetchPublications() {
     .then(pages => {
         console.log(`Received ${pages.length} pages of data`);
         
-        // Flatten all pages into a single array
-        const allItems = pages.flat();
-        console.log(`Total items before filtering: ${allItems.length}`);
+        // Flatten all pages into a single array and filter out any empty results from failed requests
+        const allItems = pages.flat().filter(Boolean);
+        console.log(`Total items received: ${allItems.length}`);
+        
+        if (allItems.length === 0) {
+            console.log('No items found in the response');
+            showError('No publications found. The group might be empty or not publicly accessible.');
+            return;
+        }
         
         // Filter out notes and attachments
         allPublications = allItems.filter(pub => {
-            const isValid = pub.data && pub.data.itemType !== 'note' && pub.data.itemType !== 'attachment';
+            const isValid = pub.data && pub.data.itemType && 
+                          pub.data.itemType !== 'note' && 
+                          pub.data.itemType !== 'attachment';
+            
             if (!isValid) {
-                console.log('Filtered out item:', pub);
+                console.log('Filtered out item:', {
+                    key: pub.key,
+                    itemType: pub.data?.itemType,
+                    title: pub.data?.title?.substring(0, 50) + (pub.data?.title?.length > 50 ? '...' : '')
+                });
             }
             return isValid;
         });
         
-        console.log(`Loaded ${allPublications.length} valid publications`);
+        console.log(`Loaded ${allPublications.length} valid publications after filtering`);
+        
+        if (allPublications.length === 0) {
+            showError('No valid publications found after filtering out notes and attachments.');
+            return;
+        }
+        
         updatePublicationsCount(allPublications.length);
         
         // Collect all tags
         allPublications.forEach(pub => {
             if (pub.data && pub.data.tags) {
                 pub.data.tags.forEach(tag => {
-                    if (tag.tag) {
+                    if (tag && typeof tag === 'object' && tag.tag) {
                         allTags.add(tag.tag);
+                    } else if (typeof tag === 'string') {
+                        // Handle case where tags are just strings
+                        allTags.add(tag);
                     }
                 });
             }
         });
         
+        console.log(`Collected ${allTags.size} unique tags`);
+        
         // Update tag filter dropdown
         updateTagFilter();
         
-        // Apply filters to the full dataset
+        // Apply filters to the full dataset, which will also render the publications
         applyFilters();
         
-        // Remove loading state
-        if (container) {
-            container.innerHTML = '';
-        }
-        
+        // Loading is complete
         isLoading = false;
     })
     .catch(error => {
         console.error('Error fetching Zotero data:', error);
-        const container = document.getElementById('recent-publications');
-        if (container) {
-            container.innerHTML = `
-                <div class="alert alert-danger">
-                    <i class="bi bi-exclamation-triangle me-2"></i>
-                    Failed to load publications from Zotero. Please try again later.
-                    <br><small class="text-muted">${error.message || error}</small>
-                </div>
-            `;
-        }
-        
+        showError(`Failed to load publications from Zotero: ${error.message || error}`);
         isLoading = false;
     });
+    
+/**
+ * Display an error message in the publications container
+ */
+function showError(message) {
+    console.error('Displaying error:', message);
+    const container = document.getElementById('recent-publications') || document.body;
+    
+    // Create or update error message
+    let errorDiv = container.querySelector('.alert.alert-danger');
+    if (!errorDiv) {
+        errorDiv = document.createElement('div');
+        errorDiv.className = 'alert alert-danger';
+        container.innerHTML = '';
+        container.appendChild(errorDiv);
+    }
+    
+    errorDiv.innerHTML = `
+        <i class="bi bi-exclamation-triangle me-2"></i>
+        ${message}
+        <div class="mt-2">
+            <button class="btn btn-sm btn-outline-secondary" onclick="location.reload()">
+                <i class="bi bi-arrow-clockwise"></i> Try Again
+            </button>
+        </div>
+    `;
+    
+    // If we're not in the container, scroll to it
+    if (container !== document.body) {
+        container.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 }
 
 /**
@@ -496,6 +567,7 @@ function updatePublicationsCount(count) {
  * Render publications in the UI based on current view
  */
 function renderPublications(publications) {
+    console.log(`Rendering ${publications ? publications.length : 0} publications with view: ${currentView}`);
     const container = document.getElementById('recent-publications');
     if (!container) {
         console.error('Publications container not found');
