@@ -368,10 +368,13 @@ async function onSendMessage(e) {
     submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i>';
   }
 
+  // Remove any existing typing indicators to prevent duplicates
   document.querySelectorAll('.typing-indicator').forEach(el => el.remove());
+
+  // Add typing indicator with animated dots
   let typingIndicator = document.createElement('div');
   typingIndicator.className = 'rkts-msg assistant typing-indicator';
-  typingIndicator.innerHTML = '<span></span><span></span><span></span>';
+  typingIndicator.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
   messagesContainer.appendChild(typingIndicator);
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 

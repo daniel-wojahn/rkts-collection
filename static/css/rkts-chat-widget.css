@@ -121,7 +121,7 @@
   max-width: calc(100vw - 48px);
   height: 640px;
   max-height: 80vh;
-  background: var(--bg-color);
+  background: #fff;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   z-index: 9998;
