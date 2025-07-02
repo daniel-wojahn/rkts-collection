@@ -902,6 +902,11 @@ footer {
     color: #adb5bd;
 }
 
+/* Prevent interaction with disabled option's checkbox */
+.disabled-filter-option input[type="checkbox"] {
+    pointer-events: none;
+}
+
 /* Modal styles */
 .modal-title {
     font-weight: bold;

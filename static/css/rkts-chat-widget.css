@@ -256,7 +256,7 @@
   animation: messageAppear 0.3s ease-out forwards;
   box-shadow: var(--shadow-sm);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 @keyframes messageAppear {

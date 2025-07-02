@@ -85,7 +85,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const selectedDateMin = document.getElementById('selected-date-min');
     const selectedDateMax = document.getElementById('selected-date-max');
     
+    const includeUndatedCheckbox = document.getElementById('include-undated');
+    let undatedAuto = true;
     console.log('Setting up date slider event listeners');
+    function toggleUndatedBasedOnRange() {
+        const minVal = parseInt(dateSliderMin.value);
+        const maxVal = parseInt(dateSliderMax.value);
+        const isFullRange = (minVal === minYear) && (maxVal === maxYear);
+        if (includeUndatedCheckbox) {
+            includeUndatedCheckbox.checked = isFullRange;
+        }
+    }
     
     if (dateSliderMin) {
         dateSliderMin.addEventListener('input', function() {
@@ -101,7 +111,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Apply filters immediately when slider stops
         dateSliderMin.addEventListener('change', function() {
+            if (undatedAuto && includeUndatedCheckbox) {
+                toggleUndatedBasedOnRange();
+            }
             console.log('Min slider final value:', this.value);
+            applyFilters();
+        });
+    }
+    
+    // Listener for undated checkbox itself
+    if (includeUndatedCheckbox) {
+        includeUndatedCheckbox.addEventListener('change', () => {
+            undatedAuto = false; // user overrode
             applyFilters();
         });
     }
@@ -120,6 +141,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Apply filters immediately when slider stops
         dateSliderMax.addEventListener('change', function() {
+            if (undatedAuto && includeUndatedCheckbox) {
+                toggleUndatedBasedOnRange();
+            }
             console.log('Max slider final value:', this.value);
             applyFilters();
         });
@@ -142,6 +166,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Helper to ensure all interaction handlers are active and map container is focusable
+function enableMapInteractions() {
+    if (!map) return;
+    // Enable primary interaction handlers (they may already be on, but enabling again is safe)
+    map.dragging?.enable();
+    map.scrollWheelZoom?.enable();
+    map.touchZoom?.enable();
+    map.doubleClickZoom?.enable();
+    map.boxZoom?.enable();
+    map.keyboard?.enable();
+
+    // Make sure the container can receive focus so wheel events are captured immediately
+    const container = map.getContainer();
+    if (container && !container.hasAttribute('tabindex')) {
+        container.setAttribute('tabindex', '0');
+    }
+}
 
 // Initialize the Leaflet map
 function initMap() {
@@ -179,6 +221,9 @@ function initMap() {
     
     // Create a regular layer group for individual markers when needed
     markers = L.layerGroup().addTo(map);
+
+    // Ensure all interaction gestures are active immediately
+    enableMapInteractions();
 }
 
 // Load data from JSON files
@@ -455,95 +500,56 @@ function createCheckboxItem(value, type, count) {
 
 // Update filter options based on current selections
 function updateDynamicFilterOptions() {
-    // Get all selected filters
-    const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
-    const selectedGroups = Array.from(document.querySelectorAll('.group-checkbox:checked')).map(cb => cb.value);
-    const selectedPlaces = Array.from(document.querySelectorAll('.place-checkbox:checked')).map(cb => cb.value);
-    
-    // Get all filter checkboxes
-    const allCheckboxes = document.querySelectorAll('.filter-checkbox');
-    
-    // Calculate available options for each filter type based on current filtered collections
-    const availableCategories = new Set();
-    const availableGroups = new Set();
-    const availablePlaces = new Set();
-    const availableMedia = new Set();
-    
-    // Count occurrences for each option in the filtered collections
-    const categoryCounts = {};
-    const groupCounts = {};
-    const placeCounts = {};
-    const mediumCounts = {};
-    
-    // For each filtered collection, track available options
-    filteredCollections.forEach(collection => {
-        // Track categories
-        if (collection.genre) {
-            availableCategories.add(collection.genre);
-            categoryCounts[collection.genre] = (categoryCounts[collection.genre] || 0) + 1;
+    // Use currently visible (filtered) collections if available, otherwise all
+    const currentCollections = (typeof filteredCollections !== 'undefined' && Array.isArray(filteredCollections) && filteredCollections.length > 0)
+        ? filteredCollections
+        : collections;
+
+    // Prepare count maps for each filter type
+    const counts = {
+        category: {},
+        group: {},
+        place: {},
+        medium: {}
+    };
+
+    currentCollections.forEach(coll => {
+        if (coll.genre) {
+            counts.category[coll.genre] = (counts.category[coll.genre] || 0) + 1;
         }
         
-        // Track places
-        if (collection.place_of_production) {
-            availablePlaces.add(collection.place_of_production);
-            placeCounts[collection.place_of_production] = (placeCounts[collection.place_of_production] || 0) + 1;
+        if (coll.place_of_production) {
+            counts.place[coll.place_of_production] = (counts.place[coll.place_of_production] || 0) + 1;
         }
         
-        // Track groups/classifications
-        if (collection.classifications) {
-            collection.classifications.forEach(group => {
-                availableGroups.add(group);
-                groupCounts[group] = (groupCounts[group] || 0) + 1;
+        if (coll.classifications) {
+            // Deduplicate groups within a single collection to avoid inflated counts
+            const uniqueGroups = new Set(coll.classifications);
+            uniqueGroups.forEach(group => {
+                counts.group[group] = (counts.group[group] || 0) + 1;
             });
         }
-        // Track media
-        if (collection.medium) {
-            availableMedia.add(collection.medium);
-            mediumCounts[collection.medium] = (mediumCounts[collection.medium] || 0) + 1;
+        if (coll.medium) {
+            counts.medium[coll.medium] = (counts.medium[coll.medium] || 0) + 1;
         }
     });
-    
-    // Update each checkbox's disabled state and count
-    allCheckboxes.forEach(checkbox => {
+
+    // Update each checkbox UI based on new counts
+    document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
         const type = checkbox.dataset.type;
         const value = checkbox.dataset.value;
+        const count = counts[type][value] || 0;
         const countSpan = checkbox.parentElement.querySelector('.filter-checkbox-count');
-        
-        // Skip checked checkboxes - they should always be enabled
+        if (countSpan) countSpan.textContent = `(${count})`;
+
         if (checkbox.checked) {
-            return;
-        }
-        
-        let isAvailable = false;
-        let count = 0;
-        
-        // Check if this option is available based on current filters
-        switch (type) {
-            case 'category':
-                isAvailable = availableCategories.has(value);
-                count = categoryCounts[value] || 0;
-                break;
-            case 'group':
-                isAvailable = availableGroups.has(value);
-                count = groupCounts[value] || 0;
-                break;
-            case 'place':
-                isAvailable = availablePlaces.has(value);
-                count = placeCounts[value] || 0;
-                break;
-            case 'medium':
-                isAvailable = availableMedia.has(value);
-                count = mediumCounts[value] || 0;
-                break;
-        }
-        
-        // Update disabled state
-        checkbox.disabled = !isAvailable;
-        checkbox.parentElement.classList.toggle('disabled-filter-option', !isAvailable);
-        
-        // Update count
-        if (countSpan) {
-            countSpan.textContent = `(${count})`;
+            // Never disable an option that is currently selected
+            checkbox.disabled = false;
+            checkbox.parentElement.classList.remove('disabled-filter-option');
+        } else {
+            const shouldDisable = count === 0;
+            checkbox.disabled = shouldDisable;
+            checkbox.parentElement.classList.toggle('disabled-filter-option', shouldDisable);
         }
     });
 }
@@ -608,7 +614,7 @@ function parseDateString(dateStr) {
     return { minYear: null, maxYear: null };
 }
 
-// Perform search with mkdocs-style preview dropdown
+// Perform search with lunr.js
 function performSearch() {
     // Use the generic search function from utils.js
     performGenericSearch({
@@ -642,15 +648,6 @@ function performSearch() {
     });
 }
 
-// These utility functions are now imported from utils.js:
-// - highlightSearchTerm
-// - createSnippet
-// - escapeRegExp
-
-// parseSearchTerm function is now imported from utils.js
-
-// calculateBasicSearchScore function is now imported from utils.js
-
 // Apply filters to collections
 function applyFilters() {
     const searchInput = document.getElementById('search');
@@ -673,6 +670,9 @@ function applyFilters() {
     const dateSliderMax = document.getElementById('date-slider-max');
     const dateMinFilter = dateSliderMin ? parseInt(dateSliderMin.value) : minYear;
     const dateMaxFilter = dateSliderMax ? parseInt(dateSliderMax.value) : maxYear;
+    // Include-undated checkbox
+    const includeUndatedCheckbox = document.getElementById('include-undated');
+    const includeUndated = includeUndatedCheckbox ? includeUndatedCheckbox.checked : true;
 
     const mediumCheckboxes = document.querySelectorAll('.medium-checkbox:checked');
     const selectedMedia = Array.from(mediumCheckboxes).map(cb => cb.value);
@@ -703,7 +703,11 @@ function applyFilters() {
             const matchesMedium = selectedMedia.length === 0 || 
                                   (collection.medium && selectedMedia.includes(collection.medium));
             
-            return matchesCategory && matchesGroup && matchesPlace && matchesMedium;
+            // Undated handling
+            const hasDate = parseDateRange(collection.date_created) !== null;
+            const matchesUndated = includeUndated || hasDate;
+            
+            return matchesCategory && matchesGroup && matchesPlace && matchesMedium && matchesUndated;
         }
     );
     
@@ -721,7 +725,7 @@ function applyFilters() {
     updateMapWithFiltered();
     
     // Update URL with current filters for sharing
-    updateShareableUrl();
+    updateShareableUrlFromFilters();
     
     // Update charts
     updateCharts();
@@ -834,13 +838,12 @@ function updateCollectionsDisplay() {
     });
 }
 
-// Legacy function updateMap has been removed - use updateMapWithFiltered directly
-
 // Alias for backward compatibility
 const updateMapMarkers = updateMapWithFiltered;
 const updateMap = updateMapWithFiltered; // Keep this alias for backward compatibility
 
 function switchToMarkerView() {
+    enableMapInteractions();
     // Remove heatmap layer if it exists
     if (heatLayer) {
         map.removeLayer(heatLayer);
@@ -860,6 +863,7 @@ function switchToMarkerView() {
 
 // Switch to heatmap view
 function switchToHeatmapView() {
+    enableMapInteractions();
     // Hide markers by removing the marker layer
     if (markerCluster) {
         map.removeLayer(markerCluster);
@@ -1567,9 +1571,9 @@ function exportFilteredAsCSV() {
 }
 
 // Create shareable URL with current filters
-function updateShareableUrl() {
+function updateShareableUrlFromFilters() {
     // Use the generic updateShareableUrl utility function from utils.js
-    return updateShareableUrl({
+    return window.updateShareableUrl({
         // Map filter parameter names to element IDs
         elementIds: {
             'search': 'search',

@@ -698,9 +698,9 @@ function filterCollections(collections, filters = {}, customFilterFn = null) {
             // Try to parse the date string into a range
             const itemDateRange = parseDateRange(collection.date_created);
 
-            // If the date is unparseable, exclude it from the filtered results when a date filter is active.
+            // If the date is unparseable or missing, keep the item (treat as unspecified)
             if (!itemDateRange) {
-                return false;
+                return true;
             }
 
             const [itemStart, itemEnd] = itemDateRange;
