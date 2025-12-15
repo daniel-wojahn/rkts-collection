@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rKTs - Bibliography</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/utils.js" defer></script>
+    <script src="../js/zotero.js" defer></script>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../images/rkts-logo.png" alt="rKTs Logo">
+                <div>
+                    <span>Resources for Kanjur and Tanjur Studies</span>
+                    <small class="d-block">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="vertical-divider d-none d-lg-block"></div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="collections.html">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="zotero.html">Bibliography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1>Bibliography</h1>
+        
+        <!-- Search and Filter Controls -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <!-- Search Box -->
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-search"></i></span>
+                                    <input type="text" class="form-control" id="search-input" placeholder="Search publications by title, author, or abstract...">
+                                    <button class="btn btn-outline-secondary" type="button" id="clear-search-btn">
+                                        <i class="bi bi-x-lg"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Sort Order -->
+                            <div class="col-md-4">
+                                <select class="form-select" id="sort-order">
+                                    <option value="dateAdded-desc">Newest First</option>
+                                    <option value="dateAdded-asc">Oldest First</option>
+                                    <option value="date-desc">Publication Date (Newest)</option>
+                                    <option value="date-asc">Publication Date (Oldest)</option>
+                                    <option value="title-asc">Title A-Z</option>
+                                    <option value="title-desc">Title Z-A</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <!-- View Options -->
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div>
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-outline-primary active" id="view-cards">
+                                        <i class="bi bi-grid-3x3-gap"></i> Cards
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary" id="view-list">
+                                        <i class="bi bi-list-ul"></i> List
+                                    </button>
+                                    <button type="button" class="btn btn-outline-primary" id="view-compact">
+                                        <i class="bi bi-list"></i> Compact
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Publications Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div>
+                                <span id="filter-badge" class="badge bg-secondary ms-2" style="display: none;">Filtered</span>
+                            </div>
+                            <div>
+                                <button id="load-more-btn" class="btn btn-sm btn-outline-primary" style="display: none;">
+                                    <i class="bi bi-plus-circle me-1"></i>Load More
+                                </button>
+                            </div>
+                        </div>
+                        <div id="recent-publications">
+                            <div class="d-flex justify-content-center my-5">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">&copy; <script>document.write(new Date().getFullYear())</script> Resources for Kanjur and Tanjur Studies (rKTs). Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</span>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Debug script -->
+    <script src="../js/debug.js"></script>
+</body>
+</html>

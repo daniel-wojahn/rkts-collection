@@ -1,0 +1,9 @@
+# Ignore everything by default
+*
+
+# But track these
+!.gitignore
+!README.md
+!index.html
+!static/
+!static/**

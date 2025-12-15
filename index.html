@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rKTs - Tibetan Buddhist Collections</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="static/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="static/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="static/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="static/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="static/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="static/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="static/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="static/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="static/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    
+    <!-- Custom CSS -->
+    <style>
+        .filter-checkboxes {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 0.5rem;
+        }
+        
+        .filter-checkbox-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+        
+        .filter-checkbox-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .filter-checkbox-item label {
+            margin-left: 0.5rem;
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+        
+        .filter-checkbox-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+    </style>
+    
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/rkts-chat-widget.css">
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+            
+    <!-- Leaflet MarkerCluster -->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    
+    <!-- Leaflet Heat (for heatmap) -->
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    
+    <!-- Chart.js for interactive charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- FileSaver.js for export functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="static/images/rkts-logo.png" alt="rKTs Logo">
+                <div>
+                    <span>Resources for Kanjur and Tanjur Studies</span>
+                    <small class="d-block">བཀའ་བསྟན་རིག་པའི་མཐུན་སྦྱོར།</small>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="vertical-divider d-none d-lg-block"></div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Map</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="static/pages/collections.html">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="static/pages/zotero.html">Bibliography</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="static/pages/about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Filters Column -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filters</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="filter-form">
+                            <div class="mb-3">
+                                <label for="search" class="form-label">Search</label>
+                                <div class="input-group search-container position-relative">
+                                    <span class="input-group-text bg-white border-end-0">
+                                        <i class="bi bi-search text-muted"></i>
+                                    </span>
+                                    <input type="text" class="form-control border-start-0" id="search" placeholder="Search collections...">
+                                    <button class="btn btn-outline-primary" type="button" id="clear-search">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                    <!-- Search results preview dropdown -->
+                                    <div id="search-preview" class="search-preview-dropdown" style="display: none;">
+                                        <div class="search-preview-header">
+                                            <span id="search-results-count">0</span> results found
+                                        </div>
+                                        <div id="search-preview-results" class="search-preview-results">
+                                            <!-- Search results will be populated here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Category</label>
+                                <div id="category-filter" class="filter-checkboxes">
+                                    <!-- Will be populated dynamically -->
+                                    <div class="text-center my-1"><small class="text-muted">Loading categories...</small></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Group</label>
+                                <div id="group-filter" class="filter-checkboxes">
+                                    <!-- Will be populated dynamically -->
+                                    <div class="text-center my-1"><small class="text-muted">Loading groups...</small></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Place of Production</label>
+                                <div id="place-filter" class="filter-checkboxes">
+                                    <!-- Will be populated dynamically -->
+                                    <div class="text-center my-1"><small class="text-muted">Loading places...</small></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Medium</label>
+                                <div id="medium-filter" class="filter-checkboxes">
+                                    <!-- Will be populated dynamically -->
+                                    <div class="text-center my-1"><small class="text-muted">Loading media...</small></div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Date Range</label>
+                                <div class="d-flex justify-content-between mb-1">
+                                    <span id="date-range-min">1000</span>
+                                    <span id="date-range-max">2000</span>
+                                </div>
+                                <input type="range" class="form-range" min="1000" max="2000" step="10" id="date-slider-min" value="1000">
+                                <input type="range" class="form-range" min="1000" max="2000" step="10" id="date-slider-max" value="2000">
+                                <div class="d-flex justify-content-between">
+                                    <span id="selected-date-min">1000</span>
+                                    <span id="selected-date-max">2000</span>
+                                </div>
+                                <div class="form-check mt-2">
+                                    <input class="form-check-input" type="checkbox" id="include-undated" checked>
+                                    <label class="form-check-label" for="include-undated" title="Include items that have no date metadata">Include undated</label>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-end mt-3">
+                                <button type="button" class="btn btn-outline-secondary" id="reset-filters">Reset All Filters</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h5>Quick Stats</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Total Collections: <span id="total-collections">0</span></p>
+                        <p>Filtered Collections: <span id="filtered-collections">0</span></p>
+                        <p>Collections with Coordinates: <span id="mapped-collections">0</span></p>
+                    </div>
+                </div>
+                
+                <!-- Export Options Card -->
+                <div class="card mt-3">
+                    <div class="card-header bg-light">
+                        <h5>Export Options</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted small mb-2">Export your currently filtered collections data. Only the collections matching your current filter criteria will be included in the export.</p>
+                        <div class="d-grid gap-2">
+                            <div class="btn-group">
+                                <button id="export-json" class="btn btn-sm btn-outline-secondary" title="Export complete data in JSON format">Export JSON</button>
+                                <button id="export-csv" class="btn btn-sm btn-outline-secondary" title="Export tabular data in CSV format">Export CSV</button>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistics Button -->
+                <div class="card mt-3">
+                    <div class="card-body p-2">
+                        <div class="d-grid">
+                            <a href="/static/pages/collections.html" class="btn btn-primary">View Detailed Statistics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Column -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5>Map</h5>
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary active" id="marker-view-btn">Markers</button>
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="heatmap-view-btn">Heatmap</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="map" style="height: 700px;"></div>
+                        
+                        <!-- Map Legend -->
+                        <div class="map-legend mt-3">
+                            <h6>Map Legend</h6>
+                            <div class="d-flex flex-wrap gap-3">
+                                <div class="d-flex align-items-center">
+                                    <span class="legend-marker" style="background-color: #e41a1c;"></span>
+                                    <span class="ms-1">Kanjur</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="legend-marker" style="background-color: #377eb8;"></span>
+                                    <span class="ms-1">Tanjur</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="legend-marker" style="background-color: #4daf4a;"></span>
+                                    <span class="ms-1">Tantra</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="legend-marker" style="background-color: #984ea3;"></span>
+                                    <span class="ms-1">Collection</span>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <span class="legend-marker" style="background-color: #3388ff;"></span>
+                                    <span class="ms-1">Other</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Collections List -->
+                <div class="card mt-3" id="collections">
+                    <div class="card-header">
+                        <h5>Collections</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" id="collections-container">
+                            <!-- Will be populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Collection Detail Modal -->
+    <div class="modal fade" id="collection-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Collection Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Will be populated dynamically -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="download-xml-btn">Download XML</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">&copy; <script>document.write(new Date().getFullYear())</script> Resources for Kanjur and Tanjur Studies (rKTs). Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</span>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Lunr.js for advanced search -->
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    
+    <!-- Utility JS -->
+    <script src="static/js/utils.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="static/js/app.js"></script>
+
+    <script src="static/js/rkts-chat-widget.js"></script>
+</body>
+</html>
