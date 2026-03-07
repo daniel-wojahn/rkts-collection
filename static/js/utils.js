@@ -4,7 +4,7 @@
  */
 
 // Returns a debounced version of func, delayed by wait ms.
-function _debounce(func, wait) {
+function debounce(func, wait) {
 	let timeout;
 	return function (...args) {
 		clearTimeout(timeout);
@@ -40,7 +40,7 @@ function parseSearchTerm(searchTerm) {
 	return searchTerm.length >= 3 ? `${searchTerm}*` : searchTerm;
 }
 
-function _performGenericSearch(config) {
+function performGenericSearch(config) {
 	const {
 		searchInputId,
 		searchPreviewId,
@@ -312,7 +312,7 @@ function calculateBasicSearchScore(item, searchTerm) {
 	return score;
 }
 
-function _truncateText(text, maxLength) {
+function truncateText(text, maxLength) {
 	if (!text || text.length <= maxLength) {
 		return text;
 	}
@@ -320,13 +320,13 @@ function _truncateText(text, maxLength) {
 	return `${text.substring(0, maxLength)}...`;
 }
 
-function _exportJSON(items, filename = "export.json") {
+function exportJSON(items, filename = "export.json") {
 	const dataStr = JSON.stringify(items, null, 2);
 	const blob = new Blob([dataStr], { type: "application/json" });
 	saveAs(blob, filename);
 }
 
-function _exportCSV(items, headers, filename = "export.csv") {
+function exportCSV(items, headers, filename = "export.csv") {
 	// Create CSV content
 	let csvContent = `${headers.join(",")}\n`;
 
@@ -353,7 +353,7 @@ function _exportCSV(items, headers, filename = "export.csv") {
 	saveAs(blob, filename);
 }
 
-function _showError(message, containerId = "collections-container") {
+function showError(message, containerId = "collections-container") {
 	const container = document.getElementById(containerId);
 	if (container) {
 		container.innerHTML = `
@@ -370,7 +370,7 @@ function _showError(message, containerId = "collections-container") {
 	}
 }
 
-function _downloadCollectionXML(fileName) {
+function downloadCollectionXML(fileName) {
 	if (!fileName) {
 		console.error("No file name provided for XML download");
 		alert("Error: Could not identify the XML file to download.");
@@ -413,7 +413,7 @@ function _downloadCollectionXML(fileName) {
 		});
 }
 
-function _updateGenericCategoryChart(
+function updateGenericCategoryChart(
 	collections,
 	chartId,
 	chartInstance,
@@ -544,7 +544,7 @@ function parseDateRange(dateStr) {
 	return null; // Return null if no format matches
 }
 
-function _updateShareableUrl(config) {
+function updateShareableUrl(config) {
 	const { filters = {}, elementIds = {}, replaceState = true } = config;
 
 	const searchParams = new URLSearchParams();
@@ -583,7 +583,7 @@ function _updateShareableUrl(config) {
 	return newUrl;
 }
 
-function _filterCollections(collections, filters = {}, customFilterFn = null) {
+function filterCollections(collections, filters = {}, customFilterFn = null) {
 	if (!collections || !Array.isArray(collections)) {
 		console.error("Invalid collections array provided to filterCollections");
 		return [];
@@ -821,7 +821,7 @@ function countCollectionsByRegion(collections) {
 	return regionCounts;
 }
 
-function _updateGenericRegionalChart(
+function updateGenericRegionalChart(
 	collections,
 	chartId,
 	chartInstance,
