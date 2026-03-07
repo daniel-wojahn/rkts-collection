@@ -1,21 +1,8 @@
 # Tibetan Buddhist Collections Explorer
 
-A web application for exploring and visualizing Tibetan Buddhist text collections with advanced search, filtering, and map visualization capabilities.
+A web application for exploring and visualizing rKTs collections with advanced search, filtering, and map visualization capabilities.
 
-## Tech Stack
-
-This application is built using a modern web technology stack:
-
-### Frontend
-- **HTML5/CSS3** - Core structure and styling
-- **Bootstrap 5** - Responsive UI framework with built-in components
-- **JavaScript (ES6+)** - Client-side functionality
-- **Leaflet.js** - Interactive map visualization with marker clustering and heatmap
-- **Chart.js** - Data visualization for collection statistics
-- **lunr.js** - Client-side full-text search engine with instant results
-- **FileSaver.js** - Client-side file download functionality
-
-### Data Processing
+## Data Processing
 - **Python** - Server-side data processing (`scripts/process_xml.py`, `run.py`, `deploy.py`)
 - **XML/JSON** - Data storage and exchange formats
 - **GeoJSON** - Geographic data representation
@@ -81,7 +68,3 @@ The search functionality is powered by lunr.js (via `utils.js`), which provides:
 - Instant results as users type
 - Highlighted search terms in results
 - Wildcard and fuzzy fallback search for robustness
-
-## Zotero API Key
-
-The bibliography page fetches from the public rKTs Zotero group. If an API key is needed (e.g. for a private group), set `ZOTERO_API_KEY` in `static/js/zotero.js` — **do not commit keys to version control**.
