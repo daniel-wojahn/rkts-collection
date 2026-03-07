@@ -11,10 +11,6 @@ let heatLayer;
 let isHeatmapActive = false;
 let collections = [];
 let filteredCollections = []; // Store filtered collections
-let geojson;
-let categoryFilter = '';
-let groupFilter = '';
-let placeFilter = '';
 let lunrIndex; // Lunr search index
 let categoryOptions = new Set();
 let groupOptions = new Set();
@@ -150,19 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set up export buttons if they exist on this page
     const exportJsonBtn = document.getElementById('export-json');
     const exportCsvBtn = document.getElementById('export-csv');
-    const shareLinkBtn = document.getElementById('share-link');
     
     if (exportJsonBtn) exportJsonBtn.addEventListener('click', exportFilteredAsJSON);
     if (exportCsvBtn) exportCsvBtn.addEventListener('click', exportFilteredAsCSV);
-    if (shareLinkBtn) shareLinkBtn.addEventListener('click', function() {
-        // Copy current URL to clipboard
-        navigator.clipboard.writeText(window.location.href).then(() => {
-            alert('Link copied to clipboard!');
-        }).catch(err => {
-            console.error('Could not copy link: ', err);
-            alert('Could not copy link. Please copy the URL from your browser address bar.');
-        });
-    });
 });
 
 // Helper to ensure all interaction handlers are active and map container is focusable
@@ -850,10 +836,6 @@ function updateCollectionsDisplay() {
     });
 }
 
-// Alias for backward compatibility
-const updateMapMarkers = updateMapWithFiltered;
-const updateMap = updateMapWithFiltered; // Keep this alias for backward compatibility
-
 function switchToMarkerView() {
     enableMapInteractions();
     // Remove heatmap layer if it exists
@@ -1143,8 +1125,6 @@ function updateMapWithFiltered() {
         }
     }
     
-    // Update charts with the filtered data
-    updateCharts();
 }
 
 // Show collection details in modal

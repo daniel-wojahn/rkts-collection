@@ -10,64 +10,78 @@ This application is built using a modern web technology stack:
 - **HTML5/CSS3** - Core structure and styling
 - **Bootstrap 5** - Responsive UI framework with built-in components
 - **JavaScript (ES6+)** - Client-side functionality
-- **Leaflet.js** - Interactive map visualization
+- **Leaflet.js** - Interactive map visualization with marker clustering and heatmap
 - **Chart.js** - Data visualization for collection statistics
 - **lunr.js** - Client-side full-text search engine with instant results
 - **FileSaver.js** - Client-side file download functionality
 
 ### Data Processing
-- **Python** - Server-side data processing
+- **Python** - Server-side data processing (`scripts/process_xml.py`, `run.py`, `deploy.py`)
 - **XML/JSON** - Data storage and exchange formats
 - **GeoJSON** - Geographic data representation
 
 ## Features
-- **Interactive Map** - Visualize collections by geographic location
-- **Advanced Filtering** - Filter collections by category, group, place, and date range
+- **Interactive Map** - Visualize collections by geographic location, with marker clustering and heatmap view
+- **Advanced Filtering** - Filter collections by category, group, place, medium, and date range
 - **Full-Text Search** - Instant search with lunr.js across multiple fields
 - **Collection Details** - View detailed information about each collection
 - **XML Downloads** - Download original XML files for each collection
-- **Data Visualization** - Charts showing distribution of collections by category and place
+- **Bibliography** - Browse and search the rKTs Zotero bibliography
+- **Data Visualization** - Charts showing distribution of collections by category and region
 - **Responsive Design** - Works on desktop and mobile devices
 
 ## Project Structure
 
 ```
 /
-├── index.html                 # Main application page
+├── index.html                 # Main application page (map + filters)
+├── run.py                     # Local development server
 ├── deploy.py                  # Deployment script
 ├── README.md                  # This file
-├── static/
-│   ├── css/
-│   │   └── style.css          # Custom styles
-│   ├── data/
-│   │   ├── collections.json   # Collection metadata
-│   │   └── collections.geojson # Geographic data
-│   ├── images/                # Application images
-│   ├── js/
-│   │   ├── app.js             # Main application logic
-│   │   ├── collections.js     # Collections page logic
-│   │   └── lunr-search.js     # Search functionality
-│   ├── pages/
-│   │   ├── about.html         # About page
-│   │   └── collections.html   # Collections overview page
-│   └── xml_files/             # Original XML files
+├── xml_files/                 # Source XML files (one per collection)
+├── scripts/
+│   └── process_xml.py         # Processes XML files into JSON/GeoJSON
+└── static/
+    ├── css/
+    │   ├── style.css              # Custom styles
+    │   └── rkts-chat-widget.css   # Chat widget styles
+    ├── data/
+    │   ├── collections.json       # Collection metadata (generated)
+    │   └── collections.geojson    # Geographic data (generated)
+    ├── images/                    # Application images and favicons
+    ├── js/
+    │   ├── app.js                 # Main application logic (map page)
+    │   ├── collections.js         # Collections overview page logic
+    │   ├── zotero.js              # Bibliography page logic (Zotero API)
+    │   ├── utils.js               # Shared utility functions
+    │   └── rkts-chat-widget.js    # Chat widget
+    ├── pages/
+    │   ├── about.html             # About page
+    │   ├── collections.html       # Collections overview page
+    │   └── zotero.html            # Bibliography page
+    └── xml_files -> ../xml_files  # Symlink for web serving of XML downloads
 ```
 
 ## Data Flow
 
-1. XML files containing collection metadata are processed into JSON and GeoJSON formats
-2. The web application loads these data files on startup
-3. Users can interact with the data through the map, filters, and search
-4. lunr.js provides instant search capabilities across multiple fields
-5. Filtered results are displayed on both the map and in the collections list
+1. Source XML files in `xml_files/` are processed by `scripts/process_xml.py`
+2. Processing generates `static/data/collections.json` and `static/data/collections.geojson`
+3. The web application loads these data files on startup
+4. Users can interact with the data through the map, filters, and search
+5. lunr.js provides instant search capabilities across multiple fields
+6. Filtered results are displayed on both the map and in the collections list
+7. XML files are served for download via the `static/xml_files` symlink
 
 ## Search Implementation
 
-The search functionality is powered by lunr.js, which provides:
+The search functionality is powered by lunr.js (via `utils.js`), which provides:
 
 - Full-text search across multiple fields (title, sigla, place, etc.)
 - Field-specific boosts for relevance ranking
 - Instant results as users type
 - Highlighted search terms in results
-- Fallback search for robustness
+- Wildcard and fuzzy fallback search for robustness
 
+## Zotero API Key
+
+The bibliography page fetches from the public rKTs Zotero group. If an API key is needed (e.g. for a private group), set `ZOTERO_API_KEY` in `static/js/zotero.js` — **do not commit keys to version control**.

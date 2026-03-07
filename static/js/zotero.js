@@ -7,7 +7,7 @@
 const ZOTERO_API_BASE = 'https://api.zotero.org';
 const ZOTERO_GROUP_ID = '2296997'; // rKTs Bibliography group ID
 const ZOTERO_GROUP_URL = 'https://www.zotero.org/groups/2296997/rkts_bibliography/library';
-const ZOTERO_API_KEY = 'HPibzNjw5n2fiaLHdG8Dz8s0'; // Add your Zotero API key here if required
+const ZOTERO_API_KEY = ''; // Set via environment/server config
 const ITEMS_PER_PAGE = 100; // Max items per API request
 const CACHE_KEY = 'rkts_zotero_cache';
 const CACHE_EXPIRY_MS = 30 * 60 * 1000; // Cache expires after 30 minutes
