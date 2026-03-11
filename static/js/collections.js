@@ -268,7 +268,7 @@ function showCollectionDetails(collection) {
 			placeContent += ` (<a href="${collection.bdrc_reference.url}" target="_blank">${collection.bdrc_reference.id}</a>)`;
 		}
 
-		content += `<tr><th>Place of Production</th><td>${placeContent}</td></tr>`;
+		content += `<tr><th>Place (Production/Storage/Documentation)</th><td>${placeContent}</td></tr>`;
 	}
 
 	if (collection.extent) {

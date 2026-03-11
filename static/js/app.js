@@ -16,7 +16,6 @@ const categoryOptions = new Set();
 const groupOptions = new Set();
 const placeOptions = new Set();
 const mediumOptions = new Set();
-const linesOptions = new Set();
 let minYear = 1000;
 let maxYear = 2050;
 let categoryChart;
@@ -261,8 +260,6 @@ async function loadData() {
 				});
 			}
 			if (collection.medium) mediumOptions.add(collection.medium);
-			if (collection.number_of_lines != null)
-				linesOptions.add(collection.number_of_lines);
 		});
 
 		minYear = Math.floor(foundMinYear / 100) * 100;
@@ -371,25 +368,21 @@ function populateFilterDropdowns() {
 	const groupContainer = document.getElementById("group-filter");
 	const placeContainer = document.getElementById("place-filter");
 	const mediumContainer = document.getElementById("medium-filter");
-	const linesContainer = document.getElementById("lines-filter");
 
 	categoryContainer.innerHTML = "";
 	groupContainer.innerHTML = "";
 	placeContainer.innerHTML = "";
 	if (mediumContainer) mediumContainer.innerHTML = "";
-	if (linesContainer) linesContainer.innerHTML = "";
 
 	const sortedCategories = Array.from(categoryOptions).sort();
 	const sortedGroups = Array.from(groupOptions).sort();
 	const sortedPlaces = Array.from(placeOptions).sort();
 	const sortedMedia = Array.from(mediumOptions).sort();
-	const sortedLines = Array.from(linesOptions).sort((a, b) => a - b);
 
 	const categoryCounts = {};
 	const groupCounts = {};
 	const placeCounts = {};
 	const mediumCounts = {};
-	const linesCounts = {};
 
 	collections.forEach((collection) => {
 		if (collection.genre) {
@@ -410,10 +403,6 @@ function populateFilterDropdowns() {
 		if (collection.medium) {
 			mediumCounts[collection.medium] =
 				(mediumCounts[collection.medium] || 0) + 1;
-		}
-		if (collection.number_of_lines != null) {
-			linesCounts[collection.number_of_lines] =
-				(linesCounts[collection.number_of_lines] || 0) + 1;
 		}
 	});
 
@@ -440,14 +429,6 @@ function populateFilterDropdowns() {
 			const count = mediumCounts[medium] || 0;
 			const item = createCheckboxItem(medium, "medium", count);
 			mediumContainer.appendChild(item);
-		});
-	}
-
-	if (linesContainer) {
-		sortedLines.forEach((lines) => {
-			const count = linesCounts[lines] || 0;
-			const item = createCheckboxItem(String(lines), "lines", count);
-			linesContainer.appendChild(item);
 		});
 	}
 }
@@ -494,7 +475,6 @@ function updateDynamicFilterOptions() {
 		group: {},
 		place: {},
 		medium: {},
-		lines: {},
 	};
 
 	currentCollections.forEach((coll) => {
@@ -515,10 +495,6 @@ function updateDynamicFilterOptions() {
 		}
 		if (coll.medium) {
 			counts.medium[coll.medium] = (counts.medium[coll.medium] || 0) + 1;
-		}
-		if (coll.number_of_lines != null) {
-			counts.lines[coll.number_of_lines] =
-				(counts.lines[coll.number_of_lines] || 0) + 1;
 		}
 	});
 
@@ -659,11 +635,6 @@ function applyFilters() {
 	);
 	const selectedMedia = Array.from(mediumCheckboxes).map((cb) => cb.value);
 
-	const linesCheckboxes = document.querySelectorAll(".lines-checkbox:checked");
-	const selectedLines = Array.from(linesCheckboxes).map((cb) =>
-		Number(cb.value),
-	);
-
 	filteredCollections = filterCollections(
 		collections,
 		{
@@ -688,11 +659,6 @@ function applyFilters() {
 				selectedMedia.length === 0 ||
 				(collection.medium && selectedMedia.includes(collection.medium));
 
-			const matchesLines =
-				selectedLines.length === 0 ||
-				(collection.number_of_lines != null &&
-					selectedLines.includes(collection.number_of_lines));
-
 			const hasDate = parseDateRange(collection.date_created) !== null;
 			const matchesUndated = includeUndated || hasDate;
 
@@ -701,7 +667,6 @@ function applyFilters() {
 				matchesGroup &&
 				matchesPlace &&
 				matchesMedium &&
-				matchesLines &&
 				matchesUndated
 			);
 		},
@@ -1111,10 +1076,10 @@ function showCollectionDetails(collection) {
 			placeContent += ` (<a href="${collection.bdrc_reference.url}" target="_blank">${collection.bdrc_reference.id}</a>)`;
 		}
 
-		content += `<tr><th>Place of Production</th><td>${placeContent}</td></tr>`;
+		content += `<tr><th>Place (Production/Storage/Documentation)</th><td>${placeContent}</td></tr>`;
 	} else if (collection.bdrc_reference) {
 		// If no place but BDRC reference exists, show it separately
-		content += `<tr><th>Place of Production</th><td>
+		content += `<tr><th>Place (Production/Storage/Documentation)</th><td>
                     (<a href="${collection.bdrc_reference.url}" target="_blank">${collection.bdrc_reference.id}</a>)
                     </td></tr>`;
 	}
